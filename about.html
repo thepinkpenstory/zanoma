@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Zanoma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --bg2: #12121a;
+      --bg3: #1a1a24;
+      --bg4: #222230;
+      --green: #39FF14;
+      --green-dim: rgba(57, 255, 20, 0.15);
+      --green-glow: rgba(57, 255, 20, 0.4);
+      --text: #f0f0f5;
+      --text-muted: #8888a0;
+      --text-dim: #555568;
+      --border: rgba(255,255,255,0.08);
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    a { color: var(--green); text-decoration: none; }
+    .bg-grid { position: fixed; inset: 0; background-image: linear-gradient(rgba(57,255,20,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(57,255,20,0.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+    .bg-glow { position: fixed; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(57,255,20,0.08) 0%, transparent 70%); pointer-events: none; z-index: 0; }
+    .bg-glow-1 { top: -200px; right: -200px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    header { padding: 24px 0; position: sticky; top: 0; background: rgba(10,10,15,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); z-index: 100; }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: var(--text); letter-spacing: -0.5px; }
+    .logo span { color: var(--green); }
+    nav { display: flex; gap: 32px; align-items: center; }
+    nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    nav a:hover { color: var(--green); }
+    nav a.active { color: var(--green); }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--green-dim); border: 1px solid var(--green); border-radius: 100px; font-size: 12px; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: 1px; }
+    .pill .dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    
+    .page-header { padding: 80px 0 60px; text-align: center; }
+    .page-header h1 { font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 700; margin-bottom: 16px; }
+    .page-header h1 span { color: var(--green); }
+    .page-header p { font-size: 18px; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
+    
+    .content-section { padding: 60px 0; }
+    .content-section h2 { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; margin-bottom: 20px; }
+    .content-section p { color: var(--text-muted); font-size: 16px; margin-bottom: 20px; }
+    
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .grid-2 .text h2 { margin-top: 20px; }
+    
+    .feature-list { list-style: none; }
+    .feature-list li { padding: 12px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; }
+    .feature-list li::before { content: '✓'; color: var(--green); font-weight: 700; }
+    
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 60px 0; }
+    .stat-box { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; text-align: center; }
+    .stat-box .value { font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; color: var(--green); }
+    .stat-box .label { font-size: 14px; color: var(--text-muted); margin-top: 8px; }
+    
+    footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; }
+    .footer-text { font-size: 13px; color: var(--text-dim); }
+    
+    @media (max-width: 900px) { .grid-2, .stats-row { grid-template-columns: 1fr; } nav { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">Zan<span>oma</span></a>
+        <nav>
+          <a href="about.html" class="active">About</a>
+          <a href="services.html">Services</a>
+          <a href="case-studies.html">Case Studies</a>
+          <a href="contact.html">Contact</a>
+          <div class="pill"><span class="dot"></span>AI-Powered</div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  
+  <section class="page-header">
+    <div class="container">
+      <h1>About <span>Zanoma</span></h1>
+      <p>Same credibility. Zero humans. All AI. We're building the agency of the future — and the future is autonomous.</p>
+    </div>
+  </section>
+  
+  <section class="content-section">
+    <div class="container">
+      <div class="grid-2">
+        <div class="text">
+          <h2>The Old Way Is Broken</h2>
+          <p>Traditional agencies charge $10K+ per month, take 3-6 months to deliver, and rely on billable hours from expensive talent. You pay for their overhead, their office, their management layers.</p>
+          <p>We started Zanoma with a simple question: What if you could get everything a traditional agency does — strategy, design, content, SEO, ads — at a fraction of the cost, delivered in days instead of months?</p>
+          <p>The answer: build the entire agency on AI.</p>
+        </div>
+        <div class="text">
+          <h2>How It Works</h2>
+          <p>We've replaced every human role in a traditional agency with AI agents that work 24/7:</p>
+          <ul class="feature-list">
+            <li>AI scrapes the web to find brands with problems</li>
+            <li>AI audits websites, listings, and social presence</li>
+            <li>AI designs the fix (mockups, optimized content)</li>
+            <li>AI writes personalized pitch emails</li>
+            <li>AI follows up automatically</li>
+            <li>AI delivers the work</li>
+          </ul>
+          <p style="margin-top: 20px; color: var(--green); font-weight: 600;">Kevin only closes deals. Everything else is automated.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="content-section">
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat-box"><div class="value">35+</div><div class="label">Fortune 500 Clients</div></div>
+        <div class="stat-box"><div class="value">24h</div><div class="label">Avg. Delivery Time</div></div>
+        <div class="stat-box"><div class="value">90%</div><div class="label">Less Than Agencies</div></div>
+        <div class="stat-box"><div class="value">100%</div><div class="label">AI-Powered</div></div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="content-section">
+    <div class="container">
+      <h2>Why Brands Choose Zanoma</h2>
+      <div class="grid-2" style="margin-top: 40px;">
+        <div>
+          <h3 style="color: var(--green); margin-bottom: 12px;">Speed</h3>
+          <p>What takes agencies months, we deliver in days. Our AI never sleeps, never vacations, and never bills you for learning.</p>
+        </div>
+        <div>
+          <h3 style="color: var(--green); margin-bottom: 12px;">Cost</h3>
+          <p>No office, no salaries, no overhead. We pass the savings to you — typically 80-90% less than traditional agencies.</p>
+        </div>
+        <div>
+          <h3 style="color: var(--green); margin-bottom: 12px;">Scale</h3>
+          <p>Need 100 landing pages? 500 social posts? 50 SEO-optimized blog articles? Our AI can scale output instantly.</p>
+        </div>
+        <div>
+          <h3 style="color: var(--green); margin-bottom: 12px;">Results</h3>
+          <p>We're not interested in "strategy decks." We deliver measurable results — traffic, conversions, revenue.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="container">
+      <div class="footer-text">© 2026 Zanoma. AI Solutions for Brands, Retailers, and Sellers.</div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zanoma | AI Solutions for Brands, Retailers, and Sellers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --bg2: #12121a;
+      --bg3: #1a1a24;
+      --bg4: #222230;
+      --green: #39FF14;
+      --green-dim: rgba(57, 255, 20, 0.15);
+      --green-glow: rgba(57, 255, 20, 0.4);
+      --text: #f0f0f5;
+      --text-muted: #8888a0;
+      --text-dim: #555568;
+      --border: rgba(255,255,255,0.08);
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    a { color: var(--green); text-decoration: none; }
+    
+    /* Animated background */
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(57,255,20,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(57,255,20,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    .bg-glow {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(57,255,20,0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .bg-glow-1 { top: -200px; right: -200px; }
+    .bg-glow-2 { bottom: -300px; left: -200px; }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Header */
+    header {
+      padding: 24px 0;
+      position: sticky;
+      top: 0;
+      background: rgba(10,10,15,0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+    
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+    .logo span { color: var(--green); }
+    
+    nav {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+    
+    nav a {
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--green); }
+    
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--green-dim);
+      border: 1px solid var(--green);
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .pill .dot {
+      width: 6px;
+      height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    
+    /* Hero */
+    .hero {
+      padding: 120px 0 100px;
+      text-align: center;
+    }
+    
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+    .hero-badge span { color: var(--green); font-weight: 600; }
+    
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+    .hero h1 .highlight {
+      background: linear-gradient(135deg, var(--green), #00ff88);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+    
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 32px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+    }
+    
+    .btn-primary {
+      background: var(--green);
+      color: var(--bg);
+    }
+    .btn-primary:hover {
+      box-shadow: 0 0 30px var(--green-glow);
+      transform: translateY(-2px);
+    }
+    
+    .btn-secondary {
+      background: var(--bg2);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+    
+    /* Stats */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      padding: 60px 0;
+    }
+    
+    .stat-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--green);
+      box-shadow: 0 0 20px var(--green);
+    }
+    
+    .stat-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 4px;
+    }
+    
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    
+    /* Logo wall */
+    .logos-section {
+      padding: 80px 0;
+    }
+    
+    .big-bold-text {
+      text-align: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 56px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 48px;
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+    
+    .section-label {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 32px;
+    }
+    
+    .logo-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+    }
+    
+    .logo-grid img {
+      height: 40px;
+      width: auto;
+      opacity: 0.7;
+      filter: grayscale(100%) brightness(0.8);
+      transition: all 0.3s;
+    }
+    
+    .logo-grid img:hover {
+      opacity: 1;
+      filter: grayscale(0%) brightness(1);
+      transform: scale(1.05);
+    }
+    
+    .logo-item {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px 28px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+    .logo-item:hover {
+      border-color: var(--green);
+      color: var(--text);
+    }
+    
+    /* Services preview */
+    .services-preview {
+      padding: 100px 0;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .section-header h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 16px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    
+    .service-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius);
+      padding: 1px;
+      background: linear-gradient(135deg, transparent, var(--green-dim));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .service-card:hover::before {
+      opacity: 1;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--green);
+      box-shadow: 0 20px 40px rgba(57,255,20,0.1);
+    }
+    
+    .service-icon {
+      font-size: 32px;
+      margin-bottom: 20px;
+      display: block;
+    }
+    
+    .service-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .service-price {
+      font-size: 14px;
+      color: var(--green);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    
+    .service-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    
+    /* CTA */
+    .cta-section {
+      padding: 100px 0;
+      text-align: center;
+    }
+    
+    .cta-box {
+      background: linear-gradient(135deg, var(--bg2), var(--bg3));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 80px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, var(--green-dim) 0%, transparent 50%);
+      opacity: 0.5;
+    }
+    
+    .cta-box h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    
+    .cta-box p {
+      color: var(--text-muted);
+      font-size: 16px;
+      margin-bottom: 32px;
+      position: relative;
+    }
+    
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    
+    .footer-text {
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+    
+    @media (max-width: 900px) {
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: 1fr; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">Zan<span>oma</span></a>
+        <nav>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="case-studies.html">Case Studies</a>
+          <a href="contact.html">Contact</a>
+          <div class="pill"><span class="dot"></span>AI-Powered</div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        Trusted by <span>35+ Fortune 500 brands</span>
+      </div>
+      <h1>AI Solutions for<br><span class="highlight">Brands, Retailers & Sellers</span></h1>
+      <p>We find brands with problems. AI designs the fix. AI writes the pitch. You close. Fully automated. 10x faster than traditional agencies.</p>
+      <div class="hero-cta">
+        <a href="contact.html" class="btn btn-primary">Book Free Audit →</a>
+        <a href="services.html" class="btn btn-secondary">View Services</a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="container">
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-value">24h</div>
+        <div class="stat-label">Delivery Time</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">90%</div>
+        <div class="stat-label">Cost Reduction</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">35+</div>
+        <div class="stat-label">Fortune 500 Clients</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">100%</div>
+        <div class="stat-label">AI-Powered</div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="logos-section">
+    <div class="container">
+      <div class="big-bold-text">Brands We've Worked With</div>
+      <div class="logo-grid">
+        <img src="logos/nbc-universal.svg" alt="NBC Universal">
+        <img src="logos/keurig.svg" alt="Keurig">
+        <img src="logos/carhartt.png" alt="Carhartt">
+        <img src="logos/kelloggs.svg" alt="Kellogg's">
+        <img src="logos/guess.svg" alt="Guess">
+        <img src="logos/duracell.svg" alt="Duracell">
+        <img src="logos/philips.svg" alt="Philips">
+        <img src="logos/paul-mitchell.png" alt="Paul Mitchell">
+        <img src="logos/hydro-flask.svg" alt="Hydro Flask">
+        <img src="logos/casper.png" alt="Casper">
+        <img src="logos/blackstone.svg" alt="Blackstone">
+        <img src="logos/dr-teals.png" alt="Dr. Teal's">
+        <img src="logos/havaianas.svg" alt="Havaianas">
+        <img src="logos/valspar.svg" alt="Valspar">
+        <img src="logos/velcro.svg" alt="Velcro">
+        <img src="logos/intelligentsia.svg" alt="Intelligentsia">
+      </div>
+    </div>
+  </section>
+  
+  <section class="services-preview">
+    <div class="container">
+      <div class="section-header">
+        <h2>AI-Powered Services</h2>
+        <p>Everything a traditional agency does — at a fraction of the cost, delivered in a fraction of the time.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="service-icon">🔍</span>
+          <div class="service-name">AI Brand Audit</div>
+          <div class="service-price">$1-2K · 24hr delivery</div>
+          <div class="service-desc">Full analysis of website, SEO, Amazon, social & email. Get a Brand Health Score with revenue-at-risk calculations.</div>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🌐</span>
+          <div class="service-name">Website Redesign</div>
+          <div class="service-price">$5-10K · 5 day delivery</div>
+          <div class="service-desc">Complete website rebuild on Ghost, WordPress or Shopify. Mobile-optimized, SEO-ready, conversion-focused.</div>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">📦</span>
+          <div class="service-name">Amazon Optimization</div>
+          <div class="service-price">$2-5K · 48hr delivery</div>
+          <div class="service-desc">Title, bullets, A+ content, images & keywords. Average 3-10% conversion lift per listing.</div>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">📱</span>
+          <div class="service-name">Social Content Engine</div>
+          <div class="service-price">$3-5K/mo</div>
+          <div class="service-desc">30 posts per month + captions + hashtags + scheduling. All AI-generated, brand-consistent.</div>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">📰</span>
+          <div class="service-name">Content Brand Build</div>
+          <div class="service-price">$5-10K · 5 day delivery</div>
+          <div class="service-desc">Newsletter + website + 20 articles + social templates. The Pink Pen model, replicated for you.</div>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🤖</span>
+          <div class="service-name">AI Marketing Engine</div>
+          <div class="service-price">$5-10K setup + retainer</div>
+          <div class="service-desc">Full automated content pipeline. One input → blog + social + email + newsletter generated.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Ready to 10x Your Digital Presence?</h2>
+        <p>Book a free AI Brand Audit. We'll scan your online presence and show you exactly where you're leaving money on the table.</p>
+        <a href="contact.html" class="btn btn-primary">Book Free Audit →</a>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="container">
+      <div class="footer-text">© 2026 Zanoma. AI Solutions for Brands, Retailers, and Sellers.</div>
+    </div>
+  </footer>
+</body>
+</html>

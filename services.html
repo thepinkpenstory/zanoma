@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Zanoma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #0a0a0f; --bg2: #12121a; --bg3: #1a1a24; --green: #39FF14; --green-dim: rgba(57,255,20,0.15); --green-glow: rgba(57,255,20,0.4); --text: #f0f0f5; --text-muted: #8888a0; --text-dim: #555568; --border: rgba(255,255,255,0.08); --radius: 16px; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    a { color: var(--green); text-decoration: none; }
+    .bg-grid { position: fixed; inset: 0; background-image: linear-gradient(rgba(57,255,20,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(57,255,20,0.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    header { padding: 24px 0; position: sticky; top: 0; background: rgba(10,10,15,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); z-index: 100; }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: var(--text); letter-spacing: -0.5px; }
+    .logo span { color: var(--green); }
+    nav { display: flex; gap: 32px; align-items: center; }
+    nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    nav a:hover, nav a.active { color: var(--green); }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--green-dim); border: 1px solid var(--green); border-radius: 100px; font-size: 12px; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: 1px; }
+    .pill .dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .page-header { padding: 80px 0 60px; text-align: center; }
+    .page-header h1 { font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 700; margin-bottom: 16px; }
+    .page-header h1 span { color: var(--green); }
+    .page-header p { font-size: 18px; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
+    .tier-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim); margin-bottom: 16px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding-bottom: 80px; }
+    .service-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; transition: all 0.3s; position: relative; }
+    .service-card:hover { border-color: var(--green); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(57,255,20,0.1); }
+    .service-card .badge { position: absolute; top: 16px; right: 16px; background: var(--green-dim); color: var(--green); font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 100px; text-transform: uppercase; }
+    .service-icon { font-size: 36px; margin-bottom: 20px; display: block; }
+    .service-name { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+    .service-price { font-size: 15px; color: var(--green); font-weight: 600; margin-bottom: 12px; }
+    .service-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
+    .service-features { list-style: none; }
+    .service-features li { font-size: 13px; color: var(--text-muted); padding: 6px 0; border-bottom: 1px solid var(--border); }
+    .service-features li:last-child { border-bottom: none; }
+    .service-features li::before { content: '→'; color: var(--green); margin-right: 8px; }
+    footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; }
+    .footer-text { font-size: 13px; color: var(--text-dim); }
+    @media (max-width: 900px) { .services-grid { grid-template-columns: 1fr; } nav { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">Zan<span>oma</span></a>
+        <nav>
+          <a href="about.html">About</a>
+          <a href="services.html" class="active">Services</a>
+          <a href="case-studies.html">Case Studies</a>
+          <a href="contact.html">Contact</a>
+          <div class="pill"><span class="dot"></span>AI-Powered</div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <section class="page-header">
+    <div class="container">
+      <h1>Our <span>Services</span></h1>
+      <p>Everything a traditional agency does — at a fraction of the cost, delivered in a fraction of the time.</p>
+    </div>
+  </section>
+  <section class="container">
+    <div class="tier-label">Tier 1 — Quick Wins ($1-3K)</div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">🔍</span>
+        <div class="service-name">AI Brand Audit</div>
+        <div class="service-price">$1-2K · 24 Hour Delivery</div>
+        <div class="service-desc">Full analysis of website, SEO, Amazon listings, social media & email. Get a Brand Health Score with specific revenue-at-risk calculations.</div>
+        <ul class="service-features">
+          <li>Website health score</li>
+          <li>SEO analysis</li>
+          <li>Competitor benchmarking</li>
+          <li>Revenue-at-risk report</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">📦</span>
+        <div class="service-name">Amazon Optimization</div>
+        <div class="service-price">$2-5K · 48 Hour Delivery</div>
+        <div class="service-desc">Rewrite titles, bullets, A+ content, images & keywords. Average 3-10% conversion lift per listing.</div>
+        <ul class="service-features">
+          <li>Title optimization</li>
+          <li>Bullet point rewrite</li>
+          <li>A+ content creation</li>
+          <li>Keyword research</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">📱</span>
+        <div class="service-name">Social Content Pack</div>
+        <div class="service-price">$1-3K · 48 Hour Delivery</div>
+        <div class="service-desc">30 posts + captions + hashtag strategy. All AI-generated, brand-consistent, ready to post.</div>
+        <ul class="service-features">
+          <li>30 branded posts</li>
+          <li>Custom captions</li>
+          <li>Hashtag strategy</li>
+          <li>Scheduling calendar</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tier-label">Tier 2 — Full Builds ($5-10K)</div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">🌐</span>
+        <div class="service-name">Website Redesign</div>
+        <div class="service-price">$5-10K · 5 Day Delivery</div>
+        <div class="service-desc">Complete website rebuild on Ghost, WordPress or Shopify. Mobile-optimized, SEO-ready, conversion-focused.</div>
+        <ul class="service-features">
+          <li>Custom design</li>
+          <li>Mobile responsive</li>
+          <li>SEO optimization</li>
+          <li>CMS training</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">📰</span>
+        <div class="service-name">Content Brand Build</div>
+        <div class="service-price">$5-10K · 5 Day Delivery</div>
+        <div class="service-desc">Newsletter + website + 20 articles + social templates. The Pink Pen model, replicated for your brand.</div>
+        <ul class="service-features">
+          <li>Newsletter setup</li>
+          <li>20 SEO articles</li>
+          <li>Social templates</li>
+          <li>Email sequences</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🤖</span>
+        <div class="service-name">AI Marketing Engine</div>
+        <div class="service-price">$5-10K Setup + $2-5K/mo</div>
+        <div class="service-desc">Full automated content pipeline. One input → blog + social + email + newsletter generated weekly.</div>
+        <ul class="service-features">
+          <li>Auto blog generation</li>
+          <li>Social posting</li>
+          <li>Email campaigns</li>
+          <li>Weekly reports</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tier-label">Tier 3 — Retainers ($3-5K/mo)</div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">🚀</span>
+        <div class="service-name">Managed AI Marketing</div>
+        <div class="service-price">$3-5K/month</div>
+        <div class="service-desc">Ongoing content, email, social — all AI-generated. Your own marketing department, automated.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">💎</span>
+        <div class="service-name">Amazon Management</div>
+        <div class="service-price">$3-5K/month</div>
+        <div class="service-desc">Listing optimization, review monitoring, ad copy, and competitive analysis. Ongoing.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">📊</span>
+        <div class="service-name">Brand Intelligence</div>
+        <div class="service-price">$2-4K/month</div>
+        <div class="service-desc">Competitive monitoring, trend alerts, and opportunity detection. Always stay ahead.</div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container"><div class="footer-text">© 2026 Zanoma. AI Solutions for Brands, Retailers, and Sellers.</div></div>
+  </footer>
+</body>
+</html>
