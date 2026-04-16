@@ -194,5 +194,19 @@
       <div class="footer-text">© 2026 Zanoma. AI Solutions for Brands, Retailers, and Sellers.</div>
     </div>
   </footer>
+
+<script>
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
+      var menu = dd.querySelector('.dropdown-menu');
+      if (!menu) return;
+      menu.style.display = 'none';
+      dd.addEventListener('mouseenter', function() { menu.style.display = 'flex'; });
+      dd.addEventListener('mouseleave', function() { menu.style.display = 'none'; });
+    });
+  });
+})();
+</script>
 </body>
 </html>
