@@ -61,6 +61,7 @@
         <nav>
           <a href="about.html">About</a>
           <a href="services.html">Services</a>
+          <a href="brand-intelligence.html">Brand Intelligence</a>
           <a href="case-studies.html">Case Studies</a>
           <a href="contact.html" class="active">Contact</a>
           <div class="pill"><span class="dot"></span>AI-Powered</div>
@@ -78,22 +79,22 @@
     <div class="contact-grid">
       <div class="contact-form">
         <div class="form-title">Send us a message</div>
-        <form>
+        <form action="https://formspree.io/f/kevinkeranen@gmail.com" method="POST">
           <div class="form-group">
             <label>Name</label>
-            <input type="text" placeholder="Your name">
+            <input type="text" name="name" placeholder="Your name" required>
           </div>
           <div class="form-group">
             <label>Email</label>
-            <input type="email" placeholder="your@email.com">
+            <input type="email" name="email" placeholder="your@email.com" required>
           </div>
           <div class="form-group">
             <label>Company</label>
-            <input type="text" placeholder="Your company">
+            <input type="text" name="company" placeholder="Your company">
           </div>
           <div class="form-group">
             <label>Service Interested In</label>
-            <select>
+            <select name="service">
               <option>Select a service...</option>
               <option>AI Brand Audit ($1-2K)</option>
               <option>Website Redesign ($5-10K)</option>
@@ -107,19 +108,19 @@
           </div>
           <div class="form-group">
             <label>Message</label>
-            <textarea placeholder="Tell us about your project..."></textarea>
+            <textarea name="message" placeholder="Tell us about your project..."></textarea>
           </div>
           <button type="submit" class="form-submit">Send Message →</button>
         </form>
       </div>
       <div class="contact-info">
         <div class="info-block">
-          <div class="info-label">Email</div>
-          <div class="info-value"><a href="mailto:hello@zanoma.com">hello@zanoma.com</a></div>
+          <div class="info-label">Get In Touch</div>
+          <div class="info-value">Fill out the form and we'll be in touch</div>
         </div>
         <div class="info-block">
           <div class="info-label">Based In</div>
-          <div class="info-value">Las Vegas, NV</div>
+          <div class="info-value">Bend, Oregon</div>
           <div class="info-desc">Serving brands worldwide</div>
         </div>
         <div class="info-block">
