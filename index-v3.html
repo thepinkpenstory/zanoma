@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zanoma — AI Sales Agents for Small Business</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;}
+a{text-decoration:none;color:inherit;}
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:#0a0a0a;border-bottom:1px solid #1a1a1a;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:70px;}
+.nav-logo{font-size:1.5rem;font-weight:800;color:#00FF7F;letter-spacing:-0.5px;}
+.nav-links{display:flex;gap:2rem;}
+.nav-links a{color:#aaa;font-size:0.9rem;font-weight:600;transition:color 0.2s;}
+.nav-links a:hover{color:#fff;}
+.nav-cta{background:#00FF7F;color:#000;padding:0.6rem 1.4rem;border-radius:50px;font-weight:700;font-size:0.9rem;transition:opacity 0.2s;}
+.nav-cta:hover{opacity:0.85;}
+/* HERO */
+.hero{background:#0a0a0a;padding:120px 5% 100px;max-width:1200px;margin:0 auto;}
+.hero-tag{display:inline-block;background:#00FF7F22;color:#00FF7F;font-size:0.75rem;font-weight:700;letter-spacing:2px;padding:0.4rem 1rem;border-radius:50px;margin-bottom:2rem;border:1px solid #00FF7F44;}
+.hero h1{font-size:clamp(2.8rem,6vw,5rem);font-weight:800;line-height:1.1;max-width:700px;margin-bottom:1.5rem;}
+.hero p{font-size:1.15rem;color:#aaa;max-width:560px;line-height:1.7;margin-bottom:2.5rem;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem;}
+.btn-primary{background:#00FF7F;color:#000;padding:0.9rem 2rem;border-radius:50px;font-weight:700;font-size:1rem;transition:opacity 0.2s;}
+.btn-primary:hover{opacity:0.85;}
+.btn-outline{border:2px solid #444;color:#fff;padding:0.9rem 2rem;border-radius:50px;font-weight:600;font-size:1rem;transition:border-color 0.2s;}
+.btn-outline:hover{border-color:#aaa;}
+.proof-box{background:#111;border:1px solid #00FF7F44;border-left:3px solid #00FF7F;border-radius:12px;padding:1.25rem 1.75rem;max-width:560px;font-size:0.95rem;color:#ccc;line-height:1.6;}
+.proof-box strong{color:#fff;}
+/* PROBLEM */
+.section-white{background:#fff;color:#0a0a0a;padding:100px 5%;}
+.section-dark{background:#0a0a0a;color:#fff;padding:100px 5%;}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section-tag{display:inline-block;background:#00FF7F22;color:#00FF7F;font-size:0.7rem;font-weight:700;letter-spacing:2px;padding:0.3rem 0.9rem;border-radius:50px;margin-bottom:1.25rem;border:1px solid #00FF7F44;}
+.section-white .section-tag{background:#00FF7F11;border-color:#00FF7F33;}
+h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.15;margin-bottom:1rem;}
+.subhead{font-size:1.1rem;color:#666;max-width:600px;margin-bottom:3rem;line-height:1.6;}
+.section-dark .subhead{color:#aaa;}
+/* STAT GRID */
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.stat-card{background:#f8f8f8;border-radius:12px;padding:2rem 1.5rem;text-align:center;}
+.stat-number{font-size:2.8rem;font-weight:800;color:#e53e3e;line-height:1;margin-bottom:0.5rem;}
+.stat-label{font-size:0.9rem;color:#555;line-height:1.5;}
+/* QUOTE */
+.quote-section{background:#111;padding:100px 5%;text-align:center;}
+.big-quote{font-size:clamp(1.3rem,2.5vw,1.9rem);font-style:italic;color:#fff;max-width:800px;margin:0 auto 1.5rem;line-height:1.6;}
+.quote-attr{color:#00FF7F;font-size:0.9rem;font-weight:600;}
+/* HOW IT WORKS */
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.how-card{background:#111;border-left:3px solid #00FF7F;border-radius:12px;padding:2rem;}
+.how-icon{font-size:2rem;margin-bottom:1rem;}
+.how-card h3{font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;color:#fff;}
+.how-card p{color:#aaa;font-size:0.95rem;line-height:1.6;}
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.service-card{background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:2rem;}
+.service-icon{font-size:1.75rem;margin-bottom:1rem;}
+.service-card h3{font-size:1rem;font-weight:700;color:#0a0a0a;margin-bottom:0.5rem;}
+.service-card p{font-size:0.9rem;color:#555;line-height:1.6;}
+/* PROCESS */
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+.process-step{padding:1.5rem;}
+.step-num{font-size:3rem;font-weight:800;color:#00FF7F;line-height:1;margin-bottom:0.75rem;}
+.process-step h3{font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.5rem;}
+.process-step p{color:#aaa;font-size:0.9rem;line-height:1.6;}
+/* PROOF */
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.proof-card{background:#f8f8f8;border-radius:12px;padding:2rem;text-align:center;}
+.proof-card h3{font-size:1.4rem;font-weight:800;color:#0a0a0a;margin-bottom:0.75rem;}
+.proof-card p{font-size:0.9rem;color:#555;line-height:1.6;}
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem;}
+.price-card{background:#fff;border:1px solid #e5e5e5;border-radius:16px;padding:2.5rem 2rem;}
+.price-card.featured{background:#111;border:2px solid #00FF7F;color:#fff;}
+.price-badge{display:inline-block;background:#00FF7F;color:#000;font-size:0.7rem;font-weight:700;padding:0.25rem 0.75rem;border-radius:50px;margin-bottom:1rem;letter-spacing:1px;}
+.price-card h3{font-size:1.1rem;font-weight:700;color:#0a0a0a;margin-bottom:0.5rem;}
+.price-card.featured h3{color:#fff;}
+.price-amount{font-size:2.5rem;font-weight:800;color:#0a0a0a;margin:1rem 0;}
+.price-card.featured .price-amount{color:#00FF7F;}
+.price-features{list-style:none;margin:1.5rem 0 2rem;}
+.price-features li{font-size:0.9rem;color:#555;padding:0.4rem 0;border-bottom:1px solid #f0f0f0;}
+.price-features li::before{content:"✓ ";color:#00FF7F;font-weight:700;}
+.price-card.featured .price-features li{color:#aaa;border-bottom-color:#222;}
+.price-note{font-size:0.8rem;color:#888;text-align:center;margin-top:1.5rem;font-style:italic;}
+/* OBJECTIONS */
+.obj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.obj-card{background:#111;border-left:3px solid #00FF7F;border-radius:12px;padding:2rem;}
+.obj-card h3{font-size:1rem;font-weight:700;color:#00FF7F;margin-bottom:0.75rem;}
+.obj-card p{color:#aaa;font-size:0.95rem;line-height:1.6;}
+/* LOGOS */
+.metrics-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-bottom:3rem;}
+.metric-box{background:#f8f8f8;border-radius:12px;padding:1.5rem;text-align:center;}
+.metric-num{font-size:2rem;font-weight:800;color:#0a0a0a;}
+.metric-label{font-size:0.8rem;color:#666;margin-top:0.25rem;}
+.logo-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:2rem;align-items:center;}
+.logo-grid img{width:100%;height:40px;object-fit:contain;filter:grayscale(100%);opacity:0.6;}
+/* FINAL CTA */
+.cta-section{background:#0a0a0a;padding:120px 5%;text-align:center;}
+.cta-section h2{margin-bottom:1rem;}
+.cta-section .subhead{margin:0 auto 2.5rem;}
+.cta-form{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;max-width:520px;margin:0 auto 1.5rem;}
+.cta-input{flex:1;min-width:220px;background:#111;border:2px solid #333;color:#fff;padding:0.9rem 1.25rem;border-radius:50px;font-size:1rem;outline:none;}
+.cta-input:focus{border-color:#00FF7F;}
+.cta-phone{color:#666;font-size:0.9rem;}
+/* FOOTER */
+footer{background:#050505;padding:3rem 5%;border-top:1px solid #111;}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;}
+.footer-logo{font-size:1.4rem;font-weight:800;color:#00FF7F;}
+.footer-links{display:flex;gap:2rem;}
+.footer-links a{color:#666;font-size:0.85rem;transition:color 0.2s;}
+.footer-links a:hover{color:#aaa;}
+.footer-investor{color:#444;font-size:0.8rem;}
+.footer-bottom{border-top:1px solid #111;padding-top:1.5rem;color:#333;font-size:0.8rem;}
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .hero{padding:80px 5% 60px;}
+  .stat-grid,.how-grid,.services-grid,.proof-grid,.pricing-grid,.obj-grid{grid-template-columns:1fr;}
+  .process-steps{grid-template-columns:1fr 1fr;}
+  .logo-grid{grid-template-columns:repeat(4,1fr);}
+  .metrics-row{grid-template-columns:repeat(2,1fr);}
+  .footer-top{flex-direction:column;text-align:center;}
+  .footer-links{justify-content:center;}
+  .cta-form{flex-direction:column;}
+  .hero h1{text-align:center;}
+  .hero p{text-align:center;}
+  .hero-btns{justify-content:center;}
+  .proof-box{margin:0 auto;}
+}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">ZANOMA</div>
+  <div class="nav-links">
+    <a href="#how">How It Works</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="nav-cta">Book a Free Call</a>
+</nav>
+<!-- HERO -->
+<section style="background:#0a0a0a;">
+<div class="hero">
+  <div class="hero-tag">AI THAT WORKS FOR YOU 24/7</div>
+  <h1><span style="color:#fff;">Never Miss</span> <span style="color:#00FF7F;">Another Lead.</span></h1>
+  <p>You're running your business. Let AI answer every call, follow up every lead, and fill your calendar — automatically.</p>
+  <div class="hero-btns">
+    <a href="#how" class="btn-primary">See How It Works →</a>
+    <a href="#contact" class="btn-outline">Book a Free Call</a>
+  </div>
+</div>
+</section>
+<!-- PROBLEM -->
+<section class="section-white" id="problem">
+<div class="section-inner">
+  <div class="section-tag">THE PROBLEM</div>
+  <h2 style="color:#0a0a0a;">You're losing customers<br>you don't even know about.</h2>
+  <p class="subhead">Every missed call is a missed sale. Here's what it's actually costing you.</p>
+  <div class="stat-grid">
+    <div class="stat-card"><div class="stat-number">62%</div><div class="stat-label">Of leads never get a callback</div></div>
+    <div class="stat-card"><div class="stat-number">$71K</div><div class="stat-label">Average revenue lost per year to missed leads</div></div>
+    <div class="stat-card"><div class="stat-number">78%</div><div class="stat-label">Of buyers go with whoever responds first</div></div>
+    <div class="stat-card"><div class="stat-number">5 min</div><div class="stat-label">How long before a lead goes cold</div></div>
+    <div class="stat-card"><div class="stat-number">48 hrs</div><div class="stat-label">Average time for a small business to call back</div></div>
+    <div class="stat-card"><div class="stat-number">3x</div><div class="stat-label">More likely to close if you respond in under 1 minute</div></div>
+  </div>
+</div>
+</section>
+<!-- QUOTE -->
+<section class="quote-section">
+<div class="section-inner" style="text-align:center;">
+  <p class="big-quote">"I used to miss calls all the time — weekends, after hours, when we were slammed. Now our AI answers every single one. I don't think about leads anymore. I just show up to the appointments."</p>
+  <div class="quote-attr">— Athlete AI client, 2025</div>
+</div>
+</section>
+<!-- HOW IT WORKS -->
+<section class="section-dark" id="how">
+<div class="section-inner">
+  <div class="section-tag">HOW IT WORKS</div>
+  <h2>Here's what we do for you.</h2>
+  <p class="subhead">No tech experience needed. We set it up. You get more customers.</p>
+  <div class="how-grid">
+    <div class="how-card">
+      <div class="how-icon">📞</div>
+      <h3>We Answer Every Call</h3>
+      <p>Your AI picks up 24/7. Qualifies the lead. Books them straight onto your calendar. You show up to the meeting.</p>
+    </div>
+    <div class="how-card">
+      <div class="how-icon">📲</div>
+      <h3>We Follow Up For You</h3>
+      <p>Missed a call? Got a cold lead in your database? AI texts and emails them until they respond. You never chase anyone again.</p>
+    </div>
+    <div class="how-card">
+      <div class="how-icon">📋</div>
+      <h3>You See Everything</h3>
+      <p>Every call, every lead, every booking — in one simple dashboard. No spreadsheets. No sticky notes.</p>
+    </div>
+  </div>
+</div>
+</section>
+<!-- SERVICES -->
+<section class="section-white" id="services">
+<div class="section-inner">
+  <div class="section-tag" style="background:#00FF7F11;border-color:#00FF7F33;">SERVICES</div>
+  <h2 style="color:#0a0a0a;">Everything handled.<br>Nothing falling through the cracks.</h2>
+  <p class="subhead">Six ways we keep your leads moving.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">📞</div>
+      <h3>Answer Every Call</h3>
+      <p>AI voice agent picks up instantly, 24/7. No more voicemail. No more missed opportunities.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📤</div>
+      <h3>Wake Up Old Leads</h3>
+      <p>Have a database of people who never booked? We call and text them until they do.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💬</div>
+      <h3>Auto-Text Your Leads</h3>
+      <p>Follow-up texts sent automatically. Appointment reminders. Review requests. All on autopilot.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📧</div>
+      <h3>Email That Actually Works</h3>
+      <p>Automated emails that nurture leads until they're ready to buy. No manual work.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔗</div>
+      <h3>Works With Your CRM</h3>
+      <p>Already using HubSpot, Salesforce, or GoHighLevel? We connect right in. No switching tools.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📊</div>
+      <h3>Simple Dashboard</h3>
+      <p>See exactly how many leads came in, how many booked, and what it's worth to you. One screen.</p>
+    </div>
+  </div>
+</div>
+</section>
+<!-- PROCESS -->
+<section class="section-dark" id="process">
+<div class="section-inner">
+  <div class="section-tag">THE PROCESS</div>
+  <h2>You'll have AI working for you in 30 days.</h2>
+  <p class="subhead">We handle the setup. You don't need a tech team.</p>
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-num">1</div>
+      <h3>Week 1 — We Learn Your Business</h3>
+      <p style="color:#aaa;font-size:0.9rem;line-height:1.6;">Tell us how you talk to customers and what a good lead looks like. That's it.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">2</div>
+      <h3>Weeks 2–3 — We Build Your AI</h3>
+      <p style="color:#aaa;font-size:0.9rem;line-height:1.6;">We train your AI agents on your voice, your offers, and your process.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">3</div>
+      <h3>Week 4 — We Connect Everything</h3>
+      <p style="color:#aaa;font-size:0.9rem;line-height:1.6;">Linked to your phone, your calendar, your CRM. Tested and ready.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">4</div>
+      <h3>Day 30 — You Go Live</h3>
+      <p style="color:#aaa;font-size:0.9rem;line-height:1.6;">Your AI starts answering calls, following up leads, and booking appointments. You just show up.</p>
+    </div>
+  </div>
+</div>
+</section>
+<!-- PROOF -->
+<section class="section-white" id="proof">
+<div class="section-inner">
+  <div class="section-tag" style="background:#00FF7F11;border-color:#00FF7F33;">RESULTS</div>
+  <h2 style="color:#0a0a0a;">What happens when you stop missing leads.</h2>
+  <div class="proof-grid" style="margin-top:2.5rem;">
+    <div class="proof-card">
+      <h3>3x More Bookings</h3>
+      <p>When you respond instantly, more leads convert. Simple math.</p>
+    </div>
+    <div class="proof-card">
+      <h3>50 Leads in Week 1</h3>
+      <p>One client went from 40 leads in 4 months to 50 leads in their first week with Zanoma.</p>
+    </div>
+    <div class="proof-card">
+      <h3>Zero After-Hours Misses</h3>
+      <p>Your AI works nights, weekends, and holidays. Your competitors' voicemail doesn't.</p>
+    </div>
+  </div>
+</div>
+</section>
+<!-- PRICING -->
+<section class="section-white" id="pricing" style="padding-top:0;">
+<div class="section-inner">
+  <div class="section-tag" style="background:#00FF7F11;border-color:#00FF7F33;">PRICING</div>
+  <h2 style="color:#0a0a0a;">Start small. Scale when you're ready.</h2>
+  <p class="subhead">No engineers needed. No IT department. We set everything up for you.</p>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <h3 style="color:#0a0a0a;">Starter</h3>
+      <div class="price-amount">$2,500<span style="font-size:1rem;font-weight:400;color:#666;">/mo</span></div>
+      <ul class="price-features">
+        <li>AI SMS + email follow-up</li>
+        <li>CRM connection</li>
+        <li>Lead dashboard</li>
+        <li>500 contacts/mo</li>
+        <li>Email support</li>
+      </ul>
+      <a href="#contact" class="btn-primary" style="display:block;text-align:center;">Get Started</a>
+    </div>
+    <div class="price-card featured">
+      <div class="price-badge">MOST POPULAR</div>
+      <h3>Growth</h3>
+      <div class="price-amount">$4,500<span style="font-size:1rem;font-weight:400;color:#aaa;">/mo</span></div>
+      <ul class="price-features">
+        <li>Everything in Starter</li>
+        <li>AI answers your calls 24/7</li>
+        <li>Reactivates old leads</li>
+        <li>2,000 contacts/mo</li>
+        <li>Priority support</li>
+      </ul>
+      <a href="#contact" class="btn-primary" style="display:block;text-align:center;">Get Started</a>
+    </div>
+    <div class="price-card">
+      <h3 style="color:#0a0a0a;">Enterprise</h3>
+      <div class="price-amount" style="color:#0a0a0a;">Custom</div>
+      <ul class="price-features">
+        <li>Full AI team</li>
+        <li>Unlimited contacts</li>
+        <li>Dedicated account manager</li>
+        <li>Custom integrations</li>
+        <li>SLA guarantee</li>
+      </ul>
+      <a href="#contact" class="btn-outline" style="display:block;text-align:center;border-color:#ccc;color:#0a0a0a;">Talk to Us</a>
+    </div>
+  </div>
+  <p class="price-note">No long-term contracts required. Cancel anytime.</p>
+</div>
+</section>
+<!-- OBJECTIONS -->
+<section class="section-dark" id="faq">
+<div class="section-inner">
+  <div class="section-tag">WE KNOW WHAT YOU'RE THINKING</div>
+  <h2>Common questions.</h2>
+  <div class="obj-grid" style="margin-top:2.5rem;">
+    <div class="obj-card">
+      <h3>I'm not a tech person.</h3>
+      <p>Good. Neither are most of our clients. We set everything up. You just approve it.</p>
+    </div>
+    <div class="obj-card">
+      <h3>What if it doesn't sound like me?</h3>
+      <p>We train your AI on how you actually talk. Your customers won't know the difference.</p>
+    </div>
+    <div class="obj-card">
+      <h3>Is this going to take forever?</h3>
+      <p>30 days from contract to live. We've done this for businesses in every industry.</p>
+    </div>
+  </div>
+</div>
+</section>
+<!-- LOGOS -->
+<section class="section-white" id="clients">
+<div class="section-inner">
+  <div class="section-tag" style="background:#00FF7F11;border-color:#00FF7F33;">TRUSTED BY</div>
+  <h2 style="color:#0a0a0a;">Trusted by brands you've heard of.</h2>
+  <div class="metrics-row" style="margin-top:2rem;">
+    <div class="metric-box"><div class="metric-num">35+</div><div class="metric-label">Clients served</div></div>
+    <div class="metric-box"><div class="metric-num">$720K</div><div class="metric-label">Revenue proven</div></div>
+    <div class="metric-box"><div class="metric-num">50</div><div class="metric-label">Leads in first week</div></div>
+    <div class="metric-box"><div class="metric-num">30 days</div><div class="metric-label">To go live</div></div>
+  </div>
+  <div class="logo-grid" style="margin-bottom:1.5rem;">
+    <img src="logos/nbc-universal.svg" alt="NBC Universal">
+    <img src="logos/keurig.svg" alt="Keurig">
+    <img src="logos/carhartt.png" alt="Carhartt">
+    <img src="logos/kelloggs.svg" alt="Kelloggs">
+    <img src="logos/guess.svg" alt="Guess">
+    <img src="logos/duracell.svg" alt="Duracell">
+    <img src="logos/philips.svg" alt="Philips">
+    <img src="logos/paul-mitchell.png" alt="Paul Mitchell">
+  </div>
+  <div class="logo-grid">
+    <img src="logos/hydro-flask.svg" alt="Hydro Flask">
+    <img src="logos/casper.png" alt="Casper">
+    <img src="logos/blackstone.svg" alt="Blackstone">
+    <img src="logos/dr-teals.png" alt="Dr Teals">
+    <img src="logos/havaianas.svg" alt="Havaianas">
+    <img src="logos/valspar.svg" alt="Valspar">
+    <img src="logos/velcro.svg" alt="Velcro">
+    <img src="logos/intelligentsia.svg" alt="Intelligentsia">
+  </div>
+</div>
+</section>
+<!-- FINAL CTA -->
+<section class="cta-section" id="contact">
+<div class="section-inner">
+  <h2>See it work in 30 minutes.</h2>
+  <p class="subhead">Book a free call. We'll show you exactly how it works in your business — no tech talk, no pressure.</p>
+  <div class="cta-form">
+    <input type="email" class="cta-input" placeholder="Enter your email">
+    <a href="mailto:kevin@zanoma.com" class="btn-primary">Book My Call →</a>
+  </div>
+  <p class="cta-phone">Or call us: <a href="tel:8889266624" style="color:#aaa;">(888) 926-6624</a></p>
+</div>
+</section>
+<!-- FOOTER -->
+<footer>
+<div class="footer-inner">
+  <div class="footer-top">
+    <div class="footer-logo">ZANOMA</div>
+    <div class="footer-links">
+      <a href="#how">How It Works</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-investor">Investors: <a href="mailto:kevin@zanoma.com" style="color:#444;">kevin@zanoma.com</a></div>
+  </div>
+  <div class="footer-bottom">© 2026 Zanoma. All rights reserved. | zanoma.com</div>
+</div>
+</footer>
+</body>
+</html>

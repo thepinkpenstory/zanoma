@@ -1,0 +1,22 @@
+{{!< default}}
+
+{{#post}}
+<div class="content-wrap">
+  <article class="post">
+    <header class="post-header">
+      {{#primary_tag}}
+        <span class="post-tag">{{name}}</span>
+      {{/primary_tag}}
+      <h1>{{title}}</h1>
+      <div class="post-meta">
+        <span>{{authors}}</span>
+        <span>{{date published_at format="MMMM D, YYYY"}}</span>
+        <span>{{reading_time}}</span>
+      </div>
+    </header>
+    <section class="post-content">
+      {{content}}
+    </section>
+  </article>
+</div>
+{{/post}}

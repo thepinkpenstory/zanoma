@@ -50,6 +50,30 @@
     footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; }
     .footer-text { font-size: 13px; color: var(--text-dim); }
     @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } nav { display: none; } }
+  
+    /* Dropdown */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
+    .nav-dropdown > a::after { content: '▾'; font-size: 10px; color: var(--text-dim); transition: color 0.2s; }
+    .nav-dropdown:hover > a, .nav-dropdown:hover > a::after { color: var(--green); }
+    .dropdown-menu {
+      display: none; position: absolute; top: calc(100% + 12px); left: 0;
+      background: rgba(10,10,15,0.98); border: 1px solid rgba(57,255,20,0.2);
+      border-radius: 10px; padding: 8px; min-width: 200px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.6); z-index: 200;
+    }
+    .nav-dropdown:hover .dropdown-menu { display: flex; flex-direction: column; gap: 2px; }
+    .dropdown-menu a {
+      display: block; padding: 10px 14px; border-radius: 7px;
+      font-size: 13px; font-weight: 500; color: var(--text-muted);
+      transition: all 0.15s; white-space: nowrap;
+    }
+    .dropdown-menu a:hover { background: rgba(57,255,20,0.08); color: var(--green); }
+    .dropdown-menu .dropdown-label {
+      font-size: 10px; font-weight: 700; color: var(--text-dim);
+      text-transform: uppercase; letter-spacing: 1.5px; padding: 6px 14px 4px;
+    }
+
   </style>
 </head>
 <body>
@@ -58,11 +82,18 @@
     <div class="container">
       <div class="header-inner">
         <a href="index.html" class="logo">Zan<span>oma</span></a>
-        <nav>
+                <nav>
+          <a href="index.html">Home</a>
           <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="brand-intelligence.html">Brand Intelligence</a>
-          <a href="sales.html">Sales</a>
+          <div class="nav-dropdown">
+            <a href="services.html">Services</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-label">Our Services</div>
+              <a href="services.html">All Services</a>
+              <a href="sales.html">AI Sales Automation</a>
+              <a href="brand-intelligence.html">Brand Intelligence</a>
+            </div>
+          </div>
           <a href="case-studies.html">Case Studies</a>
           <a href="contact.html" class="active">Contact</a>
           <div class="pill"><span class="dot"></span>AI-Powered</div>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{meta_title}}</title>
+    {{ghost_head}}
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+    :root{--bg:#0a0a0f;--bg2:#12121a;--green:#39FF14;--green-dim:rgba(57,255,20,0.15);--text:#f0f0f5;--text-muted:#8888a0;--border:rgba(255,255,255,0.08)}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,sans-serif;line-height:1.6}
+    a{color:var(--green);text-decoration:none}
+    .bg-grid{position:fixed;inset:0;background-image:linear-gradient(rgba(57,255,20,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(57,255,20,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0}
+    .bg-glow{position:fixed;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(57,255,20,0.08) 0%,transparent 70%);pointer-events:none;z-index:0}
+    .bg-glow-1{top:-200px;right:-200px}
+    .bg-glow-2{bottom:-300px;left:-200px}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+    header{padding:24px 0;position:sticky;top:0;background:rgba(10,10,15,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);z-index:100}
+    .header-inner{display:flex;justify-content:space-between;align-items:center}
+    .logo{font-size:28px;font-weight:700;color:#39FF14}
+    nav{display:flex;gap:32px;align-items:center}
+    nav a{color:var(--text-muted);font-size:14px;font-weight:500}
+    nav a:hover{color:var(--green)}
+    .pill{background:var(--green-dim);border:1px solid var(--green);border-radius:100px;padding:8px 16px;font-size:12px;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:1px}
+    .hero{padding:100px 0;text-align:center}
+    .hero-badge{font-size:14px;color:var(--text-muted);margin-bottom:16px}
+    .hero-badge span{color:var(--green);font-weight:600}
+    .hero h1{font-size:clamp(36px,5vw,56px);font-weight:700;line-height:1.1;margin-bottom:20px;font-family:'Space Grotesk',sans-serif}
+    .hero h1 .highlight{color:var(--green)}
+    .hero p{color:var(--text-muted);font-size:18px;max-width:550px;margin:0 auto 32px}
+    .btn{display:inline-block;padding:16px 32px;background:var(--green);color:var(--bg);border-radius:12px;font-size:15px;font-weight:600}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1200px;margin:0 auto;padding:0 24px 60px}
+    .stat{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center;position:relative}
+    .stat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);border-radius:16px 16px 0 0}
+    .statv{font-size:36px;font-weight:700;color:var(--green)}
+    .statl{font-size:13px;color:var(--text-muted)}
+    .logos{background:var(--bg2);padding:80px 24px;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .bigbold{font-size:48px;font-weight:700;margin-bottom:40px;font-family:'Space Grotesk',sans-serif}
+    .logogrid{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+    .logogrid img{height:36px;opacity:0.7;filter:grayscale(100%)}
+    .logogrid img:hover{opacity:1;filter:grayscale(0%)}
+    .services{padding:80px 24px;max-width:1200px;margin:0 auto}
+    .services h2{font-size:36px;text-align:center;margin-bottom:48px;font-family:'Space Grotesk',sans-serif}
+    .svcgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .svccard{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:32px;transition:all 0.2s}
+    .svccard:hover{border-color:var(--green);transform:translateY(-4px)}
+    .svcicon{font-size:32px;margin-bottom:16px}
+    .svcname{font-size:20px;font-weight:600;margin-bottom:8px}
+    .svcprice{color:var(--green);font-size:15px;font-weight:600;margin-bottom:12px}
+    .svcdesc{color:var(--text-muted);font-size:14px;line-height:1.6}
+    .cta{text-align:center;padding:80px 24px;background:linear-gradient(135deg,var(--bg2),#1a1a24);margin:40px 24px;border-radius:24px;border:1px solid var(--border)}
+    .cta h2{font-size:32px;margin-bottom:16px;font-family:'Space Grotesk',sans-serif}
+    .cta p{color:var(--text-muted);margin-bottom:32px}
+    /* Page styles */
+    .page-hero{padding:80px 0 40px;text-align:center}
+    .page-hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,5vw,52px);font-weight:700;margin-bottom:16px}
+    .page-hero .highlight{color:var(--green)}
+    .hero-sub{color:var(--text-muted);font-size:18px;max-width:600px;margin:0 auto}
+    .content-section{padding:40px 24px}
+    .content-section h2{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;margin-bottom:20px}
+    .content-section p{color:var(--text-muted);font-size:16px;margin-bottom:16px;line-height:1.7}
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+    .feature-list{list-style:none;margin:16px 0}
+    .feature-list li{padding:10px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;color:var(--text)}
+    .feature-list li::before{content:'✓';color:var(--green);font-weight:700}
+    footer{text-align:center;padding:40px 24px;border-top:1px solid var(--border);color:var(--text-muted);font-size:13px;background:var(--bg)}
+    @media(max-width:900px){.stats,.svcgrid,.content-grid{grid-template-columns:1fr}nav{display:none}}
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    
+    <header>
+    <div class="container">
+    <div class="header-inner">
+    <a href="/" class="logo">Zanoma</a>
+    <nav>
+    <a href="/about/">About</a>
+    <a href="/services/">Services</a>
+    <a href="/case-studies/">Case Studies</a>
+    <a href="/contact/">Contact</a>
+    <div class="pill">AI-Powered</div>
+    </nav>
+    </div>
+    </div>
+    </header>
+    
+    {{{body}}}
+    
+    <footer>© 2026 Zanoma · A Velocity Marketing Inc. Company · Bend, Oregon</footer>
+    
+    {{ghost_foot}}
+</body>
+</html>

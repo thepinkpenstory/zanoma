@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{meta_title}}</title>
+  <meta name="description" content="{{meta_description}}">
+
+  {{!-- Google Fonts: Space Grotesk + Inter --}}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  {{!-- Theme stylesheet --}}
+  <link rel="stylesheet" href="{{asset "css/main.css"}}">
+
+  {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+
+  {{!-- Animated background grid + glows --}}
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+
+  {{!-- Navigation --}}
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <a href="{{@site.url}}" class="logo">Zan<span>oma</span></a>
+        <nav>
+          <a href="{{@site.url}}/about/">About</a>
+          <a href="{{@site.url}}/services/">Services</a>
+          <a href="{{@site.url}}/case-studies/">Case Studies</a>
+          <a href="{{@site.url}}/contact/">Contact</a>
+          <div class="nav-pill">
+            <span class="dot"></span>
+            AI-Powered
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  {{!-- Page content --}}
+  {{{body}}}
+
+  {{!-- Footer --}}
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a href="{{@site.url}}" class="footer-logo">Zan<span>oma</span></a>
+        <p class="footer-text">© {{date format="YYYY"}} Zanoma. AI Solutions for Brands, Retailers, and Sellers.</p>
+        <div class="footer-links">
+          <a href="{{@site.url}}/about/">About</a>
+          <a href="{{@site.url}}/services/">Services</a>
+          <a href="{{@site.url}}/contact/">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  {{ghost_foot}}
+</body>
+</html>

@@ -1,0 +1,17 @@
+/* Custom styles for Zanoma - overrides Ghost defaults */
+body {
+    background: #0a0a0f !important;
+    color: #f0f0f5 !important;
+    font-family: 'Inter', -apple-system, sans-serif !important;
+}
+
+/* Hide default Ghost header since our code injection has one */
+.gh-head, #gh-head {
+    display: none !important;
+}
+
+/* Footer styling */
+.site-footer {
+    background: #0a0a0f !important;
+    color: #8888a0 !important;
+}

@@ -1,0 +1,8 @@
+{
+  "name": "zanoma",
+  "description": "Zanoma Custom Theme",
+  "demo": "https://zanoma.com",
+  "version": "1.2.0",
+  "engines": {"ghost": ">=5.0.0"},
+  "license": "MIT"
+}
