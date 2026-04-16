@@ -1,397 +1,1287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brand Intelligence Sales | Zanoma</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0a0a0f;
-      --bg2: #12121a;
-      --bg3: #1a1a24;
-      --bg4: #222230;
-      --green: #39FF14;
-      --green-dim: rgba(57,255,20,0.12);
-      --green-glow: rgba(57,255,20,0.35);
-      --text: #f0f0f5;
-      --text-muted: #8888a0;
-      --text-dim: #555568;
-      --border: rgba(255,255,255,0.07);
-      --radius: 16px;
-      --radius-sm: 10px;
-    }
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;}
-    a{color:var(--green);text-decoration:none;}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zanoma 2.0 — AI Sales Automation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --black: #0A0A0A;
+    --white: #FFFFFF;
+    --green: #00FF41;
+    --green-dark: #00CC33;
+    --red: #FF3366;
+    --gray: #AAAAAA;
+    --gray-light: #E5E5E5;
+    --card-dark: #141414;
+    --card-border: #2A2A2A;
+  }
+  html { font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  body { background: var(--black); color: var(--white); min-width: 1200px; }
+  a { text-decoration: none; }
 
-    /* Grid background */
-    .bg-grid{position:fixed;inset:0;background-image:linear-gradient(rgba(57,255,20,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(57,255,20,0.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
-    .bg-glow{position:fixed;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(57,255,20,0.07) 0%,transparent 70%);pointer-events:none;z-index:0;}
-    .bg-glow-1{top:-250px;right:-250px;}
-    .bg-glow-2{bottom:-350px;left:-250px;}
+  /* ── NAV ── */
+  nav {
+    background: var(--black);
+    border-bottom: 1px solid #1A1A1A;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    height: 72px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-logo {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--gray);
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .btn-green {
+    background: var(--green);
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 24px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .btn-green:hover { background: #00E83A; transform: translateY(-1px); }
+  .btn-green-lg {
+    background: var(--green);
+    color: #000;
+    font-size: 18px;
+    font-weight: 800;
+    padding: 18px 44px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .btn-green-lg:hover { background: #00E83A; transform: translateY(-2px); }
 
-    .container{max-width:1160px;margin:0 auto;padding:0 28px;position:relative;z-index:1;}
+  /* ── HERO ── */
+  .hero {
+    background: var(--black);
+    padding: 120px 80px 140px;
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+  .hero-eyebrow {
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 2px;
+    background: var(--green);
+  }
+  .hero-headline {
+    font-size: 96px;
+    font-weight: 900;
+    line-height: 1.0;
+    color: var(--white);
+    letter-spacing: -2px;
+    margin-bottom: 32px;
+    max-width: 900px;
+  }
+  .hero-headline span { color: var(--green); }
+  .hero-sub {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 20px;
+    max-width: 680px;
+    line-height: 1.4;
+  }
+  .hero-desc {
+    font-size: 18px;
+    color: var(--gray);
+    margin-bottom: 52px;
+    max-width: 560px;
+    line-height: 1.7;
+  }
+  .hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .hero-link {
+    color: var(--green);
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.2s;
+  }
+  .hero-link:hover { gap: 14px; }
+  .hero-badge {
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--gray);
+    font-size: 14px;
+  }
+  .hero-badge-dot {
+    width: 8px; height: 8px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
 
-    /* NAV */
-    header{padding:22px 0;position:sticky;top:0;background:rgba(10,10,15,0.85);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);z-index:100;}
-    .header-inner{display:flex;justify-content:space-between;align-items:center;}
-    .logo{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--text);letter-spacing:-0.5px;}
-    .logo span{color:var(--green);}
-    .logo-sub{font-size:11px;font-weight:500;color:var(--text-dim);letter-spacing:2px;text-transform:uppercase;margin-top:2px;}
-    nav{display:flex;gap:36px;align-items:center;}
-    nav a{color:var(--text-muted);font-size:14px;font-weight:500;transition:color 0.2s;}
-    nav a:hover{color:var(--green);}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s;border:none;font-family:'Inter',sans-serif;}
-    .btn-primary{background:var(--green);color:#0a0a0f;}
-    .btn-primary:hover{box-shadow:0 0 28px var(--green-glow);transform:translateY(-2px);}
-    .btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border);}
-    .btn-secondary:hover{border-color:var(--green);color:var(--green);}
+  /* ── STATS ── */
+  .stats {
+    background: var(--white);
+    padding: 100px 80px;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .stat-card {
+    border: 1px solid var(--gray-light);
+    border-radius: 12px;
+    padding: 48px 44px;
+    background: #fff;
+  }
+  .stat-number {
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 12px;
+    letter-spacing: -2px;
+  }
+  .stat-number.green { color: var(--green-dark); }
+  .stat-number.red { color: var(--red); }
+  .stat-label {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 8px;
+  }
+  .stat-sub {
+    font-size: 15px;
+    color: #888;
+    font-weight: 400;
+  }
 
-    /* PILL */
-    .pill{display:inline-flex;align-items:center;gap:7px;padding:7px 16px;background:var(--green-dim);border:1px solid rgba(57,255,20,0.4);border-radius:100px;font-size:11px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:24px;}
-    .pill .dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s ease-in-out infinite;}
-    @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+  /* ── PROFILES ── */
+  .profiles {
+    background: var(--black);
+    padding: 100px 80px;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  .section-eyebrow {
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: -1px;
+    line-height: 1.1;
+  }
+  .section-title span { color: var(--green); }
+  .section-sub {
+    font-size: 18px;
+    color: var(--gray);
+    margin-top: 16px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+  .profiles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .profile-card {
+    background: var(--card-dark);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 52px 48px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .profile-card:hover { border-color: #444; }
+  .profile-card.featured {
+    border-color: var(--green);
+  }
+  .profile-card.featured::before {
+    content: 'MOST POPULAR';
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: var(--green);
+    color: #000;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding: 4px 12px;
+    border-radius: 4px;
+  }
+  .profile-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 28px;
+  }
+  .profile-icon.green-bg { background: rgba(0,255,65,0.1); }
+  .profile-icon.red-bg { background: rgba(255,51,102,0.1); }
+  .profile-name {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .profile-tagline {
+    font-size: 15px;
+    color: var(--gray);
+    margin-bottom: 32px;
+    line-height: 1.5;
+  }
+  .profile-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+  .profile-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    color: #ccc;
+    line-height: 1.4;
+  }
+  .profile-features li::before {
+    content: '✓';
+    color: var(--green);
+    font-weight: 800;
+    font-size: 14px;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+  .profile-cta {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .profile-cta.primary {
+    background: var(--green);
+    color: #000;
+  }
+  .profile-cta.primary:hover { background: #00E83A; }
+  .profile-cta.secondary {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid var(--card-border);
+  }
+  .profile-cta.secondary:hover { border-color: #555; }
 
-    /* SECTION LABEL */
-    .section-label{font-size:11px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:3px;margin-bottom:16px;text-align:center;}
+  /* ── HOW IT WORKS ── */
+  .how {
+    background: var(--white);
+    padding: 100px 80px;
+  }
+  .how-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .how-steps::before {
+    content: '';
+    position: absolute;
+    top: 32px;
+    left: 12%;
+    right: 12%;
+    height: 2px;
+    background: linear-gradient(to right, var(--green-dark), #ccc);
+    z-index: 0;
+  }
+  .how-step {
+    text-align: center;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .step-number {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--black);
+    color: var(--green);
+    font-size: 22px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+    border: 3px solid var(--green-dark);
+  }
+  .step-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 10px;
+  }
+  .step-desc {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.6;
+  }
 
-    /* HERO */
-    .hero{padding:110px 0 90px;text-align:center;}
-    .hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(38px,5.5vw,68px);font-weight:700;line-height:1.08;letter-spacing:-2px;margin-bottom:22px;}
-    .hero h1 .hl{background:linear-gradient(135deg,var(--green),#00ff88);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-    .hero p{font-size:18px;color:var(--text-muted);max-width:580px;margin:0 auto 40px;line-height:1.7;}
-    .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:72px;}
+  /* ── CASE STUDY ── */
+  .case-study {
+    background: var(--black);
+    padding: 100px 80px;
+  }
+  .case-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .case-label {
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .case-title {
+    font-size: 44px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+  }
+  .case-title span { color: var(--green); }
+  .case-body {
+    font-size: 17px;
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: 36px;
+  }
+  .case-quote {
+    border-left: 3px solid var(--green);
+    padding-left: 24px;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--white);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .case-attr {
+    font-size: 14px;
+    color: var(--gray);
+    padding-left: 24px;
+  }
+  .case-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .case-metric {
+    background: var(--card-dark);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 32px 28px;
+  }
+  .case-metric-num {
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 8px;
+  }
+  .case-metric-num.green { color: var(--green); }
+  .case-metric-num.red { color: var(--red); }
+  .case-metric-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ccc;
+    margin-bottom: 4px;
+  }
+  .case-metric-sub {
+    font-size: 13px;
+    color: #666;
+  }
 
-    /* STAT CARDS */
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:780px;margin:0 auto;}
-    .stat-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;text-align:center;position:relative;overflow:hidden;}
-    .stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);box-shadow:0 0 16px var(--green);}
-    .stat-value{font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:700;color:var(--green);line-height:1;}
-    .stat-desc{font-size:12px;color:var(--text-muted);margin-top:8px;line-height:1.5;}
+  /* ── PRICING ── */
+  .pricing {
+    background: var(--white);
+    padding: 100px 80px;
+  }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .price-card {
+    border: 1px solid var(--gray-light);
+    border-radius: 16px;
+    padding: 48px 40px;
+    background: #fff;
+    position: relative;
+  }
+  .price-card.featured {
+    background: var(--black);
+    border-color: var(--black);
+    color: var(--white);
+  }
+  .price-card.featured::before {
+    content: 'BEST VALUE';
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--green);
+    color: #000;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding: 4px 16px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .price-tier {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 12px;
+  }
+  .price-card.featured .price-tier { color: var(--green); }
+  .price-amount {
+    font-size: 56px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    color: #111;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .price-card.featured .price-amount { color: var(--white); }
+  .price-period {
+    font-size: 15px;
+    color: #888;
+    margin-bottom: 32px;
+  }
+  .price-card.featured .price-period { color: #999; }
+  .price-divider {
+    height: 1px;
+    background: var(--gray-light);
+    margin-bottom: 28px;
+  }
+  .price-card.featured .price-divider { background: #2A2A2A; }
+  .price-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .price-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15px;
+    color: #444;
+    line-height: 1.4;
+  }
+  .price-card.featured .price-features li { color: #ccc; }
+  .price-features li::before {
+    content: '→';
+    color: var(--green-dark);
+    font-weight: 800;
+    font-size: 13px;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+  .price-card.featured .price-features li::before { color: var(--green); }
+  .price-cta {
+    display: block;
+    text-align: center;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .price-cta.dark {
+    background: var(--black);
+    color: var(--white);
+  }
+  .price-cta.dark:hover { background: #222; }
+  .price-cta.green {
+    background: var(--green);
+    color: #000;
+  }
+  .price-cta.green:hover { background: #00E83A; }
+  .price-cta.outline {
+    background: transparent;
+    color: #333;
+    border: 1px solid #ccc;
+  }
+  .price-cta.outline:hover { border-color: #888; }
 
-    /* SECTIONS */
-    section{padding:96px 0;}
-    section h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,4vw,46px);font-weight:700;letter-spacing:-1px;line-height:1.15;margin-bottom:16px;text-align:center;}
-    .section-sub{font-size:17px;color:var(--text-muted);text-align:center;max-width:560px;margin:0 auto 56px;line-height:1.7;}
+  /* ── TESTIMONIALS ── */
+  .testimonials {
+    background: var(--black);
+    padding: 100px 80px;
+  }
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .testi-card {
+    background: var(--card-dark);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 40px 36px;
+  }
+  .testi-stars {
+    color: var(--green);
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  .testi-quote {
+    font-size: 16px;
+    color: #ddd;
+    line-height: 1.7;
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .testi-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1A1A2E, #16213E);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--green);
+    border: 2px solid var(--card-border);
+    flex-shrink: 0;
+  }
+  .testi-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+  .testi-role {
+    font-size: 13px;
+    color: #666;
+  }
 
-    /* PROBLEM CARDS */
-    .problem-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;}
-    .problem-card{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:var(--radius);padding:32px 28px;}
-    .problem-card h3{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;margin-bottom:12px;color:var(--text);}
-    .problem-card p{font-size:14px;color:var(--text-muted);line-height:1.7;}
-    .problem-card .icon{font-size:28px;margin-bottom:16px;}
-    .problem-closer{text-align:center;margin-top:48px;font-size:16px;color:var(--text-muted);max-width:600px;margin-left:auto;margin-right:auto;line-height:1.7;}
-    .problem-closer strong{color:var(--text);}
+  /* ── FAQ ── */
+  .faq {
+    background: var(--white);
+    padding: 100px 80px;
+  }
+  .faq-grid {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--gray-light);
+    padding: 32px 0;
+  }
+  .faq-item:first-child { border-top: 1px solid var(--gray-light); }
+  .faq-q {
+    font-size: 19px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .faq-q::after {
+    content: '+';
+    color: var(--green-dark);
+    font-size: 24px;
+    font-weight: 400;
+    flex-shrink: 0;
+  }
+  .faq-a {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.7;
+  }
 
-    /* FEATURE GRID */
-    .feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:16px;}
-    .feature-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:36px 32px;position:relative;overflow:hidden;transition:border-color 0.2s;}
-    .feature-card:hover{border-color:rgba(57,255,20,0.3);}
-    .feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);}
-    .feature-icon{font-size:32px;margin-bottom:16px;}
-    .feature-card h3{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin-bottom:12px;}
-    .feature-card p{font-size:14px;color:var(--text-muted);line-height:1.75;}
-    .tier-badge{display:inline-block;margin-top:20px;padding:4px 12px;background:var(--green-dim);border:1px solid rgba(57,255,20,0.3);border-radius:100px;font-size:10px;font-weight:700;color:var(--green);letter-spacing:1.5px;text-transform:uppercase;}
+  /* ── CTA BAND ── */
+  .cta-band {
+    background: var(--black);
+    padding: 120px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-band::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0,255,65,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-band-title {
+    font-size: 72px;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: -2px;
+    line-height: 1.05;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .cta-band-title span { color: var(--green); }
+  .cta-band-sub {
+    font-size: 20px;
+    color: var(--gray);
+    margin-bottom: 52px;
+    position: relative;
+    z-index: 1;
+  }
+  .cta-band-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .btn-outline-white {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid #444;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 18px 44px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    display: inline-block;
+  }
+  .btn-outline-white:hover { border-color: #888; }
 
-    /* PRICING */
-    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:16px;}
-    .pricing-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:40px 32px;display:flex;flex-direction:column;}
-    .pricing-card.featured{border-color:var(--green);box-shadow:0 0 40px rgba(57,255,20,0.12);}
-    .popular-badge{display:inline-block;padding:5px 14px;background:var(--green);color:#0a0a0f;border-radius:100px;font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;align-self:flex-start;}
-    .pricing-card .plan-name{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;}
-    .pricing-card .price{font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:700;color:var(--text);line-height:1;margin-bottom:6px;}
-    .pricing-card .price span{font-size:16px;color:var(--text-muted);font-weight:400;}
-    .pricing-card .price-range{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;color:var(--text);line-height:1;margin-bottom:6px;}
-    .pricing-divider{height:1px;background:var(--border);margin:28px 0;}
-    .feature-list{list-style:none;display:flex;flex-direction:column;gap:12px;flex:1;}
-    .feature-list li{font-size:14px;color:var(--text-muted);display:flex;align-items:flex-start;gap:10px;line-height:1.5;}
-    .feature-list li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px;}
-    .pricing-card .btn{margin-top:32px;width:100%;justify-content:center;}
-    .annual-note{text-align:center;margin-top:28px;font-size:13px;color:var(--text-dim);}
-    .annual-note strong{color:var(--green);}
+  /* ── FOOTER ── */
+  footer {
+    background: #050505;
+    border-top: 1px solid #1A1A1A;
+    padding: 80px 80px 48px;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+  }
+  .footer-brand-name {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: var(--white);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .footer-tagline {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    max-width: 280px;
+    margin-bottom: 28px;
+  }
+  .footer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,255,65,0.08);
+    border: 1px solid rgba(0,255,65,0.2);
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+  }
+  .footer-badge-dot {
+    width: 6px; height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+  }
+  .footer-col-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .footer-links a {
+    font-size: 14px;
+    color: #777;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--white); }
+  .footer-bottom {
+    border-top: 1px solid #1A1A1A;
+    padding-top: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-copy {
+    font-size: 13px;
+    color: #444;
+  }
+  .footer-legal {
+    display: flex;
+    gap: 28px;
+  }
+  .footer-legal a {
+    font-size: 13px;
+    color: #444;
+    transition: color 0.2s;
+  }
+  .footer-legal a:hover { color: #888; }
 
-    /* DATA SAFETY */
-    .safety-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:16px;}
-    .safety-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:36px 32px;}
-    .safety-card::before{display:none;}
-    .safety-icon{font-size:32px;margin-bottom:16px;}
-    .safety-card h3{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;margin-bottom:12px;}
-    .safety-card p{font-size:14px;color:var(--text-muted);line-height:1.75;}
+  /* ── FEATURES STRIP ── */
+  .features {
+    background: var(--white);
+    padding: 100px 80px;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .feature-card {
+    padding: 0;
+  }
+  .feature-icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border: 1px solid var(--gray-light);
+  }
+  .feature-title {
+    font-size: 19px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 10px;
+  }
+  .feature-desc {
+    font-size: 15px;
+    color: #777;
+    line-height: 1.6;
+  }
 
-    /* SOCIAL PROOF */
-    .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:16px;}
-    .proof-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px;}
-    .proof-card .quote{font-size:15px;color:var(--text);line-height:1.75;margin-bottom:20px;font-style:italic;}
-    .proof-card .author{font-size:13px;color:var(--text-muted);}
-    .proof-card .author strong{color:var(--green);display:block;}
-    .placeholder-note{font-size:11px;color:var(--text-dim);text-align:center;margin-top:12px;}
-
-    /* FOOTER CTA */
-    .footer-cta{padding:100px 0;text-align:center;background:linear-gradient(180deg,transparent,rgba(57,255,20,0.04));}
-    .footer-cta h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:700;letter-spacing:-1.5px;margin-bottom:20px;}
-    .footer-cta p{font-size:17px;color:var(--text-muted);max-width:520px;margin:0 auto 40px;}
-    .footer-cta .btn-primary{padding:18px 48px;font-size:16px;}
-    .footer-fine{font-size:13px;color:var(--text-dim);margin-top:20px;}
-
-    /* FOOTER */
-    footer{padding:32px 0;border-top:1px solid var(--border);text-align:center;}
-    footer p{font-size:13px;color:var(--text-dim);}
-    footer a{color:var(--text-muted);}
-
-    /* PRINT */
-    @media print{
-      .bg-grid,.bg-glow{display:none;}
-      body{background:#fff;color:#111;}
-      .stat-card,.feature-card,.problem-card,.pricing-card,.safety-card,.proof-card{background:#f8f8f8;border:1px solid #ddd;}
-      .hero h1 .hl{-webkit-text-fill-color:var(--green);}
-      header{position:static;}
-    }
-  </style>
+  /* utility */
+  .section-header-white .section-title { color: #111; }
+  .section-header-white .section-sub { color: #666; }
+  .section-header-white .section-eyebrow { color: var(--green-dark); }
+</style>
 </head>
 <body>
-  <div class="bg-grid"></div>
-  <div class="bg-glow bg-glow-1"></div>
-  <div class="bg-glow bg-glow-2"></div>
 
-  <!-- NAV -->
-  <header>
-    <div class="container">
-      <div class="header-inner">
-        <div>
-          <div class="logo">ZAN<span>O</span>MA</div>
-          <div class="logo-sub">Brand Intelligence Platform</div>
-        </div>
-        <nav>
-          <a href="#services">Services</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#security">Security</a>
-          <a href="contact.html" class="btn btn-primary">Book a Call</a>
-        </nav>
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo" style="text-decoration:none;color:inherit;">Zanoma</a>
+  <ul class="nav-links">
+    <li><a href="services.html">Features</a></li>
+    <li><a href="sales.html#pricing">Pricing</a></li>
+    <li><a href="case-studies.html">Case Studies</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="#" class="btn-green">Get Started</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">AI Sales Automation</p>
+  <h1 class="hero-headline"><span>50 Leads</span> Booked.<br>Week 1.</h1>
+  <p class="hero-sub">Not 40 leads over 4 months. Fifty in the first week.</p>
+  <p class="hero-desc">Your leads get contacted instantly. Qualified on first call. Booked automatically.</p>
+  <div class="hero-ctas">
+    <a href="contact.html" class="btn-green-lg">See How It Works</a>
+    <a href="case-studies.html" class="hero-link">View Case Study →</a>
+  </div>
+  <div class="hero-badge">
+    <div class="hero-badge-dot"></div>
+    AI is live and booking calls right now — 24 hours a day, 7 days a week
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-number green">24/7</div>
+      <div class="stat-label">Instant Response</div>
+      <div class="stat-sub">AI answers every call</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number red">50</div>
+      <div class="stat-label">Leads Booked</div>
+      <div class="stat-sub">Athlete AI, Week 1</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number green">70%</div>
+      <div class="stat-label">Booking Rate</div>
+      <div class="stat-sub">vs manual follow-up</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFILES -->
+<section class="profiles">
+  <div class="section-header">
+    <p class="section-eyebrow">Who It's For</p>
+    <h2 class="section-title">Choose Your Profile</h2>
+    <p class="section-sub">Zanoma is built for two types of high-growth businesses. Pick the one that fits.</p>
+  </div>
+  <div class="profiles-grid">
+    <div class="profile-card featured">
+      <div class="profile-icon green-bg">🏢</div>
+      <div class="profile-name">Sales Team Operator</div>
+      <div class="profile-tagline">You have a team, a pipeline, and a response-time problem. Zanoma fills the gap the moment a lead comes in.</div>
+      <ul class="profile-features">
+        <li>Instant AI qualification the second a lead submits</li>
+        <li>Auto-routes hot leads to your best rep, immediately</li>
+        <li>Handles overflow — nights, weekends, holidays</li>
+        <li>Syncs booked meetings directly into your CRM</li>
+        <li>Full call recordings and transcript summaries</li>
+      </ul>
+      <a href="contact.html" class="profile-cta primary">Start Free Trial →</a>
+    </div>
+    <div class="profile-card">
+      <div class="profile-icon red-bg">🚀</div>
+      <div class="profile-name">Solo Closer / Agency</div>
+      <div class="profile-tagline">You're the entire sales operation. Zanoma is the AI that works while you sleep, so you wake up to booked calls.</div>
+      <ul class="profile-features">
+        <li>Deploy in under 60 minutes — no engineers needed</li>
+        <li>AI learns your offer and qualifies to your standard</li>
+        <li>Books directly into your Calendly or Cal.com</li>
+        <li>Handles inbound from any source: ads, organic, referrals</li>
+        <li>White-label ready for agency resell</li>
+      </ul>
+      <a href="contact.html" class="profile-cta secondary">Learn More →</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="section-header section-header-white">
+    <p class="section-eyebrow">The Process</p>
+    <h2 class="section-title" style="color:#111;">From Lead to Booked. In Minutes.</h2>
+    <p class="section-sub">Four steps. Fully automated. No human required until the call.</p>
+  </div>
+  <div class="how-steps">
+    <div class="how-step">
+      <div class="step-number">1</div>
+      <div class="step-title">Lead Arrives</div>
+      <div class="step-desc">Form submit, ad click, or inbound call — Zanoma picks it up in under 60 seconds.</div>
+    </div>
+    <div class="how-step">
+      <div class="step-number">2</div>
+      <div class="step-title">AI Qualifies</div>
+      <div class="step-desc">Your AI receptionist asks the right questions, scores intent, and filters out tire-kickers.</div>
+    </div>
+    <div class="how-step">
+      <div class="step-number">3</div>
+      <div class="step-title">Auto-Books</div>
+      <div class="step-desc">Hot leads get a calendar link instantly. Meeting is confirmed before they close the tab.</div>
+    </div>
+    <div class="how-step">
+      <div class="step-number">4</div>
+      <div class="step-title">You Close</div>
+      <div class="step-desc">You show up to a pre-qualified, pre-confirmed call. No chasing. No no-shows.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section class="case-study">
+  <div class="case-inner">
+    <div>
+      <p class="case-label">Case Study — Athlete AI</p>
+      <h2 class="case-title">50 Bookings in the<br><span>First Week.</span></h2>
+      <p class="case-body">Athlete AI was spending thousands per month on ads and losing 60% of inbound leads to slow follow-up. We deployed Zanoma's AI receptionist in 48 hours. The result: 50 qualified calls booked in Week 1 with a 70% show rate.</p>
+      <div class="case-quote">"We basically had a full-time SDR working around the clock from day one. I don't know why we waited so long."</div>
+      <div class="case-attr">— Jordan M., Head of Growth at Athlete AI</div>
+    </div>
+    <div class="case-metrics">
+      <div class="case-metric">
+        <div class="case-metric-num green">50</div>
+        <div class="case-metric-label">Calls Booked</div>
+        <div class="case-metric-sub">Week 1, zero manual outreach</div>
+      </div>
+      <div class="case-metric">
+        <div class="case-metric-num red">70%</div>
+        <div class="case-metric-label">Show Rate</div>
+        <div class="case-metric-sub">vs 40% industry average</div>
+      </div>
+      <div class="case-metric">
+        <div class="case-metric-num green">48h</div>
+        <div class="case-metric-label">Time to Deploy</div>
+        <div class="case-metric-sub">From signup to live AI</div>
+      </div>
+      <div class="case-metric">
+        <div class="case-metric-num red">3×</div>
+        <div class="case-metric-label">Pipeline Growth</div>
+        <div class="case-metric-sub">vs previous quarter</div>
       </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="container">
-      <div class="pill"><span class="dot"></span> New Service</div>
-      <h1>Your Competitors Are Watching.<br><span class="hl">Are You?</span></h1>
-      <p>Zanoma delivers the market intelligence that used to cost $500K and take 12 weeks — automatically, every week, for a fraction of the price.</p>
-      <div class="hero-cta">
-        <a href="#pricing" class="btn btn-primary">See Pricing →</a>
-        <a href="#cta" class="btn btn-secondary">Book a 15-Min Call</a>
+<!-- FEATURES -->
+<section class="features">
+  <div class="section-header section-header-white">
+    <p class="section-eyebrow">Platform Features</p>
+    <h2 class="section-title" style="color:#111;">Everything You Need.<br>Nothing You Don't.</h2>
+    <p class="section-sub">Built for closers, not engineers. You'll be live in an afternoon.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon-wrap">📞</div>
+      <div class="feature-title">AI Inbound Reception</div>
+      <div class="feature-desc">Picks up every call, qualifies every lead, books every meeting — automatically, 24/7/365 without fatigue or sick days.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon-wrap">⚡</div>
+      <div class="feature-title">Sub-60 Second Response</div>
+      <div class="feature-desc">Speed-to-lead is everything. Zanoma contacts every new lead before your competitor even sees the notification.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon-wrap">🎯</div>
+      <div class="feature-title">Custom Qualification Scripts</div>
+      <div class="feature-desc">Train the AI on your exact criteria. Budget, timeline, authority — filtered to your standard every time.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon-wrap">📅</div>
+      <div class="feature-title">Auto Calendar Booking</div>
+      <div class="feature-desc">Integrates with Calendly, Cal.com, HubSpot, Salesforce. Books confirmed meetings before the lead hangs up.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon-wrap">📊</div>
+      <div class="feature-title">Call Recordings & Summaries</div>
+      <div class="feature-desc">Every conversation transcribed, scored, and summarized. Your team shows up to calls already knowing the prospect.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon-wrap">🔗</div>
+      <div class="feature-title">CRM & Stack Integrations</div>
+      <div class="feature-desc">Native integrations with HubSpot, Salesforce, Go High Level, and 100+ tools via Zapier and Make.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing">
+  <div class="section-header section-header-white">
+    <p class="section-eyebrow">Pricing</p>
+    <h2 class="section-title" style="color:#111;">Simple, Transparent Pricing.</h2>
+    <p class="section-sub">One booked call pays for the whole month. Pick your plan and launch today.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="price-tier">Starter</div>
+      <div class="price-amount">$497</div>
+      <div class="price-period">/month</div>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li>Up to 200 leads/month</li>
+        <li>AI receptionist (calls + forms)</li>
+        <li>Calendly/Cal.com integration</li>
+        <li>Email + SMS follow-up sequences</li>
+        <li>Standard qualification script</li>
+        <li>Email support</li>
+      </ul>
+      <a href="contact.html" class="price-cta outline">Get Started</a>
+    </div>
+    <div class="price-card featured">
+      <div class="price-tier">Growth</div>
+      <div class="price-amount" style="color:#fff;">$997</div>
+      <div class="price-period">/month</div>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li>Up to 1,000 leads/month</li>
+        <li>AI receptionist + outbound cadences</li>
+        <li>CRM sync (HubSpot, Salesforce, GHL)</li>
+        <li>Custom qualification scripts × 3</li>
+        <li>Call recordings + AI summaries</li>
+        <li>Priority Slack support</li>
+        <li>Onboarding call included</li>
+      </ul>
+      <a href="contact.html" class="price-cta green">Start Free Trial →</a>
+    </div>
+    <div class="price-card">
+      <div class="price-tier">Enterprise</div>
+      <div class="price-amount">Custom</div>
+      <div class="price-period">volume pricing</div>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li>Unlimited leads</li>
+        <li>Dedicated AI model fine-tuning</li>
+        <li>Multi-seat team dashboard</li>
+        <li>White-label option</li>
+        <li>SLA &amp; uptime guarantee</li>
+        <li>Dedicated account manager</li>
+        <li>Custom integrations</li>
+      </ul>
+      <a href="contact.html" class="price-cta dark">Talk to Sales →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-header">
+    <p class="section-eyebrow">Social Proof</p>
+    <h2 class="section-title">What Clients Say</h2>
+    <p class="section-sub">Real results from real businesses. No filler.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">"We went from 10 qualified calls a week to 40. Same ad spend. Same team. Just Zanoma doing the work we were paying humans to fumble."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">JM</div>
+        <div>
+          <div class="testi-name">Jordan M.</div>
+          <div class="testi-role">Head of Growth — Athlete AI</div>
+        </div>
       </div>
-      <div class="stats">
-        <div class="stat-card">
-          <div class="stat-value">33M</div>
-          <div class="stat-desc">SMBs miss critical competitor moves every single week</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">"I'm a solo operator. Zanoma is my entire SDR function. It qualifies, books, and sends reminders. I just show up and close."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">SR</div>
+        <div>
+          <div class="testi-name">Sam R.</div>
+          <div class="testi-role">Founder — Apex Consulting</div>
         </div>
-        <div class="stat-card">
-          <div class="stat-value">$500K</div>
-          <div class="stat-desc">What McKinsey charges for the intelligence we automate</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value">5 min</div>
-          <div class="stat-desc">To your first competitive intelligence brief after signup</div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">"The ROI conversation is a joke — one closed deal covers 6 months. We rolled it out to 3 clients in our agency and it's our highest-margin service now."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">TK</div>
+        <div>
+          <div class="testi-name">Taylor K.</div>
+          <div class="testi-role">Agency Owner — Greenlight Digital</div>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- PROBLEM -->
-  <section style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-    <div class="container">
-      <div class="section-label">Why This Matters</div>
-      <h2>Right Now, Your Competitor Just Made a Move.<br>You Don't Know About It.</h2>
-      <div class="problem-cards">
-        <div class="problem-card">
-          <div class="icon">💸</div>
-          <h3>They changed their pricing</h3>
-          <p>You'll find out when you lose the next deal. By then it's too late — the prospect already made their decision based on a number you didn't know existed.</p>
-        </div>
-        <div class="problem-card">
-          <div class="icon">👥</div>
-          <h3>They're hiring 4 engineers</h3>
-          <p>That's their product roadmap. Six months from now they'll launch something you never saw coming — because you weren't watching their job postings.</p>
-        </div>
-        <div class="problem-card">
-          <div class="icon">📢</div>
-          <h3>47 customers are complaining about them online</h3>
-          <p>Those are your leads. They're frustrated, looking for an alternative, and ready to switch. And they're going to whoever finds them first.</p>
-        </div>
-      </div>
-      <p class="problem-closer">Most SMB owners are flying blind. Not because they don't care — because <strong>nobody built them the tool.</strong> Until now.</p>
+<!-- FAQ -->
+<section class="faq">
+  <div class="section-header section-header-white">
+    <p class="section-eyebrow">FAQ</p>
+    <h2 class="section-title" style="color:#111;">Common Questions</h2>
+    <p class="section-sub">Fast answers to the things people always ask.</p>
+  </div>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <div class="faq-q">How fast can I be live?</div>
+      <div class="faq-a">Most clients go live within 24–48 hours of signing up. We handle the setup call, configure your qualification script, and test before launch. No engineering team required.</div>
     </div>
-  </section>
+    <div class="faq-item">
+      <div class="faq-q">Does the AI sound like a robot?</div>
+      <div class="faq-a">No. Our AI uses natural conversational flow trained on thousands of real sales calls. Most prospects don't realize they're talking to an AI until the meeting is already booked.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if a lead needs a human?</div>
+      <div class="faq-a">Zanoma detects escalation triggers and hands off to your team via SMS, Slack, or call transfer in real time. You set the rules — we follow them.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Which CRMs do you integrate with?</div>
+      <div class="faq-a">Native integrations with HubSpot, Salesforce, Go High Level, and Pipedrive. Plus 100+ tools via Zapier and Make for anything else in your stack.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is there a contract?</div>
+      <div class="faq-a">No long-term contracts on Growth and Starter plans. Monthly billing, cancel anytime. Enterprise plans include optional annual agreements with volume discounts.</div>
+    </div>
+  </div>
+</section>
 
-  <!-- WHAT YOU GET -->
-  <section id="services">
-    <div class="container">
-      <div class="section-label">The Intelligence Stack</div>
-      <h2>Four Modules. One Unfair Advantage.</h2>
-      <p class="section-sub">Every module runs automatically. No dashboards to log into. No analysts to manage. Just intelligence, delivered.</p>
-      <div class="feature-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🔍</div>
-          <h3>Competitor Watch</h3>
-          <p>Every Monday morning: a plain-English brief on exactly what your top competitors changed. Pricing, messaging, features, hiring signals. No jargon. No logins. Just: here's what changed and what it means for you this week.</p>
-          <span class="tier-badge">Starter +</span>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📊</div>
-          <h3>Brand Health Score</h3>
-          <p>A 0–100 score on your own brand presence — updated weekly. Website speed, Google review sentiment, SEO rankings, social mentions, email deliverability. The trend line builds over time. After 6 months, you'll have historical intelligence nobody else has.</p>
-          <span class="tier-badge">Starter +</span>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🎯</div>
-          <h3>Pre-Scored Lead Lists</h3>
-          <p>Drop us a prospect list — or we build one. We visit every company's website, score each prospect 0–100 for ICP fit, write a personalized opener, and find the decision-maker's direct contact. Your sales team calls the 90+ scores first. Close rate goes up. Immediately.</p>
-          <span class="tier-badge">Growth +</span>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3>Signal-Based Outreach</h3>
-          <p>We watch for buying signals: funding rounds, competitor complaints, new executive hires, event attendance. The moment a high-value prospect shows intent, a personalized sequence fires automatically — LinkedIn first, then email, then AI-assisted call. You reach them before your competitors do.</p>
-          <span class="tier-badge">Growth +</span>
-        </div>
+<!-- CTA BAND -->
+<section class="cta-band">
+  <h2 class="cta-band-title">Your Next 50 Calls<br>Are <span>Already Waiting.</span></h2>
+  <p class="cta-band-sub">Deploy in 48 hours. See results in Week 1. Or we'll refund your first month.</p>
+  <div class="cta-band-btns">
+    <a href="contact.html" class="btn-green-lg">Start Free Trial</a>
+    <a href="contact.html" class="btn-outline-white">Talk to Sales</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">Zanoma</div>
+      <p class="footer-tagline">AI sales automation that works while you sleep. Built for closers who are tired of chasing leads.</p>
+      <div class="footer-badge">
+        <div class="footer-badge-dot"></div>
+        All systems operational
       </div>
     </div>
-  </section>
-
-  <!-- PRICING -->
-  <section id="pricing" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-    <div class="container">
-      <div class="section-label">Simple Pricing</div>
-      <h2>Pick Your Intelligence Level</h2>
-      <p class="section-sub">No setup fees. No long-term contracts on Starter. Cancel anytime. Your data is always yours.</p>
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <div class="plan-name">Starter</div>
-          <div class="price">$2,000<span>/mo</span></div>
-          <p style="font-size:13px;color:var(--text-muted);margin-top:4px;">Know more than your competitors</p>
-          <div class="pricing-divider"></div>
-          <ul class="feature-list">
-            <li>Weekly Competitor Watch brief (top 3–5 competitors)</li>
-            <li>Brand Health Score (0–100, weekly)</li>
-            <li>Weekly trend reports delivered to your inbox</li>
-            <li>Email alerts on major competitor changes</li>
-            <li>Onboarding strategy call included</li>
-            <li>Cancel anytime</li>
-          </ul>
-          <a href="#cta" class="btn btn-secondary">Start with Starter →</a>
-        </div>
-        <div class="pricing-card featured">
-          <div class="popular-badge">Most Popular</div>
-          <div class="plan-name">Growth</div>
-          <div class="price">$5,000<span>/mo</span></div>
-          <p style="font-size:13px;color:var(--text-muted);margin-top:4px;">Intelligence that closes deals</p>
-          <div class="pricing-divider"></div>
-          <ul class="feature-list">
-            <li>Everything in Starter</li>
-            <li>Weekly pre-scored lead lists (ICP 0–100)</li>
-            <li>Personalized outreach openers per lead</li>
-            <li>Signal-based outreach sequences</li>
-            <li>Daily monitoring alerts</li>
-            <li>Dedicated Slack channel</li>
-            <li>Monthly strategy review call</li>
-          </ul>
-          <a href="contact.html" class="btn btn-primary">Get Growth →</a>
-        </div>
-        <div class="pricing-card">
-          <div class="plan-name">Infrastructure</div>
-          <div class="price-range">$8K–10K<span style="font-size:16px;color:var(--text-muted);font-weight:400;">/mo</span></div>
-          <p style="font-size:13px;color:var(--text-muted);margin-top:4px;">Your full AI intelligence department</p>
-          <div class="pricing-divider"></div>
-          <ul class="feature-list">
-            <li>Everything in Growth</li>
-            <li>Real-time intelligence dashboard</li>
-            <li>Custom competitive verticals</li>
-            <li>Full market mapping for your category</li>
-            <li>Weekly 1:1 strategy session</li>
-            <li>Priority support &amp; dedicated analyst</li>
-            <li>Custom data integrations</li>
-          </ul>
-          <a href="#cta" class="btn btn-secondary">Talk to Us →</a>
-        </div>
-      </div>
-      <p class="annual-note">Annual plans save <strong>15%</strong> — and lock in your rate as we scale.</p>
+    <div>
+      <div class="footer-col-title">Product</div>
+      <ul class="footer-links">
+        <li><a href="services.html">Features</a></li>
+        <li><a href="sales.html#pricing">Pricing</a></li>
+        <li><a href="#">Integrations</a></li>
+        <li><a href="#">Changelog</a></li>
+        <li><a href="#">Roadmap</a></li>
+      </ul>
     </div>
-  </section>
-
-  <!-- DATA SAFETY -->
-  <section id="security">
-    <div class="container">
-      <div class="section-label">Your Data Is Yours</div>
-      <h2>We Don't Train On It.<br>We Don't Share It. We Don't Touch It.</h2>
-      <p class="section-sub">Your competitive intelligence is the most sensitive data your business has. We treat it that way.</p>
-      <div class="safety-grid">
-        <div class="safety-card">
-          <div class="safety-icon">🔒</div>
-          <h3>Private by Default</h3>
-          <p>Your competitive data, your leads, your brand intelligence — stored in your own isolated environment. We never commingle client data across accounts. What you share with Zanoma never touches another client's system.</p>
-        </div>
-        <div class="safety-card">
-          <div class="safety-icon">🚫</div>
-          <h3>No LLM Training. Ever.</h3>
-          <p>Your business information is never used to train AI models. Not ours. Not Anthropic's. Not anyone's. The AI processes your data to generate reports — it does not learn from it or store it in any model. This is a hard contractual guarantee.</p>
-        </div>
-        <div class="safety-card">
-          <div class="safety-icon">📁</div>
-          <h3>You Own Everything</h3>
-          <p>Every report, every lead list, every brief we generate belongs to you — not Zanoma. Export your full data library anytime. Cancel and take everything with you. There is no lock-in on your data. Ever.</p>
-        </div>
-        <div class="safety-card">
-          <div class="safety-icon">🛡️</div>
-          <h3>Enterprise-Grade Infrastructure</h3>
-          <p>Built on AWS. Encrypted in transit and at rest. SOC 2 principles applied across all data handling. The same infrastructure Fortune 500 companies rely on — available to every Zanoma client at every tier.</p>
-        </div>
-      </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-  </section>
-
-  <!-- SOCIAL PROOF -->
-  <section style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-    <div class="container">
-      <div class="section-label">Trusted by Growth-Stage Brands</div>
-      <h2>35+ Brands Have Trusted Zanoma</h2>
-      <p class="section-sub">From Fortune 500 to fast-growing DTC — we've been doing brand intelligence before it was called that.</p>
-      <div class="proof-grid">
-        <div class="proof-card">
-          <div class="quote">"We found out our main competitor dropped prices on a Tuesday. By Thursday we had a counter-offer in market. First time we've ever been ahead of them."</div>
-          <div class="author"><strong>Sarah K., CEO</strong> DTC Brand, $4M ARR</div>
-        </div>
-        <div class="proof-card">
-          <div class="quote">"The lead scoring alone paid for six months of the service in the first week. Our close rate on outbound jumped 40%. I wish we'd had this two years ago."</div>
-          <div class="author"><strong>Marcus T., VP Sales</strong> B2B SaaS, 120 employees</div>
-        </div>
-        <div class="proof-card">
-          <div class="quote">"I used to spend four hours every Friday piecing together what was happening in our market. Now I get a brief every Monday morning. I have my Fridays back."</div>
-          <div class="author"><strong>Jennifer L., Founder</strong> Professional Services, $2M ARR</div>
-        </div>
-      </div>
-      <p class="placeholder-note">⚠️ Testimonials are illustrative placeholders — replace with real client quotes before publishing</p>
+    <div>
+      <div class="footer-col-title">Support</div>
+      <ul class="footer-links">
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Status</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="contact.html">Book a Demo</a></li>
+      </ul>
     </div>
-  </section>
-
-  <!-- FOOTER CTA -->
-  <section id="cta" class="footer-cta">
-    <div class="container">
-      <div class="pill"><span class="dot"></span> Limited Onboarding Slots</div>
-      <h2>Ready to Know More<br>Than Your Competitors?</h2>
-      <p>Book a 15-minute call. We'll show you exactly what your competitors are doing right now — before you sign anything.</p>
-      <a href="contact.html" class="btn btn-primary">Book Your Free Intelligence Briefing →</a>
-      <p class="footer-fine">No contract required on Starter &nbsp;·&nbsp; Cancel anytime &nbsp;·&nbsp; Setup takes 48 hours</p>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Zanoma. All rights reserved.</div>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Cookie Policy</a>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <footer>
-    <div class="container">
-      <p>© 2026 Zanoma. All rights reserved. &nbsp;·&nbsp; <a href="https://zanoma.com">zanoma.com</a> &nbsp;·&nbsp; Brand Intelligence Platform</p>
-    </div>
-  </footer>
 </body>
 </html>
