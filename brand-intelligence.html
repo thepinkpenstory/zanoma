@@ -141,6 +141,10 @@
     }
 
   </style>
+<style>
+.dropdown-menu { margin-top: 0 !important; padding-top: 12px !important; }
+.nav-dropdown { padding-bottom: 8px; }
+</style>
 </head>
 <body>
   <div class="bg-grid"></div>
@@ -400,9 +404,36 @@
     document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
       var menu = dd.querySelector('.dropdown-menu');
       if (!menu) return;
+      var hideTimer = null;
       menu.style.display = 'none';
-      dd.addEventListener('mouseenter', function() { menu.style.display = 'flex'; });
-      dd.addEventListener('mouseleave', function() { menu.style.display = 'none'; });
+      // Show on enter
+      dd.addEventListener('mouseenter', function() {
+        if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+        menu.style.display = 'flex';
+      });
+      // Hide with delay so mouse can travel into menu
+      dd.addEventListener('mouseleave', function() {
+        hideTimer = setTimeout(function() { menu.style.display = 'none'; }, 150);
+      });
+      // Keep open when mouse is inside menu
+      menu.addEventListener('mouseenter', function() {
+        if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+      });
+      menu.addEventListener('mouseleave', function() {
+        hideTimer = setTimeout(function() { menu.style.display = 'none'; }, 150);
+      });
+      // Also support click toggle for touch/mobile
+      dd.querySelector('a').addEventListener('click', function(e) {
+        if (menu.style.display === 'flex') {
+          menu.style.display = 'none';
+        }
+      });
+    });
+    // Close on outside click
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-dropdown')) {
+        document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.style.display = 'none'; });
+      }
     });
   });
 })();
