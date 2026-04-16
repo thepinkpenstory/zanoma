@@ -3,605 +3,419 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zanoma — AI That Works for You 24/7</title>
+<title>Zanoma — AI-Powered Growth for SMBs</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="icon" href="logos/zanoma-favicon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#00FF7F;--bg:#0a0a0a;--surface:#111111;--surface2:#1a1a1a;--border:#2a2a2a;--text:#ffffff;--muted:#888888;--red:#FF4444}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;line-height:1.6}
-
-/* ── NAV ── */
-nav{position:sticky;top:0;z-index:100;background:#0a0a0a;border-bottom:1px solid #1a1a1a;padding:0 5%}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 2rem}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px}
-.nav-logo{font-size:1.4rem;font-weight:800;color:#00FF7F;letter-spacing:-0.5px;text-decoration:none}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{color:#ccc;text-decoration:none;font-size:.95rem;font-weight:500;transition:color .2s}
-.nav-links a:hover{color:#fff}
-.btn-nav{background:#00FF7F;color:#0a0a0a;padding:.55rem 1.2rem;border-radius:6px;font-weight:700;font-size:.9rem;text-decoration:none;transition:opacity .2s}
+.nav-logo{font-size:1.4rem;font-weight:900;letter-spacing:0.12em;color:var(--text)}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:0.9rem;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.btn-nav{background:var(--green);color:#000;font-weight:700;font-size:0.85rem;padding:.55rem 1.2rem;border-radius:6px;transition:opacity .2s;white-space:nowrap}
 .btn-nav:hover{opacity:.85}
-.nav-mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
-.nav-mobile-toggle span{display:block;width:24px;height:2px;background:#fff;border-radius:2px}
-@media(max-width:768px){
-  .nav-links,.btn-nav-wrap{display:none}
-  .nav-mobile-toggle{display:flex}
-  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:#0a0a0a;border-bottom:1px solid #1a1a1a;padding:1.5rem 5%;gap:1.2rem}
-}
-
-/* ── HERO ── */
-.hero{background:#0a0a0a;padding:100px 5% 80px}
-.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.hero-tag{display:inline-block;color:#00FF7F;font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:1.2rem;border:1px solid rgba(0,255,127,.3);padding:.3rem .8rem;border-radius:20px}
-.hero h1{font-size:clamp(2.4rem,5vw,3.8rem);font-weight:800;line-height:1.1;margin-bottom:1.2rem}
-.hero p{font-size:1.15rem;color:#bbb;margin-bottom:2rem;max-width:480px}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
-.btn-primary{background:#00FF7F;color:#0a0a0a;padding:.75rem 1.75rem;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}
-.btn-primary:hover{opacity:.85}
-.btn-outline{border:2px solid #555;color:#fff;padding:.7rem 1.6rem;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color .2s,color .2s}
-.btn-outline:hover{border-color:#fff}
-.proof-box{background:#111;border:1px solid rgba(0,255,127,.4);border-radius:12px;padding:1.5rem;box-shadow:0 0 20px rgba(0,255,127,.08)}
-.proof-box p{font-size:1rem;color:#e0e0e0;font-style:italic;line-height:1.6;margin-bottom:.6rem}
-.proof-box cite{font-size:.85rem;color:#00FF7F;font-style:normal;font-weight:600}
-.hero-visual{display:flex;align-items:center;justify-content:center}
-.hero-dashboard{background:#111;border:1px solid #222;border-radius:16px;padding:2rem;width:100%;max-width:380px}
-.dash-header{font-size:.75rem;color:#00FF7F;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:1.2rem}
-.dash-stat{display:flex;justify-content:space-between;align-items:center;padding:.75rem 0;border-bottom:1px solid #1a1a1a}
-.dash-stat:last-child{border-bottom:none}
-.dash-label{font-size:.9rem;color:#888}
-.dash-value{font-size:1.1rem;font-weight:700;color:#00FF7F}
-.dash-badge{background:rgba(0,255,127,.1);color:#00FF7F;font-size:.7rem;font-weight:700;padding:.2rem .5rem;border-radius:4px}
-@media(max-width:768px){
-  .hero-inner{grid-template-columns:1fr}
-  .hero-visual{display:none}
-}
-
-/* ── SECTION: PROBLEM (white) ── */
-.section-problem{background:#fff;padding:90px 5%}
-.section-problem .section-inner{max-width:1200px;margin:0 auto}
-.section-problem h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#0a0a0a;margin-bottom:.75rem}
-.section-problem .sub{font-size:1.1rem;color:#666;margin-bottom:3rem}
+.nav-mobile-toggle{display:none;background:none;border:none;cursor:pointer;color:var(--text);font-size:1.5rem}
+/* BUTTONS */
+.btn-primary{display:inline-block;background:var(--green);color:#000;font-weight:700;font-size:1rem;padding:.8rem 1.8rem;border-radius:8px;transition:opacity .2s,transform .1s}
+.btn-primary:hover{opacity:.88;transform:translateY(-1px)}
+.btn-outline{display:inline-block;border:2px solid var(--border);color:var(--text);font-weight:600;font-size:1rem;padding:.78rem 1.8rem;border-radius:8px;transition:border-color .2s,transform .1s}
+.btn-outline:hover{border-color:var(--muted);transform:translateY(-1px)}
+/* SECTIONS */
+section{padding:100px 2rem}
+.container{max-width:1200px;margin:0 auto}
+/* HERO */
+.hero{padding:160px 2rem 100px;background:var(--bg)}
+.hero-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.hero-pill{display:inline-block;background:rgba(0,255,127,.12);color:var(--green);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.4rem 1rem;border-radius:100px;border:1px solid rgba(0,255,127,.25);margin-bottom:1.5rem}
+.hero h1{font-size:clamp(2.8rem,5vw,5rem);font-weight:900;line-height:1.08;letter-spacing:-.03em;margin-bottom:1.5rem}
+.hero h1 .green{color:var(--green)}
+.hero-sub{font-size:1.15rem;color:var(--muted);max-width:480px;margin-bottom:2.2rem;line-height:1.7}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.hero-quote{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.5rem;max-width:480px}
+.hero-quote p{font-size:.9rem;color:var(--muted);font-style:italic;margin-bottom:.5rem}
+.hero-quote cite{font-size:.8rem;color:var(--green);font-weight:600;font-style:normal}
+/* LIVE ACTIVITY CARD */
+.live-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative;overflow:hidden}
+.live-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green),transparent)}
+.live-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.8rem}
+.live-card-title{font-size:1rem;font-weight:700;letter-spacing:.05em}
+.live-badge{background:rgba(0,255,127,.15);color:var(--green);font-size:.7rem;font-weight:700;padding:.3rem .7rem;border-radius:100px;border:1px solid rgba(0,255,127,.3);display:flex;align-items:center;gap:.4rem}
+.live-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.live-stat{display:flex;justify-content:space-between;align-items:center;padding:.9rem 0;border-bottom:1px solid var(--border)}
+.live-stat:last-child{border-bottom:none}
+.live-stat-label{font-size:.9rem;color:var(--muted)}
+.live-stat-value{font-size:1.3rem;font-weight:800;color:var(--green)}
+.live-stat-value.white{color:var(--text)}
+/* CREDIBILITY */
+.credibility{background:#ffffff;color:#000}
+.credibility .eyebrow{font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#00aa55;margin-bottom:1rem}
+.credibility h2{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;letter-spacing:-.03em;color:#0a0a0a;max-width:600px;margin-bottom:3rem}
+.logo-wall{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;align-items:center;margin-bottom:2.5rem}
+.logo-wall span{font-size:clamp(1rem,2vw,1.4rem);font-weight:800;letter-spacing:.06em;color:#cccccc;text-transform:uppercase}
+.credibility-tagline{font-size:1.1rem;color:#555;font-weight:500}
+/* PROBLEM */
+.problem{background:var(--bg)}
+.section-eyebrow{font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
+.problem h2{font-size:clamp(2rem,3.5vw,3rem);font-weight:900;letter-spacing:-.03em;margin-bottom:3.5rem;max-width:600px}
 .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.stat-card{background:#f9f9f9;border:1px solid #e8e8e8;border-radius:12px;padding:1.75rem;text-align:center}
-.stat-number{font-size:2.8rem;font-weight:800;color:#e53e3e;line-height:1;margin-bottom:.5rem}
-.stat-desc{font-size:.95rem;color:#444;line-height:1.5}
-@media(max-width:768px){.stats-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.stats-grid{grid-template-columns:1fr}}
-
-/* ── SECTION: HOW IT WORKS (dark) ── */
-.section-how{background:#0a0a0a;padding:90px 5%}
-.section-how .section-inner{max-width:1200px;margin:0 auto;text-align:center}
-.section-how h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#fff;margin-bottom:.75rem}
-.section-how .sub{font-size:1.1rem;color:#888;margin-bottom:3rem}
-.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;text-align:left}
-.step-card{background:#111;border:1px solid #222;border-radius:14px;padding:2rem;position:relative}
-.step-num{font-size:2.5rem;font-weight:800;color:rgba(0,255,127,.15);line-height:1;margin-bottom:.75rem}
-.step-icon{font-size:1.8rem;margin-bottom:.75rem}
-.step-card h3{font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:.6rem}
-.step-card p{font-size:.95rem;color:#888;line-height:1.6}
-.step-connector{display:none}
-@media(max-width:768px){.steps-grid{grid-template-columns:1fr}}
-
-/* ── SECTION: SERVICES (white) ── */
-.section-services{background:#fff;padding:90px 5%}
-.section-services .section-inner{max-width:1200px;margin:0 auto}
-.section-services h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#0a0a0a;margin-bottom:.75rem}
-.section-services .sub{font-size:1.1rem;color:#666;margin-bottom:3rem}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.service-card{background:#fff;border:2px solid #eee;border-radius:14px;padding:2rem;transition:border-color .2s,box-shadow .2s}
-.service-card:hover{border-color:#00FF7F;box-shadow:0 4px 24px rgba(0,255,127,.1)}
-.service-icon{font-size:2rem;margin-bottom:1rem}
-.service-card h3{font-size:1.1rem;font-weight:700;color:#0a0a0a;margin-bottom:.6rem}
-.service-card p{font-size:.9rem;color:#555;line-height:1.6;margin-bottom:1rem}
-.service-tag{display:inline-block;background:#f0fff8;color:#00a854;font-size:.75rem;font-weight:700;padding:.25rem .65rem;border-radius:20px;border:1px solid rgba(0,168,84,.2)}
-@media(max-width:768px){.services-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.services-grid{grid-template-columns:1fr}}
-
-/* ── SECTION: LOGOS (dark) ── */
-.section-logos{background:#0a0a0a;padding:70px 5%;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a}
-.section-logos .section-inner{max-width:1200px;margin:0 auto;text-align:center}
-.section-logos p{font-size:.85rem;color:#555;text-transform:uppercase;letter-spacing:2px;font-weight:600;margin-bottom:2.5rem}
-.logos-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:2rem 3rem;margin-bottom:1.5rem}
-.logos-row img{height:32px;width:auto;filter:grayscale(100%) brightness(0.5);opacity:.6;transition:opacity .2s}
-.logos-row img:hover{opacity:1}
-
-/* ── SECTION: PRICING (white) ── */
-.section-pricing{background:#fff;padding:90px 5%}
-.section-pricing .section-inner{max-width:1100px;margin:0 auto;text-align:center}
-.section-pricing h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#0a0a0a;margin-bottom:.75rem}
-.section-pricing .sub{font-size:1.1rem;color:#666;margin-bottom:3rem}
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:start}
-.pricing-card{border-radius:16px;padding:2.25rem;text-align:left;position:relative}
-.pricing-card.light{background:#f9f9f9;border:2px solid #e8e8e8}
-.pricing-card.featured{background:#0a0a0a;border:2px solid #00FF7F;box-shadow:0 0 30px rgba(0,255,127,.15)}
-.pricing-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#00FF7F;color:#0a0a0a;font-size:.7rem;font-weight:800;padding:.3rem .9rem;border-radius:20px;text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
-.pricing-tier{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:.75rem}
-.pricing-card.light .pricing-tier{color:#888}
-.pricing-card.featured .pricing-tier{color:#00FF7F}
-.pricing-price{font-size:2.5rem;font-weight:800;line-height:1;margin-bottom:.25rem}
-.pricing-card.light .pricing-price{color:#0a0a0a}
-.pricing-card.featured .pricing-price{color:#fff}
-.pricing-period{font-size:.9rem;color:#888;margin-bottom:1.5rem}
-.pricing-card.featured .pricing-period{color:#aaa}
-.pricing-divider{height:1px;margin-bottom:1.5rem}
-.pricing-card.light .pricing-divider{background:#e8e8e8}
-.pricing-card.featured .pricing-divider{background:#222}
-.pricing-features{list-style:none;margin-bottom:2rem}
-.pricing-features li{font-size:.95rem;padding:.5rem 0;display:flex;gap:.6rem;align-items:flex-start}
-.pricing-card.light .pricing-features li{color:#444}
-.pricing-card.featured .pricing-features li{color:#ccc}
-.pricing-features li::before{content:"✓";font-weight:700;flex-shrink:0;margin-top:.05rem}
-.pricing-card.light .pricing-features li::before{color:#00a854}
-.pricing-card.featured .pricing-features li::before{color:#00FF7F}
-.btn-pricing-primary{display:block;background:#00FF7F;color:#0a0a0a;text-align:center;padding:.8rem;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}
-.btn-pricing-primary:hover{opacity:.85}
-.btn-pricing-outline{display:block;border:2px solid #ccc;color:#0a0a0a;text-align:center;padding:.75rem;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color .2s}
-.btn-pricing-outline:hover{border-color:#0a0a0a}
-.btn-pricing-dark-outline{display:block;border:2px solid #333;color:#fff;text-align:center;padding:.75rem;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color .2s}
-.btn-pricing-dark-outline:hover{border-color:#fff}
-@media(max-width:768px){.pricing-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto}}
-
-/* ── SECTION: TESTIMONIALS (dark) ── */
-.section-testi{background:#0a0a0a;padding:90px 5%}
-.section-testi .section-inner{max-width:1200px;margin:0 auto;text-align:center}
-.section-testi h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#fff;margin-bottom:.75rem}
-.section-testi .sub{font-size:1.1rem;color:#888;margin-bottom:3rem}
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;text-align:left}
-.testi-card{background:#111;border:1px solid #222;border-radius:14px;padding:1.75rem}
-.testi-stars{color:#00FF7F;font-size:1rem;letter-spacing:2px;margin-bottom:.75rem}
-.testi-card p{font-size:.95rem;color:#ccc;line-height:1.7;font-style:italic;margin-bottom:1rem}
-.testi-author{font-size:.85rem;font-weight:700;color:#fff}
-.testi-biz{font-size:.8rem;color:#555}
-@media(max-width:768px){.testi-grid{grid-template-columns:1fr}}
-
-/* ── SECTION: CTA (green) ── */
-.section-cta{background:#00FF7F;padding:90px 5%}
-.section-cta .section-inner{max-width:800px;margin:0 auto;text-align:center}
-.section-cta h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#0a0a0a;margin-bottom:1rem}
-.section-cta p{font-size:1.15rem;color:rgba(10,10,10,.7);margin-bottom:2.5rem;max-width:560px;margin-left:auto;margin-right:auto}
-.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.btn-cta-dark{background:#0a0a0a;color:#fff;padding:.85rem 2rem;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}
-.btn-cta-dark:hover{opacity:.85}
-.btn-cta-outline{border:2px solid rgba(10,10,10,.3);color:#0a0a0a;padding:.8rem 2rem;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color .2s}
-.btn-cta-outline:hover{border-color:#0a0a0a}
-
-/* ── FOOTER ── */
-footer{background:#0a0a0a;border-top:1px solid #1a1a1a;padding:60px 5% 30px}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.8rem}
+.stat-number{font-size:2.4rem;font-weight:900;margin-bottom:.5rem}
+.stat-number.red{color:var(--red)}
+.stat-number.green{color:var(--green)}
+.stat-desc{font-size:.9rem;color:var(--muted);line-height:1.5}
+/* PRODUCTS */
+.products{background:var(--bg)}
+.products-header{text-align:center;margin-bottom:3.5rem}
+.products-header h2{font-size:clamp(2rem,3.5vw,3rem);font-weight:900;letter-spacing:-.03em;margin-bottom:.8rem}
+.products-header p{color:var(--muted);font-size:1.1rem}
+.products-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.product-card{background:var(--surface);border-radius:16px;padding:2.5rem;display:flex;flex-direction:column}
+.product-card.featured{border:2px solid var(--green);box-shadow:0 0 40px rgba(0,255,127,.12)}
+.product-card.standard{border:1px solid var(--border)}
+.product-icon{font-size:2rem;margin-bottom:1rem}
+.product-card h3{font-size:1.6rem;font-weight:800;margin-bottom:.6rem}
+.product-tagline{font-size:1rem;color:var(--muted);margin-bottom:1.8rem;line-height:1.5}
+.product-features{list-style:none;margin-bottom:2rem;display:flex;flex-direction:column;gap:.8rem}
+.product-features li{display:flex;align-items:flex-start;gap:.7rem;font-size:.95rem;color:var(--muted)}
+.product-features li::before{content:'✓';color:var(--green);font-weight:800;flex-shrink:0;margin-top:.05rem}
+.product-price{font-size:2rem;font-weight:900;margin-bottom:1.5rem;margin-top:auto}
+.product-price span{font-size:1rem;font-weight:500;color:var(--muted)}
+.flywheel{text-align:center;margin-top:2.5rem;font-size:1.05rem;color:var(--muted);padding:1.5rem;border:1px solid var(--border);border-radius:12px;background:var(--surface)}
+.flywheel strong{color:var(--text)}
+/* CASE STUDY */
+.casestudy{background:#ffffff;color:#000}
+.casestudy .eyebrow{font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#00aa55;margin-bottom:1rem}
+.casestudy h2{font-size:clamp(2rem,3.5vw,3rem);font-weight:900;letter-spacing:-.03em;color:#0a0a0a;margin-bottom:3rem}
+.casestudy-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.casestudy-text p{font-size:1.05rem;color:#444;line-height:1.75;margin-bottom:1.5rem}
+.casestudy-quote{background:#f5f5f5;border-left:4px solid #00aa55;padding:1.5rem;border-radius:0 12px 12px 0;margin-top:2rem}
+.casestudy-quote p{font-style:italic;color:#333;font-size:1rem;margin-bottom:.8rem}
+.casestudy-quote cite{font-size:.85rem;color:#00aa55;font-weight:700;font-style:normal}
+.metrics-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.metric-card{background:#0a0a0a;border-radius:12px;padding:1.5rem;text-align:center}
+.metric-value{font-size:2.2rem;font-weight:900;color:#00FF7F;margin-bottom:.3rem}
+.metric-label{font-size:.85rem;color:#888;font-weight:500}
+/* PRICING */
+.pricing{background:var(--bg)}
+.pricing-header{text-align:center;margin-bottom:3.5rem}
+.pricing-header h2{font-size:clamp(2rem,3.5vw,3rem);font-weight:900;letter-spacing:-.03em;margin-bottom:.8rem}
+.pricing-header p{color:var(--muted);font-size:1.1rem}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:900px;margin:0 auto}
+.pricing-card{background:var(--surface);border-radius:16px;padding:2.5rem}
+.pricing-card.standard{border:1px solid var(--border)}
+.pricing-card.popular{border:2px solid var(--green);position:relative}
+.popular-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--green);color:#000;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:.35rem 1rem;border-radius:100px}
+.pricing-card h3{font-size:1.4rem;font-weight:800;margin-bottom:.5rem}
+.pricing-card .price{font-size:2.8rem;font-weight:900;margin:.8rem 0;color:var(--green)}
+.pricing-card .price span{font-size:1rem;font-weight:400;color:var(--muted)}
+.pricing-card p{color:var(--muted);font-size:.95rem;margin-bottom:1.5rem}
+.pricing-features{list-style:none;display:flex;flex-direction:column;gap:.7rem;margin-bottom:2rem}
+.pricing-features li{display:flex;gap:.6rem;font-size:.9rem;color:var(--muted)}
+.pricing-features li::before{content:'✓';color:var(--green);font-weight:800;flex-shrink:0}
+.bundle-note{text-align:center;margin-top:2rem;color:var(--muted);font-size:1rem}
+.bundle-note a{color:var(--green);font-weight:600}
+/* CTA BAND */
+.ctaband{background:linear-gradient(135deg,#0d1f0d 0%,var(--bg) 50%,#0d1f0d 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;padding:120px 2rem}
+.ctaband h2{font-size:clamp(2.2rem,4vw,3.5rem);font-weight:900;letter-spacing:-.04em;max-width:800px;margin:0 auto 2rem;line-height:1.1}
+.ctaband .fine-print{margin-top:1.2rem;font-size:.85rem;color:var(--muted)}
+/* FOOTER */
+footer{background:#050505;border-top:1px solid var(--border);padding:60px 2rem 40px}
 .footer-inner{max-width:1200px;margin:0 auto}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
-.footer-brand .nav-logo{display:inline-block;margin-bottom:.75rem}
-.footer-brand p{font-size:.9rem;color:#555;line-height:1.7;max-width:280px}
-.footer-col h4{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#555;margin-bottom:1rem}
-.footer-col ul{list-style:none}
-.footer-col ul li{margin-bottom:.6rem}
-.footer-col ul li a{color:#888;text-decoration:none;font-size:.9rem;transition:color .2s}
-.footer-col ul li a:hover{color:#fff}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #1a1a1a;padding-top:1.5rem;flex-wrap:wrap;gap:1rem}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-brand p{color:var(--muted);font-size:.9rem;margin-top:.6rem;max-width:220px}
+.footer-col h4{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.2rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.footer-col ul li a{font-size:.9rem;color:#666;transition:color .2s}
+.footer-col ul li a:hover{color:var(--text)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
 .footer-bottom p{font-size:.8rem;color:#444}
-.footer-bottom a{color:#555;text-decoration:none;font-size:.8rem;transition:color .2s}
-.footer-bottom a:hover{color:#fff}
-.footer-contact{font-size:.85rem;color:#666}
-.footer-contact a{color:#00FF7F;text-decoration:none}
-@media(max-width:768px){
-  .footer-top{grid-template-columns:1fr 1fr}
-  .footer-brand{grid-column:1/-1}
+.footer-bottom a{color:#666;transition:color .2s}
+.footer-bottom a:hover{color:var(--text)}
+/* RESPONSIVE */
+@media(max-width:900px){
+.hero-grid{grid-template-columns:1fr;gap:3rem}
+.live-card{max-width:500px}
+.stats-grid{grid-template-columns:1fr 1fr}
+.products-grid{grid-template-columns:1fr}
+.casestudy-grid{grid-template-columns:1fr}
+.pricing-grid{grid-template-columns:1fr}
+.footer-top{grid-template-columns:1fr 1fr}
 }
-@media(max-width:480px){
-  .footer-top{grid-template-columns:1fr}
+@media(max-width:700px){
+.nav-links{display:none}
+.nav-mobile-toggle{display:block}
+.nav-links.open{display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(10,10,10,.98);padding:1.5rem 2rem;gap:1.5rem;border-bottom:1px solid var(--border)}
+.stats-grid{grid-template-columns:1fr}
+.metrics-grid{grid-template-columns:1fr 1fr}
+.footer-top{grid-template-columns:1fr}
+.footer-bottom{flex-direction:column;text-align:center}
 }
-
-    
-
-  
-    /* Dropdown */
-    .nav-dropdown { position: relative; list-style: none; }
-    .nav-dropdown > a { color: #ccc; text-decoration: none; font-size: .95rem; font-weight: 500; display: flex; align-items: center; gap: 4px; }
-    .nav-dropdown > a::after { content: '▾'; font-size: 10px; opacity: 0.6; }
-    .nav-dropdown:hover > a { color: #fff; }
-    .dropdown-menu {
-      display: none; position: absolute; top: calc(100% + 8px); left: 0;
-      background: #111; border: 1px solid #2a2a2a;
-      border-radius: 8px; padding: 8px; min-width: 210px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.8); z-index: 300;
-      list-style: none;
-    }
-    .nav-dropdown:hover .dropdown-menu { display: flex; flex-direction: column; gap: 2px; }
-    .dropdown-menu a {
-      display: block; padding: 10px 14px; border-radius: 6px;
-      font-size: 14px; font-weight: 500; color: #aaa; transition: all 0.15s; white-space: nowrap;
-    }
-    .dropdown-menu a:hover { background: rgba(0,255,127,0.08); color: #00FF7F; }
-    .dropdown-label {
-      font-size: 10px; font-weight: 700; color: #555;
-      text-transform: uppercase; letter-spacing: 1.5px; padding: 4px 14px 6px; display: block;
-    }
-  </style>
-<style>
-.dropdown-menu { margin-top: 0 !important; padding-top: 12px !important; }
-.nav-dropdown { padding-bottom: 8px; }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav id="top">
+<nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">ZANOMA</a>
-    <button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li class="nav-dropdown">
-        <a href="services.html">Services</a>
-        <div class="dropdown-menu">
-          <span class="dropdown-label">Our Services</span>
-          <a href="services.html">All Services</a>
-          <a href="sales.html">AI Sales Automation</a>
-          <a href="brand-intelligence.html">Brand Intelligence</a>
-        </div>
-      </li>
-      <li><a href="case-studies.html">Case Studies</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <span class="btn-nav-wrap"><a href="contact.html" class="btn-nav">Book a Free Call</a></span>
+    <div class="nav-links" id="navLinks">
+      <a href="brand-intelligence.html">Brand Intelligence</a>
+      <a href="sales.html">Lead Generation</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn-nav">Book a Free Call</a>
+    </div>
+    <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">☰</button>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-inner">
-    <div class="hero-content">
-      <span class="hero-tag">AI THAT WORKS FOR YOU 24/7</span>
-      <h1><span style="color:#fff">Never Miss</span> <span style="color:#00FF7F">Another Lead.</span></h1>
-      <p>You're running your business. Let AI answer every call, follow up every lead, and fill your calendar — automatically.</p>
-      <div class="hero-btns">
-        <a href="#how-it-works" class="btn-primary">See How It Works →</a>
-        <a href="#contact" class="btn-outline">Book a Free Call</a>
+  <div class="hero-grid">
+    <div class="hero-left">
+      <span class="hero-pill">AI-Powered Growth for SMBs</span>
+      <h1>Your Competitors<br>Are Winning.<br><span class="green">We're Going to<br>Fix That.</span></h1>
+      <p class="hero-sub">Fortune 500 competitive intelligence and automated lead generation — finally accessible at SMB prices. Know everything. Act faster. Win more.</p>
+      <div class="hero-ctas">
+        <a href="brand-intelligence.html" class="btn-primary">Get Brand Intelligence →</a>
+        <a href="sales.html" class="btn-outline">Automate Lead Generation →</a>
       </div>
-      <div class="proof-box">
-        <p>"50 leads in our first week — vs. 40 leads in the prior 4 months."</p>
-        <cite>— Athlete AI client</cite>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="hero-dashboard">
-        <div class="dash-header">⚡ Live AI Activity</div>
-        <div class="dash-stat">
-          <span class="dash-label">Calls answered today</span>
-          <span class="dash-value">47</span>
-        </div>
-        <div class="dash-stat">
-          <span class="dash-label">Leads followed up</span>
-          <span class="dash-value">23</span>
-        </div>
-        <div class="dash-stat">
-          <span class="dash-label">Appointments booked</span>
-          <span class="dash-value">11</span>
-        </div>
-        <div class="dash-stat">
-          <span class="dash-label">Response time</span>
-          <span class="dash-value">&lt; 60 sec</span>
-        </div>
-        <div class="dash-stat" style="border-bottom:none">
-          <span class="dash-label">Status</span>
-          <span class="dash-badge">LIVE 24/7</span>
-        </div>
+      <div class="hero-quote">
+        <p>"We basically had a full-time SDR working around the clock from day one."</p>
+        <cite>— Jordan M., Head of Growth at Athlete AI</cite>
       </div>
     </div>
+    <div class="hero-right">
+      <div class="live-card">
+        <div class="live-card-header">
+          <span class="live-card-title">⚡ LIVE AI ACTIVITY</span>
+          <span class="live-badge"><span class="live-dot"></span>LIVE 24/7</span>
+        </div>
+        <div class="live-stat">
+          <span class="live-stat-label">Calls answered</span>
+          <span class="live-stat-value">47</span>
+        </div>
+        <div class="live-stat">
+          <span class="live-stat-label">Leads followed up</span>
+          <span class="live-stat-value">23</span>
+        </div>
+        <div class="live-stat">
+          <span class="live-stat-label">Appointments booked</span>
+          <span class="live-stat-value">11</span>
+        </div>
+        <div class="live-stat">
+          <span class="live-stat-label">Response time</span>
+          <span class="live-stat-value white">&lt;60 sec</span>
+        </div>
+        <div class="live-stat">
+          <span class="live-stat-label">Status</span>
+          <span class="live-badge"><span class="live-dot"></span>LIVE 24/7</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDIBILITY -->
+<section class="credibility">
+  <div class="container">
+    <p class="eyebrow">Trusted Experience</p>
+    <h2>We Built Programs for the World's Biggest Brands.</h2>
+    <div class="logo-wall">
+      <span>NBC Universal</span>
+      <span>·</span>
+      <span>Keurig</span>
+      <span>·</span>
+      <span>Carhartt</span>
+      <span>·</span>
+      <span>Kellogg's</span>
+      <span>·</span>
+      <span>Duracell</span>
+      <span>·</span>
+      <span>Philips</span>
+      <span>·</span>
+      <span>Paul Mitchell</span>
+      <span>·</span>
+      <span>Hydro Flask</span>
+      <span>·</span>
+      <span>Casper</span>
+      <span>·</span>
+      <span>Blackstone</span>
+      <span>·</span>
+      <span>Dr Teal's</span>
+    </div>
+    <p class="credibility-tagline">Enterprise-grade intelligence. SMB-accessible price.</p>
   </div>
 </section>
 
 <!-- PROBLEM -->
-<section class="section-problem">
-  <div class="section-inner">
-    <h2>You're losing customers you don't even know about.</h2>
-    <p class="sub">Every missed call is a missed sale. Here's what it's actually costing you.</p>
+<section class="problem">
+  <div class="container">
+    <p class="section-eyebrow">The Problem</p>
+    <h2>Right Now, You're Flying Blind.</h2>
     <div class="stats-grid">
       <div class="stat-card">
-        <div class="stat-number">62%</div>
-        <div class="stat-desc">of callers won't leave a voicemail. They just call your competitor.</div>
+        <div class="stat-number red">62%</div>
+        <div class="stat-desc">of SMBs have no idea what their top competitor launched last month — and found out too late.</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">78%</div>
-        <div class="stat-desc">of customers buy from the first business that responds. Speed wins.</div>
+        <div class="stat-number red">78%</div>
+        <div class="stat-desc">of leads go cold because follow-up happens more than 24 hours after the first touch.</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">$25K+</div>
-        <div class="stat-desc">is the average annual revenue lost by a small business missing just 5 calls a week.</div>
+        <div class="stat-number green">$25K+</div>
+        <div class="stat-desc">The average annual cost of a full-time SDR — before benefits, management, or tools.</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">5 min</div>
-        <div class="stat-desc">is all it takes for a lead to go cold. Most businesses respond in 47 hours.</div>
+        <div class="stat-number red">5 min</div>
+        <div class="stat-desc">The response window that converts leads at 21× the rate of a 30-minute delay. Most SMBs miss it every time.</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">3 in 4</div>
-        <div class="stat-desc">customers say they won't call back after being sent to voicemail the first time.</div>
+        <div class="stat-number red">3 in 4</div>
+        <div class="stat-desc">SMBs are competing against companies running paid brand monitoring they'll never know about.</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">24/7</div>
-        <div class="stat-desc">is when your customers want help. Most businesses are only open 9 to 5.</div>
+        <div class="stat-number red">47 hrs</div>
+        <div class="stat-desc">Average weekly time lost by founders doing outreach manually instead of closing deals.</div>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- HOW IT WORKS -->
-<section class="section-how" id="how-it-works">
-  <div class="section-inner">
-    <h2>Simple setup. <span style="color:#00FF7F">Real results.</span></h2>
-    <p class="sub">You don't need to be technical. We handle everything. Here's how it works.</p>
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-num">01</div>
-        <div class="step-icon">📞</div>
-        <h3>AI Answers Every Call</h3>
-        <p>Your AI receptionist picks up every call, 24 hours a day. It answers questions, captures lead info, and books appointments — even when you're on a job site or with a client.</p>
+<!-- PRODUCTS -->
+<section class="products">
+  <div class="container">
+    <div class="products-header">
+      <h2>Two Products. One Unfair Advantage.</h2>
+      <p>Choose one, or stack both for the full Zanoma flywheel.</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card featured">
+        <div class="product-icon">🔍</div>
+        <h3>Brand Intelligence</h3>
+        <p class="product-tagline">Know what your competitors are doing before your next sales call.</p>
+        <ul class="product-features">
+          <li>Weekly competitive intelligence reports on your top rivals</li>
+          <li>Ad spend tracking, messaging shifts &amp; campaign launches</li>
+          <li>SEO movement, keyword wins, and content strategy analysis</li>
+          <li>Executive briefing deck delivered every Monday morning</li>
+        </ul>
+        <div class="product-price">$2,000<span>/mo</span></div>
+        <a href="brand-intelligence.html" class="btn-primary">Start Watching →</a>
       </div>
-      <div class="step-card">
-        <div class="step-num">02</div>
-        <div class="step-icon">🔁</div>
-        <h3>Follows Up Automatically</h3>
-        <p>Every new lead gets a text and email within 60 seconds. The AI follows up until they respond — so no lead falls through the cracks, and you never have to chase anyone.</p>
+      <div class="product-card standard">
+        <div class="product-icon">⚡</div>
+        <h3>Lead Generation</h3>
+        <p class="product-tagline">AI that books calls while you sleep.</p>
+        <ul class="product-features">
+          <li>AI voice agent handles inbound calls 24/7, qualifies leads instantly</li>
+          <li>Automated SMS &amp; email follow-up sequences — zero manual work</li>
+          <li>CRM sync and calendar booking without human intervention</li>
+          <li>Live dashboard: calls answered, appointments booked, pipeline value</li>
+        </ul>
+        <div class="product-price">$497<span>/mo</span></div>
+        <a href="sales.html" class="btn-outline">Start Booking →</a>
       </div>
-      <div class="step-card">
-        <div class="step-num">03</div>
-        <div class="step-icon">📅</div>
-        <h3>Fills Your Calendar</h3>
-        <p>Appointments land directly on your calendar. Reminders go out automatically. No back-and-forth scheduling. No no-shows. Just paying customers showing up when they said they would.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">04</div>
-        <div class="step-icon">⭐</div>
-        <h3>Builds Your Reputation</h3>
-        <p>After every visit, your AI sends a review request. More 5-star reviews. Higher rankings on Google. New customers finding you — without you doing a thing.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">05</div>
-        <div class="step-icon">💬</div>
-        <h3>Handles Your DMs Too</h3>
-        <p>Facebook, Instagram, your website chat — your AI manages all of it. Questions answered instantly. Every lead captured. Nothing lost to a slow inbox.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">06</div>
-        <div class="step-icon">📊</div>
-        <h3>You See Everything</h3>
-        <p>One simple dashboard shows you every call, every lead, every booking. You're always in the loop — without spending hours managing it yourself.</p>
-      </div>
+    </div>
+    <div class="flywheel">
+      <strong>Use both together</strong> and the intelligence feeds the outreach. That's the Zanoma flywheel — know what to say, then say it automatically, at scale, 24/7.
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="section-services" id="services">
-  <div class="section-inner">
-    <h2>Everything you need. <span style="color:#0a0a0a">Nothing you don't.</span></h2>
-    <p class="sub">Pick the services that match where you are right now. Add more as you grow.</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">📞</div>
-        <h3>AI Receptionist</h3>
-        <p>A 24/7 voice assistant that answers calls, qualifies leads, books appointments, and handles FAQs — in your voice, for your business.</p>
-        <span class="service-tag">Most Popular</span>
+<!-- CASE STUDY -->
+<section class="casestudy">
+  <div class="container">
+    <p class="eyebrow">Case Study — Athlete AI</p>
+    <h2>50 Booked Calls. First Week.<br>Zero Manual Outreach.</h2>
+    <div class="casestudy-grid">
+      <div class="casestudy-text">
+        <p>Athlete AI was growing fast — but their sales team was drowning. Every inbound lead required a manual call, a follow-up text, and a scheduling dance that took days. Qualified prospects were going cold before anyone could close them.</p>
+        <p>We deployed Zanoma's Lead Generation system in 48 hours. The AI voice agent began answering every inbound call immediately, qualifying prospects against their ICP, and booking discovery calls directly onto the sales team's calendar — around the clock, without a single human touchpoint in the process.</p>
+        <p>In the first seven days: 50 booked calls. A 70% show rate. And a pipeline that had tripled in size before the end of week two.</p>
+        <div class="casestudy-quote">
+          <p>"We basically had a full-time SDR working around the clock from day one. The pipeline filled up faster than we could work it."</p>
+          <cite>— Jordan M., Head of Growth at Athlete AI</cite>
+        </div>
       </div>
-      <div class="service-card">
-        <div class="service-icon">💬</div>
-        <h3>AI Follow-Up Agent</h3>
-        <p>Texts and emails every new lead within 60 seconds. Keeps following up until they respond. Stops when they book. No manual work required.</p>
-        <span class="service-tag">High ROI</span>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-value">50</div>
+          <div class="metric-label">Calls Booked<br>Week 1</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">70%</div>
+          <div class="metric-label">Show Rate</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">48hrs</div>
+          <div class="metric-label">Deploy Time</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">3×</div>
+          <div class="metric-label">Pipeline Growth</div>
+        </div>
       </div>
-      <div class="service-card">
-        <div class="service-icon">📅</div>
-        <h3>Automated Booking</h3>
-        <p>Connects to your calendar and lets leads book themselves. Sends reminders. Reduces no-shows. Works around the clock, even on weekends.</p>
-        <span class="service-tag">Time Saver</span>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">⭐</div>
-        <h3>Review Generation</h3>
-        <p>Automatically asks happy customers for a Google review right after their visit. More 5-star reviews means more people finding you first.</p>
-        <span class="service-tag">Growth</span>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🎯</div>
-        <h3>Lead Reactivation</h3>
-        <p>Got a list of old leads who never booked? We run a targeted campaign to bring them back. Most businesses see new bookings within 48 hours.</p>
-        <span class="service-tag">Quick Win</span>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🤖</div>
-        <h3>Custom AI Sales Agent</h3>
-        <p>A fully custom AI agent trained on your business, your offers, and your sales process. Handles objections, qualifies prospects, closes deals.</p>
-        <span class="service-tag">Enterprise</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- LOGOS -->
-<section class="section-logos">
-  <div class="section-inner">
-    <p>Trusted by brands you recognize</p>
-    <div class="logos-row">
-      <img src="logos/nbc-universal.svg" alt="NBC Universal">
-      <img src="logos/keurig.svg" alt="Keurig">
-      <img src="logos/carhartt.png" alt="Carhartt">
-      <img src="logos/kelloggs.svg" alt="Kellogg's">
-      <img src="logos/guess.svg" alt="Guess">
-      <img src="logos/duracell.svg" alt="Duracell">
-      <img src="logos/philips.svg" alt="Philips">
-      <img src="logos/paul-mitchell.png" alt="Paul Mitchell">
-    </div>
-    <div class="logos-row">
-      <img src="logos/hydro-flask.svg" alt="Hydro Flask">
-      <img src="logos/casper.png" alt="Casper">
-      <img src="logos/blackstone.svg" alt="Blackstone">
-      <img src="logos/dr-teals.png" alt="Dr Teal's">
-      <img src="logos/havaianas.svg" alt="Havaianas">
-      <img src="logos/valspar.svg" alt="Valspar">
-      <img src="logos/velcro.svg" alt="Velcro">
-      <img src="logos/intelligentsia.svg" alt="Intelligentsia">
     </div>
   </div>
 </section>
 
 <!-- PRICING -->
-<section class="section-pricing" id="pricing">
-  <div class="section-inner">
-    <h2>Straightforward pricing.</h2>
-    <p class="sub">No long-term contracts. No hidden fees. Cancel anytime.</p>
+<section class="pricing">
+  <div class="container">
+    <div class="pricing-header">
+      <h2>Simple, Transparent Pricing.</h2>
+      <p>No setup fees. No long-term contracts. Cancel anytime.</p>
+    </div>
     <div class="pricing-grid">
-      <div class="pricing-card light">
-        <div class="pricing-tier">Starter</div>
-        <div class="pricing-price">$2,500</div>
-        <div class="pricing-period">per month</div>
-        <div class="pricing-divider"></div>
+      <div class="pricing-card standard">
+        <h3>Brand Intelligence</h3>
+        <div class="price">$2,000<span>/mo</span></div>
+        <p>Full competitive intelligence on your top rivals — delivered weekly.</p>
         <ul class="pricing-features">
-          <li>AI Receptionist (voice)</li>
-          <li>Automated text &amp; email follow-up</li>
-          <li>Calendar booking integration</li>
-          <li>Up to 500 leads/month</li>
-          <li>Basic reporting dashboard</li>
-          <li>Email support</li>
+          <li>Up to 5 competitors monitored</li>
+          <li>Weekly executive briefing deck</li>
+          <li>Ad, SEO &amp; content tracking</li>
+          <li>Slack or email delivery</li>
+          <li>Monthly strategy call included</li>
         </ul>
-        <a href="#contact" class="btn-pricing-outline">Get Started</a>
+        <a href="brand-intelligence.html" class="btn-outline" style="text-align:center">Learn More →</a>
       </div>
-      <div class="pricing-card featured">
-        <div class="pricing-badge">Most Popular</div>
-        <div class="pricing-tier">Growth</div>
-        <div class="pricing-price" style="color:#fff">$4,500</div>
-        <div class="pricing-period">per month</div>
-        <div class="pricing-divider"></div>
+      <div class="pricing-card popular">
+        <span class="popular-badge">Most Popular</span>
+        <h3>Lead Generation</h3>
+        <div class="price">$497<span>/mo</span></div>
+        <p>AI that qualifies leads and books calls — 24 hours a day, 7 days a week.</p>
         <ul class="pricing-features">
-          <li>Everything in Starter</li>
-          <li>AI Follow-Up Agent (multi-channel)</li>
-          <li>Review generation campaigns</li>
-          <li>Lead reactivation (quarterly)</li>
-          <li>Unlimited leads</li>
-          <li>Live dashboard + weekly reports</li>
-          <li>Priority phone &amp; email support</li>
+          <li>AI voice agent (inbound + outbound)</li>
+          <li>SMS &amp; email follow-up sequences</li>
+          <li>CRM &amp; calendar integration</li>
+          <li>Live performance dashboard</li>
+          <li>Setup in 48 hours</li>
         </ul>
-        <a href="#contact" class="btn-pricing-primary">Get Started</a>
-      </div>
-      <div class="pricing-card light">
-        <div class="pricing-tier">Enterprise</div>
-        <div class="pricing-price">Custom</div>
-        <div class="pricing-period">let's talk</div>
-        <div class="pricing-divider"></div>
-        <ul class="pricing-features">
-          <li>Everything in Growth</li>
-          <li>Custom AI Sales Agent</li>
-          <li>Multi-location support</li>
-          <li>CRM &amp; tool integrations</li>
-          <li>Dedicated account manager</li>
-          <li>Custom reporting &amp; analytics</li>
-          <li>SLA guarantee</li>
-        </ul>
-        <a href="#contact" class="btn-pricing-outline">Contact Us</a>
+        <a href="contact.html" class="btn-primary" style="text-align:center;display:block">Get Started →</a>
       </div>
     </div>
+    <p class="bundle-note">Want both? <a href="contact.html">Ask about our Growth Bundle →</a></p>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="section-testi">
-  <div class="section-inner">
-    <h2>Real businesses. <span style="color:#00FF7F">Real results.</span></h2>
-    <p class="sub">These aren't edge cases. This is what happens when AI handles the work you don't have time for.</p>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"I was losing probably 10 calls a week just because I was on a job. Now every call gets answered and I get a text summary. I booked $18K in new work last month that I would've missed."</p>
-        <div class="testi-author">Mike R.</div>
-        <div class="testi-biz">HVAC Contractor, Phoenix AZ</div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Our front desk used to spend half her day chasing leads. Now the AI does it. She's actually helping members. Memberships are up 22% in 3 months. I wish we'd done this sooner."</p>
-        <div class="testi-author">Danielle K.</div>
-        <div class="testi-biz">Gym Owner, Austin TX</div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Med spas run on bookings. Between consultations and procedures, I had no time to follow up with people who'd expressed interest. The AI books them while I'm with a client. It's like having another full-time employee."</p>
-        <div class="testi-author">Lauren T.</div>
-        <div class="testi-biz">Med Spa Owner, Nashville TN</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- CTA -->
-<section class="section-cta">
-  <div class="section-inner">
-    <h2>Stop losing leads. Start growing.</h2>
-    <p>Book a free 30-minute call. We'll show you exactly how AI can work in your business — no jargon, no pressure, no obligation.</p>
-    <div class="cta-btns">
-      <a href="#contact" class="btn-cta-dark">Book a Free Call →</a>
-      <a href="#how-it-works" class="btn-cta-outline">See How It Works</a>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section style="background:#0a0a0a;padding:90px 5%" id="contact">
-  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start">
-    <div>
-      <span style="display:inline-block;color:#00FF7F;font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:1rem;border:1px solid rgba(0,255,127,.3);padding:.3rem .8rem;border-radius:20px">LET'S TALK</span>
-      <h2 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;color:#fff;margin-bottom:1rem">Ready to stop missing leads?</h2>
-      <p style="color:#888;font-size:1.05rem;line-height:1.7;margin-bottom:2rem">Book a free 30-minute call. We'll walk through your business, show you where leads are slipping away, and tell you exactly what AI can do about it. No pressure. No jargon.</p>
-      <div style="display:flex;flex-direction:column;gap:1rem">
-        <div style="display:flex;align-items:center;gap:.75rem">
-          <span style="color:#00FF7F;font-size:1.2rem">📞</span>
-          <a href="tel:8889266624" style="color:#ccc;text-decoration:none;font-size:1rem">(888) 926-6624</a>
-        </div>
-        <div style="display:flex;align-items:center;gap:.75rem">
-          <span style="color:#00FF7F;font-size:1.2rem">✉️</span>
-          <a href="mailto:hello@zanoma.com" style="color:#ccc;text-decoration:none;font-size:1rem">hello@zanoma.com</a>
-        </div>
-      </div>
-    </div>
-    <div style="background:#111;border:1px solid #222;border-radius:16px;padding:2.5rem">
-      <form onsubmit="handleSubmit(event)">
-        <div style="margin-bottom:1.25rem">
-          <label style="display:block;color:#888;font-size:.85rem;font-weight:600;margin-bottom:.4rem">Your Name</label>
-          <input type="text" required placeholder="Mike Rodriguez" style="width:100%;background:#1a1a1a;border:1px solid #333;color:#fff;padding:.8rem 1rem;border-radius:8px;font-size:.95rem;font-family:inherit;outline:none" onfocus="this.style.borderColor='#00FF7F'" onblur="this.style.borderColor='#333'">
-        </div>
-        <div style="margin-bottom:1.25rem">
-          <label style="display:block;color:#888;font-size:.85rem;font-weight:600;margin-bottom:.4rem">Business Email</label>
-          <input type="email" required placeholder="mike@yourbusiness.com" style="width:100%;background:#1a1a1a;border:1px solid #333;color:#fff;padding:.8rem 1rem;border-radius:8px;font-size:.95rem;font-family:inherit;outline:none" onfocus="this.style.borderColor='#00FF7F'" onblur="this.style.borderColor='#333'">
-        </div>
-        <div style="margin-bottom:1.25rem">
-          <label style="display:block;color:#888;font-size:.85rem;font-weight:600;margin-bottom:.4rem">Phone Number</label>
-          <input type="tel" placeholder="(555) 000-0000" style="width:100%;background:#1a1a1a;border:1px solid #333;color:#fff;padding:.8rem 1rem;border-radius:8px;font-size:.95rem;font-family:inherit;outline:none" onfocus="this.style.borderColor='#00FF7F'" onblur="this.style.borderColor='#333'">
-        </div>
-        <div style="margin-bottom:1.25rem">
-          <label style="display:block;color:#888;font-size:.85rem;font-weight:600;margin-bottom:.4rem">Type of Business</label>
-          <select style="width:100%;background:#1a1a1a;border:1px solid #333;color:#fff;padding:.8rem 1rem;border-radius:8px;font-size:.95rem;font-family:inherit;outline:none;cursor:pointer">
-            <option value="">Select your industry...</option>
-            <option>Gym / Fitness Studio</option>
-            <option>HVAC / Plumbing / Contractor</option>
-            <option>Med Spa / Aesthetics</option>
-            <option>Real Estate</option>
-            <option>Dental / Healthcare</option>
-            <option>Restaurant / Food Service</option>
-            <option>Auto Services</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div style="margin-bottom:1.75rem">
-          <label style="display:block;color:#888;font-size:.85rem;font-weight:600;margin-bottom:.4rem">What's your biggest challenge right now?</label>
-          <textarea rows="3" placeholder="e.g. Missing calls, leads not converting, no time for follow-up..." style="width:100%;background:#1a1a1a;border:1px solid #333;color:#fff;padding:.8rem 1rem;border-radius:8px;font-size:.95rem;font-family:inherit;outline:none;resize:vertical" onfocus="this.style.borderColor='#00FF7F'" onblur="this.style.borderColor='#333'"></textarea>
-        </div>
-        <button type="submit" style="width:100%;background:#00FF7F;color:#0a0a0a;padding:.9rem;border:none;border-radius:8px;font-weight:700;font-size:1rem;cursor:pointer;font-family:inherit;transition:opacity .2s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Book My Free Call →</button>
-        <p style="text-align:center;font-size:.8rem;color:#555;margin-top:.75rem">No spam. No obligation. We'll reach out within 1 business day.</p>
-      </form>
-    </div>
+<!-- CTA BAND -->
+<section class="ctaband">
+  <div class="container">
+    <h2>Ready to Stop Losing to Competitors Who Outwork You?</h2>
+    <a href="contact.html" class="btn-primary" style="font-size:1.15rem;padding:1rem 2.5rem">Book Your Free Strategy Call →</a>
+    <p class="fine-print">No contract. No pressure. Setup in 48 hours.</p>
   </div>
 </section>
 
@@ -610,96 +424,74 @@ footer{background:#0a0a0a;border-top:1px solid #1a1a1a;padding:60px 5% 30px}
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo">ZANOMA</a>
-        <p>AI that answers calls, follows up leads, and fills your calendar — automatically. Built for small businesses that are done leaving money on the table.</p>
+        <a href="index.html" style="font-size:1.3rem;font-weight:900;letter-spacing:.1em">ZANOMA</a>
+        <p>Enterprise intelligence. SMB price.</p>
       </div>
       <div class="footer-col">
         <h4>Product</h4>
         <ul>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="brand-intelligence.html">Brand Intelligence</a></li>
+          <li><a href="sales.html">Lead Generation</a></li>
+          <li><a href="contact.html">Growth Bundle</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Industries</h4>
         <ul>
-          <li><a href="#contact">Gyms &amp; Fitness</a></li>
-          <li><a href="#contact">HVAC &amp; Contractors</a></li>
-          <li><a href="#contact">Med Spas</a></li>
-          <li><a href="#contact">Real Estate</a></li>
-          <li><a href="#contact">Healthcare</a></li>
+          <li><a href="#">SaaS &amp; Tech</a></li>
+          <li><a href="#">Health &amp; Wellness</a></li>
+          <li><a href="#">Professional Services</a></li>
+          <li><a href="#">E-Commerce</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="tel:8889266624">(888) 926-6624</a></li>
-          <li><a href="mailto:hello@zanoma.com">hello@zanoma.com</a></li>
-          <li><a href="#contact">Book a Call</a></li>
+          <li><a href="mailto:kevin@zanoma.com">kevin@zanoma.com</a></li>
+          <li><a href="contact.html">Book a Call</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Zanoma. All rights reserved.</p>
-      <div style="display:flex;gap:1.5rem">
-        <a href="#top">Privacy Policy</a>
-        <a href="#top">Terms of Service</a>
-      </div>
-      <p class="footer-contact">Investors: <a href="mailto:kevin@zanoma.com">kevin@zanoma.com</a></p>
+      <p>© 2026 Zanoma · <a href="mailto:kevin@zanoma.com">kevin@zanoma.com</a></p>
+      <p><a href="#">Privacy Policy</a> · <a href="#">Terms</a></p>
     </div>
   </div>
 </footer>
 
 <script>
-function handleSubmit(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('button[type="submit"]');
-  btn.textContent = '✓ Submitted! We\'ll be in touch soon.';
-  btn.style.background = '#00a854';
-  btn.disabled = true;
-}
-</script>
-
-<script>
-(function() {
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
-      var menu = dd.querySelector('.dropdown-menu');
-      if (!menu) return;
-      var hideTimer = null;
-      menu.style.display = 'none';
-      // Show on enter
-      dd.addEventListener('mouseenter', function() {
-        if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
-        menu.style.display = 'flex';
-      });
-      // Hide with delay so mouse can travel into menu
-      dd.addEventListener('mouseleave', function() {
-        hideTimer = setTimeout(function() { menu.style.display = 'none'; }, 150);
-      });
-      // Keep open when mouse is inside menu
-      menu.addEventListener('mouseenter', function() {
-        if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
-      });
-      menu.addEventListener('mouseleave', function() {
-        hideTimer = setTimeout(function() { menu.style.display = 'none'; }, 150);
-      });
-      // Also support click toggle for touch/mobile
-      dd.querySelector('a').addEventListener('click', function(e) {
-        if (menu.style.display === 'flex') {
-          menu.style.display = 'none';
-        }
-      });
-    });
-    // Close on outside click
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.nav-dropdown')) {
-        document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.style.display = 'none'; });
-      }
-    });
-  });
-})();
+// Animate live stats on load
+const stats = [
+  {el: document.querySelectorAll('.live-stat-value')[0], target: 47, suffix: ''},
+  {el: document.querySelectorAll('.live-stat-value')[1], target: 23, suffix: ''},
+  {el: document.querySelectorAll('.live-stat-value')[2], target: 11, suffix: ''}
+];
+stats.forEach(({el, target, suffix}) => {
+  let count = 0;
+  const step = Math.ceil(target / 40);
+  const timer = setInterval(() => {
+    count = Math.min(count + step, target);
+    el.textContent = count + suffix;
+    if (count >= target) clearInterval(timer);
+  }, 30);
+});
+// Increment live stats slowly over time
+setInterval(() => {
+  const vals = document.querySelectorAll('.live-stat-value');
+  if (Math.random() > 0.6) {
+    const i = Math.floor(Math.random() * 3);
+    const cur = parseInt(vals[i].textContent) || 0;
+    vals[i].textContent = cur + 1;
+  }
+}, 8000);
 </script>
 </body>
 </html>
