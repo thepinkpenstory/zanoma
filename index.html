@@ -125,7 +125,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 
 /* HERO */
 .hero { padding: 160px 0 120px; }
-.hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: flex-start; }
 .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 36px; }
 .trust-strip { margin-top: 24px; font-size: 14px; color: var(--text-muted); }
 .trust-strip span { margin: 0 8px; }
@@ -355,13 +355,9 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
         <div class="trust-strip">
           <span>Frontier AI</span>·<span>Founder-led · Based in Bend, OR</span>·<span>Onboards in 7 days</span>
         </div>
-        <blockquote class="hero-quote">
-          <p>"We were losing leads every single weekend. Now our AI picks up every call, books the appointment, and sends a confirmation — all before I even see the notification. It paid for itself in the first week."</p>
-          <cite>Marcus T., Owner, Regional HVAC Company</cite>
-        </blockquote>
       </div>
-      <div class="nucleus-svg-wrap">
-        <img src="/website_assets/nucleus-hero.jpg" alt="Nucleus AI Brain" style="width:280px;height:auto;border-radius:12px;box-shadow:0 0 30px rgba(57,255,20,0.35);" />
+      <div class="nucleus-svg-wrap" style="margin-top:-20px;">
+        <img src="/website_assets/nucleus-hero.jpg" alt="Nucleus AI Brain" style="width:560px;height:auto;border-radius:12px;box-shadow:0 0 30px rgba(57,255,20,0.35);" />
       </div>
     </div>
   </div>
@@ -412,7 +408,14 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
         <h3>Always Accountable</h3>
         <p>A real human owns your outcome. Software without accountability is just a dashboard. Every Nucleus client gets a Zanoma advisor who owns the outcome — walks the brief with you monthly, and picks up the phone when it matters.</p>
       </div>
-    </div>
+</section>
+
+<!-- SOCIAL PROOF GATE -->
+<section style="padding: 100px 0; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg2);">
+  <div class="container" style="max-width: 880px;">
+    <p style="font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 28px;">A current client said it best</p>
+    <blockquote style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.25; font-weight: 600; color: var(--text); letter-spacing: -1px; margin-bottom: 28px; font-style: italic;">"We were losing leads every single weekend. Now our AI picks up every call, books the appointment, and sends a confirmation — all before I even see the notification. It paid for itself in the first week."</blockquote>
+    <cite style="display: block; font-size: 15px; color: var(--green); font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: 0.5px; font-style: normal;">— Marcus T., Owner, Regional HVAC Company</cite>
   </div>
 </section>
 
