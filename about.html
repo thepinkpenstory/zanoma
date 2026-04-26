@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Zanoma</title>
+  <title>About Zanoma — Founder-Led AI Intelligence for Small Business | Zanoma</title>
+<meta name="description" content="Zanoma is a founder-led AI firm based in Bend, OR. We build intelligence and lead generation systems for small businesses ready to compete at scale.">
+<link rel="canonical" href="https://zanoma.com/about">
+<meta property="og:title" content="About Zanoma — Founder-Led AI Intelligence for Small Business | Zanoma">
+<meta property="og:description" content="Zanoma is a founder-led AI firm based in Bend, OR. We build intelligence and lead generation systems for small businesses ready to compete at scale.">
+<meta property="og:url" content="https://zanoma.com/about">
+<meta property="og:image" content="https://zanoma.com/og-zanoma.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Zanoma — Founder-Led AI Intelligence for Small Business | Zanoma">
+<meta name="twitter:description" content="Zanoma is a founder-led AI firm based in Bend, OR. We build intelligence and lead generation systems for small businesses ready to compete at scale.">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -104,22 +114,12 @@
   <header>
     <div class="container">
       <div class="header-inner">
-        <a href="index.html" class="logo">Zan<span>oma</span></a>
-                <nav>
-          <a href="index.html">Home</a>
-          <a href="about.html" class="active">About</a>
-          <div class="nav-dropdown">
-            <a href="services.html">Services</a>
-            <div class="dropdown-menu">
-              <div class="dropdown-label">Our Services</div>
-              <a href="services.html">All Services</a>
-              <a href="sales.html">AI Sales Automation</a>
-              <a href="brand-intelligence.html">Brand Intelligence</a>
-            </div>
-          </div>
-          <a href="case-studies.html">Case Studies</a>
-          <a href="contact.html">Contact</a>
-          <div class="pill"><span class="dot"></span>AI-Powered</div>
+        <a href="/" class="logo" style="color:var(--text);letter-spacing:0.08em;">ZANOMA</a>
+        <nav>
+          <a href="/services">Services</a>
+                    <a href="/about" class="active">About</a>
+          <a href="/contact">Contact</a>
+          <a href="/contact" class="pill" style="background:var(--green);color:#000;border:none;">Book a Free Call</a>
         </nav>
       </div>
     </div>
@@ -193,51 +193,19 @@
     </div>
   </section>
   
-  <footer>
-    <div class="container">
-      <div class="footer-text">© 2026 Zanoma. AI Solutions for Brands, Retailers, and Sellers.</div>
+  <footer style="background:#0a0a0a;border-top:1px solid #1a1a1a;padding:32px 5%;margin-top:60px;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+    <div style="display:flex;gap:24px;flex-wrap:wrap;font-size:14px;">
+      <a href="/sales" style="color:#888;text-decoration:none;">Lead Generation</a>
+      <a href="/brand-intelligence" style="color:#888;text-decoration:none;">Brand Intelligence</a>
+      <a href="/nucleus" style="color:#00FF7F;text-decoration:none;">Nucleus</a>
+      <a href="/about" style="color:#888;text-decoration:none;">About</a>
+      <a href="/contact" style="color:#888;text-decoration:none;">Contact</a>
+      <a href="mailto:kevin@zanoma.com" style="color:#888;text-decoration:none;">kevin@zanoma.com</a>
     </div>
-  </footer>
+    <div style="font-size:13px;color:#555;">© 2026 Zanoma. All rights reserved.</div>
+  </div>
+</footer>
 
-<script>
-(function() {
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
-      var menu = dd.querySelector('.dropdown-menu');
-      if (!menu) return;
-      var hideTimer = null;
-      menu.style.display = 'none';
-      // Show on enter
-      dd.addEventListener('mouseenter', function() {
-        if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
-        menu.style.display = 'flex';
-      });
-      // Hide with delay so mouse can travel into menu
-      dd.addEventListener('mouseleave', function() {
-        hideTimer = setTimeout(function() { menu.style.display = 'none'; }, 150);
-      });
-      // Keep open when mouse is inside menu
-      menu.addEventListener('mouseenter', function() {
-        if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
-      });
-      menu.addEventListener('mouseleave', function() {
-        hideTimer = setTimeout(function() { menu.style.display = 'none'; }, 150);
-      });
-      // Also support click toggle for touch/mobile
-      dd.querySelector('a').addEventListener('click', function(e) {
-        if (menu.style.display === 'flex') {
-          menu.style.display = 'none';
-        }
-      });
-    });
-    // Close on outside click
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.nav-dropdown')) {
-        document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.style.display = 'none'; });
-      }
-    });
-  });
-})();
-</script>
 </body>
 </html>

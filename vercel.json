@@ -1,17 +1,98 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.zanoma.com"
+        }
+      ],
+      "destination": "https://zanoma.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/nucleus",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sales",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/ai-inside-sales",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/engine",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/services/lead-generation",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/services/brand-intelligence",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/brand-intelligence",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [],
   "headers": [
     {
       "source": "/(.*).html",
       "headers": [
-        { "key": "Cache-Control", "value": "no-store, no-cache, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate"
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "no-store, no-cache, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    },
+    {
+      "source": "/og-nucleus.png",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, immutable"
+        }
       ]
     }
   ]

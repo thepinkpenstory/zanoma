@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zanoma — AI-Powered Growth for SMBs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#00FF7F;--bg:#0a0a0a;--surface:#111111;--surface2:#1a1a1a;--border:#2a2a2a;--text:#ffffff;--muted:#888888;--red:#FF4444}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 2rem}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px}
+.nav-logo{font-size:1.4rem;font-weight:900;letter-spacing:0.12em;color:var(--text)}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:0.9rem;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.btn-nav{background:var(--green);color:#000;font-weight:700;font-size:0.85rem;padding:.55rem 1.2rem;border-radius:6px;transition:opacity .2s;white-space:nowrap}
+.btn-nav:hover{opacity:.85}
+.nav-mobile-toggle{display:none;background:none;border:none;cursor:pointer;color:var(--text);font-size:1.5rem}
+/* BUTTONS */
+.btn-primary{display:inline-block;background:var(--green);color:#000;font-weight:700;font-size:1rem;padding:.8rem 1.8rem;border-radius:8px;transition:opacity .2s,transform .1s}
+.btn-primary:hover{opacity:.88;transform:translateY(-1px)}
+.btn-outline{display:inline-block;border:2px solid var(--border);color:var(--text);font-weight:600;font-size:1rem;padding:.78rem 1.8rem;border-radius:8px;transition:border-color .2s,transform .1s}
+.btn-outline:hover{border-color:var(--muted);transform:translateY(-1px)}
+/* SECTIONS */
+section{padding:100px 2rem}
+.container{max-width:1200px;margin:0 auto}
+/* HERO */
+.hero{padding:160px 2rem 100px;background:var(--bg)}
+.hero-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.hero-pill{display:inline-block;background:rgba(0,255,127,.12);color:var(--green);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.4rem 1rem;border-radius:100px;border:1px solid rgba(0,255,127,.25);margin-bottom:1.5rem}
+.hero h1{font-size:clamp(2.8rem,5vw,5rem);font-weight:900;line-height:1.08;letter-spacing:-.03em;margin-bottom:1.5rem}
+.hero h1 .green{color:var(--green)}
+.hero-sub{font-size:1.15rem;color:var(--muted);max-width:480px;margin-bottom:2.2rem;line-height:1.7}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.hero-quote{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.5rem;max-width:480px}
+.hero-quote p{font-size:.9rem;color:var(--muted);font-style:italic;margin-bottom:.5rem}
+.hero-quote cite{font-size:.8rem;color:var(--green);font-weight:600;font-style:normal}
+/* LIVE ACTIVITY CARD */
+.live-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative;overflow:hidden}
+.live-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green),transparent)}
+.live-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.8rem}
+.live-card-title{font-size:1rem;font-weight:700;letter-spacing:.05em}
+.live-badge{background:rgba(0,255,127,.15);color:var(--green);font-size:.7rem;font-weight:700;padding:.3rem .7rem;border-radius:100px;border:1px solid rgba(0,255,127,.3);display:flex;align-items:center;gap:.4rem}
+.live-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.live-stat{display:flex;justify-content:space-between;align-items:center;padding:.9rem 0;border-bottom:1px solid var(--border)}
+.live-stat:last-child{border-bottom:none}
+.live-stat-label{font-size:.9rem;color:var(--muted)}
+.live-stat-value{font-size:1.3rem;font-weight:800;color:var(--green)}
+.live-stat-value.white{color:var(--text)}
+/* CREDIBILITY */
+.credibility{background:#ffffff;color:#000}
+.credibility .eyebrow{font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#00aa55;margin-bottom:1rem}
+.credibility h2{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;letter-spacing:-.03em;color:#0a0a0a;max-width:600px;margin-bottom:3rem}
+.logo-wall{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;align-items:center;margin-bottom:2.5rem}
+.logo-wall span{font-size:clamp(1rem,2vw,1.4rem);font-weight:800;letter-spacing:.06em;color:#cccccc;text-transform:uppercase}
+.credibility-tagline{font-size:1.1rem;color:#555;font-weight:500}
+/* PROBLEM */
+.problem{background:var(--bg)}
+.section-eyebrow{font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
+.problem h2{font-size:clamp(2rem,3.5vw,3rem);font-weight:900;letter-spacing:-.03em;margin-bottom:3.5rem;max-width:600px}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.8rem}
+.stat-number{font-size:2.4rem;font-weight:900;margin-bottom:.5rem}
+.stat-number.red{color:var(--red)}
+.stat-number.green{color:var(--green)}
+.stat-desc{font-size:.9rem;color:var(--muted);line-height:1.5}
+/* PRODUCTS */
+.products{background:var(--bg)}
+.products-header{text-align:center;margin-bottom:3.5rem}
+.products-header h2{font-size:clamp(2rem,3.5vw,3rem);font-weight:900;letter-spacing:-.03em;margin-bottom:.8rem}
+.products-header p{color:var(--muted);font-size:1.1rem}
+.products-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.product-card{background:var(--surface);border-radius:16px;padding:2.5rem;display:flex;flex-direction:column}
+.product-card.featured{border:2px solid var(--green);box-shadow:0 0 40px rgba(0,255,127,.12)}
+.product-card.standard{border:1px solid var(--border)}
+.product-icon{font-size:2rem;margin-bottom:1rem}
+.product-card h3{font-size:1.6rem;font-weight:800;margin-bottom:.6rem}
+.product-tagline{font-size:1rem;color:var(--muted);margin-bottom:1.8rem;line-height:1.5}
+.product-features{list-style:none;margin-bottom:2rem;display:flex;flex-direction:column;gap:.8rem}
+.product-features li{display:flex;align-items:flex-start;gap:.7rem;font-size:.95rem;color:var(--muted)}
+.product-features li::before{content:'✓';color:var(--green);font-weight:800;flex-shrink:0;margin-top:.05rem}
+.product-price{font-size:2rem;font-weight:900;margin-bottom:1.5rem;margin-top:auto}
+.product-price span{font-size:1rem;font-weight:500;color:var(--muted)}
+.flywheel{text-align:center;margin-top:2.5rem;font-size:1.05rem;color:var(--muted);padding:1.5rem;border:1px solid var(--border);border-radius:12px;background:var(--surface)}
+.flywheel strong{color:var(--text)}
+/* CASE STUDY */
+.casestudy{background:#ffffff;color:#000}
+.casestudy .eyebrow{font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#00aa55;margin-bottom:1rem}
+.casestudy h2{font-size:clamp(2rem,3.5vw,3rem);font-weight:900;letter-spacing:-.03em;color:#0a0a0a;margin-bottom:3rem}
+.casestudy-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.casestudy-text p{font-size:1.05rem;color:#444;line-height:1.75;margin-bottom:1.5rem}
+.casestudy-quote{background:#f5f5f5;border-left:4px solid #00aa55;padding:1.5rem;border-radius:0 12px 12px 0;margin-top:2rem}
+.casestudy-quote p{font-style:italic;color:#333;font-size:1rem;margin-bottom:.8rem}
+.casestudy-quote cite{font-size:.85rem;color:#00aa55;font-weight:700;font-style:normal}
+.metrics-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.metric-card{background:#0a0a0a;border-radius:12px;padding:1.5rem;text-align:center}
+.metric-value{font-size:2.2rem;font-weight:900;color:#00FF7F;margin-bottom:.3rem}
+.metric-label{font-size:.85rem;color:#888;font-weight:500}
+/* PRICING */
+.pricing{background:var(--bg)}
+.pricing-header{text-align:center;margin-bottom:3.5rem}
+.pricing-header h2{font-size:clamp(2rem,3.5vw,3rem);font-weight:900;letter-spacing:-.03em;margin-bottom:.8rem}
+.pricing-header p{color:var(--muted);font-size:1.1rem}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:900px;margin:0 auto}
+.pricing-card{background:var(--surface);border-radius:16px;padding:2.5rem}
+.pricing-card.standard{border:1px solid var(--border)}
+.pricing-card.popular{border:2px solid var(--green);position:relative}
+.popular-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--green);color:#000;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:.35rem 1rem;border-radius:100px}
+.pricing-card h3{font-size:1.4rem;font-weight:800;margin-bottom:.5rem}
+.pricing-card .price{font-size:2.8rem;font-weight:900;margin:.8rem 0;color:var(--green)}
+.pricing-card .price span{font-size:1rem;font-weight:400;color:var(--muted)}
+.pricing-card p{color:var(--muted);font-size:.95rem;margin-bottom:1.5rem}
+.pricing-features{list-style:none;display:flex;flex-direction:column;gap:.7rem;margin-bottom:2rem}
+.pricing-features li{display:flex;gap:.6rem;font-size:.9rem;color:var(--muted)}
+.pricing-features li::before{content:'✓';color:var(--green);font-weight:800;flex-shrink:0}
+.bundle-note{text-align:center;margin-top:2rem;color:var(--muted);font-size:1rem}
+.bundle-note a{color:var(--green);font-weight:600}
+/* CTA BAND */
+.ctaband{background:linear-gradient(135deg,#0d1f0d 0%,var(--bg) 50%,#0d1f0d 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;padding:120px 2rem}
+.ctaband h2{font-size:clamp(2.2rem,4vw,3.5rem);font-weight:900;letter-spacing:-.04em;max-width:800px;margin:0 auto 2rem;line-height:1.1}
+.ctaband .fine-print{margin-top:1.2rem;font-size:.85rem;color:var(--muted)}
+/* FOOTER */
+footer{background:#050505;border-top:1px solid var(--border);padding:60px 2rem 40px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-brand p{color:var(--muted);font-size:.9rem;margin-top:.6rem;max-width:220px}
+.footer-col h4{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.2rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.footer-col ul li a{font-size:.9rem;color:#666;transition:color .2s}
+.footer-col ul li a:hover{color:var(--text)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{font-size:.8rem;color:#444}
+.footer-bottom a{color:#666;transition:color .2s}
+.footer-bottom a:hover{color:var(--text)}
+/* RESPONSIVE */
+@media(max-width:900px){
+.hero-grid{grid-template-columns:1fr;gap:3rem}
+.live-card{max-width:500px}
+.stats-grid{grid-template-columns:1fr 1fr}
+.products-grid{grid-template-columns:1fr}
+.casestudy-grid{grid-template-columns:1fr}
+.pricing-grid{grid-template-columns:1fr}
+.footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+.nav-links{display:none}
+.nav-mobile-toggle{display:block}
+.nav-links.open{display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(10,10,10,.98);padding:1.5rem 2rem;gap:1.5rem;border-bottom:1px solid var(--border)}
+.stats-grid{grid-template-columns:1fr}
+.metrics-grid{grid-template-columns:1fr 1fr}
+.footer-top{grid-template-columns:1fr}
+.footer-bottom{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">ZANOMA</a>
+    <div class="nav-links" id="navLinks">
+      <a href="sales.html">Lead Generation</a>
+      <a href="brand-intelligence.html">Brand Intelligence</a>
+      <a href="/nucleus" style="color:#39FF14;font-weight:700;">Nucleus ✨</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn-nav">Book a Free Call</a>
+    </div>
+    <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <span class="hero-pill">AI-Powered Growth for SMBs</span>
+      <h1>Your Competitors<br>Are Winning.<br><span class="green">We're Going to<br>Fix That.</span></h1>
+      <p class="hero-sub">Fortune 500 competitive intelligence and automated lead generation — finally accessible at SMB prices. Know everything. Act faster. Win more.</p>
+      <div class="hero-ctas">
+        <a href="brand-intelligence.html" class="btn-primary">Get Brand Intelligence →</a>
+        <a href="sales.html" class="btn-outline">Automate Lead Generation →</a>
+      </div>
+      <div class="hero-quote">
+        <p>"We basically had a full-time SDR working around the clock from day one."</p>
+        <cite>— Jordan M., Head of Growth at Athlete AI</cite>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="live-card">
+        <div class="live-card-header">
+          <span class="live-card-title">⚡ LIVE AI ACTIVITY</span>
+          <span class="live-badge"><span class="live-dot"></span>LIVE 24/7</span>
+        </div>
+        <div class="live-stat">
+          <span class="live-stat-label">Calls answered</span>
+          <span class="live-stat-value">47</span>
+        </div>
+        <div class="live-stat">
+          <span class="live-stat-label">Leads followed up</span>
+          <span class="live-stat-value">23</span>
+        </div>
+        <div class="live-stat">
+          <span class="live-stat-label">Appointments booked</span>
+          <span class="live-stat-value">11</span>
+        </div>
+        <div class="live-stat">
+          <span class="live-stat-label">Response time</span>
+          <span class="live-stat-value white">&lt;60 sec</span>
+        </div>
+        <div class="live-stat">
+          <span class="live-stat-label">Status</span>
+          <span class="live-badge"><span class="live-dot"></span>LIVE 24/7</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDIBILITY -->
+<section class="credibility">
+  <div class="container">
+    <p class="eyebrow">Trusted Experience</p>
+    <h2>We Built Programs for the World's Biggest Brands.</h2>
+    <div class="logo-wall">
+      <span>NBC Universal</span>
+      <span>·</span>
+      <span>Keurig</span>
+      <span>·</span>
+      <span>Carhartt</span>
+      <span>·</span>
+      <span>Kellogg's</span>
+      <span>·</span>
+      <span>Duracell</span>
+      <span>·</span>
+      <span>Philips</span>
+      <span>·</span>
+      <span>Paul Mitchell</span>
+      <span>·</span>
+      <span>Hydro Flask</span>
+      <span>·</span>
+      <span>Casper</span>
+      <span>·</span>
+      <span>Blackstone</span>
+      <span>·</span>
+      <span>Dr Teal's</span>
+    </div>
+    <p class="credibility-tagline">Enterprise-grade intelligence. SMB-accessible price.</p>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="container">
+    <p class="section-eyebrow">The Problem</p>
+    <h2>Right Now, You're Flying Blind.</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number red">62%</div>
+        <div class="stat-desc">of SMBs have no idea what their top competitor launched last month — and found out too late.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number red">78%</div>
+        <div class="stat-desc">of leads go cold because follow-up happens more than 24 hours after the first touch.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number green">$25K+</div>
+        <div class="stat-desc">The average annual cost of a full-time SDR — before benefits, management, or tools.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number red">5 min</div>
+        <div class="stat-desc">The response window that converts leads at 21× the rate of a 30-minute delay. Most SMBs miss it every time.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number red">3 in 4</div>
+        <div class="stat-desc">SMBs are competing against companies running paid brand monitoring they'll never know about.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number red">47 hrs</div>
+        <div class="stat-desc">Average weekly time lost by founders doing outreach manually instead of closing deals.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products">
+  <div class="container">
+    <div class="products-header">
+      <h2>Two Products. One Unfair Advantage.</h2>
+      <p>Choose one, or stack both for the full Zanoma flywheel.</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card featured">
+        <div class="product-icon">🔍</div>
+        <h3>Brand Intelligence</h3>
+        <p class="product-tagline">Know what your competitors are doing before your next sales call.</p>
+        <ul class="product-features">
+          <li>Weekly competitive intelligence reports on your top rivals</li>
+          <li>Ad spend tracking, messaging shifts &amp; campaign launches</li>
+          <li>SEO movement, keyword wins, and content strategy analysis</li>
+          <li>Executive briefing deck delivered every Monday morning</li>
+        </ul>
+        <div class="product-price">$2,000<span>/mo</span></div>
+        <a href="brand-intelligence.html" class="btn-primary">Start Watching →</a>
+      </div>
+      <div class="product-card standard">
+        <div class="product-icon">⚡</div>
+        <h3>Lead Generation</h3>
+        <p class="product-tagline">AI that books calls while you sleep.</p>
+        <ul class="product-features">
+          <li>AI voice agent handles inbound calls 24/7, qualifies leads instantly</li>
+          <li>Automated SMS &amp; email follow-up sequences — zero manual work</li>
+          <li>CRM sync and calendar booking without human intervention</li>
+          <li>Live dashboard: calls answered, appointments booked, pipeline value</li>
+        </ul>
+        <div class="product-price">$497<span>/mo</span></div>
+        <a href="sales.html" class="btn-outline">Start Booking →</a>
+      </div>
+      <div class="product-card" style="border:2px solid #39FF14;background:rgba(57,255,20,0.04);">
+        <div class="product-icon">&#x269B;&#xFE0F;</div>
+        <h3>Nucleus <span style="background:#39FF14;color:#000;font-size:11px;font-weight:800;padding:2px 8px;border-radius:4px;vertical-align:middle;margin-left:6px;">NEW</span></h3>
+        <p class="product-tagline">Always-on AI intelligence platform for your business.</p>
+        <ul class="product-features">
+          <li>Daily brief: revenue, reviews, competitors, ops — scored across 6 dimensions</li>
+          <li>Built on Claude — the most trusted AI model for enterprise</li>
+          <li>Connects to every tool you already use — onboards in 7 days</li>
+          <li>Human advisor owns your outcome alongside you</li>
+        </ul>
+        <div class="product-price">$499<span>/mo</span></div>
+        <a href="/nucleus" class="btn-primary" style="background:#39FF14;color:#000;">Learn More →</a>
+      </div>
+    </div>
+    <div class="flywheel">
+      <strong>Use both together</strong> and the intelligence feeds the outreach. That's the Zanoma flywheel — know what to say, then say it automatically, at scale, 24/7.
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section class="casestudy">
+  <div class="container">
+    <p class="eyebrow">Case Study — Athlete AI</p>
+    <h2>50 Booked Calls. First Week.<br>Zero Manual Outreach.</h2>
+    <div class="casestudy-grid">
+      <div class="casestudy-text">
+        <p>Athlete AI was growing fast — but their sales team was drowning. Every inbound lead required a manual call, a follow-up text, and a scheduling dance that took days. Qualified prospects were going cold before anyone could close them.</p>
+        <p>We deployed Zanoma's Lead Generation system in 48 hours. The AI voice agent began answering every inbound call immediately, qualifying prospects against their ICP, and booking discovery calls directly onto the sales team's calendar — around the clock, without a single human touchpoint in the process.</p>
+        <p>In the first seven days: 50 booked calls. A 70% show rate. And a pipeline that had tripled in size before the end of week two.</p>
+        <div class="casestudy-quote">
+          <p>"We basically had a full-time SDR working around the clock from day one. The pipeline filled up faster than we could work it."</p>
+          <cite>— Jordan M., Head of Growth at Athlete AI</cite>
+        </div>
+      </div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-value">50</div>
+          <div class="metric-label">Calls Booked<br>Week 1</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">70%</div>
+          <div class="metric-label">Show Rate</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">48hrs</div>
+          <div class="metric-label">Deploy Time</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">3×</div>
+          <div class="metric-label">Pipeline Growth</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing">
+  <div class="container">
+    <div class="pricing-header">
+      <h2>Simple, Transparent Pricing.</h2>
+      <p>No setup fees. No long-term contracts. Cancel anytime.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card standard">
+        <h3>Brand Intelligence</h3>
+        <div class="price">$2,000<span>/mo</span></div>
+        <p>Full competitive intelligence on your top rivals — delivered weekly.</p>
+        <ul class="pricing-features">
+          <li>Up to 5 competitors monitored</li>
+          <li>Weekly executive briefing deck</li>
+          <li>Ad, SEO &amp; content tracking</li>
+          <li>Slack or email delivery</li>
+          <li>Monthly strategy call included</li>
+        </ul>
+        <a href="brand-intelligence.html" class="btn-outline" style="text-align:center">Learn More →</a>
+      </div>
+      <div class="pricing-card popular">
+        <span class="popular-badge">Most Popular</span>
+        <h3>Lead Generation</h3>
+        <div class="price">$497<span>/mo</span></div>
+        <p>AI that qualifies leads and books calls — 24 hours a day, 7 days a week.</p>
+        <ul class="pricing-features">
+          <li>AI voice agent (inbound + outbound)</li>
+          <li>SMS &amp; email follow-up sequences</li>
+          <li>CRM &amp; calendar integration</li>
+          <li>Live performance dashboard</li>
+          <li>Setup in 48 hours</li>
+        </ul>
+        <a href="contact.html" class="btn-primary" style="text-align:center;display:block">Get Started →</a>
+      </div>
+    </div>
+    <p class="bundle-note">Want both? <a href="contact.html">Ask about our Growth Bundle →</a></p>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="ctaband">
+  <div class="container">
+    <h2>Ready to Stop Losing to Competitors Who Outwork You?</h2>
+    <a href="contact.html" class="btn-primary" style="font-size:1.15rem;padding:1rem 2.5rem">Book Your Free Strategy Call →</a>
+    <p class="fine-print">No contract. No pressure. Setup in 48 hours.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" style="font-size:1.3rem;font-weight:900;letter-spacing:.1em">ZANOMA</a>
+        <p>Enterprise intelligence. SMB price.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="brand-intelligence.html">Brand Intelligence</a></li>
+          <li><a href="sales.html">Lead Generation</a></li>
+          <li><a href="contact.html">Growth Bundle</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Industries</h4>
+        <ul>
+          <li><a href="#">SaaS &amp; Tech</a></li>
+          <li><a href="#">Health &amp; Wellness</a></li>
+          <li><a href="#">Professional Services</a></li>
+          <li><a href="#">E-Commerce</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:kevin@zanoma.com">kevin@zanoma.com</a></li>
+          <li><a href="contact.html">Book a Call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Zanoma · <a href="mailto:kevin@zanoma.com">kevin@zanoma.com</a></p>
+      <p><a href="#">Privacy Policy</a> · <a href="#">Terms</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Animate live stats on load
+const stats = [
+  {el: document.querySelectorAll('.live-stat-value')[0], target: 47, suffix: ''},
+  {el: document.querySelectorAll('.live-stat-value')[1], target: 23, suffix: ''},
+  {el: document.querySelectorAll('.live-stat-value')[2], target: 11, suffix: ''}
+];
+stats.forEach(({el, target, suffix}) => {
+  let count = 0;
+  const step = Math.ceil(target / 40);
+  const timer = setInterval(() => {
+    count = Math.min(count + step, target);
+    el.textContent = count + suffix;
+    if (count >= target) clearInterval(timer);
+  }, 30);
+});
+// Increment live stats slowly over time
+setInterval(() => {
+  const vals = document.querySelectorAll('.live-stat-value');
+  if (Math.random() > 0.6) {
+    const i = Math.floor(Math.random() * 3);
+    const cur = parseInt(vals[i].textContent) || 0;
+    vals[i].textContent = cur + 1;
+  }
+}, 8000);
+</script>
+</body>
+</html>
