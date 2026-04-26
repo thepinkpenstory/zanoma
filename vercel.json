@@ -20,22 +20,12 @@
     },
     {
       "source": "/sales",
-      "destination": "/contact",
-      "permanent": true
-    },
-    {
-      "source": "/ai-inside-sales",
-      "destination": "/contact",
-      "permanent": true
-    },
-    {
-      "source": "/engine",
-      "destination": "/contact",
+      "destination": "/ai-inside-sales",
       "permanent": true
     },
     {
       "source": "/services/lead-generation",
-      "destination": "/contact",
+      "destination": "/ai-inside-sales",
       "permanent": true
     },
     {
