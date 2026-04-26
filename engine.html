@@ -1,78 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" style="scroll-behavior:smooth;">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Engine — Your AI Workforce | Zanoma</title>
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
-<meta name="description" content="Nucleus replaces your marketing stack, ops stack, and reporting stack with one AI platform. Daily brief, 6-dimension scoring, human advisor — built for small business.">
+<meta name="description" content="Five AI agents working in harmony. AI Front Desk, Review Responder, Bookkeeper, Listing Manager, Outbound Caller. $10,000/month. Replaces $180K of fragmented spend.">
 <link rel="canonical" href="https://zanoma.com/engine">
-<meta property="og:title" content="Zanoma — AI-Powered Business Intelligence for Small Business">
-<meta property="og:description" content="Every business has leaks. Nucleus finds yours in 15 minutes — built on Claude, owned by a human advisor. Free Revenue Leak Analysis.">
+<meta property="og:title" content="Engine — Five AI hires. One workforce. One Brief. | Zanoma">
+<meta property="og:description" content="Five named AI agents trained on your business. $10,000/month + activation. Replaces ~$180K of fragmented spend.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://zanoma.com/">
+<meta property="og:url" content="https://zanoma.com/engine">
 <meta property="og:image" content="https://zanoma.com/og-nucleus.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Zanoma — AI-Powered Business Intelligence for Small Business">
-<meta name="twitter:description" content="Every business has leaks. Nucleus finds yours in 15 minutes — built on Claude, owned by a human advisor.">
-<meta name="twitter:image" content="https://zanoma.com/og-nucleus.png">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://zanoma.com/#org",
-      "name": "Zanoma",
-      "url": "https://zanoma.com",
-      "logo": "https://zanoma.com/logo.png",
-      "address": { "@type": "PostalAddress", "addressLocality": "Bend", "addressRegion": "OR", "addressCountry": "US" },
-      "founder": { "@type": "Person", "name": "Kevin Keranen" }
-    },
-    {
-      "@type": "Service",
-      "@id": "https://zanoma.com/nucleus#service",
-      "name": "Nucleus",
-      "description": "Always-on AI intelligence platform for small business. Connects to your tools, scores your business across six dimensions, and delivers a daily brief with a human advisor.",
-      "provider": { "@id": "https://zanoma.com/#org" },
-      "areaServed": "US",
-      "offers": [
-        { "@type": "Offer", "name": "Nucleus", "price": "500", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "unitText": "MONTH" } },
-        { "@type": "Offer", "name": "AI Inside Sales", "price": "3000", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "unitText": "MONTH" } },
-        { "@type": "Offer", "name": "Engine", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "unitText": "MONTH" } }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://zanoma.com/#faq",
-      "mainEntity": [
-        { "@type": "Question", "name": "Is this just ChatGPT with a wrapper?", "acceptedAnswer": { "@type": "Answer", "text": "No. Nucleus is a six-layer architecture — ingestion, normalization, scoring, benchmarks, playbooks, and a human advisor who owns your outcome." } },
-        { "@type": "Question", "name": "How long does onboarding take?", "acceptedAnswer": { "@type": "Answer", "text": "Seven days for Nucleus. Thirty days for AI Inside Sales. We do the integration work — you approve the connections." } },
-        { "@type": "Question", "name": "What if I already have HubSpot / QuickBooks / Shopify?", "acceptedAnswer": { "@type": "Answer", "text": "Nucleus connects to all of them. We don't replace your tools — we replace the layer above them." } },
-        { "@type": "Question", "name": "What if I want to leave?", "acceptedAnswer": { "@type": "Answer", "text": "You own your data. CSV/JSON export delivered within 7 days of cancellation." } },
-        { "@type": "Question", "name": "Is my data safe?", "acceptedAnswer": { "@type": "Answer", "text": "Enterprise-grade AI infrastructure, SOC 2 compliant, tenant isolation by default. Your data is never used to train any AI model." } },
-        { "@type": "Question", "name": "Who owns the number?", "acceptedAnswer": { "@type": "Answer", "text": "You do. Every Nucleus client is assigned a named Zanoma advisor who owns the outcome alongside you. Kevin Keranen, founder, reviews every onboarding personally." } }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Zanoma", "item": "https://zanoma.com" },
-        { "@type": "ListItem", "position": 2, "name": "Nucleus", "item": "https://zanoma.com/nucleus" }
-      ]
-    }
-  ]
-}
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Non-blocking font load -->
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"></noscript>
-<!-- Lucide deferred -->
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #0a0a0f;
@@ -93,22 +35,12 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { background: var(--bg); color: var(--text); font-family: 'Inter', -apple-system, sans-serif; font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
-h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
-h1 { font-size: clamp(40px,5vw,64px); letter-spacing: -2px; line-height: 1.08; }
-h2 { font-size: clamp(32px,4vw,48px); letter-spacing: -1.5px; line-height: 1.15; }
+h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
+h1 { font-size: clamp(40px, 5vw, 64px); letter-spacing: -2px; line-height: 1.08; }
+h2 { font-size: clamp(32px, 4vw, 48px); letter-spacing: -1.5px; line-height: 1.15; }
 h3 { font-size: 28px; font-weight: 600; letter-spacing: -0.5px; }
 a { color: inherit; text-decoration: none; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-.section { padding: 120px 0; }
-.section-sm { padding: 80px 0; }
-.btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: var(--radius-sm); font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 16px; cursor: pointer; transition: all 0.2s; border: none; }
-.btn-primary { background: var(--green); color: var(--bg); }
-.btn-primary:hover { background: #4fff2a; box-shadow: var(--green-glow); }
-.btn-ghost { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,0.2); }
-.btn-ghost:hover { border-color: var(--green); color: var(--green); }
-.btn-lg { padding: 16px 36px; font-size: 18px; }
-.card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; }
-.eyebrow { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 20px; }
 .text-dim { color: var(--text-dim); }
 .text-muted { color: var(--text-muted); }
 .text-green { color: var(--green); }
@@ -120,712 +52,298 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .nav-links { display: flex; align-items: center; gap: 32px; }
 .nav-links a { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 500; color: var(--text-dim); transition: color 0.2s; }
 .nav-links a:hover, .nav-links a.active { color: var(--green); }
-.nav-cta { margin-left: 16px; }
-.hamburger { display: none; cursor: pointer; }
+.btn-primary { background: var(--green); color: #0a0a0f; padding: 10px 22px; border-radius: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 14px; display: inline-block; transition: transform 0.15s, box-shadow 0.2s; border: none; cursor: pointer; }
+.btn-primary:hover { transform: translateY(-1px); box-shadow: var(--green-glow); }
+.btn-secondary { background: transparent; color: var(--text); padding: 14px 28px; border-radius: 12px; border: 1px solid var(--border); font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; display: inline-block; transition: all 0.2s; cursor: pointer; }
+.btn-secondary:hover { border-color: var(--green); color: var(--green); }
 
 /* HERO */
-.hero { padding: 160px 0 120px; }
-.hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 36px; }
-.trust-strip { margin-top: 24px; font-size: 14px; color: var(--text-muted); }
-.trust-strip span { margin: 0 8px; }
+.hero { padding: 160px 0 100px; }
+.hero .eyebrow { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--green); margin-bottom: 24px; padding: 6px 14px; border: 1px solid var(--green-dim); border-radius: 100px; background: var(--green-dim); }
+.hero h1 { margin-bottom: 28px; max-width: 820px; }
+.hero .lede { font-size: 22px; color: var(--text-dim); max-width: 760px; line-height: 1.5; margin-bottom: 40px; }
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+.hero-cta-big { background: var(--green); color: #0a0a0f; padding: 18px 32px; border-radius: 12px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; display: inline-flex; align-items: center; gap: 10px; transition: all 0.2s; cursor: pointer; border: none; }
+.hero-cta-big:hover { transform: translateY(-2px); box-shadow: var(--green-glow); }
+.hero-trust { font-size: 13px; color: var(--text-muted); }
 
-/* NUCLEUS SVG */
-.nucleus-svg-wrap { display: flex; justify-content: center; align-items: center; }
+/* WHO FOR */
+.who-for { padding: 80px 0; border-top: 1px solid var(--border); background: var(--bg2); }
+.who-for h2 { margin-bottom: 24px; max-width: 820px; }
+.who-for p { font-size: 18px; color: var(--text-dim); max-width: 760px; line-height: 1.65; }
 
-/* SECTION 2 — PROBLEM */
-.problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; }
-.problem-col-header { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--green); margin-bottom: 24px; }
-.line-item { display: flex; justify-content: space-between; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 15px; }
-.line-item .name { color: var(--text-dim); }
-.line-item .cost { color: var(--text-muted); white-space: nowrap; margin-left: 16px; }
-.price-big { font-family: 'Space Grotesk', sans-serif; font-size: 56px; font-weight: 700; color: var(--green); letter-spacing: -2px; margin: 32px 0 12px; }
-.problem-right { display: flex; flex-direction: column; justify-content: center; }
+/* THE FIVE AGENTS */
+.agents { padding: 100px 0; }
+.section-title { text-align: center; margin-bottom: 16px; }
+.section-lede { font-size: 19px; color: var(--text-dim); text-align: center; max-width: 700px; margin: 0 auto 60px; }
+.agents-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 48px; }
+.agent-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; transition: border-color 0.2s, transform 0.2s; }
+.agent-card:hover { border-color: var(--green); transform: translateY(-2px); }
+.agent-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--green-dim); color: var(--green); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 22px; }
+.agent-card h3 { font-size: 20px; margin-bottom: 10px; color: var(--green); }
+.agent-card p { font-size: 15px; color: var(--text-dim); line-height: 1.55; }
 
-/* SECTION 3 — WHAT IS */
-.three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
-.feature-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; }
-.feature-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-.icon-green { background: var(--green-dim); color: var(--green); }
-.icon-blue { background: var(--blue-dim); color: var(--blue); }
-.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
-.pricing-card { background: #0F0F12; border: 1.5px solid #1F2024; border-radius: 20px; padding: 24px; max-width: 400px; }
-.pricing-card--featured { background: #0F140E; border: 2px solid #22C55E; }
-.pricing-card--enterprise { background: #0F0F12; border: 1.5px solid #FFFFFF; }
-.badge--popular { display: inline-block; background: #22C55E; color: #0A0A0A; padding: 8px 16px; border-radius: 20px; font-weight: 700; font-size: 13px; margin-bottom: 16px; }
-.badge--value { display: inline-block; background: #FFFFFF; color: #0A0A0A; padding: 8px 16px; border-radius: 20px; font-weight: 700; font-size: 13px; margin-bottom: 16px; }
-.tier-label { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #9CA3AF; display: block; margin-bottom: 12px; }
-.price { font-size: 38px; font-weight: 700; color: #FFFFFF; margin: 20px 0; }
-.price .amount { color: #FFFFFF; }
-.price .period { font-size: 17px; color: #9CA3AF; margin-left: 4px; }
-.replaces-label { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: #6B7280; margin-bottom: 12px; display: block; }
-.replaces-total { font-size: 22px; font-weight: 700; color: #FFFFFF; margin: 12px 0; }
-.you-pay { font-size: 22px; font-weight: 700; color: #22C55E; margin: 8px 0; }
-.savings { font-size: 13px; color: #6B7280; font-style: italic; margin-top: 8px; }
-.feature-card h3 { font-size: 22px; margin-bottom: 12px; }
-.feature-card p { color: var(--text-dim); font-size: 15px; }
+/* WOW SCENE */
+.wow { padding: 100px 0; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.wow-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: center; }
+.wow h2 { margin-bottom: 24px; }
+.wow p { font-size: 18px; color: var(--text-dim); margin-bottom: 18px; line-height: 1.65; }
+.wow p strong { color: var(--text); font-weight: 600; }
+.wow-image { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.wow-image img { width: 100%; height: auto; border-radius: var(--radius-sm); display: block; }
+.wow-callout { background: var(--bg3); border: 1px solid var(--green); border-radius: var(--radius); padding: 24px; margin-top: 24px; box-shadow: 0 0 40px rgba(57,255,20,0.06); }
+.wow-callout-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
+.wow-callout p { font-size: 17px; color: var(--text); margin: 0; }
 
-/* SECTION 4 — DAILY BRIEF */
-.brief-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 48px; }
-.phone-wrap { display: flex; justify-content: center; }
-.phone-frame { width: 280px; background: #0a0a0f; border: 2px solid rgba(255,255,255,0.15); border-radius: 36px; padding: 16px; transform: rotate(5deg); box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 40px rgba(57,255,20,0.08); }
-.phone-notch { width: 80px; height: 24px; background: #111; border-radius: 12px; margin: 0 auto 16px; }
-.phone-screen { background: #0d0d16; border-radius: 24px; padding: 20px 16px; min-height: 400px; }
-.brief-greeting { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; color: var(--green); margin-bottom: 4px; }
-.brief-date { font-size: 11px; color: var(--text-muted); margin-bottom: 16px; }
-.brief-section-title { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin: 14px 0 8px; }
-.brief-item { font-size: 11px; color: var(--text-dim); margin-bottom: 6px; line-height: 1.5; }
-.brief-numbers { display: flex; gap: 12px; margin-top: 8px; flex-wrap: wrap; }
-.brief-number { font-size: 10px; }
-.brief-number strong { color: var(--text); display: block; font-size: 12px; }
-.brief-actions { display: flex; gap: 8px; margin-top: 16px; }
-.brief-btn { padding: 5px 10px; border-radius: 6px; font-size: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; cursor: pointer; }
-.brief-btn-primary { background: var(--green); color: #000; }
-.brief-btn-ghost { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: var(--text-dim); }
-.up-arrow { color: var(--green); }
+/* MATH */
+.math { padding: 100px 0; }
+.math-card { max-width: 600px; margin: 0 auto; background: var(--bg2); border: 1.5px solid var(--green); border-radius: var(--radius); padding: 48px; box-shadow: 0 0 60px rgba(57,255,20,0.06); }
+.math-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px; }
+.math .line-item { display: flex; justify-content: space-between; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 16px; }
+.math .line-item .name { color: var(--text-dim); }
+.math .line-item .cost { color: var(--text-muted); white-space: nowrap; margin-left: 16px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; }
+.math-total { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; color: var(--text); letter-spacing: -1px; margin: 28px 0 8px; }
+.math-pay { font-family: 'Space Grotesk', sans-serif; font-size: 38px; font-weight: 700; color: var(--green); letter-spacing: -1.5px; margin-bottom: 12px; }
+.math-savings { font-size: 16px; color: var(--text-dim); font-style: italic; }
 
-/* SECTION 5 — HOW IT WORKS */
-.stepper { margin-top: 48px; max-width: 720px; }
-.step { display: flex; gap: 32px; padding: 32px 0; border-bottom: 1px solid var(--border); }
-.step:last-child { border-bottom: none; }
-.step-num { font-family: 'Space Grotesk', sans-serif; font-size: 36px; font-weight: 700; color: var(--green); opacity: 0.4; min-width: 60px; line-height: 1; }
-.step-content h3 { font-size: 22px; margin-bottom: 8px; }
-.step-content p { color: var(--text-dim); font-size: 15px; }
+/* JOURNEY */
+.journey { padding: 100px 0; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.journey-list { max-width: 820px; margin: 48px auto 0; counter-reset: step; }
+.journey-item { display: flex; gap: 28px; padding: 28px 0; border-bottom: 1px solid var(--border); counter-increment: step; }
+.journey-item:last-child { border-bottom: none; }
+.journey-num { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: var(--green-dim); border: 1px solid var(--green); color: var(--green); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; }
+.journey-num.label { width: auto; padding: 0 14px; height: 36px; border-radius: 18px; font-size: 13px; }
+.journey-body h3 { font-size: 19px; margin-bottom: 6px; }
+.journey-body p { font-size: 16px; color: var(--text-dim); line-height: 1.55; }
 
-/* SECTION 6 — COMPETITOR RADAR */
-/* uses three-col */
+/* TESTIMONIAL */
+.testimonial-section { padding: 100px 0; }
+.testimonial-card { max-width: 800px; margin: 0 auto; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 48px; transition: border-color 0.2s; }
+.testimonial-card:hover { border-color: var(--green); }
+.testimonial-card blockquote { font-size: 22px; line-height: 1.5; color: var(--text); font-style: italic; margin-bottom: 24px; }
+.testimonial-card cite { font-style: normal; font-size: 15px; color: var(--green); font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: 0.5px; }
 
-/* SECTION 7 — CALCULATOR */
-.calc-card { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; }
-.slider-group { margin-bottom: 28px; }
-.slider-label { display: flex; justify-content: space-between; font-size: 15px; margin-bottom: 10px; }
-.slider-label span { color: var(--text-dim); }
-.slider-value { color: var(--green); font-family: 'Space Grotesk', sans-serif; font-weight: 600; }
-input[type=range] { width: 100%; height: 4px; -webkit-appearance: none; appearance: none; background: rgba(255,255,255,0.1); border-radius: 2px; outline: none; }
-input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: var(--green); cursor: pointer; box-shadow: 0 0 8px rgba(57,255,20,0.5); }
-.calc-output { background: var(--bg3); border-radius: var(--radius); padding: 32px; display: flex; flex-direction: column; gap: 20px; }
-.output-row { display: flex; flex-direction: column; gap: 4px; }
-.output-label { font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-.output-value { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; }
-.output-savings { color: var(--green); font-size: 48px; }
-.output-gain { font-size: 14px; color: var(--text-dim); }
-.divider { border: none; border-top: 1px solid var(--border); }
-
-/* SECTION 8 — POWERED BY AI */
-.ai-band { background: var(--bg2); padding: 80px 0; text-align: center; }
-.logo-strip { display: flex; justify-content: center; align-items: center; gap: 48px; margin-top: 40px; flex-wrap: wrap; }
-.logo-item { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 18px; color: var(--text-muted); opacity: 0.5; }
-
-/* SECTION 9 — PRICING */
-.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
-.pricing-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px; position: relative; display: flex; flex-direction: column; }
-.pricing-card.featured { border-color: var(--green); box-shadow: var(--green-glow); }
-.badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--green); color: var(--bg); font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700; padding: 4px 16px; border-radius: 20px; white-space: nowrap; }
-.pricing-tier { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
-.pricing-price { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; letter-spacing: -1px; margin-bottom: 6px; }
-.pricing-subtitle { font-size: 14px; color: var(--text-muted); margin-bottom: 28px; }
-.pricing-features { list-style: none; flex: 1; margin-bottom: 28px; }
-.pricing-features li { padding: 8px 0; font-size: 15px; color: var(--text-dim); border-bottom: 1px solid var(--border); display: flex; gap: 10px; align-items: baseline; }
-.pricing-features li::before { content: "·"; color: var(--green); font-size: 20px; line-height: 1; flex-shrink: 0; }
-.pricing-caption { text-align: center; font-size: 14px; color: var(--text-muted); margin-top: 24px; }
-
-/* SECTION 10 — WHO ITS FOR */
-.verticals-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 48px; }
-.vertical-tile { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 20px; text-align: center; transition: border-color 0.2s; }
-.vertical-tile:hover { border-color: rgba(57,255,20,0.3); }
-.vertical-emoji { font-size: 28px; margin-bottom: 12px; }
-.vertical-name { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 600; margin-bottom: 6px; }
-.vertical-line { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
-
-/* SECTION 11 — FAQ */
-.faq-list { margin-top: 48px; max-width: 800px; }
-.faq-item { border-bottom: 1px solid var(--border); }
-.faq-q { width: 100%; background: none; border: none; color: var(--text); font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 600; text-align: left; padding: 24px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
-.faq-q:hover { color: var(--green); }
-.faq-chevron { flex-shrink: 0; transition: transform 0.3s; color: var(--text-muted); }
-.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-.faq-a-inner { padding-bottom: 24px; color: var(--text-dim); font-size: 16px; line-height: 1.7; }
-.faq-item.open .faq-chevron { transform: rotate(180deg); }
-
-/* SECTION 12 — FINAL CTA */
-.cta-band { background: var(--bg3); padding: 120px 0; text-align: center; }
-.cta-band h2 { font-size: clamp(36px,4vw,56px); margin-bottom: 8px; }
-.cta-band p { color: var(--text-dim); margin: 20px auto 40px; max-width: 560px; }
-.cta-trust { margin-top: 20px; font-size: 14px; color: var(--text-muted); }
-.hero-quote { margin-top: 48px; padding: 32px; background: rgba(57,255,20,0.08); border-left: 4px solid var(--green); border-radius: 8px; max-width: 700px; margin-left: auto; margin-right: auto; }
-.hero-quote p { font-size: 18px; font-style: italic; color: var(--text-dim); margin: 0 0 12px; line-height: 1.6; }
-.hero-quote cite { color: var(--text-muted); font-style: normal; font-size: 14px; }
+/* FINAL CTA */
+.final-cta { padding: 120px 0; text-align: center; background: linear-gradient(180deg, var(--bg) 0%, rgba(57,255,20,0.04) 100%); }
+.final-cta h2 { margin-bottom: 20px; }
+.final-cta p { font-size: 19px; color: var(--text-dim); max-width: 720px; margin: 0 auto 36px; line-height: 1.5; }
 
 /* FOOTER */
-footer { background: var(--bg); border-top: 1px solid var(--border); padding: 40px 0; }
+footer { padding: 48px 0 32px; border-top: 1px solid var(--border); background: var(--bg); }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
-.footer-links a { font-size: 14px; color: var(--text-muted); transition: color 0.2s; }
+.footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
+.footer-links a { font-size: 14px; color: var(--text-muted); transition: color 0.15s; }
 .footer-links a:hover { color: var(--green); }
-.footer-copy { font-size: 14px; color: var(--text-muted); }
+.footer-copy { font-size: 13px; color: var(--text-muted); }
 
-/* RESPONSIVE */
+/* MOBILE */
 @media (max-width: 900px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-  .nucleus-svg-wrap { order: -1; }
-  .problem-grid { grid-template-columns: 1fr; }
-  .three-col { grid-template-columns: 1fr; }
-  .brief-layout { grid-template-columns: 1fr; }
-  .calc-card { grid-template-columns: 1fr; }
-  .pricing-grid { grid-template-columns: 1fr; max-width: 460px; margin-left: auto; margin-right: auto; }
-  .verticals-grid { grid-template-columns: repeat(2, 1fr); }
-  .nav-links { display: none; }
-  .hamburger { display: block; }
+  .wow-grid { grid-template-columns: 1fr; gap: 32px; }
+  .agents-grid { grid-template-columns: 1fr; }
+  .nav-links a:not(.btn-primary) { display: none; }
+  .hero { padding: 120px 0 60px; }
+  .hero .lede { font-size: 18px; }
+  .math-card { padding: 32px 24px; }
+  .math-pay { font-size: 30px; }
+  .testimonial-card { padding: 32px 24px; }
+  .testimonial-card blockquote { font-size: 18px; }
 }
-@media (max-width: 480px) {
-  .section { padding: 80px 0; }
-  h1 { font-size: 36px; }
-  h2 { font-size: 28px; }
-  .hero { padding: 120px 0 80px; }
-  .hero-ctas { flex-direction: column; }
-  .btn { width: 100%; justify-content: center; }
-  .phone-frame { width: 240px; }
-  .verticals-grid { grid-template-columns: repeat(2, 1fr); }
-  .output-savings { font-size: 36px; }
-}
-/* ---- Accessibility: focus-visible ---- */
-a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible {
-  outline: 3px solid var(--green);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
-/* Skip nav */
-.skip-link { position:absolute; top:-100px; left:16px; background:var(--green); color:#000; padding:8px 16px; border-radius:4px; font-weight:700; font-size:14px; z-index:9999; transition:top 0.2s; }
-.skip-link:focus { top:16px; }
-/* Consent banner */
-/* contact form */
-.contact-form { max-width:520px; margin:0 auto; display:flex; flex-direction:column; gap:16px; }
-.contact-form label { font-size:13px; font-weight:600; letter-spacing:0.5px; color:var(--text-muted); text-transform:uppercase; display:block; margin-bottom:6px; }
-.contact-form input, .contact-form textarea { width:100%; background:#0d0d14; border:1px solid var(--border); border-radius:8px; padding:14px 16px; color:var(--text); font-family:'Inter',sans-serif; font-size:15px; transition:border-color 0.2s, box-shadow 0.2s; box-sizing:border-box; }
-.contact-form input:focus, .contact-form textarea:focus { outline:none; border-color:var(--green); box-shadow:0 0 0 3px rgba(57,255,20,0.15); }
-.contact-form textarea { resize:vertical; min-height:100px; }
-.contact-form .char-count { font-size:12px; color:var(--text-muted); text-align:right; margin-top:-10px; }
-.form-success { display:none; padding:24px; background:rgba(57,255,20,0.08); border:1px solid rgba(57,255,20,0.3); border-radius:12px; text-align:center; color:var(--green); font-size:17px; font-weight:600; }
-
-/* Trusted brands logo wall */
-.nuc-logo-wall { background: #0d0d0d; padding: 48px 5%; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); }
-.nuc-logo-label { text-align: center; font-family: 'Space Grotesk', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 3px; color: #444; margin-bottom: 1.75rem; }
-.nuc-logo-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 14px; }
-.nuc-logo-pill { display: inline-flex; align-items: center; justify-content: center; min-width: 110px; padding: 0.5rem 1rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(57,255,20,0.5); border-radius: 8px; font-size: 0.68rem; font-weight: 700; letter-spacing: 1.5px; color: #e8e8e8; white-space: nowrap; transition: all 0.2s; }
-.nuc-logo-pill:hover { color: #aaa; border-color: rgba(57,255,20,0.6); background: rgba(57,255,20,0.06); }
-
 </style>
 </head>
 <body>
-<a href="#main-content" class="skip-link">Skip to main content</a>
 
-<!-- Consent Banner -->
-<!-- NAV -->
-<nav id="main-nav" role="navigation" aria-label="Main navigation">
+<nav>
   <div class="container nav-inner">
     <a href="/" class="nav-logo">ZANOMA</a>
-    <div class="nav-links" id="navLinks">
+    <div class="nav-links">
+      <a href="/">Nucleus</a>
+      <a href="/ai-inside-sales">AI Inside Sales</a>
+      <a href="/engine" class="active">Engine</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/contact" class="btn-primary">Book the Brief Demo</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Engine · Your AI Workforce</span>
+    <h1>Five AI hires.<br>One workforce. One Brief.</h1>
+    <p class="lede">Engine is what AI Inside Sales grows up into. Five named AI agents trained on your business, working in harmony, all run by the Nucleus brain. They never miss a handoff. They never sleep. You see their work in your Brief every morning.</p>
+    <div class="hero-ctas">
+      <a href="/contact" class="hero-cta-big">Hire your AI workforce →</a>
+      <a href="#the-five" class="btn-secondary">Meet the five agents ↓</a>
+    </div>
+    <p class="hero-trust">Nucleus included · $10K/mo + $15K–$25K activation · 90-day commit · Onboards in 30 days, full workforce live by day 60</p>
+  </div>
+</section>
+
+<!-- WHO FOR -->
+<section class="who-for">
+  <div class="container">
+    <h2>For owners running 4–5 AI tools that don't talk to each other.</h2>
+    <p>If you're already paying for an AI receptionist, an AI bookkeeper, an AI review tool, and a cold-email tool — and they don't talk to each other — Engine is built for you. <strong>One workforce. One Brief. One advisor accountable for the outcome.</strong></p>
+  </div>
+</section>
+
+<!-- THE FIVE -->
+<section class="agents" id="the-five">
+  <div class="container">
+    <h2 class="section-title">The five agents.</h2>
+    <p class="section-lede">Each one trained on your business. All five running on Nucleus. All five visible in one Brief every morning.</p>
+    <div class="agents-grid">
+      <div class="agent-card">
+        <div class="agent-icon">📞</div>
+        <h3>AI Front Desk</h3>
+        <p>Answers every call 24/7. Qualifies. Books direct to your calendar. The receptionist that never takes a sick day.</p>
+      </div>
+      <div class="agent-card">
+        <div class="agent-icon">⭐</div>
+        <h3>AI Review Responder</h3>
+        <p>Drafts every reply in your voice. Queued for one-tap approval from your Daily Brief.</p>
+      </div>
+      <div class="agent-card">
+        <div class="agent-icon">📒</div>
+        <h3>AI Bookkeeper</h3>
+        <p>Categorizes daily. Flags margin leaks. Prepares your CPA handoff.</p>
+      </div>
+      <div class="agent-card">
+        <div class="agent-icon">📍</div>
+        <h3>AI Listing Manager</h3>
+        <p>Keeps Google Business Profile, Yelp, Apple Maps, hours, and photos consistent across the web.</p>
+      </div>
+      <div class="agent-card">
+        <div class="agent-icon">🔄</div>
+        <h3>AI Outbound Caller</h3>
+        <p>Reactivates dormant leads from your existing database. Books them back onto the calendar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WOW SCENE -->
+<section class="wow">
+  <div class="container">
+    <div class="wow-grid">
+      <div>
+        <h2>The 2 AM review.</h2>
+        <p>Monday 2:14 AM. A 2-star review hits your Google Business Profile. Your AI Review Responder catches it within four minutes. Classifies it. Drafts a response in your voice. Queues it in your approval inbox.</p>
+        <p>You wake up at 7. Your Brief shows: <em>"Sarah J. left 2 stars. Draft response ready. [Approve] [Edit]."</em> You tap Approve from your truck at 7:01. Posted by 7:02.</p>
+        <div class="wow-callout">
+          <p class="wow-callout-label">The difference</p>
+          <p><strong>Without Engine:</strong> 18 hours minimum, usually tomorrow afternoon. <strong>With Engine:</strong> 30 seconds of your time.</p>
+        </div>
+      </div>
+      <div class="wow-image">
+        <img src="/website_assets/nucleus_engine_approval.png" alt="iPhone showing Nucleus Engine Approval Queue with the 2AM review draft">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATH -->
+<section class="math">
+  <div class="container">
+    <h2 class="section-title">Do the math.</h2>
+    <p class="section-lede">Replaces three things you're already paying for — the office manager, the reception coverage, the patchwork of point AI tools.</p>
+    <div class="math-card">
+      <p class="math-label">Replaces</p>
+      <div class="line-item"><span class="name">Office manager / ops coordinator</span><span class="cost">$80K/yr</span></div>
+      <div class="line-item"><span class="name">Receptionist + answering backup</span><span class="cost">$65K/yr</span></div>
+      <div class="line-item"><span class="name">Bookkeeping + reviews + listings tools</span><span class="cost">$35K/yr</span></div>
+      <p class="math-total">~$180K/yr in cost</p>
+      <p class="math-pay">You pay $135K year 1.</p>
+      <p class="math-savings">One workforce. One Brief. One advisor.</p>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="journey">
+  <div class="container">
+    <h2 class="section-title">Your first 90 days.</h2>
+    <p class="section-lede">Staged rollout. Each agent goes live in sequence so you build confidence as the workforce comes online.</p>
+    <div class="journey-list">
+      <div class="journey-item">
+        <div class="journey-num">0</div>
+        <div class="journey-body">
+          <h3>Day 0 — Live Brief Demo</h3>
+          <p>30-minute call. We connect 2–3 of your tools live. Show you yesterday's Brief with your real data.</p>
+        </div>
+      </div>
+      <div class="journey-item">
+        <div class="journey-num">7</div>
+        <div class="journey-body">
+          <h3>Days 1–7 — Onboarding</h3>
+          <p>Connectors wired. Brand voice captured (10 minutes, 5 of your best customer messages). First Brief delivered by day 7.</p>
+        </div>
+      </div>
+      <div class="journey-item">
+        <div class="journey-num">14</div>
+        <div class="journey-body">
+          <h3>Week 2 — First agent live</h3>
+          <p>Usually AI Front Desk or AI Review Responder. First "holy shit" moment.</p>
+        </div>
+      </div>
+      <div class="journey-item">
+        <div class="journey-num">30</div>
+        <div class="journey-body">
+          <h3>Week 4 — Three agents live</h3>
+          <p>Month-1 review. First scorecard. Real movement on one or two dimensions.</p>
+        </div>
+      </div>
+      <div class="journey-item">
+        <div class="journey-num">60</div>
+        <div class="journey-body">
+          <h3>Day 60 — Full workforce live</h3>
+          <p>All five agents handing off cleanly. Brief landing every morning. Your phone never rings unanswered.</p>
+        </div>
+      </div>
+      <div class="journey-item">
+        <div class="journey-num">90</div>
+        <div class="journey-body">
+          <h3>Day 90 — Quarterly business review</h3>
+          <p>What's working. What to add next. The flywheel. Your advisor walks the scorecard with you live.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial-section">
+  <div class="container">
+    <div class="testimonial-card">
+      <blockquote>"We were losing leads every single weekend. Now our AI picks up every call, books the appointment, and sends a confirmation — all before I even see the notification. It paid for itself in the first week."</blockquote>
+      <cite>— Marcus T., Owner, Regional HVAC Company</cite>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>One workforce. One Brief. One advisor.</h2>
+    <p>If you're tired of running 5 AI tools that don't talk to each other, Engine is the consolidation. Book a 30-min walkthrough — we'll walk a current client's setup.</p>
+    <a href="/contact" class="hero-cta-big">Book the Brief Demo →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-links">
       <a href="/">Nucleus</a>
       <a href="/ai-inside-sales">AI Inside Sales</a>
       <a href="/engine">Engine</a>
       <a href="/about">About</a>
       <a href="/contact">Contact</a>
-      <a href="/contact" class="btn btn-primary nav-cta" style="padding:10px 20px;font-size:14px;">Book the Brief Demo</a>
     </div>
-    <button class="hamburger" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
-      <i data-lucide="menu" style="width:24px;height:24px;color:var(--text)"></i>
-    </button>
-  </div>
-</nav>
-
-<!-- S1: HERO -->
-<main id="main-content">
-<section class="hero" aria-labelledby="hero-heading">
-  <div class="container">
-    <div class="hero-inner">
-      <div>
-        <div class="eyebrow">ENGINE</div>
-        <h1>Your AI workforce.</h1>
-        <p class="text-dim" style="margin-top:20px;max-width:560px;font-size:19px;">Five AI agents working in harmony. Front Desk, Bookkeeper, Review Responder, Listing Manager, Outbound Caller. One Brief. One decision.</p>
-        <div class="hero-ctas">
-          <a href="/contact" class="btn btn-primary btn-lg">Deploy Engine →</a>
-          <a href="#how-it-works" class="btn btn-ghost btn-lg">See the five agents →</a>
-        </div>
-        <div class="trust-strip">
-          <span>$10K/mo + activation</span>·<span>Nucleus included</span>·<span>90-day commit</span>·<span>$135K year 1 value</span>
-        </div></section>
-
-<!-- S1b: TRUSTED BRANDS -->
-<section class="nuc-logo-wall">
-  <div class="container">
-    <div class="nuc-logo-label">TRUSTED BY 35+ BRANDS</div>
-    <div class="nuc-logo-pills">
-      <span class="nuc-logo-pill" style="background: rgba(255,255,255,0.06); filter: grayscale(100%); opacity: 0.7; transition: all 0.3s;" onmouseover="this.style.filter='grayscale(0%)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';">NBC UNIVERSAL</span>
-      <span class="nuc-logo-pill" style="background: rgba(255,255,255,0.06); filter: grayscale(100%); opacity: 0.7; transition: all 0.3s;" onmouseover="this.style.filter='grayscale(0%)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';">KEURIG</span>
-      <span class="nuc-logo-pill" style="background: rgba(255,255,255,0.06); filter: grayscale(100%); opacity: 0.7; transition: all 0.3s;" onmouseover="this.style.filter='grayscale(0%)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';">CARHARTT</span>
-      <span class="nuc-logo-pill" style="background: rgba(255,255,255,0.06); filter: grayscale(100%); opacity: 0.7; transition: all 0.3s;" onmouseover="this.style.filter='grayscale(0%)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';">KELLOGG'S</span>
-      <span class="nuc-logo-pill" style="background: rgba(255,255,255,0.06); filter: grayscale(100%); opacity: 0.7; transition: all 0.3s;" onmouseover="this.style.filter='grayscale(0%)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';">GUESS</span>
-      <span class="nuc-logo-pill" style="background: rgba(255,255,255,0.06); filter: grayscale(100%); opacity: 0.7; transition: all 0.3s;" onmouseover="this.style.filter='grayscale(0%)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';">DURACELL</span>
-      <span class="nuc-logo-pill" style="background: rgba(255,255,255,0.06); filter: grayscale(100%); opacity: 0.7; transition: all 0.3s;" onmouseover="this.style.filter='grayscale(0%)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';">PHILIPS</span>
-      <span class="nuc-logo-pill" style="background: rgba(255,255,255,0.06); filter: grayscale(100%); opacity: 0.7; transition: all 0.3s;" onmouseover="this.style.filter='grayscale(0%)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';">PAUL MITCHELL</span>
-      <span class="nuc-logo-pill" style="background: rgba(255,255,255,0.06); filter: grayscale(100%); opacity: 0.7; transition: all 0.3s;" onmouseover="this.style.filter='grayscale(0%)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';">HYDRO FLASK</span>
-      <span class="nuc-logo-pill" style="background: rgba(255,255,255,0.06); filter: grayscale(100%); opacity: 0.7; transition: all 0.3s;" onmouseover="this.style.filter='grayscale(0%)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';">CASPER</span>
-      <span class="nuc-logo-pill" style="background: rgba(255,255,255,0.06); filter: grayscale(100%); opacity: 0.7; transition: all 0.3s;" onmouseover="this.style.filter='grayscale(0%)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';">BLACKSTONE</span>
-      <span class="nuc-logo-pill" style="background: rgba(255,255,255,0.06); filter: grayscale(100%); opacity: 0.7; transition: all 0.3s;" onmouseover="this.style.filter='grayscale(0%)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';">DR TEAL'S</span>
-      <span class="nuc-logo-pill" style="background: rgba(255,255,255,0.06); filter: grayscale(100%); opacity: 0.7; transition: all 0.3s;" onmouseover="this.style.filter='grayscale(0%)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';">HAVAIANAS</span>
-      <span class="nuc-logo-pill" style="background: rgba(255,255,255,0.06); filter: grayscale(100%); opacity: 0.7; transition: all 0.3s;" onmouseover="this.style.filter='grayscale(0%)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';">VALSPAR</span>
-      <span class="nuc-logo-pill" style="background: rgba(255,255,255,0.06); filter: grayscale(100%); opacity: 0.7; transition: all 0.3s;" onmouseover="this.style.filter='grayscale(0%)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';">VELCRO</span>
-      <span class="nuc-logo-pill" style="background: rgba(255,255,255,0.06); filter: grayscale(100%); opacity: 0.7; transition: all 0.3s;" onmouseover="this.style.filter='grayscale(0%)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';">INTELLIGENTSIA</span>
-    </div>
-  </div>
-</section>
-
-<!-- S3: WHAT NUCLEUS IS -->
-<section class="section">
-  <div class="container">
-    <h2>It's not another tool.<br>It's the operating system your business has been missing.</h2>
-    <div class="three-col" style="margin-top:48px;">
-      <div class="feature-card">
-        <div class="feature-icon icon-green"><i data-lucide="radar" style="width:24px;height:24px;"></i></div>
-        <h3>Always Watching</h3>
-        <p>Connected to everything you already use. QuickBooks, your CRM, Google Business, Amazon, Shopify, your website, your reviews, your ads. Nucleus pipes all of it into one living model of your business — no rip-and-replace, no new software to learn.</p>
-      </div>
-      <div class="feature-card" style="border-color:rgba(59,130,246,0.2);">
-        <div class="feature-icon icon-blue"><i data-lucide="cpu" style="width:24px;height:24px;"></i></div>
-        <h3>Always Thinking</h3>
-        <p>Nucleus reasons across your entire business. Every morning, it reads your numbers, reviews, competitors, ops, ads, and finances. Then it scores your business across six dimensions and flags exactly what needs attention — before it costs you money.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon icon-green"><i data-lucide="handshake" style="width:24px;height:24px;"></i></div>
-        <h3>Always Accountable</h3>
-        <p>A real human owns your outcome. Software without accountability is just a dashboard. Every Nucleus client gets a Zanoma advisor who owns the outcome — walks the brief with you monthly, and picks up the phone when it matters.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- S4: THE DAILY BRIEF -->
-<section class="section" id="daily-brief" style="background:var(--bg2);">
-  <div class="container">
-    <div class="brief-layout">
-      <div>
-        <h2>Open your phone.<br>Know the three things that matter today.</h2>
-        <p class="text-dim" style="margin-top:16px;">Every morning at 7 a.m., Nucleus sends your Daily Brief — to Slack, email, or SMS. The top three moves, the top three risks, the top three numbers. Nothing else.</p>
-        <a href="#contact" class="btn btn-ghost" style="margin-top:32px;">See the full Brief — book a 15-min demo →</a>
-      </div>
-      <div class="phone-wrap">
-        <p style="text-align:center;font-size:11px;color:var(--text-muted);margin-bottom:12px;letter-spacing:1px;text-transform:uppercase;">Illustrative Act tier brief · 7:00 AM</p>
-        <p style="text-align:center;font-size:12px;color:var(--text-muted);margin-bottom:16px;font-style:italic;">Sample brief — yours will be customized to your business.</p>
-        <div class="phone-frame" role="img" aria-label="Sample Nucleus daily brief dashboard showing business scores and recommended actions">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <div class="brief-greeting">GOOD MORNING, KEVIN.</div>
-            <div class="brief-date">Zanoma · Monday, April 20</div>
-            <div class="brief-section-title" style="color:var(--green);">Top 3 Moves</div>
-            <div class="brief-item">1. Review-response lag hit 3.2 days — Your advisor AJ will respond to the 4 pending now</div>
-            <div class="brief-item">2. GBP post missed yesterday — queuing today's</div>
-            <div class="brief-item">3. A/R aging: $8,400 older than 45 days — draft chase email ready</div>
-            <div class="brief-section-title" style="color:#f97316;">Top 3 Risks</div>
-            <div class="brief-item">• Competitor "Acme Co." ran 2 new Meta ads yesterday targeting your ZIP</div>
-            <div class="brief-item">• Website speed dropped 18% after plugin update</div>
-            <div class="brief-item">• Med spa benchmark: no-show rate 14% vs. peer median 9%</div>
-            <div class="brief-section-title" style="color:var(--blue);">Top 3 Numbers</div>
-            <div class="brief-numbers">
-              <div class="brief-number"><strong>$42,100 <span class="up-arrow">↑12%</span></strong>Revenue WTD</div>
-              <div class="brief-number"><strong>$184K</strong>Pipeline</div>
-              <div class="brief-number"><strong>73</strong>NPS</div>
-            </div>
-            <div class="brief-actions">
-              <button class="brief-btn brief-btn-primary">Approve all</button>
-              <button class="brief-btn brief-btn-ghost">Review</button>
-              <button class="brief-btn brief-btn-ghost">Ask Nucleus</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- S5: HOW IT WORKS -->
-<section class="section">
-  <div class="container">
-    <h2>How Nucleus turns your business into an operating system.</h2>
-    <p class="text-dim" style="margin-top:16px;max-width:600px;">Six layers, built in this order. Every client's stack lives inside the same Nucleus architecture.</p>
-    <div class="stepper">
-      <div class="step"><div class="step-num">01</div><div class="step-content"><h3>Ingestion</h3><p>Connect every tool you use in under a week. Auth once, flow forever.</p></div></div>
-      <div class="step"><div class="step-num">02</div><div class="step-content"><h3>Normalization</h3><p>Your chaos, mapped to one clean model of your business. One schema, everything in one place.</p></div></div>
-      <div class="step"><div class="step-num">03</div><div class="step-content"><h3>Scoring</h3><p>Six universal dimensions: Acquisition, Retention, Operations, Finance, Reputation, Compliance.</p></div></div>
-      <div class="step"><div class="step-num">04</div><div class="step-content"><h3>Benchmarks</h3><p>Your numbers vs. the median business in your vertical. Anonymous. Always current.</p></div></div>
-      <div class="step"><div class="step-num">05</div><div class="step-content"><h3>Playbooks</h3><p>Codified industry judgment. "If X happens, trigger Y." Proven playbooks from years of agency work made operational.</p></div></div>
-      <div class="step"><div class="step-num">06</div><div class="step-content"><h3>Accountability</h3><p>A human advisor walks the brief with you every month. The layer software can't replace.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- S6: COMPETITOR RADAR -->
-<section class="section" style="background:var(--bg2);">
-  <div class="container">
-    <h2>Your competitors ran three new campaigns last month.<br>Do you know what they said?</h2>
-    <p class="text-dim" style="margin-top:16px;max-width:680px;">Nucleus monitors your top competitors across ads, reviews, rankings, and content — and flags moves while they're still new, not three weeks old in a quarterly report.</p>
-    <div class="three-col">
-      <div class="feature-card">
-        <div class="feature-icon icon-green"><i data-lucide="megaphone" style="width:24px;height:24px;"></i></div>
-        <h3>Ad creative changes</h3>
-        <p>We see new Meta and Google ads the day they launch, TikTok within 48 hours.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon icon-green"><i data-lucide="star" style="width:24px;height:24px;"></i></div>
-        <h3>Review sentiment shifts</h3>
-        <p>When a competitor's rating moves, you know why before their next customer does.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon icon-blue"><i data-lucide="trending-up" style="width:24px;height:24px;"></i></div>
-        <h3>Ranking and content moves</h3>
-        <p>Keyword wins and losses, tracked daily across your local market.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- S7: CALCULATOR -->
-<section class="section">
-  <div class="container">
-    <h2>Do the math. Then book the call.</h2>
-    <p class="text-dim" style="margin-top:16px;max-width:600px;">Tell us what you spend. We'll show you what Nucleus costs.</p>
-    <div class="card" style="margin-top:48px;">
-      <div class="calc-card">
-        <div>
-          <div class="slider-group">
-            <div class="slider-label"><span>Marketing agency monthly retainer</span><span class="slider-value" id="val-agency">$3,500</span></div>
-            <input type="range" id="slider-agency" min="0" max="15000" step="100" value="3500" aria-label="Marketing agency monthly retainer">
-          </div>
-          <div class="slider-group">
-            <div class="slider-label"><span>Dashboards / analytics tools</span><span class="slider-value" id="val-dash">$400</span></div>
-            <input type="range" id="slider-dash" min="0" max="3000" step="50" value="400" aria-label="Dashboards and analytics tools">
-          </div>
-          <div class="slider-group">
-            <div class="slider-label"><span>Fractional COO or ops manager <em style="color:var(--text-muted);font-style:normal;font-size:12px;">← drag if you have one</em></span><span class="slider-value" id="val-coo">$0</span></div>
-            <input type="range" id="slider-coo" min="0" max="20000" step="500" value="0" aria-label="Fractional COO or ops manager">
-          </div>
-          <div class="slider-group">
-            <div class="slider-label"><span>Bookkeeper / finance support</span><span class="slider-value" id="val-book">$800</span></div>
-            <input type="range" id="slider-book" min="0" max="5000" step="100" value="800" aria-label="Bookkeeper or finance support">
-          </div>
-        </div>
-        <div class="calc-output">
-          <div class="output-row">
-            <span class="output-label">Current monthly spend</span>
-            <span class="output-value" id="out-spend">$4,700</span>
-          </div>
-          <hr class="divider">
-          <div class="output-row">
-            <span class="output-label">Recommended tier</span>
-            <span class="output-value" id="out-tier" style="color:var(--text-dim);font-size:20px;">AI Inside Sales $3,000/mo</span>
-          </div>
-          <hr class="divider">
-          <div class="output-row">
-            <span class="output-label">Monthly savings</span>
-            <span class="output-value output-savings" id="out-savings">$2,200</span>
-            <span style="font-size:14px;color:var(--text-muted);margin-top:4px;" id="out-annual">That’s $26,400 a year back in your business.</span>
-          </div>
-          <hr class="divider">
-          <div class="output-row">
-            <span class="output-label">What you gain</span>
-            <span class="output-gain">Real-time intelligence · A human advisor · AI agents executing daily</span>
-          </div>
-          <a href="#contact" class="btn btn-primary" style="margin-top:8px;justify-content:center;">Book Your Free Revenue Leak Analysis →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- S9: PRICING -->
-<section class="section" id="pricing">
-  <div class="container">
-    <h2>Three ways to put AI to work in your business.</h2>
-    <p class="text-dim" style="margin-top:16px;">Brain first. Workforce next. Always on. Do the math.</p>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <span class="tier-label">NUCLEUS</span>
-        <div class="price"><span class="amount">$500</span><span class="period">/month</span></div>
-        <p style="color:var(--green);font-weight:700;font-size:13px;margin-bottom:12px;">30-day money-back guarantee.</p>
-        <p style="font-size:14px;color:var(--text-dim);margin-bottom:16px;">No setup. Month-to-month.</p>
-        <p style="font-size:12px;color:#9CA3AF;font-style:italic;margin-bottom:16px;">For any owner who wants the brain on.</p>
-        <h3 style="font-size:20px;margin-bottom:8px;">The brain.</h3>
-        <p style="color:var(--text-dim);font-size:14px;font-style:italic;margin-bottom:16px;">Your AI executive analyst.</p>
-        <ul style="list-style:none;margin-bottom:24px;font-size:14px;color:var(--text-dim);">
-          <li style="margin-bottom:8px;">Daily Brief at 7am — Slack or email</li>
-          <li style="margin-bottom:8px;">Six-dimension monthly scoreboard</li>
-          <li style="margin-bottom:8px;">Revenue leak alerts</li>
-          <li style="margin-bottom:8px;">Competitor + market signal radar</li>
-          <li style="margin-bottom:8px;">Site uptime + page speed alerts</li>
-          <li style="margin-bottom:8px;">Monthly recap with your advisor</li>
-          <li>3 connectors included</li>
-        </ul>
-        <div style="background:var(--bg3);border-radius:12px;padding:16px;margin-bottom:20px;">
-          <p class="replaces-label">REPLACES</p>
-          <ul style="list-style:none;margin:12px 0;font-size:13px;color:#9CA3AF;">
-            <li>Junior analyst hire — $60K/yr</li>
-            <li>Dashboard tools you don't open — $5K/yr</li>
-            <li>The Sunday spreadsheet ritual</li>
-          </ul>
-          <p class="replaces-total">~$65K/yr of cost</p>
-          <p class="you-pay">You pay $6K/yr.</p>
-          <p class="savings">An analyst you can actually afford.</p>
-        </div>
-        <a href="/contact" class="btn btn-ghost" style="width:100%;justify-content:center;border-color:rgba(255,255,255,0.2);color:var(--text);">Start with Nucleus →</a>
-      </div>
-      <div class="pricing-card pricing-card--featured">
-        <span class="badge--popular">★ Most Popular</span>
-        <span class="tier-label" style="color:var(--green);">AI INSIDE SALES</span>
-        <div class="price"><span class="amount">$3,000</span><span class="period">/month</span></div>
-        <p style="font-size:14px;color:var(--text-dim);margin-bottom:8px;">Nucleus included.</p>
-        <p style="font-size:14px;color:var(--text-dim);margin-bottom:16px;">60-day initial term, then month-to-month.</p>
-        <p style="font-size:12px;color:#9CA3AF;font-style:italic;margin-bottom:16px;">Best for businesses doing $1M–$5M.</p>
-        <h3 style="font-size:20px;margin-bottom:8px;">Existing pipeline, handled.</h3>
-        <p style="color:var(--text-dim);font-size:14px;font-style:italic;margin-bottom:16px;">Your AI inside sales employee.</p>
-        <ul style="list-style:none;margin-bottom:24px;font-size:14px;color:var(--text-dim);">
-          <li style="margin-bottom:8px;">Everything in Nucleus</li>
-          <li style="margin-bottom:8px;">AI voice · email · text on every lead</li>
-          <li style="margin-bottom:8px;">Qualifies leads, books appointments</li>
-          <li style="margin-bottom:8px;">Runs on your existing CRM</li>
-          <li style="margin-bottom:8px;">Custom copy across every campaign</li>
-          <li style="margin-bottom:8px;">Email + SMS infra managed for you</li>
-          <li>1:1 live tech support</li>
-        </ul>
-        <div style="background:var(--bg3);border-radius:12px;padding:16px;margin-bottom:20px;">
-          <p class="replaces-label">REPLACES</p>
-          <ul style="list-style:none;margin:12px 0;font-size:13px;color:#9CA3AF;">
-            <li>Inside-sales rep + benefits — $80K/yr</li>
-            <li>Answering service ($700/mo) — $8.4K/yr</li>
-            <li>CRM voice/text add-on — $4K/yr</li>
-          </ul>
-          <p class="replaces-total">~$92K/yr replaced</p>
-          <p class="you-pay">You pay $36K/yr.</p>
-          <p class="savings">Saves ~$56K + works on day one.</p>
-        </div>
-        <a href="/ai-inside-sales" class="btn btn-primary" style="width:100%;justify-content:center;">Hire AI Inside Sales →</a>
-      </div>
-      <div class="pricing-card pricing-card--enterprise">
-        
-        <span class="tier-label" style="color:#FFFFFF;">ENGINE</span>
-        <div class="price"><span class="amount">$10,000</span><span class="period">/mo</span></div>
-        <p style="font-size:14px;color:var(--text-dim);margin-bottom:8px;">+ $15K–$25K activation.</p>
-        <p style="font-size:14px;color:var(--text-dim);margin-bottom:16px;">Nucleus included. 90-day commit.</p>
-        <p style="font-size:12px;color:#9CA3AF;font-style:italic;margin-bottom:16px;">Best for businesses doing $5M+ with real overhead.</p>
-        <h3 style="font-size:20px;margin-bottom:8px;">Your AI workforce.</h3>
-        <p style="color:var(--text-dim);font-size:14px;font-style:italic;margin-bottom:16px;">All five agents, working in harmony.</p>
-        <ul style="list-style:none;margin-bottom:24px;font-size:14px;color:var(--text-dim);">
-          <li style="margin-bottom:8px;">Everything in Nucleus</li>
-          <li style="margin-bottom:8px;">AI Front Desk · 24/7 calls + booking</li>
-          <li style="margin-bottom:8px;">AI Review Responder · in your voice</li>
-          <li style="margin-bottom:8px;">AI Bookkeeper · daily reconcile</li>
-          <li style="margin-bottom:8px;">AI Listing Manager · GBP, Yelp, Maps</li>
-          <li style="margin-bottom:8px;">AI Outbound Caller · reactivates leads</li>
-          <li style="margin-bottom:8px;">One-tap approve from your Brief</li>
-          <li>Weekly check-in with your team</li>
-        </ul>
-        <div style="background:var(--bg3);border-radius:12px;padding:16px;margin-bottom:20px;">
-          <p class="replaces-label">REPLACES</p>
-          <ul style="list-style:none;margin:12px 0;font-size:13px;color:#9CA3AF;">
-            <li>Office manager — $80K/yr</li>
-            <li>Receptionist + answering — $65K/yr</li>
-            <li>Bookkeeping + reviews + listings — $35K/yr</li>
-          </ul>
-          <p class="replaces-total">~$180K/yr replaced</p>
-          <p class="you-pay">You pay $135K year 1.</p>
-          <p class="savings">One workforce. One Brief. One advisor.</p>
-        </div>
-        <a href="/engine" class="btn btn-ghost" style="width:100%;justify-content:center;border-color:#FFFFFF;color:#FFFFFF;">Hire your AI workforce →</a>
-      </div>
-    </div>
-    <p style="text-align:center;margin-top:24px;color:var(--text-muted);font-size:14px;font-style:italic;">A real Zanoma advisor owns your outcome on every tier. Software without accountability is just a dashboard.</p>
-  </div>
-</section>
-
-<!-- S10: WHO IT'S FOR -->
-<section class="section" style="background:var(--bg2);">
-  <div class="container">
-    <h2>Built for the businesses that actually run the economy.</h2>
-    <p class="text-dim" style="margin-top:16px;">Nucleus is vertical-aware. Same engine, different rubrics and playbooks.</p>
-    <div class="verticals-grid">
-      <div class="vertical-tile"><div class="vertical-emoji">🏥</div><div class="vertical-name">Medical &amp; dental clinics</div><div class="vertical-line">Lower no-shows. Win the referral race.</div></div>
-      <div class="vertical-tile"><div class="vertical-emoji">⚖️</div><div class="vertical-name">Legal &amp; professional services</div><div class="vertical-line">Intake-to-signed tracked. Cases don't slip.</div></div>
-      <div class="vertical-tile"><div class="vertical-emoji">🔧</div><div class="vertical-name">Home services &amp; contractors</div><div class="vertical-line">Trucks fuller. Reviews faster. Local SEO on autopilot.</div></div>
-      <div class="vertical-tile"><div class="vertical-emoji">💰</div><div class="vertical-name">Financial services</div><div class="vertical-line">A/R aging alerts. Compliance never misses a deadline.</div></div>
-      <div class="vertical-tile"><div class="vertical-emoji">📦</div><div class="vertical-name">E-commerce &amp; Amazon sellers</div><div class="vertical-line">Ranking moves, ad costs, review velocity — one brief.</div></div>
-      <div class="vertical-tile"><div class="vertical-emoji">🏪</div><div class="vertical-name">Franchise operations</div><div class="vertical-line">Every location scored. Brand standards enforced.</div></div>
-      <div class="vertical-tile"><div class="vertical-emoji">💪</div><div class="vertical-name">Fitness &amp; wellness</div><div class="vertical-line">Fill rates, win-backs, Reels on schedule.</div></div>
-      <div class="vertical-tile"><div class="vertical-emoji">💆</div><div class="vertical-name">Med spas &amp; aesthetics</div><div class="vertical-line">Appointment density, upsell rate, review velocity.</div></div>
-      <div class="vertical-tile"><div class="vertical-emoji">🏠</div><div class="vertical-name">Real estate</div><div class="vertical-line">Lead triage, listing velocity, drip on autopilot.</div></div>
-      <div class="vertical-tile"><div class="vertical-emoji">🍽️</div><div class="vertical-name">Restaurants &amp; F&amp;B</div><div class="vertical-line">Reservations, reviews, ops SLAs — one brief.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- S11: FAQ -->
-<section class="section">
-  <div class="container">
-    <h2>Answers to the questions every SMB asks first.</h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Is this just ChatGPT with a wrapper?<i data-lucide="chevron-down" class="faq-chevron" style="width:20px;height:20px;"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">No. Nucleus is a six-layer architecture — ingestion, normalization, scoring, benchmarks, playbooks, and a human advisor who owns your outcome. It's connected to your real tools, scored on your real data, and benchmarked against your vertical peers. ChatGPT doesn't know what a healthy med spa looks like. Nucleus does.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">How long does onboarding take?<i data-lucide="chevron-down" class="faq-chevron" style="width:20px;height:20px;"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">Seven days for Nucleus. Thirty days for AI Inside Sales. We do the integration work — you approve the connections.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">What if I already have HubSpot / QuickBooks / Shopify?<i data-lucide="chevron-down" class="faq-chevron" style="width:20px;height:20px;"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">Perfect. Nucleus connects to all of them. We don't replace your tools — we replace the layer above them.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">What if I want to leave?<i data-lucide="chevron-down" class="faq-chevron" style="width:20px;height:20px;"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">You own your data. CSV/JSON export delivered within 7 days of cancellation. That said, clients stay because switching means re-plumbing 20+ integrations and losing 18 months of benchmarks.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Is my data safe?<i data-lucide="chevron-down" class="faq-chevron" style="width:20px;height:20px;"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">Yes. Enterprise-grade AI infrastructure, SOC 2 compliant, tenant isolation by default. Your data is never used to train any AI model — not ours, not anyone's.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Who owns the number?<i data-lucide="chevron-down" class="faq-chevron" style="width:20px;height:20px;"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">You do. Every Nucleus client is assigned a named Zanoma advisor who owns the outcome alongside you. Kevin Keranen, founder, reviews every onboarding personally.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Do I have to use all the AI agents?<i data-lucide="chevron-down" class="faq-chevron" style="width:20px;height:20px;"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">No. AI Inside Sales tier lets you pick your bundle — Front Desk, Review Responder, Bookkeeper, or Listing Manager. Start with one. Add others when you're ready. The Daily Brief runs regardless of which agents you activate.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">What if my vertical isn't listed?<i data-lucide="chevron-down" class="faq-chevron" style="width:20px;height:20px;"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">Nucleus runs on universal business dimensions — Acquisition, Retention, Operations, Finance, Reputation, Compliance. Every business has all six. If your vertical isn't listed, book a call and we'll tell you in 15 minutes whether Nucleus fits.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- S12: FINAL CTA + CONTACT FORM -->
-<section class="cta-band" id="contact">
-  <div class="container">
-    <h2>Stop guessing.</h2>
-    <h2>Start with a 15-min Revenue Leak Analysis — on us.</h2>
-    <p style="margin-bottom:36px;">We'll connect three of your systems, run them through Nucleus, and show you exactly where you're leaving money on the table. No sales pitch until you ask for one.</p>
-
-    <!-- Calendly inline widget begin -->
-    <div class="calendly-inline-widget"
-         data-url="https://calendly.com/joe-zanoma/30min"
-         style="min-width:320px;height:700px;"></div>
-    <script type="text/javascript"
-            src="https://assets.calendly.com/assets/external/widget.js"
-            async></script>
-    <!-- Calendly inline widget end -->
-
-    <div class="cta-trust" style="margin-top:24px;">· No credit card &nbsp;· No commitment &nbsp;· 15 minutes, zero fluff</div>
-    <p style="margin-top:16px;font-size:14px;color:var(--text-muted);">Usually replies within 24 hours &nbsp;·&nbsp; Kevin Keranen, Founder &nbsp;·&nbsp; Based in Bend, OR</p>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<!-- TESTIMONIAL -->
-<section class="testimonials" style="padding: 80px 0; background: var(--bg2);">
-  <div class="container">
-    <h2 style="text-align:center; margin-bottom: 48px;">Real results from real businesses.</h2>
-    <div style="max-width: 800px; margin: 0 auto;">
-      <blockquote style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px;">
-        <p style="font-size: 18px; font-style: italic; margin-bottom: 16px;\"We were losing leads every single weekend. Now our AI picks up every call, books the appointment, and sends a confirmation — all before I even see the notification. It paid for itself in the first week.\"</p>
-        <cite style="color: var(--green); font-weight: 600;">— Marcus T., Owner, Regional HVAC Company</cite>
-      </blockquote>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="container footer-inner">
-    <div class="footer-links">
-      <a href="/sales">Lead Generation</a>
-      <a href="/brand-intelligence">Brand Intelligence</a>
-      
-      <a href="#pricing">Pricing</a>
-      <a href="#contact">Contact</a>
-      <a href="mailto:kevin@zanoma.com">kevin@zanoma.com</a>
-    </div>
-    <div class="footer-copy">© 2026 Zanoma. All rights reserved.</div>
+    <p class="footer-copy">© 2026 Zanoma. Founder-led. Bend, OR. Built on Claude.</p>
   </div>
 </footer>
 
-<script>
-// Lucide icons
-document.addEventListener('DOMContentLoaded', () => {
-  if (window.lucide) lucide.createIcons();
-
-  // Calculator
-  const sliders = {
-    agency: document.getElementById('slider-agency'),
-    dash:   document.getElementById('slider-dash'),
-    coo:    document.getElementById('slider-coo'),
-    book:   document.getElementById('slider-book'),
-  };
-  const vals = {
-    agency: document.getElementById('val-agency'),
-    dash:   document.getElementById('val-dash'),
-    coo:    document.getElementById('val-coo'),
-    book:   document.getElementById('val-book'),
-  };
-  const outSpend   = document.getElementById('out-spend');
-  const outSavings = document.getElementById('out-savings');
-  const outTier    = document.getElementById('out-tier');
-  const outAnnual  = document.getElementById('out-annual');
-
-  function fmt(n) { return '$' + n.toLocaleString(); }
-  function getTier(total) {
-    if (total < 2000)  return { label: 'Nucleus $500/mo', cost: 500 };
-    if (total < 6000)  return { label: 'AI Inside Sales $3,000/mo', cost: 3000 };
-    return              { label: 'Engine $10,000/mo + activation', cost: 10000 };
-  }
-  function updateCalc() {
-    const total = ['agency','dash','coo','book'].reduce((s,k) => s + parseInt(sliders[k].value), 0);
-    vals.agency.textContent = fmt(parseInt(sliders.agency.value));
-    vals.dash.textContent   = fmt(parseInt(sliders.dash.value));
-    vals.coo.textContent    = fmt(parseInt(sliders.coo.value));
-    vals.book.textContent   = fmt(parseInt(sliders.book.value));
-    outSpend.textContent    = fmt(total);
-    const tier = getTier(total);
-    outTier.textContent     = tier.label;
-    const savings = Math.max(0, total - tier.cost);
-    outSavings.textContent  = fmt(savings);
-    const annual = savings * 12;
-    outAnnual.textContent   = annual > 0 ? `That’s ${fmt(annual)} a year back in your business.` : 'Nucleus pays for itself from day one.';
-  }
-  Object.values(sliders).forEach(s => s.addEventListener('input', updateCalc));
-  updateCalc();
-
-  // Contact form replaced with Calendly embed — no form handler needed
-
-  // ---- FAQ accordion ----
-  document.querySelectorAll('.faq-q').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      const panel = item.querySelector('.faq-a');
-      const isOpen = item.classList.contains('open');
-      // Close all
-      document.querySelectorAll('.faq-item').forEach(i => {
-        i.classList.remove('open');
-        i.querySelector('.faq-a').style.maxHeight = '0';
-        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
-      });
-      if (!isOpen) {
-        item.classList.add('open');
-        panel.style.maxHeight = panel.scrollHeight + 'px';
-        btn.setAttribute('aria-expanded', 'true');
-      }
-    });
-  });
-});
-</script>
 </body>
 </html>
