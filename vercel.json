@@ -42,6 +42,16 @@
       "source": "/brand-intelligence",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/ai-inside-sales",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/engine",
+      "destination": "/contact",
+      "permanent": true
     }
   ],
   "rewrites": [],
