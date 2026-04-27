@@ -88,6 +88,29 @@ code, pre { font-family: 'Menlo', 'SF Mono', monospace; font-size: 13px; }
 .persona-meta b { color: var(--text); font-weight: 500; }
 .persona-status { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted); margin-top: 4px; }
 .persona-card.active .persona-status { color: var(--green); }
+.persona-hires-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-top: 4px; }
+.persona-hires { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.3px; color: var(--text); }
+.persona-card.tier-nucleus .persona-hires { color: var(--text-dim); }
+.persona-card.tier-inside_sales .persona-hires { color: #fb923c; }
+.persona-card.tier-engine .persona-hires { color: var(--green); text-shadow: 0 0 18px rgba(57,255,20,0.45); }
+.persona-price { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 14px; color: var(--text-muted); letter-spacing: 0.2px; }
+.persona-card.active .persona-price { color: var(--text); }
+.persona-pitch { font-size: 13.5px; color: var(--text-dim); line-height: 1.45; min-height: 58px; }
+.persona-card.active .persona-pitch { color: var(--text); }
+.persona-divider { height: 1px; background: var(--border); margin: 4px 0 0; }
+.tier-contrast-strip { margin-top: 24px; display: flex; align-items: stretch; justify-content: center; gap: 12px; padding: 18px 22px; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); }
+.tier-contrast-item { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 4px 8px; }
+.tier-contrast-item:nth-child(1) .tcs-num { color: var(--text-dim); }
+.tier-contrast-item:nth-child(3) .tcs-num { color: #fb923c; }
+.tier-contrast-item:nth-child(5) .tcs-num { color: var(--green); text-shadow: 0 0 24px rgba(57,255,20,0.5); }
+.tcs-num { font-family: 'Space Grotesk', sans-serif; font-size: 36px; font-weight: 700; line-height: 1; letter-spacing: -1px; }
+.tcs-lbl { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); }
+.tcs-desc { font-size: 12.5px; color: var(--text-dim); margin-top: 4px; text-align: center; }
+.tier-contrast-arrow { display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 22px; font-family: 'Space Grotesk', sans-serif; }
+@media (max-width: 760px) {
+  .tier-contrast-strip { flex-direction: column; gap: 12px; }
+  .tier-contrast-arrow { transform: rotate(90deg); }
+}
 .live-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; box-shadow: 0 0 6px var(--green); animation: pulse 2s ease-in-out infinite; }
 @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
 
@@ -907,6 +930,8 @@ acme: {
   owner: 'Marcus Thompson', ownerFirst: 'MARCUS', initials: 'MT',
   city: 'Bend, OR', vertical: 'Home services · HVAC',
   tier: 'nucleus', tierLabel: '$500 / mo', tierBadge: 'NUCLEUS',
+  tierHires: '0 AI HIRES',
+  tierPitch: 'Pure intelligence brain. No agents — your Daily Brief tells you what to act on every morning.',
   liveSince: 'March 12, 2026', daysLive: 47,
   statusLine: 'Live · Day 47',
   advisor: { name: 'Joe Van Wyk', initials: 'JV',
@@ -1314,6 +1339,8 @@ cascade: {
   owner: 'Dr. Jennifer Lin', ownerFirst: 'JENNIFER', initials: 'JL',
   city: 'Portland, OR', vertical: 'Medical · aesthetic',
   tier: 'inside_sales', tierLabel: '$3,000 / mo', tierBadge: 'AI INSIDE SALES',
+  tierHires: '1 AI HIRE',
+  tierPitch: 'One AI hire owns the front of the funnel — calls, qualifies, books, follows up. Voice + email + SMS, 24/7.',
   liveSince: 'April 14, 2026', daysLive: 12,
   statusLine: 'Onboarding · Day 12 of 30',
   advisor: { name: 'Joe Van Wyk', initials: 'JV',
@@ -1699,6 +1726,8 @@ riverside: {
   owner: 'Ryan Marshall', ownerFirst: 'RYAN', initials: 'RM',
   city: 'Eugene, OR', vertical: 'Real estate',
   tier: 'engine', tierLabel: '$10,000 / mo', tierBadge: 'ENGINE',
+  tierHires: '5 AI HIRES',
+  tierPitch: 'Five AI hires run the whole business — front desk + reviews + bookkeeping + listings + outbound. One workforce, one Brief.',
   liveSince: 'October 28, 2025', daysLive: 198,
   statusLine: 'Live · 198 days · 5 agents active',
   advisor: { name: 'Joe Van Wyk', initials: 'JV',
@@ -2224,24 +2253,34 @@ function PersonaSwitcher({ currentId, onChange }) {
         <div className="switcher-heading">
           <div className="switcher-h-eyebrow">ZANOMA · NUCLEUS · CLIENT DASHBOARD</div>
           <div className="switcher-h-title">Three sample customers. Pick the one most like your business.</div>
-          <div className="switcher-h-sub">These are <b>fictional examples</b> — not real Zanoma clients. Each shows the dashboard at a different price point so you can see what your own dashboard would look like at every tier.</div>
+          <div className="switcher-h-sub">Same dashboard. Same Daily Brief. The difference between tiers is <b>how many AI workers run alongside it</b>.</div>
         </div>
         <div className="switcher-grid">
           {Object.values(PERSONAS).map((p, idx) => (
-            <button key={p.id} className={'persona-card' + (p.id === currentId ? ' active' : '')} onClick={() => onChange(p.id)}>
+            <button key={p.id} className={'persona-card' + (p.id === currentId ? ' active' : '') + ' tier-' + p.tier} onClick={() => onChange(p.id)}>
               <div className="persona-top">
                 <span className="persona-sample-tag">{sampleLabels[idx]}</span>
                 <span className="persona-tier">on the <b>{p.tierBadge}</b> plan</span>
               </div>
+              <div className="persona-hires-row"><span className="persona-hires">{p.tierHires}</span><span className="persona-price">{p.tierLabel}</span></div>
+              <div className="persona-pitch">{p.tierPitch}</div>
+              <div className="persona-divider"></div>
               <div className="persona-name">{p.business}</div>
               <div className="persona-meta">
                 <span><b>{p.owner}</b></span>
                 <span>{p.city} · {p.vertical}</span>
-                <span style={{color:'var(--text-muted)', fontSize:12, fontStyle:'italic'}}>illustrative example · {p.tierLabel}</span>
+                <span style={{color:'var(--text-muted)', fontSize:12, fontStyle:'italic'}}>illustrative example</span>
               </div>
               <div className="persona-status"><span className="live-dot"></span>{p.statusLine}</div>
             </button>
           ))}
+        </div>
+        <div className="tier-contrast-strip">
+          <div className="tier-contrast-item"><span className="tcs-num">0</span><span className="tcs-lbl">AI hires</span><span className="tcs-desc">Brain only. You act.</span></div>
+          <div className="tier-contrast-arrow">→</div>
+          <div className="tier-contrast-item"><span className="tcs-num">1</span><span className="tcs-lbl">AI hire</span><span className="tcs-desc">Front of the funnel.</span></div>
+          <div className="tier-contrast-arrow">→</div>
+          <div className="tier-contrast-item"><span className="tcs-num">5</span><span className="tcs-lbl">AI hires</span><span className="tcs-desc">Whole business.</span></div>
         </div>
       </div>
     </div>
