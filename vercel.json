@@ -46,6 +46,10 @@
   ],
   "rewrites": [
     {
+      "source": "/clientdemo/nucleus_500_new.html",
+      "destination": "/clientdemo/nucleus_500_new.html"
+    },
+    {
       "source": "/clientdemo",
       "destination": "/clientdemo/index.html"
     }
