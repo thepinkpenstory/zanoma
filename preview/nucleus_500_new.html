@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>Nucleus · $500/mo · the new tier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0f;
+  --bg2: #0f0f17;
+  --bg3: #13131e;
+  --bg4: #181822;
+  --text: #f0f0f5;
+  --text-dim: #a0a0b0;
+  --text-muted: #606070;
+  --green: #39ff14;
+  --green-dim: rgba(57,255,20,0.15);
+  --orange: #ff9b3d;
+  --slack-purple: #4A154B;
+  --slack-text: #1d1c1d;
+  --slack-bg: #ffffff;
+  --slack-border: #DDD;
+  --border: rgba(255,255,255,0.08);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-pill: 999px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Storytelling header ─────────────────────────────── */
+.frame { max-width: 880px; margin: 0 auto; padding: 32px 24px 64px; }
+
+.intro { text-align: center; padding: 24px 0 32px; }
+.intro-eyebrow { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
+.intro-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(28px, 4vw, 40px); letter-spacing: -1.5px; line-height: 1.1; margin: 0 0 14px; color: var(--text); }
+.intro-sub { font-size: 16px; color: var(--text-dim); max-width: 620px; margin: 0 auto; line-height: 1.55; }
+.intro-price { display: inline-flex; align-items: baseline; gap: 6px; margin-top: 18px; padding: 6px 16px; border: 1px solid var(--green); border-radius: var(--radius-pill); font-family: 'Space Grotesk', sans-serif; }
+.intro-price b { font-size: 20px; font-weight: 700; color: var(--green); }
+.intro-price span { font-size: 12px; color: var(--text-muted); letter-spacing: 1.5px; text-transform: uppercase; }
+
+.step-h { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); margin: 48px 0 14px; display: flex; align-items: center; gap: 10px; }
+.step-h::before { content: ''; flex: 0 0 22px; height: 22px; border-radius: 50%; background: var(--green-dim); border: 1.5px solid var(--green); color: var(--green); display: flex; align-items: center; justify-content: center; }
+.step-h.s1::before { content: '1'; font-family: 'Space Grotesk'; font-size: 12px; color: var(--green); }
+.step-h.s2::before { content: '2'; font-family: 'Space Grotesk'; font-size: 12px; color: var(--green); }
+
+/* ── Slack mockup ─────────────────────────────────────── */
+.slack-window { background: var(--slack-bg); border-radius: var(--radius); overflow: hidden; box-shadow: 0 0 0 1px var(--border), 0 12px 48px rgba(0,0,0,0.35); color: var(--slack-text); }
+.slack-bar { background: var(--slack-purple); color: #fff; padding: 10px 16px; display: flex; align-items: center; gap: 10px; font-size: 13px; }
+.slack-bar .dots { display: flex; gap: 6px; }
+.slack-bar .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.2); }
+.slack-channel { padding: 14px 18px; border-bottom: 1px solid var(--slack-border); }
+.slack-channel-name { font-weight: 700; font-size: 15px; color: var(--slack-text); margin: 0; }
+.slack-channel-sub { font-size: 12px; color: #6b6b6b; margin: 2px 0 0; }
+.slack-msg { padding: 14px 18px; display: flex; gap: 12px; align-items: flex-start; }
+.slack-av { width: 36px; height: 36px; border-radius: 6px; background: #0a0a0f; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--green); font-size: 14px; flex-shrink: 0; }
+.slack-meta { font-size: 13px; }
+.slack-meta b { color: var(--slack-text); font-weight: 700; margin-right: 6px; }
+.slack-meta span { color: #6b6b6b; font-size: 12px; }
+.slack-body { font-family: 'Inter', sans-serif; font-size: 14px; color: var(--slack-text); line-height: 1.55; margin-top: 4px; }
+.slack-body code { font-family: 'Menlo', 'SF Mono', monospace; font-size: 13px; background: #f4f4f4; padding: 1px 6px; border-radius: 4px; color: #1d1c1d; }
+.slack-pre { font-family: 'Menlo', 'SF Mono', monospace; font-size: 12.5px; background: #f7f7f7; border: 1px solid #e6e6e6; border-radius: 6px; padding: 14px 16px; margin: 10px 0 12px; white-space: pre-wrap; line-height: 1.55; color: var(--slack-text); }
+.slack-pre b { color: var(--slack-text); font-weight: 700; }
+.slack-pre .up { color: #009d4e; font-weight: 700; }
+.slack-pre .down { color: #d3402f; font-weight: 700; }
+.slack-pre .muted { color: #888; }
+.slack-link { color: #1264a3; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+.slack-link:hover { text-decoration: underline; }
+.slack-cost { display: inline-block; margin-top: 8px; padding: 3px 10px; background: #ECFDEC; color: #006D2C; font-family: 'Menlo', monospace; font-size: 12px; border-radius: 4px; font-weight: 600; }
+
+.connector-line { display: flex; flex-direction: column; align-items: center; gap: 6px; margin: 18px 0 12px; }
+.connector-line .arrow { font-family: 'Space Grotesk', sans-serif; font-size: 12px; color: var(--green); letter-spacing: 2px; }
+.connector-line .label { font-size: 12px; color: var(--text-muted); font-style: italic; }
+
+/* ── Artifact view ──────────────────────────────────────── */
+.artifact-bar { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; margin-bottom: 14px; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); }
+.artifact-bar .live { color: var(--green); display: flex; align-items: center; gap: 8px; }
+.artifact-bar .live::before { content:''; width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 10px var(--green); animation: pulse 1.6s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.45; } }
+
+.brief-detail { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px 36px; }
+.brief-d-header { padding-bottom: 22px; margin-bottom: 26px; border-bottom: 1px solid var(--border); }
+.brief-d-meta { display: flex; align-items: center; gap: 12px; font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--green); text-transform: uppercase; margin-bottom: 14px; flex-wrap: wrap; }
+.brief-d-meta .dot { color: var(--text-muted); }
+.brief-d-meta-r { font-weight: 500; color: var(--text-muted); letter-spacing: 0.5px; }
+.brief-d-greeting { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(28px, 4vw, 40px); letter-spacing: -1.5px; line-height: 1.05; margin: 0; }
+
+.brief-d-tldr { background: var(--bg3); border-left: 4px solid var(--green); padding: 16px 20px; margin-bottom: 28px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+.brief-d-tldr-label { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--green); text-transform: uppercase; margin-bottom: 6px; }
+.brief-d-tldr-text { font-size: 16px; color: var(--text); line-height: 1.55; font-weight: 500; }
+
+.brief-d-section-h { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2px; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+
+.bms-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-bottom: 28px; }
+.bms-cell { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 10px; text-align: center; }
+.bms-name { font-size: 9px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-muted); font-family: 'Space Grotesk', sans-serif; margin-bottom: 4px; }
+.bms-val { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; color: var(--text); display: flex; align-items: baseline; justify-content: center; gap: 4px; }
+.bms-arrow { font-size: 11px; }
+.bms-arrow.up { color: var(--green); }
+.bms-arrow.down { color: var(--orange); }
+.bms-arrow.flat { color: var(--text-muted); }
+
+.brief-d-section { margin-bottom: 30px; }
+
+.brief-d-hl { display: flex; gap: 16px; margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px solid var(--border); }
+.brief-d-hl:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+.brief-d-hl-num { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: var(--green-dim); border: 1.5px solid var(--green); color: var(--green); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; }
+.brief-d-hl-headline { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px; color: var(--text); line-height: 1.35; margin: 0 0 8px; letter-spacing: -0.3px; }
+.brief-d-hl-text { font-size: 14px; color: var(--text-dim); line-height: 1.65; margin: 0 0 8px; }
+.brief-d-hl-text b { color: var(--text); font-weight: 500; }
+
+.cite { display: inline-flex; align-items: center; gap: 4px; padding: 1px 8px; background: var(--bg4); border: 1px solid var(--border); border-radius: var(--radius-pill); font-family: 'Menlo', 'SF Mono', monospace; font-size: 11px; color: var(--text-dim); margin-left: 6px; }
+
+.advisor { display: flex; gap: 14px; align-items: flex-start; padding: 18px; background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-sm); margin-top: 12px; }
+.advisor-av { width: 38px; height: 38px; border-radius: 50%; background: var(--green-dim); border: 1.5px solid var(--green); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--green); font-size: 13px; flex-shrink: 0; }
+.advisor-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; color: var(--text); margin: 0 0 2px; letter-spacing: 0.3px; }
+.advisor-role { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; font-family: 'Space Grotesk', sans-serif; margin: 0 0 8px; }
+.advisor-msg { font-size: 14px; color: var(--text-dim); line-height: 1.6; margin: 0; }
+
+.brief-d-foot { display: flex; justify-content: space-between; align-items: center; padding-top: 22px; margin-top: 24px; border-top: 1px solid var(--border); font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); }
+.brief-d-foot .cost { color: var(--green); }
+
+/* ── Competitor intel ─────────────────────────────── */
+.comp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.comp-card { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.comp-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; color: var(--text); letter-spacing: -0.2px; margin: 0; }
+.comp-meta { font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); }
+.comp-body { font-size: 13px; color: var(--text-dim); line-height: 1.55; margin: 0; }
+.comp-body b { color: var(--text); font-weight: 500; }
+.comp-foot { display: flex; justify-content: space-between; align-items: center; padding-top: 10px; margin-top: auto; border-top: 1px solid var(--border); }
+.comp-foot .cite { margin-left: 0; }
+.comp-tag { font-family: 'Space Grotesk', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; padding: 2px 7px; border-radius: var(--radius-pill); }
+.comp-tag.pricing { background: rgba(255,155,61,0.12); color: var(--orange); border: 1px solid rgba(255,155,61,0.4); }
+.comp-tag.creative { background: rgba(57,255,20,0.10); color: var(--green); border: 1px solid rgba(57,255,20,0.35); }
+.comp-tag.hiring { background: rgba(160,160,176,0.10); color: var(--text-dim); border: 1px solid rgba(160,160,176,0.3); }
+.comp-note { font-size: 12px; color: var(--text-muted); font-style: italic; padding-top: 12px; margin-top: 14px; border-top: 1px solid var(--border); text-align: center; }
+.comp-note b { color: var(--text-dim); font-style: normal; font-weight: 500; }
+
+.tagline { text-align: center; padding: 40px 24px 16px; max-width: 640px; margin: 0 auto; }
+.tagline p { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 500; line-height: 1.5; color: var(--text); margin: 0; letter-spacing: -0.3px; }
+.tagline em { color: var(--green); font-style: normal; font-weight: 700; }
+
+@media (max-width: 640px) {
+  .bms-grid { grid-template-columns: repeat(3, 1fr); }
+  .comp-grid { grid-template-columns: 1fr; }
+  .brief-detail { padding: 24px 20px; }
+  .frame { padding: 20px 16px 48px; }
+}
+</style>
+</head>
+<body>
+
+<div class="frame">
+
+  <!-- Intro -->
+  <div class="intro">
+    <div class="intro-eyebrow">Nucleus · the new tier</div>
+    <h1 class="intro-title">Your business in three things,<br>every morning at 7 AM.</h1>
+    <p class="intro-sub">No app to log into. No dashboard to remember. The Brief lands in Slack. The live view is one click away. Joe is on the phone when something's wrong.</p>
+    <div class="intro-price"><b>$500</b><span>/ month</span></div>
+  </div>
+
+  <!-- Step 1 — Slack -->
+  <div class="step-h s1">7:00 AM · the Slack message</div>
+
+  <div class="slack-window">
+    <div class="slack-bar">
+      <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+      <span style="opacity:0.85;">Bend Mountain HVAC · Slack</span>
+    </div>
+    <div class="slack-channel">
+      <p class="slack-channel-name"># zanoma-brief</p>
+      <p class="slack-channel-sub">Your daily Brief. Every weekday at 7:00 AM PT.</p>
+    </div>
+    <div class="slack-msg">
+      <div class="slack-av">Z</div>
+      <div style="flex:1;">
+        <p class="slack-meta"><b>Zanoma Nucleus</b> <span>7:02 AM</span></p>
+        <div class="slack-body">
+          Good morning, Mike. Your Brief is ready.
+<div class="slack-pre"><b>🎯 Bend Mountain HVAC · Tuesday, Apr 28</b>
+─────────────────────────────
+
+ACQUISITION: <span class="up">+12% ↗</span>
+   ├─ GA4 sessions
+   ├─ Stripe charges
+   └─ Caveat: organic up; paid flat
+
+REPUTATION: 4.7★ (12 reviews / 30d) →
+   └─ Last review 4 days ago
+
+OPERATIONS: on track →
+   └─ All 3 connectors healthy
+
+<b>TODAY'S 3 ITEMS</b>
+
+<b>1. Lead form regression killed conversions overnight</b>
+   Mobile site speed dropped to <span class="down">4.1s</span> (vs 1.8s 14d avg).
+   Source: GA4 Web Vitals.
+   Impact: estimated <b>6 leads lost in 24h</b> (~$4–6k pipeline).
+
+<b>2. New 5★ review from Sarah J. on GBP</b>
+   "Best HVAC service I've had in 20 years in Bend."
+   No response sent — at $500 the brain only informs.
+   Want responses handled? <span class="muted">→ AI Inside Sales</span>
+
+<b>3. Competitor Bend Heating Co. launched $99/install Meta promo</b>
+   First seen 3 days ago. Joe is prepping a counter-take by Friday.
+
+────
+<a href="#" class="slack-link">Open the live dashboard →</a>
+</div>
+          <span class="slack-cost">Cost of this Brief: $0.07</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bridge -->
+  <div class="connector-line">
+    <span class="arrow">▼ ▼ ▼</span>
+    <span class="label">Mike clicks "Open the live dashboard"</span>
+    <span class="arrow">▼ ▼ ▼</span>
+  </div>
+
+  <!-- Step 2 — Live Artifact -->
+  <div class="step-h s2">One click later · the Live dashboard</div>
+
+  <div class="artifact-bar">
+    <span class="live">Live · pulled from connectors</span>
+    <span>Refreshed Tue 7:02 AM PT</span>
+  </div>
+
+  <article class="brief-detail">
+    <header class="brief-d-header">
+      <div class="brief-d-meta">
+        <span>Daily Brief</span>
+        <span class="dot">·</span>
+        <span>Day 47 consecutive</span>
+        <span class="dot">·</span>
+        <span class="brief-d-meta-r">Tuesday, April 28, 2026</span>
+      </div>
+      <h1 class="brief-d-greeting">Good morning, Mike.</h1>
+    </header>
+
+    <div class="brief-d-tldr">
+      <div class="brief-d-tldr-label">TL;DR</div>
+      <div class="brief-d-tldr-text">Lead form regression killed conversions overnight — estimated <b>6 leads lost in 24h</b>. Bend Heating launched a $99/install Meta promo. Acquisition still up <b>+12%</b> on the trailing 14d.</div>
+    </div>
+
+    <h2 class="brief-d-section-h">Six-dimension scoreboard · refreshed every morning</h2>
+    <div class="bms-grid">
+      <div class="bms-cell"><div class="bms-name">Acquisition</div><div class="bms-val">+12%<span class="bms-arrow up">▲</span></div></div>
+      <div class="bms-cell"><div class="bms-name">Reputation</div><div class="bms-val">4.7★<span class="bms-arrow flat">→</span></div></div>
+      <div class="bms-cell"><div class="bms-name">Operations</div><div class="bms-val">98%<span class="bms-arrow up">▲</span></div></div>
+      <div class="bms-cell"><div class="bms-name">Revenue</div><div class="bms-val">$84.2k<span class="bms-arrow up">▲</span></div></div>
+      <div class="bms-cell"><div class="bms-name">Pipeline</div><div class="bms-val">−6<span class="bms-arrow down">▼</span></div></div>
+      <div class="bms-cell"><div class="bms-name">Margin</div><div class="bms-val">31%<span class="bms-arrow flat">→</span></div></div>
+    </div>
+
+    <section class="brief-d-section">
+      <h2 class="brief-d-section-h">Today's three things</h2>
+
+      <div class="brief-d-hl">
+        <div class="brief-d-hl-num">1</div>
+        <div>
+          <h3 class="brief-d-hl-headline">Lead form regression killed conversions overnight</h3>
+          <p class="brief-d-hl-text">Mobile site speed dropped to <b>4.1s</b> (vs 1.8s 14d avg). Estimated <b>6 leads lost in 24h</b>; at your 18% close rate that's roughly <b>$4–6k of pipeline</b>.<a class="cite" href="#">GA4 Web Vitals ↗</a></p>
+        </div>
+      </div>
+
+      <div class="brief-d-hl">
+        <div class="brief-d-hl-num">2</div>
+        <div>
+          <h3 class="brief-d-hl-headline">New 5★ review from Sarah J. on GBP</h3>
+          <p class="brief-d-hl-text">"Best HVAC service I've had in 20 years in Bend." No response sent — at the Nucleus tier the brain only informs.<a class="cite" href="#">GBP review feed ↗</a> Want us to start handling responses? <b>That's AI Inside Sales.</b></p>
+        </div>
+      </div>
+
+      <div class="brief-d-hl">
+        <div class="brief-d-hl-num">3</div>
+        <div>
+          <h3 class="brief-d-hl-headline">Competitor Bend Heating Co. launched a $99/install Meta promo</h3>
+          <p class="brief-d-hl-text">First seen <b>3 days ago</b>; spend trending up. Joe is prepping a counter-take by Friday.<a class="cite" href="#">Meta Ad Library ↗</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="brief-d-section">
+      <h2 class="brief-d-section-h">Competitor intelligence</h2>
+      <div class="comp-grid">
+
+        <div class="comp-card">
+          <p class="comp-name">Bend Heating Co.</p>
+          <span class="comp-meta">Last seen · 3 days ago</span>
+          <p class="comp-body"><b>$99/install</b> Meta promo, spending up week-over-week. Targeting Bend metro, mobile-first creative.</p>
+          <div class="comp-foot">
+            <span class="comp-tag pricing">Pricing move</span>
+            <a class="cite" href="#">Meta Ad Library ↗</a>
+          </div>
+        </div>
+
+        <div class="comp-card">
+          <p class="comp-name">High Desert HVAC</p>
+          <span class="comp-meta">Last seen · 6 days ago</span>
+          <p class="comp-body">Launched a <b>"financing in 60 sec"</b> landing page. Same Synchrony partner you use; different framing.</p>
+          <div class="comp-foot">
+            <span class="comp-tag creative">Creative angle</span>
+            <a class="cite" href="#">Site capture ↗</a>
+          </div>
+        </div>
+
+        <div class="comp-card">
+          <p class="comp-name">Cascade Climate Control</p>
+          <span class="comp-meta">Last seen · 2 days ago</span>
+          <p class="comp-body">Hiring <b>2 install techs</b> on Indeed. Indicates capacity expansion — likely Q3 push in the same ZIP codes.</p>
+          <div class="comp-foot">
+            <span class="comp-tag hiring">Hiring signal</span>
+            <a class="cite" href="#">Indeed ↗</a>
+          </div>
+        </div>
+
+      </div>
+      <p class="comp-note"><b>Insight only at the Nucleus tier.</b> Counter-strategy and outreach handled at AI Inside Sales.</p>
+    </section>
+
+    <section class="brief-d-section">
+      <h2 class="brief-d-section-h">Your advisor's note</h2>
+      <div class="advisor">
+        <div class="advisor-av">JV</div>
+        <div>
+          <p class="advisor-name">Joe Van Wyk</p>
+          <p class="advisor-role">Your Zanoma advisor</p>
+          <p class="advisor-msg">The lead form regression is the one. That's $4–6k of pipeline if we don't fix it today. Want me to call your web team now? Reply yes and I'll dial in 10 min.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="brief-d-foot">
+      <span>Cost of this Brief: <span class="cost">$0.07</span></span>
+      <span>Next refresh: Wed 7:00 AM PT</span>
+    </footer>
+  </article>
+
+  <!-- Tagline -->
+  <div class="tagline">
+    <p>That's <em>the entire $500 product</em>.<br>The Brief. The dashboard. The advisor.<br>No app to log into. Nothing to remember.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
