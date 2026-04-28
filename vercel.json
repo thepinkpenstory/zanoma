@@ -1,5 +1,5 @@
 {
-  "cleanUrls": true,
+  "cleanUrls": false,
   "trailingSlash": false,
   "redirects": [
     {
@@ -51,6 +51,15 @@
     }
   ],
   "headers": [
+    {
+      "source": "/clientdemo/nucleus_500_new.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate"
+        }
+      ]
+    },
     {
       "source": "/(.*).html",
       "headers": [
