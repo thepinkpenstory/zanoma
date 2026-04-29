@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Engine — Your AI Workforce | Zanoma</title>
+<title>Engine — Get 10 of You. | Zanoma</title>
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
-<meta name="description" content="Five AI agents working in harmony. AI Front Desk, Review Responder, Bookkeeper, Listing Manager, Outbound Caller. $10,000/month. Replaces $180K of fragmented spend.">
+<meta name="description" content="You bought a business for freedom. Then it owned you. Engine builds an AI Digital Twin that gives you 10 of you — without the hassle of hiring. Reclaim your time, your money, your growth, your life. $10K/mo + $10K activation.">
 <link rel="canonical" href="https://zanoma.com/engine">
-<meta property="og:title" content="Engine — Five AI hires. One workforce. One Brief. | Zanoma">
-<meta property="og:description" content="Five named AI agents trained on your business. $10,000/month + activation. Replaces ~$180K of fragmented spend.">
+<meta property="og:title" content="Engine — Get 10 of You. | Zanoma">
+<meta property="og:description" content="An AI Digital Twin that runs your business — so you can run your life. Replaces ~$610K of human cost. Live in 60 days.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://zanoma.com/engine">
 <meta property="og:image" content="https://zanoma.com/og-nucleus.png">
@@ -20,35 +20,50 @@
   --bg: #0a0a0f;
   --bg2: #0f0f17;
   --bg3: #13131e;
+  --bg4: #181822;
   --text: #f0f0f5;
   --text-dim: #a0a0b0;
   --text-muted: #606070;
   --green: #39ff14;
   --green-dim: rgba(57,255,20,0.15);
+  --green-soft: rgba(57,255,20,0.06);
   --green-glow: 0 0 30px rgba(57,255,20,0.3);
-  --blue: #3b82f6;
-  --blue-dim: rgba(59,130,246,0.15);
+  --orange: #ff9b3d;
+  --orange-dim: rgba(255,155,61,0.15);
   --border: rgba(255,255,255,0.08);
+  --border-strong: rgba(255,255,255,0.16);
   --radius: 16px;
   --radius-sm: 10px;
+  --radius-pill: 999px;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { background: var(--bg); color: var(--text); font-family: 'Inter', -apple-system, sans-serif; font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
-h1 { font-size: clamp(40px, 5vw, 64px); letter-spacing: -2px; line-height: 1.08; }
-h2 { font-size: clamp(32px, 4vw, 48px); letter-spacing: -1.5px; line-height: 1.15; }
-h3 { font-size: 28px; font-weight: 600; letter-spacing: -0.5px; }
+h1 { font-size: clamp(56px, 8vw, 124px); letter-spacing: -3.5px; line-height: 0.95; }
+h2 { font-size: clamp(32px, 4.5vw, 56px); letter-spacing: -1.8px; line-height: 1.08; }
+h3 { font-size: 24px; font-weight: 600; letter-spacing: -0.5px; }
 a { color: inherit; text-decoration: none; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-.text-dim { color: var(--text-dim); }
-.text-muted { color: var(--text-muted); }
-.text-green { color: var(--green); }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+@media (min-width: 1600px) { .container { max-width: 1440px; } }
+
+/* DRAFT BANNER */
+.draft-banner {
+  background: linear-gradient(90deg, #ff9b3d 0%, #ff6b3d 100%);
+  color: #0a0a0f;
+  text-align: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 8px 16px;
+}
 
 /* NAV */
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,15,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+nav { position: sticky; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,15,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-.nav-logo { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; }
+.nav-logo { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 1px; }
 .nav-links { display: flex; align-items: center; gap: 32px; }
 .nav-links a { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 500; color: var(--text-dim); transition: color 0.2s; }
 .nav-links a:hover, .nav-links a.active { color: var(--green); }
@@ -58,33 +73,472 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .btn-secondary:hover { border-color: var(--green); color: var(--green); }
 
 /* HERO */
-.hero { padding: 160px 0 100px; }
-.hero .eyebrow { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--green); margin-bottom: 24px; padding: 6px 14px; border: 1px solid var(--green-dim); border-radius: 100px; background: var(--green-dim); }
-.hero h1 { margin-bottom: 28px; max-width: 820px; }
-.hero .lede { font-size: 22px; color: var(--text-dim); max-width: 760px; line-height: 1.5; margin-bottom: 40px; }
-.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
-.hero-cta-big { background: var(--green); color: #0a0a0f; padding: 18px 32px; border-radius: 12px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; display: inline-flex; align-items: center; gap: 10px; transition: all 0.2s; cursor: pointer; border: none; }
+.hero { padding: 140px 0 120px; position: relative; overflow: hidden; }
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  width: 1100px; height: 1100px;
+  background: radial-gradient(circle, rgba(57,255,20,0.10) 0%, transparent 55%);
+  transform: translateX(-50%) translateY(-30%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero .container { position: relative; z-index: 1; }
+.hero .eyebrow { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 2.5px; color: var(--green); margin-bottom: 32px; padding: 6px 14px; border: 1px solid var(--green-dim); border-radius: 100px; background: var(--green-dim); }
+.hero-pre {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 500;
+  color: var(--text-dim);
+  letter-spacing: -0.3px;
+  margin-bottom: 16px;
+}
+.hero h1 { margin-bottom: 32px; max-width: 1080px; font-weight: 700; }
+.hero h1 .accent { color: var(--green); }
+.hero .lede { font-size: clamp(19px, 2vw, 23px); color: var(--text-dim); max-width: 860px; line-height: 1.5; margin-bottom: 44px; }
+.hero .lede strong { color: var(--text); font-weight: 500; }
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 30px; }
+.hero-cta-big { background: var(--green); color: #0a0a0f; padding: 20px 36px; border-radius: 12px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px; display: inline-flex; align-items: center; gap: 10px; transition: all 0.2s; cursor: pointer; border: none; letter-spacing: 0.3px; }
 .hero-cta-big:hover { transform: translateY(-2px); box-shadow: var(--green-glow); }
-.hero-trust { font-size: 13px; color: var(--text-muted); }
+.hero-trust { font-size: 13px; color: var(--text-muted); line-height: 1.7; max-width: 860px; font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.3px; }
 
-/* WHO FOR */
-.who-for { padding: 80px 0; border-top: 1px solid var(--border); background: var(--bg2); }
-.who-for h2 { margin-bottom: 24px; max-width: 820px; }
-.who-for p { font-size: 18px; color: var(--text-dim); max-width: 760px; line-height: 1.65; }
+/* THE REALITY */
+.reality { padding: 110px 0; border-top: 1px solid var(--border); background: var(--bg2); }
+.reality-inner { max-width: 980px; margin: 0 auto; }
+.reality h2 { margin-bottom: 20px; }
+.reality h2 .accent { color: var(--green); }
+.reality-sub { font-size: 19px; color: var(--text-dim); margin-bottom: 44px; line-height: 1.6; max-width: 820px; }
+.reality-sub strong { color: var(--text); font-weight: 500; }
+.reality-quotes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 40px 0;
+}
+.reality-quote {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--green);
+  border-radius: var(--radius-sm);
+  padding: 24px 26px;
+  font-size: 17px;
+  color: var(--text);
+  font-style: italic;
+  line-height: 1.5;
+}
+.reality-quote-attr {
+  display: block;
+  margin-top: 14px;
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: normal;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.reality-conclusion {
+  font-size: 24px;
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.45;
+  margin-top: 20px;
+  padding-top: 36px;
+  border-top: 1px solid var(--border);
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.5px;
+}
+.reality-conclusion .accent { color: var(--green); }
 
-/* THE FIVE AGENTS */
-.agents { padding: 100px 0; }
-.section-title { text-align: center; margin-bottom: 16px; }
-.section-lede { font-size: 19px; color: var(--text-dim); text-align: center; max-width: 700px; margin: 0 auto 60px; }
-.agents-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 48px; }
-.agent-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; transition: border-color 0.2s, transform 0.2s; }
-.agent-card:hover { border-color: var(--green); transform: translateY(-2px); }
-.agent-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--green-dim); color: var(--green); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 22px; }
-.agent-card h3 { font-size: 20px; margin-bottom: 10px; color: var(--green); }
-.agent-card p { font-size: 15px; color: var(--text-dim); line-height: 1.55; }
+/* REALITY HERO IMAGE */
+.reality-image-after {
+  margin: 56px auto 0;
+  max-width: 1180px;
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 0 60px rgba(57,255,20,0.08);
+}
+.reality-image-after img { width: 100%; height: auto; display: block; }
+.reality-image-caption {
+  position: absolute;
+  bottom: 28px; left: 28px;
+  background: rgba(10,10,15,0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--green);
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  color: var(--text);
+  max-width: 380px;
+  line-height: 1.45;
+  letter-spacing: -0.2px;
+}
+.reality-image-caption strong { color: var(--green); font-weight: 700; }
+
+/* CAPABILITIES HERO IMAGE */
+.cap-hero {
+  margin: 0 auto 64px;
+  max-width: 1180px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  position: relative;
+  box-shadow: 0 0 60px rgba(57,255,20,0.08);
+}
+@media (min-width: 1280px) { .cap-hero { max-width: 1320px; } }
+@media (min-width: 1600px) { .cap-hero { max-width: 1440px; } }
+.cap-hero img { width: 100%; height: auto; display: block; }
+.cap-hero-caption {
+  position: absolute;
+  bottom: 32px; left: 32px;
+  background: rgba(10,10,15,0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--green);
+  padding: 18px 22px;
+  border-radius: var(--radius-sm);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  color: var(--text);
+  max-width: 420px;
+  line-height: 1.45;
+  letter-spacing: -0.2px;
+}
+.cap-hero-caption strong { color: var(--green); font-weight: 700; }
+
+@media (max-width: 700px) {
+  .reality-image-caption, .cap-hero-caption {
+    position: static;
+    max-width: 100%;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+  }
+}
+
+/* FOUR PILLARS */
+.pillars { padding: 120px 0; }
+.section-title { text-align: center; margin-bottom: 18px; }
+.section-title .accent { color: var(--green); }
+.section-lede { font-size: 19px; color: var(--text-dim); text-align: center; max-width: 760px; margin: 0 auto 64px; line-height: 1.55; }
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+@media (min-width: 1600px) { .pillars-grid { max-width: 1240px; } }
+.pillar-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 44px 42px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s;
+  position: relative;
+}
+.pillar-card:hover {
+  border-color: var(--green);
+  transform: translateY(-3px);
+  background: linear-gradient(180deg, var(--green-soft) 0%, var(--bg2) 100%);
+}
+.pillar-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+.pillar-h {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(28px, 3vw, 36px);
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+.pillar-h .accent { color: var(--green); }
+.pillar-body {
+  font-size: 16px;
+  color: var(--text-dim);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+.pillar-body em {
+  color: var(--text);
+  font-style: italic;
+  font-weight: 500;
+}
+.pillar-body strong {
+  color: var(--text);
+  font-weight: 500;
+}
+.pillar-proof {
+  margin-top: auto;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  color: var(--green);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  line-height: 1.5;
+}
+
+/* CAPABILITIES */
+.capabilities { padding: 120px 0; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.cap-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+@media (min-width: 1280px) { .cap-grid { grid-template-columns: repeat(3, 1fr); max-width: 1320px; } }
+@media (min-width: 1600px) { .cap-grid { max-width: 1440px; } }
+.cap-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px 28px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: border-color 0.2s, transform 0.2s, background 0.2s;
+  position: relative;
+}
+.cap-card.cap-anchor {
+  border-color: var(--green);
+  background: linear-gradient(180deg, var(--green-soft) 0%, var(--bg) 100%);
+  box-shadow: 0 0 32px rgba(57,255,20,0.06);
+}
+.cap-anchor-badge {
+  position: absolute;
+  top: -10px; left: 24px;
+  background: var(--green);
+  color: #0a0a0f;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+.cap-card:hover {
+  border-color: var(--green);
+  transform: translateY(-2px);
+  background: linear-gradient(180deg, var(--green-soft) 0%, var(--bg) 100%);
+}
+.cap-num {
+  flex-shrink: 0;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--green-dim);
+  border: 1.5px solid var(--green);
+  color: var(--green);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: -0.5px;
+}
+.cap-body { flex: 1; min-width: 0; }
+.cap-h {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.3px;
+  color: var(--text);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+.cap-detail {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+.cap-employees {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.cap-employees-label {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  margin-right: 4px;
+}
+.cap-emp-chip {
+  padding: 3px 9px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+/* ONE TWIN, NOT 10 TOOLS */
+.one-twin { padding: 120px 0; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.one-twin-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1180px;
+  margin: 56px auto 32px;
+}
+@media (min-width: 1600px) { .one-twin-grid { max-width: 1320px; } }
+.one-twin-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  transition: all 0.2s;
+  position: relative;
+}
+.one-twin-card:hover { border-color: var(--green); transform: translateY(-3px); background: linear-gradient(180deg, var(--green-soft) 0%, var(--bg) 100%); }
+.one-twin-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+.one-twin-h {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.5px;
+  color: var(--text);
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+.one-twin-h .accent { color: var(--green); }
+.one-twin-body { font-size: 15px; color: var(--text-dim); line-height: 1.6; }
+.one-twin-body strong { color: var(--text); font-weight: 500; }
+.one-twin-band {
+  max-width: 980px;
+  margin: 24px auto 0;
+  text-align: center;
+  padding: 24px 32px;
+  background: var(--bg3);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px;
+  color: var(--text);
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  line-height: 1.5;
+}
+.one-twin-band strong { color: var(--green); font-weight: 700; }
+
+/* WHY AI EMPLOYEES — 4 panels + no-hassle band */
+.why-ai { padding: 120px 0; }
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  max-width: 1140px;
+  margin: 56px auto 32px;
+}
+@media (min-width: 1600px) { .why-grid { max-width: 1280px; } }
+.why-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  text-align: center;
+  transition: all 0.2s;
+}
+.why-card:hover { border-color: var(--green); transform: translateY(-2px); }
+.why-claim {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  letter-spacing: -1.5px;
+  color: var(--green);
+  margin-bottom: 18px;
+  line-height: 1;
+}
+.why-h {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.why-proof {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.55;
+}
+.why-proof strong { color: var(--text); font-weight: 500; }
+
+.no-hassle-band {
+  max-width: 1140px;
+  margin: 0 auto;
+  background: var(--bg2);
+  border: 1.5px solid var(--orange);
+  border-radius: var(--radius);
+  padding: 32px 36px;
+  box-shadow: 0 0 50px rgba(255,155,61,0.06);
+}
+.no-hassle-eyebrow {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 8px;
+}
+.no-hassle-h {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.5px;
+  color: var(--text);
+  margin-bottom: 22px;
+  line-height: 1.25;
+}
+.no-hassle-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px 28px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.no-hassle-list li {
+  font-size: 15px;
+  color: var(--text);
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+}
+.no-hassle-list li::before {
+  content: '✕';
+  color: var(--orange);
+  font-weight: 700;
+  font-size: 16px;
+  flex-shrink: 0;
+}
 
 /* WOW SCENE */
-.wow { padding: 100px 0; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.wow { padding: 120px 0; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .wow-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: center; }
 .wow h2 { margin-bottom: 24px; }
 .wow p { font-size: 18px; color: var(--text-dim); margin-bottom: 18px; line-height: 1.65; }
@@ -96,37 +550,110 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .wow-callout p { font-size: 17px; color: var(--text); margin: 0; }
 
 /* MATH */
-.math { padding: 100px 0; }
-.math-card { max-width: 600px; margin: 0 auto; background: var(--bg2); border: 1.5px solid var(--green); border-radius: var(--radius); padding: 48px; box-shadow: 0 0 60px rgba(57,255,20,0.06); }
-.math-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px; }
+.math { padding: 120px 0; }
+.math-card { max-width: 760px; margin: 0 auto; background: var(--bg2); border: 1.5px solid var(--green); border-radius: var(--radius); padding: 48px 52px; box-shadow: 0 0 80px rgba(57,255,20,0.08); }
+.math-label { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 28px; font-family: 'Space Grotesk', sans-serif; }
 .math .line-item { display: flex; justify-content: space-between; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 16px; }
 .math .line-item .name { color: var(--text-dim); }
-.math .line-item .cost { color: var(--text-muted); white-space: nowrap; margin-left: 16px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; }
-.math-total { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; color: var(--text); letter-spacing: -1px; margin: 28px 0 8px; }
-.math-pay { font-family: 'Space Grotesk', sans-serif; font-size: 38px; font-weight: 700; color: var(--green); letter-spacing: -1.5px; margin-bottom: 12px; }
-.math-savings { font-size: 16px; color: var(--text-dim); font-style: italic; }
+.math .line-item .cost { color: var(--text); white-space: nowrap; margin-left: 16px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 16px; }
+.math .line-item.subtotal { padding: 16px 0 12px; border-bottom: 2px solid var(--border-strong); margin-top: 6px; }
+.math .line-item.subtotal .name { color: var(--text); font-weight: 500; }
+.math .line-item.loaded { padding: 14px 0; border-bottom: none; font-size: 14.5px; color: var(--text-muted); }
+.math .line-item.loaded .name { color: var(--text-muted); font-style: italic; }
+.math .line-item.loaded .cost { color: var(--text-muted); font-weight: 500; }
+.math-total {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px; font-weight: 700;
+  color: var(--text);
+  letter-spacing: -1px;
+  margin: 24px 0 6px;
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+.math-total .label-side { color: var(--text); font-size: 18px; letter-spacing: 0.5px; text-transform: uppercase; font-family: 'Space Grotesk', sans-serif; }
+.math-pay {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 38px; font-weight: 700;
+  color: var(--green);
+  letter-spacing: -1.5px;
+  margin: 28px 0 8px;
+  padding-top: 24px;
+  border-top: 2px solid var(--green);
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+.math-pay .label-side {
+  color: var(--green); font-size: 14px; letter-spacing: 1.5px;
+  text-transform: uppercase; font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+}
+.math-savings {
+  font-size: 16px;
+  color: var(--text-dim);
+  font-style: italic;
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.emotional-kicker {
+  max-width: 760px;
+  margin: 36px auto 0;
+  padding: 32px 40px;
+  background: var(--bg3);
+  border: 1px solid var(--orange);
+  border-radius: var(--radius);
+  box-shadow: 0 0 50px rgba(255,155,61,0.06);
+  text-align: center;
+}
+.emotional-eyebrow {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 14px;
+}
+.emotional-text {
+  font-size: 19px;
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.45;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.3px;
+}
+.emotional-text strong { color: var(--orange); font-weight: 700; }
 
 /* JOURNEY */
-.journey { padding: 100px 0; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.journey-list { max-width: 820px; margin: 48px auto 0; counter-reset: step; }
-.journey-item { display: flex; gap: 28px; padding: 28px 0; border-bottom: 1px solid var(--border); counter-increment: step; }
+.journey { padding: 120px 0; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.journey-list { max-width: 820px; margin: 56px auto 0; }
+.journey-item { display: flex; gap: 28px; padding: 28px 0; border-bottom: 1px solid var(--border); }
 .journey-item:last-child { border-bottom: none; }
-.journey-num { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: var(--green-dim); border: 1px solid var(--green); color: var(--green); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; }
-.journey-num.label { width: auto; padding: 0 14px; height: 36px; border-radius: 18px; font-size: 13px; }
+.journey-num { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: var(--green-dim); border: 1px solid var(--green); color: var(--green); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: -0.5px; }
 .journey-body h3 { font-size: 19px; margin-bottom: 6px; }
 .journey-body p { font-size: 16px; color: var(--text-dim); line-height: 1.55; }
 
 /* TESTIMONIAL */
-.testimonial-section { padding: 100px 0; }
-.testimonial-card { max-width: 800px; margin: 0 auto; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 48px; transition: border-color 0.2s; }
+.testimonial-section { padding: 120px 0; }
+.testimonial-card { max-width: 800px; margin: 0 auto; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 56px; transition: border-color 0.2s; }
 .testimonial-card:hover { border-color: var(--green); }
-.testimonial-card blockquote { font-size: 22px; line-height: 1.5; color: var(--text); font-style: italic; margin-bottom: 24px; }
+.testimonial-card blockquote { font-size: 24px; line-height: 1.45; color: var(--text); font-style: italic; margin-bottom: 28px; letter-spacing: -0.3px; }
 .testimonial-card cite { font-style: normal; font-size: 15px; color: var(--green); font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: 0.5px; }
 
 /* FINAL CTA */
-.final-cta { padding: 120px 0; text-align: center; background: linear-gradient(180deg, var(--bg) 0%, rgba(57,255,20,0.04) 100%); }
-.final-cta h2 { margin-bottom: 20px; }
-.final-cta p { font-size: 19px; color: var(--text-dim); max-width: 720px; margin: 0 auto 36px; line-height: 1.5; }
+.final-cta { padding: 160px 0; text-align: center; background: linear-gradient(180deg, var(--bg) 0%, rgba(57,255,20,0.06) 100%); position: relative; overflow: hidden; }
+.final-cta::before {
+  content: '';
+  position: absolute;
+  bottom: -200px; left: 50%;
+  width: 1000px; height: 500px;
+  background: radial-gradient(ellipse, rgba(57,255,20,0.10) 0%, transparent 60%);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.final-cta .container { position: relative; z-index: 1; }
+.final-cta .pre-h { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 500; color: var(--text-dim); letter-spacing: -0.3px; margin-bottom: 14px; }
+.final-cta h2 { margin-bottom: 22px; max-width: 920px; margin-left: auto; margin-right: auto; }
+.final-cta h2 .accent { color: var(--green); }
+.final-cta p { font-size: 19px; color: var(--text-dim); max-width: 720px; margin: 0 auto 44px; line-height: 1.5; }
 
 /* FOOTER */
 footer { padding: 48px 0 32px; border-top: 1px solid var(--border); background: var(--bg); }
@@ -137,20 +664,36 @@ footer { padding: 48px 0 32px; border-top: 1px solid var(--border); background: 
 .footer-copy { font-size: 13px; color: var(--text-muted); }
 
 /* MOBILE */
-@media (max-width: 900px) {
+@media (max-width: 980px) {
+  .reality-quotes { grid-template-columns: 1fr; }
+  .pillars-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .no-hassle-list { grid-template-columns: repeat(2, 1fr); }
+  .one-twin-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .cap-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
   .wow-grid { grid-template-columns: 1fr; gap: 32px; }
-  .agents-grid { grid-template-columns: 1fr; }
   .nav-links a:not(.btn-primary) { display: none; }
-  .hero { padding: 120px 0 60px; }
+  .hero { padding: 70px 0 60px; }
   .hero .lede { font-size: 18px; }
   .math-card { padding: 32px 24px; }
-  .math-pay { font-size: 30px; }
-  .testimonial-card { padding: 32px 24px; }
-  .testimonial-card blockquote { font-size: 18px; }
+  .math-pay { font-size: 28px; }
+  .math-pay .label-side { font-size: 12px; }
+  .testimonial-card { padding: 36px 26px; }
+  .testimonial-card blockquote { font-size: 19px; }
+  .cap-card { padding: 22px; gap: 16px; }
+  .pillar-card { padding: 32px 26px; }
+  .why-claim { font-size: 30px; }
+  .emotional-kicker, .no-hassle-band { padding: 24px 22px; }
+  .emotional-text { font-size: 16px; }
+  .no-hassle-list { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
+
 
 <nav>
   <div class="container nav-inner">
@@ -161,7 +704,7 @@ footer { padding: 48px 0 32px; border-top: 1px solid var(--border); background: 
       <a href="/engine" class="active">Engine</a>
       <a href="/about">About</a>
       <a href="/contact">Contact</a>
-      <a href="/contact" class="btn-primary">Book the Brief Demo</a>
+      <a href="/contact" class="btn-primary">Build Your Digital Twin</a>
     </div>
   </div>
 </nav>
@@ -169,56 +712,322 @@ footer { padding: 48px 0 32px; border-top: 1px solid var(--border); background: 
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <span class="eyebrow">Engine · Your AI Workforce</span>
-    <h1>Five AI hires.<br>One workforce. One Brief.</h1>
-    <p class="lede">Engine is what AI Inside Sales grows up into. Five named AI agents trained on your business, working in harmony, all run by the Nucleus brain. They never miss a handoff. They never sleep. You see their work in your Brief every morning.</p>
+    <span class="eyebrow">Engine · Your AI Digital Twin</span>
+    <p class="hero-pre">There's only so much of you.</p>
+    <h1>Get 10 <span class="accent">of you.</span></h1>
+    <p class="lede">You bought a business for freedom. Then it owned you. Engine builds an AI Digital Twin that runs your front office, watches your money, drafts your moves — so you stop being the bottleneck and start being the boss again. <strong>10 of you working for you. Without the hassle of hiring.</strong></p>
     <div class="hero-ctas">
-      <a href="/contact" class="hero-cta-big">Hire your AI workforce →</a>
-      <a href="#the-five" class="btn-secondary">Meet the five agents ↓</a>
+      <a href="/contact" class="hero-cta-big">Build Your Digital Twin →</a>
+      <a href="#pillars" class="btn-secondary">See how it works ↓</a>
     </div>
-    <p class="hero-trust">Nucleus included · $10K/mo + $15K–$25K activation · 90-day commit · Onboards in 30 days, full workforce live by day 60</p>
+    <p class="hero-trust">$10K/mo · $10K activation · Live in 60 days · Replaces ~$610K of human cost · Built on Claude<br><span style="opacity: 0.7;">First call is a 30-min walkthrough on your real data. No pitch.</span></p>
   </div>
 </section>
 
-<!-- WHO FOR -->
-<section class="who-for">
+<!-- THE REALITY -->
+<section class="reality">
   <div class="container">
-    <h2>For owners running 4–5 AI tools that don't talk to each other.</h2>
-    <p>If you're already paying for an AI receptionist, an AI bookkeeper, an AI review tool, and a cold-email tool — and they don't talk to each other — Engine is built for you. <strong>One workforce. One Brief. One advisor accountable for the outcome.</strong></p>
+    <div class="reality-inner">
+      <h2>You bought this business for freedom.<br><span class="accent">Then it owned you.</span></h2>
+      <p class="reality-sub">60-hour weeks. Phone always on. Calls you can't take. Reviews you can't respond to. Money leaking you can't see. <strong>There's only so much of you — and it's not enough.</strong></p>
+
+      <div class="reality-quotes">
+        <div class="reality-quote">
+          "I haven't taken a real vacation in 4 years."
+          <span class="reality-quote-attr">— Every owner, every survey</span>
+        </div>
+        <div class="reality-quote">
+          "I missed my kid's game. A customer crisis. Again."
+          <span class="reality-quote-attr">— You, last Tuesday</span>
+        </div>
+        <div class="reality-quote">
+          "I'm patching leaks. I can't even think about growth."
+          <span class="reality-quote-attr">— You, this morning</span>
+        </div>
+      </div>
+
+      <p class="reality-conclusion">Engine fixes that — by giving you <span class="accent">10 of you.</span> Without the hassle of hiring 10 people.</p>
+
+      <div class="reality-image-after">
+        <img src="/website_assets/engine_freedom_baseball.jpg" alt="Owner at his kid's baseball game holding a phone showing the AI Front Desk just took a $3,700 inbound call he would have missed">
+        <div class="reality-image-caption">
+          <strong>Tuesday, 6:47 PM.</strong> Your Twin just took a $3,700 call you would have missed — while you were at your kid's game.
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- THE FIVE -->
-<section class="agents" id="the-five">
+<!-- FOUR PILLARS -->
+<section class="pillars" id="pillars">
   <div class="container">
-    <h2 class="section-title">The five agents.</h2>
-    <p class="section-lede">Each one trained on your business. All five running on Nucleus. All five visible in one Brief every morning.</p>
-    <div class="agents-grid">
-      <div class="agent-card">
-        <div class="agent-icon">📞</div>
-        <h3>AI Front Desk</h3>
-        <p>Answers every call 24/7. Qualifies. Books direct to your calendar. The receptionist that never takes a sick day.</p>
+    <h2 class="section-title">The four things you bought this business for.<br><span class="accent">Engine gives them back.</span></h2>
+    <p class="section-lede">Time. Money. Growth. Control. The reasons you took the risk in the first place — and the reasons you're still here at midnight.</p>
+
+    <div class="pillars-grid">
+
+      <!-- TIME -->
+      <div class="pillar-card">
+        <div class="pillar-num">01 · Time</div>
+        <h3 class="pillar-h">Reclaim your <span class="accent">week.</span></h3>
+        <p class="pillar-body">You bought this business to spend more time with your family. Then it took your nights, your weekends, your kid's games. Your Digital Twin handles the front desk, the inbox, the after-hours fires — so you stop being the 24/7 ops person and start being the dad, partner, or human you bought this business to be.</p>
+        <p class="pillar-proof">→ Owners typically reclaim 20–30 hours/week within 60 days.</p>
       </div>
-      <div class="agent-card">
-        <div class="agent-icon">⭐</div>
-        <h3>AI Review Responder</h3>
-        <p>Drafts every reply in your voice. Queued for one-tap approval from your Daily Brief.</p>
+
+      <!-- MONEY -->
+      <div class="pillar-card">
+        <div class="pillar-num">02 · Money</div>
+        <h3 class="pillar-h">Plug the leaks <span class="accent">Nucleus found.</span></h3>
+        <p class="pillar-body">Nucleus already showed you where money's bleeding — missed calls, late invoices, wasted ad spend, ignored reviews. The hard truth: <em>you can't plug all of them yourself.</em> You'd need a team. Engine gives you that team — without the cost or hassle of hiring six humans.</p>
+        <p class="pillar-proof">→ $300K+/yr in revenue and savings recovered at the Engine tier.</p>
       </div>
-      <div class="agent-card">
-        <div class="agent-icon">📒</div>
-        <h3>AI Bookkeeper</h3>
-        <p>Categorizes daily. Flags margin leaks. Prepares your CPA handoff.</p>
+
+      <!-- GROWTH -->
+      <div class="pillar-card">
+        <div class="pillar-num">03 · Growth</div>
+        <h3 class="pillar-h">Stop patching the boat.<br><span class="accent">Upgrade the motor.</span></h3>
+        <p class="pillar-body">Right now you're playing defense — keeping the boat afloat. You haven't thought strategically about price, customer mix, vendor terms, or capacity in months. Engine runs strategic AI employees that <em>think</em> about growth while you're putting out fires. Then your morning Brief tells you which growth move to make.</p>
+        <p class="pillar-proof">→ 3–8% margin lift from pricing intelligence alone in year one.</p>
       </div>
-      <div class="agent-card">
-        <div class="agent-icon">📍</div>
-        <h3>AI Listing Manager</h3>
-        <p>Keeps Google Business Profile, Yelp, Apple Maps, hours, and photos consistent across the web.</p>
+
+      <!-- CONTROL -->
+      <div class="pillar-card">
+        <div class="pillar-num">04 · Control</div>
+        <h3 class="pillar-h">10 of you. <span class="accent">You still call the shots.</span></h3>
+        <p class="pillar-body">Your AI employees are experts in their space — better than the hires you'd otherwise make. They draft the email, the response, the price change, the renegotiation. <em>You approve.</em> You're not letting go of control — you're multiplying yourself across the business. <strong>Decisions still come from you. The work doesn't.</strong></p>
+        <p class="pillar-proof">→ Approval rate climbs from 40% to 95% as your Twin learns your judgment.</p>
       </div>
-      <div class="agent-card">
-        <div class="agent-icon">🔄</div>
-        <h3>AI Outbound Caller</h3>
-        <p>Reactivates dormant leads from your existing database. Books them back onto the calendar.</p>
+
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="capabilities" id="capabilities">
+  <div class="container">
+    <h2 class="section-title">What your <span class="accent">Digital Twin</span> handles.</h2>
+    <p class="section-lede">Ten outcomes. Not ten apps. Your Twin runs a workforce of AI employees underneath — you just see the results in your Brief every morning.</p>
+
+    <div class="cap-hero">
+      <img src="/website_assets/engine_freedom_dental.jpg" alt="Dental office staff seeing the AI Front Desk handle an inbound Invisalign call notification with $3,200 case value, qualified and booked">
+      <div class="cap-hero-caption">
+        <strong>9:41 AM. Bend Family Dental.</strong> $3,200 case value. Qualified, booked, confirmed — before the front desk picked up the phone.
       </div>
+    </div>
+
+    <div class="cap-grid">
+
+      <div class="cap-card cap-anchor">
+        <span class="cap-anchor-badge">Most owners start here</span>
+        <div class="cap-num">1</div>
+        <div class="cap-body">
+          <h3 class="cap-h">Your front door is always open.</h3>
+          <p class="cap-detail">Every call answered, every form replied to, every walk-in inquiry qualified. 24/7. Hot leads to your phone, warm leads to your calendar, cold leads nurtured.</p>
+          <div class="cap-employees">
+            <span class="cap-employees-label">AI Workforce:</span>
+            <span class="cap-emp-chip">AI Receptionist</span>
+            <span class="cap-emp-chip">AI Sales Qualifier</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-num">2</div>
+        <div class="cap-body">
+          <h3 class="cap-h">Your reputation is always managed.</h3>
+          <p class="cap-detail">Every review responded to in your voice. Every listing kept consistent across GBP, Yelp, Apple Maps. Every mention surfaced. 1–3★ escalated to you.</p>
+          <div class="cap-employees">
+            <span class="cap-employees-label">AI Workforce:</span>
+            <span class="cap-emp-chip">AI Review Manager</span>
+            <span class="cap-emp-chip">AI Listing Manager</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-num">3</div>
+        <div class="cap-body">
+          <h3 class="cap-h">Your pipeline never dies.</h3>
+          <p class="cap-detail">Every dormant lead worked. Every quote followed up. Every "thinking about it" customer re-engaged with personalized 3-touch sequences (email → SMS → LinkedIn).</p>
+          <div class="cap-employees">
+            <span class="cap-employees-label">AI Workforce:</span>
+            <span class="cap-emp-chip">AI Outbound Caller</span>
+            <span class="cap-emp-chip">AI Lead Nurture</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-num">4</div>
+        <div class="cap-body">
+          <h3 class="cap-h">Your money is always accounted for.</h3>
+          <p class="cap-detail">Receivables collected on schedule. 13-week cash forecast updated daily. Anomalies flagged in real-time — duplicate vendors, subscription bloat, runway risk.</p>
+          <div class="cap-employees">
+            <span class="cap-employees-label">AI Workforce:</span>
+            <span class="cap-emp-chip">AI Financial Analyst</span>
+            <span class="cap-emp-chip">AI AR Specialist</span>
+            <span class="cap-emp-chip">AI Cash Forecaster</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-num">5</div>
+        <div class="cap-body">
+          <h3 class="cap-h">Your prices are always right.</h3>
+          <p class="cap-detail">Every job, customer, margin, and competitor rate watched. Drafts price changes monthly with rationale. You approve. 3–8% margin lift typical in year one.</p>
+          <div class="cap-employees">
+            <span class="cap-employees-label">AI Workforce:</span>
+            <span class="cap-emp-chip">AI Pricing Strategist</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-num">6</div>
+        <div class="cap-body">
+          <h3 class="cap-h">Your customers are always known.</h3>
+          <p class="cap-detail">LTV scored, churn risk surfaced, platinum candidates white-gloved. Knows which acquisition channels bring which customer types — and what they're worth.</p>
+          <div class="cap-employees">
+            <span class="cap-employees-label">AI Workforce:</span>
+            <span class="cap-emp-chip">AI Customer Intelligence</span>
+            <span class="cap-emp-chip">AI Ad Watchdog</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-num">7</div>
+        <div class="cap-body">
+          <h3 class="cap-h">Your capacity is always optimized.</h3>
+          <p class="cap-detail">Demand vs supply tracked weekly. Tells you when to hire, when to invest in equipment, when you're capacity-bound vs demand-bound. Stops you from hiring too early.</p>
+          <div class="cap-employees">
+            <span class="cap-employees-label">AI Workforce:</span>
+            <span class="cap-emp-chip">AI Capacity Planner</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-num">8</div>
+        <div class="cap-body">
+          <h3 class="cap-h">Your vendors are always negotiated.</h3>
+          <p class="cap-detail">Supplier invoices vs market price benchmarked monthly. Renegotiation moments flagged. Drafts the email — you approve. 5–15% supplier cost reduction common.</p>
+          <div class="cap-employees">
+            <span class="cap-employees-label">AI Workforce:</span>
+            <span class="cap-emp-chip">AI Vendor Negotiator</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-num">9</div>
+        <div class="cap-body">
+          <h3 class="cap-h">Your compliance is always current.</h3>
+          <p class="cap-detail">Every license, insurance certificate, contract, regulatory deadline tracked. Renewals drafted 60 days out. Auto-renewals flagged before they bite.</p>
+          <div class="cap-employees">
+            <span class="cap-employees-label">AI Workforce:</span>
+            <span class="cap-emp-chip">AI Compliance Officer</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-num">10</div>
+        <div class="cap-body">
+          <h3 class="cap-h">Your day is always prioritized.</h3>
+          <p class="cap-detail">Where your time has highest leverage. Which 3 calls to make. Which decisions need your judgment. Drafts decision memos for big calls (lease, hire, equipment).</p>
+          <div class="cap-employees">
+            <span class="cap-employees-label">AI Workforce:</span>
+            <span class="cap-emp-chip">AI Chief of Staff</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ONE TWIN, NOT 10 TOOLS -->
+<section class="one-twin">
+  <div class="container">
+    <h2 class="section-title">Why one Digital Twin instead of <span class="accent">10 separate AI tools?</span></h2>
+    <p class="section-lede">Because the point isn't 10 tools. It's 10 of you. And the only way that works is if they share a brain.</p>
+
+    <div class="one-twin-grid">
+      <div class="one-twin-card">
+        <div class="one-twin-num">01</div>
+        <h3 class="one-twin-h">One brain. <span class="accent">Not 10 silos.</span></h3>
+        <p class="one-twin-body">Your Twin sees every channel at once. The receptionist knows what marketing said yesterday. The bookkeeper knows about the new vendor your AR specialist just flagged. <strong>Cross-channel patterns no human — and no 10 separate tools — can spot.</strong></p>
+      </div>
+
+      <div class="one-twin-card">
+        <div class="one-twin-num">02</div>
+        <h3 class="one-twin-h">One bill. <span class="accent">Not 10 invoices.</span></h3>
+        <p class="one-twin-body">$130K/yr replaces what would otherwise be $50K+/yr in fragmented AI subscriptions, the duct tape between them, <em>and</em> ~$610K of human labor. <strong>One line item. Predictable. No surprise overages.</strong></p>
+      </div>
+
+      <div class="one-twin-card">
+        <div class="one-twin-num">03</div>
+        <h3 class="one-twin-h">One advisor. <span class="accent">Not 10 support queues.</span></h3>
+        <p class="one-twin-body">When something needs adjusting, you call your Zanoma advisor — the same human, every time. Not 10 vendor support tickets, 10 chatbots, 10 "we'll get back to you within 48 hours." <strong>One human accountable for the outcome.</strong></p>
+      </div>
+    </div>
+
+    <div class="one-twin-band">
+      This is why we don't sell agents à la carte. <strong>The point isn't 10 tools. It's 10 of you.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- WHY AI EMPLOYEES -->
+<section class="why-ai">
+  <div class="container">
+    <h2 class="section-title">AI employees beat human hiring on <span class="accent">every dimension.</span></h2>
+    <p class="section-lede">This isn't replacing your culture, your leadership, or your founder mind. It's replacing the back-office and front-office labor you'd otherwise have to hire — at higher quality, lower cost, and zero hassle.</p>
+
+    <div class="why-grid">
+
+      <div class="why-card">
+        <div class="why-claim">Better</div>
+        <div class="why-h">No drama. Ever.</div>
+        <p class="why-proof">Never sleeps. Never forgets. <strong>No bad days.</strong> Approval rate climbs from 40% to 95% as it learns your judgment week over week.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-claim">Faster</div>
+        <div class="why-h">Milliseconds, not days.</div>
+        <p class="why-proof">Answers calls in 1 ring. Drafts dunning in 30 seconds. Scans 10,000 invoices in a minute. <strong>Watches every channel while you sleep.</strong></p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-claim">Smarter</div>
+        <div class="why-h">Knows your whole business.</div>
+        <p class="why-proof">Every customer, every job, every dollar, every vendor — in one brain. Spots cross-channel patterns no human sees. <strong>Sharper every week.</strong></p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-claim">Cheaper</div>
+        <div class="why-h">$130K vs $610K.</div>
+        <p class="why-proof">Six full-time roles plus benefits, payroll tax, training, turnover. <strong>~21¢ on the dollar of the human alternative.</strong></p>
+      </div>
+
+    </div>
+
+    <!-- NO HASSLE BAND -->
+    <div class="no-hassle-band">
+      <div class="no-hassle-eyebrow">And the part you can't put a number on</div>
+      <h3 class="no-hassle-h">Without any of the hassle of running a human team.</h3>
+      <ul class="no-hassle-list">
+        <li>No PTO requests</li>
+        <li>No sick days</li>
+        <li>No turnover</li>
+        <li>No training cost</li>
+        <li>No payroll tax</li>
+        <li>No benefits package</li>
+        <li>No HR drama</li>
+        <li>No quitting on Friday</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -229,16 +1038,15 @@ footer { padding: 48px 0 32px; border-top: 1px solid var(--border); background: 
     <div class="wow-grid">
       <div>
         <h2>The 2 AM review.</h2>
-        <p>Monday 2:14 AM. A 2-star review hits your Google Business Profile. Your AI Review Responder catches it within four minutes. Classifies it. Drafts a response in your voice. Queues it in your approval inbox.</p>
+        <p>Monday 2:14 AM. A 2-star review hits your Google Business Profile. Your Digital Twin catches it within four minutes. Classifies it. Drafts a response in your voice. Queues it in your approval inbox.</p>
         <p>You wake up at 7. Your Brief shows: <em>"Sarah J. left 2 stars. Draft response ready. [Approve] [Edit]."</em> You tap Approve from your truck at 7:01. Posted by 7:02.</p>
         <div class="wow-callout">
           <p class="wow-callout-label">The difference</p>
-          <p><strong>Without Engine:</strong> 18 hours minimum, usually tomorrow afternoon. <strong>With Engine:</strong> 30 seconds of your time.</p>
+          <p><strong>Without your Digital Twin:</strong> 18 hours minimum, usually tomorrow afternoon. <strong>With your Twin:</strong> 30 seconds of your time.</p>
         </div>
       </div>
       <div class="wow-image">
-        <img src="/website_assets/engine-2am-approval.jpg" alt="A small business owner taps approve on a Slack notification — AI Review Responder drafted the reply, owner approves in 30 seconds" style="width: 100%; max-width: 720px; height: auto; display: block; border-radius: 16px; box-shadow: 0 20px 60px rgba(57,255,20,0.15);" />
-        <p style="font-size: 13px; color: var(--text-muted); margin-top: 16px; text-align: center;">Posted to your Slack workspace at 2:18 AM · approved at 7:01 · live by 7:02</p>
+        <img src="/website_assets/nucleus_engine_approval.png" alt="iPhone showing Nucleus Engine Approval Queue with the 2AM review draft">
       </div>
     </div>
   </div>
@@ -247,16 +1055,33 @@ footer { padding: 48px 0 32px; border-top: 1px solid var(--border); background: 
 <!-- MATH -->
 <section class="math">
   <div class="container">
-    <h2 class="section-title">Do the math.</h2>
-    <p class="section-lede">Replaces three things you're already paying for — the office manager, the reception coverage, the patchwork of point AI tools.</p>
+    <h2 class="section-title">Do the <span class="accent">math.</span></h2>
+    <p class="section-lede">Compare to the human team you'd hire if you could afford it. Six full-time roles, fully loaded with benefits and turnover.</p>
+
     <div class="math-card">
-      <p class="math-label">Replaces</p>
-      <div class="line-item"><span class="name">Office manager / ops coordinator</span><span class="cost">$80K/yr</span></div>
-      <div class="line-item"><span class="name">Receptionist + answering backup</span><span class="cost">$65K/yr</span></div>
-      <div class="line-item"><span class="name">Bookkeeping + reviews + listings tools</span><span class="cost">$35K/yr</span></div>
-      <p class="math-total">~$180K/yr in cost</p>
-      <p class="math-pay">You pay $135K year 1.</p>
-      <p class="math-savings">One workforce. One Brief. One advisor.</p>
+      <p class="math-label">The Team You'd Otherwise Hire</p>
+      <div class="line-item"><span class="name">Receptionist</span><span class="cost">$55K/yr</span></div>
+      <div class="line-item"><span class="name">Financial Analyst</span><span class="cost">$75K/yr</span></div>
+      <div class="line-item"><span class="name">Operations Director</span><span class="cost">$145K/yr</span></div>
+      <div class="line-item"><span class="name">Marketing Coordinator</span><span class="cost">$80K/yr</span></div>
+      <div class="line-item"><span class="name">AR / Collections Clerk</span><span class="cost">$60K/yr</span></div>
+      <div class="line-item"><span class="name">Sales Follow-up Coordinator</span><span class="cost">$55K/yr</span></div>
+      <div class="line-item subtotal"><span class="name">Subtotal — base salaries</span><span class="cost">$470K/yr</span></div>
+      <div class="line-item loaded"><span class="name">+ Benefits, payroll tax, training, turnover (~30%)</span><span class="cost">+$140K/yr</span></div>
+      <div class="math-total">
+        <span class="label-side">True loaded cost</span>
+        <span>~$610K/yr</span>
+      </div>
+      <div class="math-pay">
+        <span class="label-side">Your Digital Twin</span>
+        <span>$130K/yr</span>
+      </div>
+      <p class="math-savings">$10K/mo + $10K activation. Saves $480K/yr — and never quits.</p>
+    </div>
+
+    <div class="emotional-kicker">
+      <div class="emotional-eyebrow">Plus the cost you can't put a number on</div>
+      <p class="emotional-text">Your weekends. Your kid's soccer games. Your peace of mind. <strong>The Twin gets those back too.</strong></p>
     </div>
   </div>
 </section>
@@ -264,14 +1089,14 @@ footer { padding: 48px 0 32px; border-top: 1px solid var(--border); background: 
 <!-- JOURNEY -->
 <section class="journey">
   <div class="container">
-    <h2 class="section-title">Your first 90 days.</h2>
-    <p class="section-lede">Staged rollout. Each agent goes live in sequence so you build confidence as the workforce comes online.</p>
+    <h2 class="section-title">Your first <span class="accent">90 days.</span></h2>
+    <p class="section-lede">How your Digital Twin learns your business. Approval-gated until trust is earned, then graduates to autonomy.</p>
     <div class="journey-list">
       <div class="journey-item">
         <div class="journey-num">0</div>
         <div class="journey-body">
           <h3>Day 0 — Live Brief Demo</h3>
-          <p>30-minute call. We connect 2–3 of your tools live. Show you yesterday's Brief with your real data.</p>
+          <p>30-minute call. We connect 2–3 of your tools live and show you yesterday's Brief on your real data. Your advisor scopes the workforce that fits your business.</p>
         </div>
       </div>
       <div class="journey-item">
@@ -284,29 +1109,29 @@ footer { padding: 48px 0 32px; border-top: 1px solid var(--border); background: 
       <div class="journey-item">
         <div class="journey-num">14</div>
         <div class="journey-body">
-          <h3>Week 2 — First agent live</h3>
-          <p>Usually AI Front Desk or AI Review Responder. First "holy shit" moment.</p>
+          <h3>Week 2 — First AI employee live</h3>
+          <p>Usually AI Receptionist or AI Review Manager. Approval-gated — every action requires your tap. First "holy shit" moment.</p>
         </div>
       </div>
       <div class="journey-item">
         <div class="journey-num">30</div>
         <div class="journey-body">
-          <h3>Week 4 — Three agents live</h3>
-          <p>Month-1 review. First scorecard. Real movement on one or two dimensions.</p>
+          <h3>Day 30 — Half the workforce live</h3>
+          <p>Month-1 review. First scorecard. Real movement on one or two dimensions. Approval rate climbing past 80%.</p>
         </div>
       </div>
       <div class="journey-item">
         <div class="journey-num">60</div>
         <div class="journey-body">
           <h3>Day 60 — Full workforce live</h3>
-          <p>All five agents handing off cleanly. Brief landing every morning. Your phone never rings unanswered.</p>
+          <p>Every AI employee in your bench handing off cleanly. Brief landing every morning. Your phone never rings unanswered. Approval cards down to a handful per day.</p>
         </div>
       </div>
       <div class="journey-item">
         <div class="journey-num">90</div>
         <div class="journey-body">
-          <h3>Day 90 — Quarterly business review</h3>
-          <p>What's working. What to add next. The flywheel. Your advisor walks the scorecard with you live.</p>
+          <h3>Day 90 — Trusted autonomy</h3>
+          <p>Per-action policies graduate to autonomy ("auto-reply 4–5★, escalate 1–3★"). Quarterly business review. Your advisor walks the scorecard with you live — what's working, what to expand.</p>
         </div>
       </div>
     </div>
@@ -317,7 +1142,7 @@ footer { padding: 48px 0 32px; border-top: 1px solid var(--border); background: 
 <section class="testimonial-section">
   <div class="container">
     <div class="testimonial-card">
-      <blockquote>"We were losing leads every single weekend. Now our AI picks up every call, books the appointment, and sends a confirmation — all before I even see the notification. It paid for itself in the first week."</blockquote>
+      <blockquote>"We were losing leads every single weekend. Now our Digital Twin picks up every call, books the appointment, and sends a confirmation — all before I even see the notification. It paid for itself in the first week. I took my wife to dinner Friday for the first time since we bought the company."</blockquote>
       <cite>— Marcus T., Owner, Regional HVAC Company</cite>
     </div>
   </div>
@@ -326,9 +1151,10 @@ footer { padding: 48px 0 32px; border-top: 1px solid var(--border); background: 
 <!-- FINAL CTA -->
 <section class="final-cta">
   <div class="container">
-    <h2>One workforce. One Brief. One advisor.</h2>
-    <p>If you're tired of running 5 AI tools that don't talk to each other, Engine is the consolidation. Book a 30-min walkthrough — we'll walk a current client's setup.</p>
-    <a href="/contact" class="hero-cta-big">Book the Brief Demo →</a>
+    <p class="pre-h">You bought this business for freedom.</p>
+    <h2><span class="accent">Get it back.</span></h2>
+    <p>Build your Digital Twin. Get yesterday's Brief on your real data in 30 minutes. We'll show you exactly what your AI workforce will handle — and what you'd otherwise pay six humans to do (and miss your kid's game for).</p>
+    <a href="/contact" class="hero-cta-big">Build Your Digital Twin →</a>
   </div>
 </section>
 
