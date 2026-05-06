@@ -1,0 +1,72 @@
+--- .pre-ai-inside-sales-removal-backup/preview-nucleus_500_new.html	2026-04-29 20:11:28
++++ preview/nucleus_500_new.html	2026-04-29 20:19:46
+@@ -213,7 +213,7 @@
+ <b>2. New 5★ review from Sarah J. on GBP</b>
+    "Best HVAC service I've had in 20 years in Bend."
+    No response sent — at $500 the brain only informs.
+-   Want responses handled? <span class="muted">→ AI Inside Sales</span>
++   Want responses handled?
+ 
+ <b>3. Competitor Bend Heating Co. launched $99/install Meta promo</b>
+    First seen 3 days ago. Joe is prepping a counter-take by Friday.
+@@ -284,59 +284,7 @@
+         <div class="brief-d-hl-num">2</div>
+         <div>
+           <h3 class="brief-d-hl-headline">New 5★ review from Sarah J. on GBP</h3>
+-          <p class="brief-d-hl-text">"Best HVAC service I've had in 20 years in Bend." No response sent — at the Nucleus tier the brain only informs.<a class="cite" href="#">GBP review feed ↗</a> Want us to start handling responses? <b>That's AI Inside Sales.</b></p>
+-        </div>
+-      </div>
+-
+-      <div class="brief-d-hl">
+-        <div class="brief-d-hl-num">3</div>
+-        <div>
+-          <h3 class="brief-d-hl-headline">Competitor Bend Heating Co. launched a $99/install Meta promo</h3>
+-          <p class="brief-d-hl-text">First seen <b>3 days ago</b>; spend trending up. Joe is prepping a counter-take by Friday.<a class="cite" href="#">Meta Ad Library ↗</a></p>
+-        </div>
+-      </div>
+-    </section>
+-
+-    <section class="brief-d-section">
+-      <h2 class="brief-d-section-h">Competitor intelligence</h2>
+-      <div class="comp-grid">
+-
+-        <div class="comp-card">
+-          <p class="comp-name">Bend Heating Co.</p>
+-          <span class="comp-meta">Last seen · 3 days ago</span>
+-          <p class="comp-body"><b>$99/install</b> Meta promo, spending up week-over-week. Targeting Bend metro, mobile-first creative.</p>
+-          <div class="comp-foot">
+-            <span class="comp-tag pricing">Pricing move</span>
+-            <a class="cite" href="#">Meta Ad Library ↗</a>
+-          </div>
+-        </div>
+-
+-        <div class="comp-card">
+-          <p class="comp-name">High Desert HVAC</p>
+-          <span class="comp-meta">Last seen · 6 days ago</span>
+-          <p class="comp-body">Launched a <b>"financing in 60 sec"</b> landing page. Same Synchrony partner you use; different framing.</p>
+-          <div class="comp-foot">
+-            <span class="comp-tag creative">Creative angle</span>
+-            <a class="cite" href="#">Site capture ↗</a>
+-          </div>
+-        </div>
+-
+-        <div class="comp-card">
+-          <p class="comp-name">Cascade Climate Control</p>
+-          <span class="comp-meta">Last seen · 2 days ago</span>
+-          <p class="comp-body">Hiring <b>2 install techs</b> on Indeed. Indicates capacity expansion — likely Q3 push in the same ZIP codes.</p>
+-          <div class="comp-foot">
+-            <span class="comp-tag hiring">Hiring signal</span>
+-            <a class="cite" href="#">Indeed ↗</a>
+-          </div>
+-        </div>
+-
+-      </div>
+-      <p class="comp-note"><b>Insight only at the Nucleus tier.</b> Counter-strategy and outreach handled at AI Inside Sales.</p>
+-    </section>
+-
+-    <section class="brief-d-section">
+-      <h2 class="brief-d-section-h">Your advisor's note</h2>
++          <p class="brief-d-hl-text">"Best HVAC service I''s note</h2>
+       <div class="advisor">
+         <div class="advisor-av">JV</div>
+         <div>

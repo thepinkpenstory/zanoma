@@ -485,7 +485,7 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
 <section class="section" id="pricing">
   <div class="container">
     <h2>Two ways to put AI to work in your business.</h2>
-    <p class="text-dim" style="margin-top:16px;">Brain first. Workforce next. One human advisor either way.</p>
+    <p class="text-dim" style="margin-top:16px;">Brain first. Workforce next. Always on. Do the math.</p>
     <div class="pricing-grid">
       <div class="pricing-card">
         <span class="tier-label">NUCLEUS</span>

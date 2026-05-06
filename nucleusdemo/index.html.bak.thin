@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Zanoma · Nucleus · Sample Brief</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0d10;
+      --panel: #11161b;
+      --panel-2: #161c22;
+      --line: #1f262d;
+      --ink: #e8edf2;
+      --muted: #8a98a6;
+      --dim: #566370;
+      --green: #9bff5e;
+      --green-soft: #7ed957;
+      --orange: #ffb454;
+      --slack-bg: #1a1d21;
+      --slack-text: #d1d2d3;
+      --slack-channel: #9b9c9e;
+      --email-bg: #ffffff;
+      --email-text: #202124;
+      --email-muted: #5f6368;
+      --email-line: #dadce0;
+      --sms-bg: #000000;
+      --sms-bubble: #1e1e1e;
+      --sms-blue: #0a7aff;
+      --sms-green: #34c759;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: inherit; }
+
+    .strip {
+      background: #0d1217;
+      border-bottom: 1px solid var(--line);
+      padding: 8px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .strip .badge {
+      background: transparent;
+      border: 1px solid var(--green);
+      color: var(--green);
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+    }
+
+    .strip strong { color: #cfd6dd; }
+
+    .header {
+      padding: 32px 24px 16px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-family: 'Space Grotesk', monospace;
+      letter-spacing: 0.18em;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin: 0 auto;
+      max-width: 900px;
+    }
+
+    .sub {
+      color: var(--muted);
+      margin: 14px auto 0;
+      max-width: 640px;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .toggle-row {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 24px 0 8px;
+    }
+
+    .toggle {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      padding: 10px 20px;
+      border-radius: 999px;
+      cursor: pointer;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      transition: all 0.15s;
+    }
+
+    .toggle:hover {
+      color: var(--ink);
+      border-color: #2c3641;
+    }
+
+    .toggle.active {
+      background: var(--green);
+      color: #0a0d10;
+      border-color: var(--green);
+      font-weight: 600;
+    }
+
+    .stage {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      padding: 24px 16px 64px;
+    }
+
+    .frame {
+      display: none;
+      width: 100%;
+      max-width: 720px;
+    }
+
+    .frame.active {
+      display: block;
+    }
+
+    /* === SLACK FRAME === */
+    .slack {
+      background: var(--slack-bg);
+      border-radius: 8px;
+      color: var(--slack-text);
+      font-family: 'Slack-Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      border: 1px solid #2c2d30;
+      overflow: hidden;
+    }
+
+    .slack-titlebar {
+      background: #19171d;
+      padding: 8px 14px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      border-bottom: 1px solid #2c2d30;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .slack-titlebar .ws {
+      opacity: 0.6;
+      font-weight: 400;
+    }
+
+    .slack-channel {
+      padding: 12px 18px;
+      border-bottom: 1px solid #2c2d30;
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .slack-msg {
+      padding: 18px 18px 6px;
+      display: flex;
+      gap: 12px;
+    }
+
+    .slack-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #9bff5e, #34c759);
+      color: #0a0d10;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-family: 'Space Grotesk', sans-serif;
+      flex-shrink: 0;
+    }
+
+    .slack-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .slack-meta {
+      font-size: 13px;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .slack-meta strong {
+      font-weight: 700;
+    }
+
+    .slack-meta .bot {
+      background: #616061;
+      color: #fff;
+      font-size: 10px;
+      padding: 1px 6px;
+      border-radius: 3px;
+      margin-left: 4px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .slack-meta .ts {
+      color: var(--slack-channel);
+      margin-left: 6px;
+      font-weight: 400;
+      font-size: 12px;
+    }
+
+    .slack-content {
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .slack-h {
+      font-weight: 700;
+      color: #fff;
+      margin: 14px 0 6px;
+      font-size: 15px;
+    }
+
+    .slack-h:first-child {
+      margin-top: 0;
+    }
+
+    .slack-list {
+      margin: 6px 0 14px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .slack-list li {
+      padding: 3px 0;
+      display: flex;
+      gap: 8px;
+    }
+
+    .slack-list li::before {
+      content: '•';
+      color: var(--slack-channel);
+      flex-shrink: 0;
+    }
+
+    .slack-divider {
+      border: 0;
+      border-top: 1px solid #383a3e;
+      margin: 18px 0;
+    }
+
+    .slack-score {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      font-size: 14px;
+      border-bottom: 1px dotted #2c2d30;
+    }
+
+    .slack-score:last-child {
+      border-bottom: none;
+    }
+
+    .slack-score .name {
+      color: #fff;
+    }
+
+    .slack-score .num {
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .slack-score .delta-up {
+      color: var(--green-soft);
+      font-size: 12px;
+      margin-left: 6px;
+    }
+
+    .slack-score .delta-down {
+      color: #e01e5a;
+      font-size: 12px;
+      margin-left: 6px;
+    }
+
+    .slack-score .delta-flat {
+      color: var(--slack-channel);
+      font-size: 12px;
+      margin-left: 6px;
+    }
+
+    .slack-status {
+      margin-top: 18px;
+      padding: 10px 12px;
+      background: #1d2024;
+      border-radius: 4px;
+      font-size: 12px;
+      color: var(--slack-channel);
+    }
+
+    .slack-reactions {
+      margin-top: 8px;
+      padding-bottom: 18px;
+    }
+
+    .slack-reaction {
+      display: inline-block;
+      background: #222529;
+      border: 1px solid #383a3e;
+      color: var(--slack-text);
+      padding: 2px 8px;
+      border-radius: 11px;
+      font-size: 12px;
+      margin-right: 4px;
+      margin-top: 4px;
+    }
+
+    /* === EMAIL FRAME === */
+    .email {
+      background: var(--email-bg);
+      color: var(--email-text);
+      font-family: 'Google Sans', 'Roboto', -apple-system, sans-serif;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--email-line);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .email-titlebar {
+      background: #f6f8fa;
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--email-line);
+      font-size: 13px;
+      color: var(--email-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .email-titlebar .gmail {
+      color: #ea4335;
+      font-weight: 700;
+    }
+
+    .email-subject {
+      padding: 18px 28px 6px;
+      font-size: 22px;
+      color: var(--email-text);
+      font-weight: 400;
+      line-height: 1.3;
+    }
+
+    .email-meta {
+      padding: 0 28px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid var(--email-line);
+    }
+
+    .email-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #9bff5e;
+      color: #0a0d10;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-family: 'Space Grotesk', sans-serif;
+      flex-shrink: 0;
+    }
+
+    .email-from {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .email-from .name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--email-text);
+    }
+
+    .email-from .addr {
+      font-size: 12px;
+      color: var(--email-muted);
+    }
+
+    .email-from .to {
+      font-size: 12px;
+      color: var(--email-muted);
+      margin-top: 2px;
+    }
+
+    .email-time {
+      font-size: 12px;
+      color: var(--email-muted);
+    }
+
+    .email-body {
+      padding: 24px 28px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--email-text);
+    }
+
+    .email-body p {
+      margin: 0 0 14px;
+    }
+
+    .email-h {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      color: #0d1217;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 24px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #0d1217;
+    }
+
+    .email-h:first-child {
+      margin-top: 0;
+    }
+
+    .email-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+
+    .email-table td {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--email-line);
+      font-size: 14px;
+    }
+
+    .email-table .num {
+      text-align: right;
+      font-weight: 700;
+    }
+
+    .email-table .delta-up {
+      color: #1e8e3e;
+      font-size: 12px;
+      margin-left: 6px;
+    }
+
+    .email-table .delta-down {
+      color: #d93025;
+      font-size: 12px;
+      margin-left: 6px;
+    }
+
+    .email-table .delta-flat {
+      color: var(--email-muted);
+      font-size: 12px;
+      margin-left: 6px;
+    }
+
+    .email-status {
+      margin-top: 20px;
+      padding: 10px 14px;
+      background: #e8f0fe;
+      color: #1967d2;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+
+    /* === SMS FRAME === */
+    .sms {
+      background: var(--sms-bg);
+      border-radius: 24px;
+      padding: 24px 20px;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+
+    .sms-titlebar {
+      text-align: center;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #1c1c1e;
+      font-size: 14px;
+      color: #999;
+    }
+
+    .sms-titlebar .from {
+      font-weight: 600;
+      color: #fff;
+      font-size: 15px;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .sms-thread {
+      padding: 14px 0;
+    }
+
+    .sms-day {
+      text-align: center;
+      color: #666;
+      font-size: 11px;
+      margin: 18px 0 10px;
+      letter-spacing: 0.06em;
+    }
+
+    .sms-bubble {
+      background: var(--sms-bubble);
+      color: #fff;
+      padding: 9px 13px;
+      border-radius: 18px;
+      display: inline-block;
+      max-width: 85%;
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+
+    .sms-bubble.sent {
+      background: var(--sms-green);
+      color: #000;
+      border-radius: 18px;
+      float: right;
+      clear: both;
+      margin-right: 0;
+      margin-left: auto;
+    }
+
+    .sms-time {
+      text-align: center;
+      font-size: 10px;
+      color: #666;
+      margin: 8px 0;
+      clear: both;
+    }
+
+    .sms-h {
+      font-weight: 600;
+      margin: 6px 0 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="strip">
+    <span><strong>Nucleus Demo</strong> — Acme HVAC, Bend OR</span>
+    <span class="badge">LIVE</span>
+  </div>
+
+  <div class="header">
+    <div class="eyebrow">ZANOMA · NUCLEUS</div>
+    <h1 class="h1">One Daily Brief. Three Delivery Channels.</h1>
+    <p class="sub">Same intelligence engine. Rendered for Slack, email, or SMS. Toggle between frames to see the same brief adapted for each channel.</p>
+  </div>
+
+  <div class="toggle-row">
+    <button class="toggle active" data-frame="slack">📘 Slack</button>
+    <button class="toggle" data-frame="email">📧 Email</button>
+    <button class="toggle" data-frame="sms">💬 SMS</button>
+  </div>
+
+  <div class="stage">
+    <!-- SLACK FRAME -->
+    <div class="frame active" data-frame="slack">
+      <div class="slack">
+        <div class="slack-titlebar">
+          <span>💼 <span class="ws">Zanoma Workspace</span> · Daily Brief</span>
+        </div>
+        <div class="slack-channel"># daily-brief</div>
+        <div class="slack-msg">
+          <div class="slack-avatar">Z</div>
+          <div class="slack-body">
+            <div class="slack-meta">
+              <strong>Zanoma</strong>
+              <span class="bot">BOT</span>
+              <span class="ts">9:00 AM</span>
+            </div>
+            <div class="slack-content">
+              <strong class="slack-h">Tuesday, April 28 — Your Daily Brief</strong>
+
+              <strong class="slack-h">☀️ Acquisition: +18%</strong>
+              <p>Lead form speed dropped to 4.1s on mobile yesterday. We caught it. Web team has been flagged.</p>
+              <div class="slack-score">
+                <span class="name">Metric</span>
+                <span><span class="num">+18%</span><span class="delta-up">↑ up</span></span>
+              </div>
+
+              <strong class="slack-h">⭐ Reputation: 4.7★</strong>
+              <p>Sarah J. left a 5-star review this morning: "Best HVAC service I've had in 20 years in Bend." Excellent signal.</p>
+              <div class="slack-score">
+                <span class="name">Rating</span>
+                <span><span class="num">4.7★</span><span class="delta-flat">— flat</span></span>
+              </div>
+
+              <strong class="slack-h">💰 Finance</strong>
+              <p>Margin holding. AC compressor reorder cycle on schedule. No surprises.</p>
+
+              <strong class="slack-h">📊 Scoreboard (six-dimension snapshot)</strong>
+              <div class="slack-score"><span class="name">Acquisition</span><span><span class="num">78</span><span class="delta-up">▲ +4</span></span></div>
+              <div class="slack-score"><span class="name">Retention</span><span><span class="num">65</span><span class="delta-down">▼ -2</span></span></div>
+              <div class="slack-score"><span class="name">Operations</span><span><span class="num">82</span><span class="delta-up">▲ +1</span></span></div>
+              <div class="slack-score"><span class="name">Finance</span><span><span class="num">71</span><span class="delta-up">▲ +3</span></span></div>
+              <div class="slack-score"><span class="name">Reputation</span><span><span class="num">88</span><span class="delta-flat">— flat</span></span></div>
+              <div class="slack-score"><span class="name">Compliance</span><span><span class="num">95</span><span class="delta-flat">— flat</span></span></div>
+
+              <strong class="slack-h">🕵️ Competitor Intel (last 24h)</strong>
+              <div class="slack-comp"><span class="tag">🆕</span><strong>Bend Heating Co.</strong> launched new Meta ad campaign (3 creatives, "$99 tune-up" offer)</div>
+              <div class="slack-comp"><span class="tag">⚠️</span><strong>Cascade Mechanical</strong> rating dipped 4.6 → 4.5 (3 new 1-star reviews — win their unhappy customers)</div>
+              <div class="slack-comp"><span class="tag">📈</span><strong>Mountain HVAC</strong> moved #5 → #3 for "AC repair Bend OR" — published new service page Sunday</div>
+
+              <hr class="slack-divider">
+
+              <strong class="slack-h">Your move</strong>
+              <p><strong>Approve the David K. callback first</strong> when you sit down — highest-value lead this month ($12–18K).</p>
+              <p style="font-size:13px;color:#888;margin-top:12px;"><strong>Connectors all healthy:</strong> QuickBooks ✓ · Google Business ✓ · ServiceTitan ✓ · Stripe ✓ · Reviews feed ✓</p>
+
+              <div class="slack-status">✓ Brief generated at 9:00 AM PT</div>
+              <div class="slack-reactions">
+                <span class="slack-reaction">👍 3</span>
+                <span class="slack-reaction">🙏 1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EMAIL FRAME -->
+    <div class="frame" data-frame="email">
+      <div class="email">
+        <div class="email-titlebar">
+          <span class="gmail">Gmail</span>
+          <span>— Inbox</span>
+        </div>
+        <div class="email-subject">Your Daily Brief — April 28, 2026</div>
+        <div class="email-meta">
+          <div class="email-avatar">Z</div>
+          <div class="email-from">
+            <div class="name">Zanoma</div>
+            <div class="addr">brief@zanoma.com</div>
+            <div class="to">to Marcus Thompson</div>
+          </div>
+          <div class="email-time">9:00 AM</div>
+        </div>
+        <div class="email-body">
+          <p>Good morning, Marcus.</p>
+
+          <h2 class="email-h">☀️ Acquisition</h2>
+          <table class="email-table">
+            <tr>
+              <td>Lead form speed</td>
+              <td class="num">4.1s<span class="delta-down">↑ slow</span></td>
+            </tr>
+            <tr>
+              <td>Target</td>
+              <td class="num">&lt;2s</td>
+            </tr>
+          </table>
+          <p>Web team flagged. Retest daily.</p>
+
+          <h2 class="email-h">⭐ Reputation</h2>
+          <table class="email-table">
+            <tr>
+              <td>Rating</td>
+              <td class="num">4.7★<span class="delta-flat">—</span></td>
+            </tr>
+          </table>
+          <p>Sarah J. 5-star: "Best HVAC service I've had in 20 years in Bend." Returning customer (daughter of 2024 client).</p>
+
+          <h2 class="email-h">💰 Finance</h2>
+          <p>Margin holding. AC compressor reorder on schedule. P&amp;L impact minimal. Revisit May 5.</p>
+
+          <h2 class="email-h">Six-Dimension Scoreboard</h2>
+          <table class="email-table">
+            <tr><td>Acquisition</td><td class="num">78<span class="delta-up">▲ +4</span></td></tr>
+            <tr><td>Retention</td><td class="num">65<span class="delta-down">▼ -2</span></td></tr>
+            <tr><td>Operations</td><td class="num">82<span class="delta-up">▲ +1</span></td></tr>
+            <tr><td>Finance</td><td class="num">71<span class="delta-up">▲ +3</span></td></tr>
+            <tr><td>Reputation</td><td class="num">88<span class="delta-flat">—</span></td></tr>
+            <tr><td>Compliance</td><td class="num">95<span class="delta-flat">—</span></td></tr>
+          </table>
+
+          <h2 class="email-h">Competitor Intel (Last 24h)</h2>
+          <div class="email-comp-card"><span class="tag">🆕</span> <strong>Bend Heating Co.</strong> launched Meta campaign ("$99 tune-up" offer) — 3 creatives</div>
+          <div class="email-comp-card"><span class="tag">⚠️</span> <strong>Cascade Mechanical</strong> rating 4.6 → 4.5 (3 new 1-stars) — opportunity to win unhappy customers</div>
+          <div class="email-comp-card"><span class="tag">📈</span> <strong>Mountain HVAC</strong> ranked #5 → #3 for "AC repair Bend OR" — new service page Sunday</div>
+
+          <h2 class="email-h">Your Move</h2>
+          <p><strong>Approve David K. callback first.</strong> Highest-value lead ($12–18K). Pipeline humming.</p>
+
+          <div class="email-status"><strong>Connectors all healthy:</strong> QuickBooks · Google Business · ServiceTitan · Stripe · Reviews feed</div>
+          <p style="margin-top:24px;color:var(--email-muted);font-size:13px">— Your Zanoma advisor walks the brief with you on the 1st of each month.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SMS FRAME -->
+    <div class="frame" data-frame="sms">
+      <div class="sms">
+        <div class="sms-titlebar">
+          <span class="from">Zanoma</span>
+          <span>Today 9:00 AM</span>
+        </div>
+        <div class="sms-thread">
+          <div class="sms-day">Tuesday</div>
+
+          <div class="sms-bubble first"><span class="sms-h">Tuesday brief — 3 things to do today</span></div>
+          <div class="sms-bubble middle">1) Approve the $5,200 AC compressor PO — vendor closes EOD</div>
+          <div class="sms-bubble middle">2) Call David K. back tonight at 8 — he's a $14K install lead</div>
+          <div class="sms-bubble last">3) ETA update to Sunday's emergency callout job</div>
+
+          <div class="sms-time">7:00 AM</div>
+
+          <div class="sms-bubble first"><span class="sms-h">Watching today</span></div>
+          <div class="sms-bubble middle">Site speed under 2s · Lead-form ≥ 2 conv · Bend Heating Co. ad spend</div>
+          <div class="sms-bubble last">Scoreboard ▲ Acquisition +4 · ▼ Retention -2 · ▲ Finance +3</div>
+
+          <div class="sms-time">7:00 AM</div>
+
+          <div class="sms-bubble first"><span class="sms-h">Competitor intel</span></div>
+          <div class="sms-bubble middle">🆕 Bend Heating Co. launched new "$99 tune-up" Meta ads</div>
+          <div class="sms-bubble middle">⚠️ Cascade Mechanical lost a star (3 new 1-star reviews)</div>
+          <div class="sms-bubble last">📈 Mountain HVAC moved #5→#3 for "AC repair Bend OR"</div>
+
+          <div class="sms-time">7:00 AM</div>
+
+          <div class="sms-bubble last">→ <a class="sms-link" href="#">Open the full brief on the web</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="cta-block">
+    <h3>Get your own brief in 7 days.</h3>
+    <p>15-minute call. We connect three of your tools, run them through Nucleus, and show you what your first brief would look like. No pitch unless you ask for one.</p>
+    <a class="cta-btn" href="https://zanoma.com/#contact" style="display:inline-block">Book Your Free Revenue Leak Analysis →</a>
+    <p class="footer-note">No credit card · No commitment · Usually replies within 24 hours</p>
+  </div>
+
+  <script>
+    document.querySelectorAll('.toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const which = btn.dataset.frame;
+        document.querySelectorAll('.toggle').forEach(b => b.classList.toggle('active', b.dataset.frame === which));
+        document.querySelectorAll('.frame').forEach(f => f.classList.toggle('active', f.dataset.frame === which));
+      });
+    });
+  </script>
+</body>
+</html>

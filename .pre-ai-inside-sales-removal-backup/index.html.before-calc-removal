@@ -482,10 +482,61 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
 </section>
 
 <!-- S7: CALCULATOR -->
+<section class="section">
+  <div class="container">
+    <h2>Do the math. Then book the call.</h2>
+    <p class="text-dim" style="margin-top:16px;max-width:600px;">Tell us what you spend. We'll show you what Nucleus costs.</p>
+    <div class="card" style="margin-top:48px;">
+      <div class="calc-card">
+        <div>
+          <div class="slider-group">
+            <div class="slider-label"><span>Marketing agency monthly retainer</span><span class="slider-value" id="val-agency">$3,500</span></div>
+            <input type="range" id="slider-agency" min="0" max="15000" step="100" value="3500" aria-label="Marketing agency monthly retainer">
+          </div>
+          <div class="slider-group">
+            <div class="slider-label"><span>Dashboards / analytics tools</span><span class="slider-value" id="val-dash">$400</span></div>
+            <input type="range" id="slider-dash" min="0" max="3000" step="50" value="400" aria-label="Dashboards and analytics tools">
+          </div>
+          <div class="slider-group">
+            <div class="slider-label"><span>Fractional COO or ops manager <em style="color:var(--text-muted);font-style:normal;font-size:12px;">← drag if you have one</em></span><span class="slider-value" id="val-coo">$0</span></div>
+            <input type="range" id="slider-coo" min="0" max="20000" step="500" value="0" aria-label="Fractional COO or ops manager">
+          </div>
+          <div class="slider-group">
+            <div class="slider-label"><span>Bookkeeper / finance support</span><span class="slider-value" id="val-book">$800</span></div>
+            <input type="range" id="slider-book" min="0" max="5000" step="100" value="800" aria-label="Bookkeeper or finance support">
+          </div>
+        </div>
+        <div class="calc-output">
+          <div class="output-row">
+            <span class="output-label">Current monthly spend</span>
+            <span class="output-value" id="out-spend">$4,700</span>
+          </div>
+          <hr class="divider">
+          <div class="output-row">
+            <span class="output-label">Recommended tier</span><span class="output-value" id="out-tier"></span></div>
+          <hr class="divider">
+          <div class="output-row">
+            <span class="output-label">Monthly savings</span>
+            <span class="output-value output-savings" id="out-savings">$2,200</span>
+            <span style="font-size:14px;color:var(--text-muted);margin-top:4px;" id="out-annual">That’s $26,400 a year back in your business.</span>
+          </div>
+          <hr class="divider">
+          <div class="output-row">
+            <span class="output-label">What you gain</span>
+            <span class="output-gain">Real-time intelligence · A human advisor · AI agents executing daily</span>
+          </div>
+          <a href="#contact" class="btn btn-primary" style="margin-top:8px;justify-content:center;">Book Your Free Revenue Leak Analysis →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S9: PRICING -->
 <section class="section" id="pricing">
   <div class="container">
     <h2>Two ways to put AI to work in your business.</h2>
-    <p class="text-dim" style="margin-top:16px;">Brain first. Workforce next. One human advisor either way.</p>
+    <p class="text-dim" style="margin-top:16px;">Brain first. Workforce next. Always on. Do the math.</p>
     <div class="pricing-grid">
       <div class="pricing-card">
         <span class="tier-label">NUCLEUS</span>

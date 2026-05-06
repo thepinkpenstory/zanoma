@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Zanoma — Founder-Led AI Intelligence for Small Business | Zanoma</title>
+<meta name="description" content="Zanoma is a founder-led AI firm based in Bend, OR. We build intelligence and lead generation systems for small businesses ready to compete at scale.">
+<link rel="canonical" href="https://zanoma.com/about">
+<meta property="og:title" content="About Zanoma — Founder-Led AI Intelligence for Small Business | Zanoma">
+<meta property="og:description" content="Zanoma is a founder-led AI firm based in Bend, OR. We build intelligence and lead generation systems for small businesses ready to compete at scale.">
+<meta property="og:url" content="https://zanoma.com/about">
+<meta property="og:image" content="https://zanoma.com/og-zanoma.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Zanoma — Founder-Led AI Intelligence for Small Business | Zanoma">
+<meta name="twitter:description" content="Zanoma is a founder-led AI firm based in Bend, OR. We build intelligence and lead generation systems for small businesses ready to compete at scale.">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --bg2: #12121a;
+      --bg3: #1a1a24;
+      --bg4: #222230;
+      --green: #39FF14;
+      --green-dim: rgba(57, 255, 20, 0.15);
+      --green-glow: rgba(57, 255, 20, 0.4);
+      --text: #f0f0f5;
+      --text-muted: #8888a0;
+      --text-dim: #555568;
+      --border: rgba(255,255,255,0.08);
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    a { color: var(--green); text-decoration: none; }
+    .bg-grid { position: fixed; inset: 0; background-image: linear-gradient(rgba(57,255,20,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(57,255,20,0.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+    .bg-glow { position: fixed; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(57,255,20,0.08) 0%, transparent 70%); pointer-events: none; z-index: 0; }
+    .bg-glow-1 { top: -200px; right: -200px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    header { padding: 24px 0; position: sticky; top: 0; background: rgba(10,10,15,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); z-index: 100; }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: var(--text); letter-spacing: -0.5px; }
+    .logo span { color: var(--green); }
+    nav { display: flex; gap: 32px; align-items: center; }
+    nav a { color: var(--text-muted); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    nav a:hover { color: var(--green); }
+    nav a.active { color: var(--green); }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--green-dim); border: 1px solid var(--green); border-radius: 100px; font-size: 12px; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: 1px; }
+    .pill .dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    
+    .page-header { padding: 80px 0 60px; text-align: center; }
+    .page-header h1 { font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 700; margin-bottom: 16px; }
+    .page-header h1 span { color: var(--green); }
+    .page-header p { font-size: 18px; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
+    
+    .content-section { padding: 60px 0; }
+    .content-section h2 { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; margin-bottom: 20px; }
+    .content-section p { color: var(--text-muted); font-size: 16px; margin-bottom: 20px; }
+    
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .grid-2 .text h2 { margin-top: 20px; }
+    
+    .feature-list { list-style: none; }
+    .feature-list li { padding: 12px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; }
+    .feature-list li::before { content: '✓'; color: var(--green); font-weight: 700; }
+    
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 60px 0; }
+    .stat-box { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; text-align: center; }
+    .stat-box .value { font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; color: var(--green); }
+    .stat-box .label { font-size: 14px; color: var(--text-muted); margin-top: 8px; }
+    
+    footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; }
+    .footer-text { font-size: 13px; color: var(--text-dim); }
+    
+    @media (max-width: 900px) { .grid-2, .stats-row { grid-template-columns: 1fr; } nav { display: none; } }
+  
+    /* Dropdown */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
+    .nav-dropdown > a::after { content: '▾'; font-size: 10px; color: var(--text-dim); transition: color 0.2s; }
+    .nav-dropdown:hover > a, .nav-dropdown:hover > a::after { color: var(--green); }
+    .dropdown-menu {
+      display: none; position: absolute; top: calc(100% + 12px); left: 0;
+      background: rgba(10,10,15,0.98); border: 1px solid rgba(57,255,20,0.2);
+      border-radius: 10px; padding: 8px; min-width: 200px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.6); z-index: 200;
+    }
+    .nav-dropdown:hover .dropdown-menu { display: flex; flex-direction: column; gap: 2px; }
+    .dropdown-menu a {
+      display: block; padding: 10px 14px; border-radius: 7px;
+      font-size: 13px; font-weight: 500; color: var(--text-muted);
+      transition: all 0.15s; white-space: nowrap;
+    }
+    .dropdown-menu a:hover { background: rgba(57,255,20,0.08); color: var(--green); }
+    .dropdown-menu .dropdown-label {
+      font-size: 10px; font-weight: 700; color: var(--text-dim);
+      text-transform: uppercase; letter-spacing: 1.5px; padding: 6px 14px 4px;
+    }
+
+  </style>
+<style>
+.dropdown-menu { margin-top: 0 !important; padding-top: 12px !important; }
+.nav-dropdown { padding-bottom: 8px; }
+</style>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <a href="/" class="logo" style="color:var(--text);letter-spacing:0.08em;">ZANOMA</a>
+        <nav>
+          <a href="/">Nucleus</a>
+          <a href="/engine">Engine</a>
+          <a href="/about" class="active">About</a>
+          <a href="/contact">Contact</a>
+          <a href="/contact" class="pill" style="background:var(--green);color:#000;border:none;">Book the Brief Demo</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  
+  <section class="page-header">
+    <div class="container">
+      <h1>About <span>Zanoma</span></h1>
+      <p>Helping brands navigate the new world of AI. 8+ years in business. Hundreds of brands served. Now we help you harness AI to grow faster.</p>
+    </div>
+  </section>
+  
+  <section class="content-section">
+    <div class="container">
+      <div class="grid-2">
+        <div class="text">
+          <h2>8+ Years Helping Brands Grow</h2>
+          <p>Zanoma has been in business since 2018, working with hundreds of brands including NBC Universal, Keurig, Carhartt, Kellogg's, Duracell, Philips, and many more. We know what works because we've done it — at scale, for the biggest names in the world.</p>
+          <p>Now the game has changed. AI is transforming every industry, and most brands don't know where to start. That's where we come in.</p>
+          <p>We help you use AI to do the work — faster, smarter, and at a fraction of the old cost.</p>
+        </div>
+        <div class="text">
+          <h2>How We Help You</h2>
+          <p>We don't just build things for you — we help you harness AI to transform your business:</p>
+          <ul class="feature-list">
+            <li>AI-powered website builds that launch in days, not months</li>
+            <li>Content engines that produce 10x output at a fraction of the cost</li>
+            <li>Brand audits that show exactly where you're losing revenue</li>
+            <li>Social media and email systems that run on autopilot</li>
+            <li>Amazon listing optimization backed by data</li>
+            <li>Custom AI solutions tailored to your specific business</li>
+          </ul>
+          <p style="margin-top: 20px; color: var(--green); font-weight: 600;">See our client list on the homepage. We've been doing this for years — now we help you do it with AI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="content-section">
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat-box"><div class="value">100s</div><div class="label">Brands Served</div></div>
+        <div class="stat-box"><div class="value">8+</div><div class="label">Years in Business</div></div>
+        <div class="stat-box"><div class="value">5 days</div><div class="label">Avg. Delivery Time</div></div>
+        <div class="stat-box"><div class="value">AI</div><div class="label">Powered Solutions</div></div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="content-section">
+    <div class="container">
+      <h2>Why Brands Choose Zanoma</h2>
+      <div class="grid-2" style="margin-top: 40px;">
+        <div>
+          <h3 style="color: var(--green); margin-bottom: 12px;">Experience</h3>
+          <p>8+ years working with hundreds of brands, from Fortune 500 to emerging startups. We know what works because we've done it at every level. Now we bring that expertise to you — supercharged with AI.</p>
+        </div>
+        <div>
+          <h3 style="color: var(--green); margin-bottom: 12px;">Speed</h3>
+          <p>AI lets us deliver in days what used to take months. Your website, content, and marketing engine — up and running before your competitors even start the RFP process.</p>
+        </div>
+        <div>
+          <h3 style="color: var(--green); margin-bottom: 12px;">We Teach You</h3>
+          <p>We don't just build it and leave. We help you understand and use AI in your own business — so you grow with the technology, not dependent on us.</p>
+        </div>
+        <div>
+          <h3 style="color: var(--green); margin-bottom: 12px;">Results</h3>
+          <p>We've navigated this new world already. We know which AI tools work, which don't, and how to apply them to real business problems. You get the shortcut.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer style="background:#0a0a0a;border-top:1px solid #1a1a1a;padding:32px 5%;margin-top:60px;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+    <div style="display:flex;gap:24px;flex-wrap:wrap;font-size:14px;">
+      <a href="/" style="color:#00FF7F;text-decoration:none;">Nucleus</a>
+      <a href="/engine" style="color:#888;text-decoration:none;">Engine</a>
+      <a href="/about" style="color:#888;text-decoration:none;">About</a>
+      <a href="/contact" style="color:#888;text-decoration:none;">Contact</a>
+      <a href="mailto:kevin.keranen@zanoma.com" style="color:#888;text-decoration:none;">kevin.keranen@zanoma.com</a>
+    </div>
+    <div style="font-size:13px;color:#555;">© 2026 Zanoma. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>

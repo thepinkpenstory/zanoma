@@ -19,6 +19,16 @@
       "permanent": true
     },
     {
+      "source": "/sales",
+      "destination": "/ai-inside-sales",
+      "permanent": true
+    },
+    {
+      "source": "/services/lead-generation",
+      "destination": "/ai-inside-sales",
+      "permanent": true
+    },
+    {
       "source": "/services/brand-intelligence",
       "destination": "/",
       "permanent": true
@@ -36,14 +46,6 @@
   ],
   "rewrites": [
     {
-      "source": "/contact",
-      "destination": "/contact/index.html"
-    },
-    {
-      "source": "/about",
-      "destination": "/about/index.html"
-    },
-    {
       "source": "/preview/nucleus_500_new.html",
       "destination": "/preview/nucleus_500_new.html"
     },
@@ -54,14 +56,6 @@
     {
       "source": "/clientdemo",
       "destination": "/clientdemo/index.html"
-    },
-    {
-      "source": "/enginedemo",
-      "destination": "/enginedemo/index.html"
-    },
-    {
-      "source": "/nucleusdemo",
-      "destination": "/nucleusdemo/index.html"
     },
     {
       "source": "/engine",

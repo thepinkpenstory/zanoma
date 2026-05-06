@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zanoma · Nucleus · Client Demo</title>
-<meta name="description" content="">
-<meta name="robots" content="index, follow">
+<title>Engine Demo — Live Walkthrough | Zanoma</title>
+<meta name="description" content="Live preview of the Nucleus client dashboard. Switch personas to see Nucleus, AI Inside Sales, and Engine tiers in action.">
+<meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -967,10 +967,12 @@ acme: {
       tldr:'Healthy day. One fire: site speed regression killed lead-form yesterday. Joe is on it.',
       execSummary:'Pipeline is up <b>+18% week-over-week</b> — your best run since Christmas. A 5-star review came in overnight from Sarah J., a returning customer. <b>Site speed regression is the only urgent item.</b> Margin slipping on AC compressor reorders is expected and on track. No new risk flags.',
       highlights:[
-        { num:1, headline:'Site speed regression hit lead conversions hard.', body:'<p>The mobile homepage went from <b>1.9s LCP</b> yesterday morning to <b>4.1s</b> by 6 PM. Lead-form completions on /sales: <b>0 yesterday</b>, vs trailing 7-day average of <b>3.2</b>.</p><p>Likely cause: yesterday\'s photo upload (12 hero images, total <span class="pill-mark">8.4MB unoptimized</span>). Better Stack auto-flagged the regression at 6:43 PM and notified the web team. No action required from you, but if it\'s not back under 2s by tonight, Joe will escalate.</p>' },
+        { num:1, headline:'Site speed regression hit lead conversions hard.', body:'<p>The mobile homepage went from <b>1.9s LCP</b> yesterday morning to <b>4.1s</b> by 6 PM. Lead-form completions on /sales: <b>0 yesterday</b>, vs trailing 7-day average of <b>3.2</b>.</p><p>Likely cause: yesterday\'s photo upload (12 hero images, total <span class="pill-mark">8.4MB unoptimized</span>). Better Stack auto-flagged the regression at 6:43 PM and notified the web team. No action required from you, but if it\'s not back under 2s by tonight, Joe will escalate.</p>',
+          upsell: { tier: 'inside_sales', text: 'Even with your form down, every <b>inbound phone call</b> would still be answered, qualified, and booked by AI Maya — not lost to voicemail. AI Inside Sales caught <b>~3 leads</b> the form would have missed in this exact scenario.' } },
         { num:2, headline:'Sarah J. — returning customer — left a 5★ review at 02:14 AM.', body:'<p>"Best HVAC service I\'ve had in 20 years in Bend." Sarah is <b>Marie Johnson\'s daughter</b> (HubSpot CRM tag: <span class="pill-mark">family</span>); you serviced her parents\' system in 2024.</p><p>No response needed at the Nucleus tier — these reviews boost your map ranking organically. Note: the "20 years in Bend" line is quotable; Joe filed it for your case-studies pile.</p>',
           upsell: { tier: 'engine', text: 'Want Nucleus to <b>create this reply and post it for you</b>? AI Review Responder drafts a thank-you in your voice within <b>4 minutes</b> of any review going live. Your manual baseline: ~36 hours.' } },
-        { num:3, headline:'"Bend Heating Co." launched a $99/install Meta promo yesterday afternoon.', body:'<p>Estimated daily reach: <b>~12,000 impressions</b> across zip codes 97701-03. Their spend looks aggressive — best guess <b>$200–300/day</b>. They\'re targeting "fall maintenance" in mid-April, which is off-cycle for the Bend market.</p><p>Joe is preparing a counter-positioning brief by Friday — likely angle: an <i>"any-season tune-up"</i> offer at $149 with the visual hook of <i>"we do this every season, not just when it\'s panicking."</i> No action from you yet.</p>' },
+        { num:3, headline:'"Bend Heating Co." launched a $99/install Meta promo yesterday afternoon.', body:'<p>Estimated daily reach: <b>~12,000 impressions</b> across zip codes 97701-03. Their spend looks aggressive — best guess <b>$200–300/day</b>. They\'re targeting "fall maintenance" in mid-April, which is off-cycle for the Bend market.</p><p>Joe is preparing a counter-positioning brief by Friday — likely angle: an <i>"any-season tune-up"</i> offer at $149 with the visual hook of <i>"we do this every season, not just when it\'s panicking."</i> No action from you yet.</p>',
+          upsell: { tier: 'inside_sales', text: 'When Joe ships the counter offer Friday, AI would <b>automatically text and call your dormant database</b> with the new pitch — reactivating ~7-10 leads in the first 48 hours instead of waiting for them to find you.' } },
       ],
       numbers:[
         { label:'Inbound calls', y:'12', avg:'10.4', delta:'+15%', sentiment:'up' },
@@ -988,7 +990,7 @@ acme: {
       advisor:'<p>The site-speed regression is the priority today; everything else is on autopilot. I\'m watching how your web team handles it — if it\'s not back under 2.5s by tomorrow\'s brief, I\'ll escalate to your developer myself.</p><p>The Bend Heating Co. promo isn\'t worth matching on price. They\'re burning cash on a saturated market; we\'ll let them tire themselves out and use the noise as cover for our own organic content push next week.</p><p>The Sarah J. review is gold — I\'d ask her if you can use a quote on your homepage. I can DM her with your sign-off if you want.</p>',
       watching:['Site speed: under 2s on mobile by 11 AM PT','Lead-form recovery: ≥ 2 conversions today vs 0 yesterday','Bend Heating Co. ad spend: hold steady or escalate','Margin: AC compressor parts reorder hits PO date today — track P&L impact'],
       connectorStatus:'All healthy: GBP · Stripe · Site Uptime',
-      nextStep:,
+      nextStep: { tier: 'inside_sales', headline: 'Three things in this Brief you\'d act on instead of just read.', body: 'Today\'s brief flagged <b>3 things you\'d ideally act on</b>: thank Sarah J., text dormant leads about the counter offer, capture leads while the form is broken. Nucleus tells you. <b>AI Inside Sales does them for you</b> — without you lifting a finger, in your voice, on your CRM. Most Nucleus owners move up around month 2-3 once they\'ve seen the brain dialed in.' },
     },
 
     { id:'apr27', dow:'Monday', month:'Apr', day:27, year:2026, isFull:true, kind:'daily', readingTime:'2 min',
@@ -998,7 +1000,8 @@ acme: {
       execSummary:'Sunday operational metrics held steady. Inbound was 5 calls, normal for a weekend. Notable: <b>Bend Heating Co. began running paid ads</b> on Meta and Google Local Services — first time in 2026. Worth tracking.',
       highlights:[
         { num:1, headline:'Bend Heating Co. ad activation detected on Meta and Google LSA.', body:'<p>First paid placement spotted at 10:14 AM yesterday. Their Meta library shows <b>3 new ad variants</b> launched in the past 48 hours, all $99-install creative. Google LSA: their bid floor on "AC repair Bend" rose from $7.20 to $11.40 — they\'re paying up.</p><p>Joe is monitoring daily; we\'ll have a counter brief ready by Friday.</p>' },
-        { num:2, headline:'GBP map-pack ranking held #2 for "HVAC Bend OR" — third week in a row.', body:'<p>Cascade Heating dropped from #4 to #6 (their listing went dark briefly Saturday). You\'re <b>top-quartile for the metro</b>. Photos uploaded last week appear to be helping — profile views up 22%.</p>' },
+        { num:2, headline:'GBP map-pack ranking held #2 for "HVAC Bend OR" — third week in a row.', body:'<p>Cascade Heating dropped from #4 to #6 (their listing went dark briefly Saturday). You\'re <b>top-quartile for the metro</b>. Photos uploaded last week appear to be helping — profile views up 22%.</p>',
+          upsell: { tier: 'inside_sales', text: 'Profile views up 22% means more inbound calls coming. <b>AI Inside Sales answers every call 24/7</b> — your weekend coverage is currently voicemail. Lost-leads-to-voicemail in the cohort: ~30% of weekend volume.' } },
       ],
       numbers:[
         { label:'Inbound calls', y:'5', avg:'4.8', delta:'+4%', sentiment:'up' },
@@ -1021,7 +1024,8 @@ acme: {
       tldr:'Strong week. Pipeline up, close rate up, no risk flags. Best week since Christmas.',
       execSummary:'<b>Net new pipeline this week:</b> $34,180 across 19 booked jobs. Close rate (booked → completed) was <b>41%</b>, your highest mark of the year. Reviews held at 4.7★ on 8 new ratings. No service complaints, no chargebacks, no missed appointments. Margin slipped 2pts on parts reorders (expected — AC compressor cycle).',
       highlights:[
-        { num:1, headline:'Pipeline up +18% week-over-week.', body:'<p>Driver was a <b>+22% jump in GBP profile views</b> after the photo refresh on Tuesday. Conversion rate from view → call held flat at 4.4%, so this is genuine demand growth, not a vanity-metric blip.</p>' },
+        { num:1, headline:'Pipeline up +18% week-over-week.', body:'<p>Driver was a <b>+22% jump in GBP profile views</b> after the photo refresh on Tuesday. Conversion rate from view → call held flat at 4.4%, so this is genuine demand growth, not a vanity-metric blip.</p>',
+          upsell: { tier: 'inside_sales', text: 'View-to-call conversion at 4.4% means lots of folks see your profile but don\'t call. AI Inside Sales adds an <b>SMS opt-in</b> on the GBP profile so view-to-text conversion typically lands at 11-14%.' } },
         { num:2, headline:'Close rate hit 41% — best week of 2026.', body:'<p>The new "we\'ll come out within 4 hours guaranteed" line on your callback voicemail (added 3 weeks ago) is correlating with <b>+9pts on close rate</b>. Joe wants to A/B test a similar line on the email confirmations next.</p>' },
         { num:3, headline:'Reviews steady at 4.7★ on 8 new ratings this week.', body:'<p>5★: 6 · 4★: 1 · 3★: 1 · 2★: 0 · 1★: 0. The 3-star was a parts-delay issue (AC compressor) — Tom from your team handled it directly. Joe followed up and the customer raised it to 4★ this morning.</p>',
           upsell: { tier: 'engine', text: '<b>Tom spent ~2 hours</b> handling the 3-star recovery. AI Review Responder catches every review (any star) and drafts a personalized response in your voice within 4 minutes — so Tom never has to leave a job to manage reviews.' } },
@@ -1175,7 +1179,7 @@ acme: {
     mode: 'lost',
     headline: '$13,840',
     title: 'Revenue Nucleus saw leaving · last 30 days',
-    subtitle: '',
+    subtitle: 'Nucleus alerted you to all of these. <b>AI Inside Sales would have stopped them</b> — every call answered, every text replied within 60 seconds, every dormant lead reactivated automatically.',
     stats: [
       { label: 'Calls missed', val: '14' },
       { label: 'Voicemails (zero callback)', val: '8' },
@@ -1183,19 +1187,19 @@ acme: {
       { label: 'Leads ghosted within 7d', val: '23' },
     ],
     items: [
-      { time: 'Tue · Apr 22 · 6:47 PM PT', tag: 'CALL MISSED', amt: '$8,400', desc: 'Inbound call from <b>(541) 555-2391</b> went to voicemail (you were on a job at the Lakehurst property).', detail: 'Caller searched <i>"HVAC Bend"</i> 14 min later. GBP map-pack at that hour ranked Bend Heating Co. #4 (you #2, but no answer). Caller booked Bend Heating Co. the next morning — confirmed via your CRM "lost-lead" cross-reference.', fix: '' },
-      { time: 'Sat · Apr 19 · 8:14 PM PT', tag: 'VOICEMAIL FULL', amt: '$3,200', desc: 'Inbound call from <b>(541) 555-7741</b> hit a "voicemail box full" message.', detail: 'Caller retried at 8:21 PM — same outcome. SMS\'d Cascade Heating from a public-records phone-tree pattern at 8:43 PM. Likely small-job AC tune-up given service request keywords found in their later web search.', fix: '' },
-      { time: 'Sun · Apr 13 · 11:32 PM PT', tag: 'NO ANSWER', amt: '$1,400', desc: 'Inbound call from <b>(541) 555-1184</b>. After-hours, voicemail.', detail: 'Caller left a 17-second voicemail describing a thermostat malfunction. Voicemail not retrieved until Mon 9:14 AM (9h 42min later). By then they had searched 3 competitors. Filter-replacement-only job, lower-margin.', fix: '' },
-      { time: 'Tue · Apr 8 · 2:14 PM PT', tag: 'WEB FORM > 1H', amt: '$840', desc: 'Web form on /sales submitted at 2:14 PM. First touch was your manual reply at 4:38 PM (2h 24min later).', detail: 'Industry data: leads contacted within 5 min are 21× more likely to qualify than at 30 min. By 4:38 PM, this lead had requested 3 other quotes via Yelp.', fix: '' },
-      { time: 'Mon · Apr 7 · 7:02 PM PT', tag: 'GHOSTED', amt: '$0 (was qualified)', desc: 'Lead booked but no-show on Tue Apr 8 9 AM. Never rescheduled. Last touch: 1 reminder email.', detail: 'CRM contact <b>"Daniel R."</b> qualified via inbound call Mon evening. Booked Tue 9 AM. No reminder SMS sent (you don\'t have automation). Daniel went silent.', fix: '' },
-      { time: 'Last 30 days', tag: 'DORMANT', amt: '~$11,200 in CRM', desc: 'Your CRM has <b>47 contacts last-touched 90+ days ago</b>, with combined estimated re-engagement value of $11,200.', detail: 'Most are people who got a quote and never closed. Industry reactivation rate at 90 days: 8-12% with a structured cadence.', fix: '' },
+      { time: 'Tue · Apr 22 · 6:47 PM PT', tag: 'CALL MISSED', amt: '$8,400', desc: 'Inbound call from <b>(541) 555-2391</b> went to voicemail (you were on a job at the Lakehurst property).', detail: 'Caller searched <i>"HVAC Bend"</i> 14 min later. GBP map-pack at that hour ranked Bend Heating Co. #4 (you #2, but no answer). Caller booked Bend Heating Co. the next morning — confirmed via your CRM "lost-lead" cross-reference.', fix: 'AI Inside Sales would have answered ring 1, qualified, booked.' },
+      { time: 'Sat · Apr 19 · 8:14 PM PT', tag: 'VOICEMAIL FULL', amt: '$3,200', desc: 'Inbound call from <b>(541) 555-7741</b> hit a "voicemail box full" message.', detail: 'Caller retried at 8:21 PM — same outcome. SMS\'d Cascade Heating from a public-records phone-tree pattern at 8:43 PM. Likely small-job AC tune-up given service request keywords found in their later web search.', fix: 'AI Inside Sales would have answered, qualified, and texted you the booking summary.' },
+      { time: 'Sun · Apr 13 · 11:32 PM PT', tag: 'NO ANSWER', amt: '$1,400', desc: 'Inbound call from <b>(541) 555-1184</b>. After-hours, voicemail.', detail: 'Caller left a 17-second voicemail describing a thermostat malfunction. Voicemail not retrieved until Mon 9:14 AM (9h 42min later). By then they had searched 3 competitors. Filter-replacement-only job, lower-margin.', fix: 'AI Inside Sales would have answered — and Maya is trained to handle filter-replacement bookings without owner involvement.' },
+      { time: 'Tue · Apr 8 · 2:14 PM PT', tag: 'WEB FORM > 1H', amt: '$840', desc: 'Web form on /sales submitted at 2:14 PM. First touch was your manual reply at 4:38 PM (2h 24min later).', detail: 'Industry data: leads contacted within 5 min are 21× more likely to qualify than at 30 min. By 4:38 PM, this lead had requested 3 other quotes via Yelp.', fix: 'AI Inside Sales texts every web-form lead within <b>60 seconds</b>.' },
+      { time: 'Mon · Apr 7 · 7:02 PM PT', tag: 'GHOSTED', amt: '$0 (was qualified)', desc: 'Lead booked but no-show on Tue Apr 8 9 AM. Never rescheduled. Last touch: 1 reminder email.', detail: 'CRM contact <b>"Daniel R."</b> qualified via inbound call Mon evening. Booked Tue 9 AM. No reminder SMS sent (you don\'t have automation). Daniel went silent.', fix: 'AI Inside Sales sends T-24h, T-2h, and T-day-of reminder SMS automatically. No-show rate in cohort drops 47%.' },
+      { time: 'Last 30 days', tag: 'DORMANT', amt: '~$11,200 in CRM', desc: 'Your CRM has <b>47 contacts last-touched 90+ days ago</b>, with combined estimated re-engagement value of $11,200.', detail: 'Most are people who got a quote and never closed. Industry reactivation rate at 90 days: 8-12% with a structured cadence.', fix: 'AI Inside Sales runs a 4-touch reactivation cadence (SMS → email → voice → final SMS) over 12 days on every dormant lead.' },
     ],
   },
   // Mother Brain insights
   motherBrain: {
     rank: { you: '#2', cohortSize: '47', percentile: 'top quartile', vertical: 'Pacific NW HVAC SMBs' },
     insights: [
-      { tag: 'COHORT', icon: '⚡', headline: 'HVAC owners in Bend who answer weekend calls book 3.4× more weekend revenue than those who don\'t.', text: '', meta: 'Sample: 47 SMBs · 12-month rolling · differentially-private aggregates' },
+      { tag: 'COHORT', icon: '⚡', headline: 'HVAC owners in Bend who answer weekend calls book 3.4× more weekend revenue than those who don\'t.', text: '47 Pacific NW HVAC SMBs in the cohort. Median weekend pickup rate: 38%. Yours: <b>0%</b> outside your shop hours. Of the cohort owners on AI Inside Sales: <b>99% pickup rate, $5,200 avg weekly weekend revenue lift</b>.', meta: 'Sample: 47 SMBs · 12-month rolling · differentially-private aggregates' },
       { tag: 'COHORT', icon: '💡', headline: 'Owners with site speed under 2s convert leads at 11.7%; you at 4.1s are at 0% the day it broke.', text: 'Top quartile of cohort runs sub-2s LCP on mobile. You averaged <b>1.9s for 23 of last 30 days</b> — top decile. The 24h regression yesterday wiped your conversions to zero. <b>Pattern: site speed is binary, not gradual.</b>', meta: 'Sample: 47 SMBs · last 90 days · daily LCP measurements' },
       { tag: 'YOU', icon: '🎯', headline: 'Your 4.7★ generates ~$840/mo in higher click-through alone vs. cohort median 4.3★.', text: 'GBP click-through rate scales with star rating in a non-linear way. <b>4.7★ vs 4.3★ on the same impressions = +14.2% click-through</b> in the cohort. At your inbound volume, that\'s ~$840/mo of demand directly attributable to your reputation moat.', meta: 'Sample: 1,847 GBP impressions / month · click-throughs · CTR by rating' },
       { tag: 'COHORT', icon: '🚨', headline: 'When competitors run paid ads, the cohort sees +7% organic lift. Their price war helps you, not them.', text: 'Bend Heating Co. spending $200-300/day on Meta will draw price-shoppers, but the price-tolerant majority sees the noise and chooses the established option (you). Cohort experienced this 11 times in 2025; <b>median outcome was +7% organic lift</b> for the non-advertising operator.', meta: 'Sample: 11 competitor-ad-launch events · cohort revenue tracking · 90-day pre/post' },
@@ -1321,12 +1325,12 @@ acme: {
     { q: 'When does the Daily Brief land?', a: 'Every weekday at 7:00 AM in your local time zone, in Slack or email — whichever you picked at signup. Weekends are skipped unless you flip the toggle in Settings.' },
     { q: 'What if I want to switch from Slack to email?', a: 'Settings → Delivery channel → flip the toggle. Takes effect tomorrow morning. You can switch back anytime.' },
     { q: 'Can my team see the Brief too?', a: 'Yes — invite them on the Team page. Each role sees only what\'s relevant to them; your bookkeeper sees finance, your ops lead sees pipeline, etc.' },
-    { q: 'How do I add another connector?', a: '' },
+    { q: 'How do I add another connector?', a: 'For Nucleus you have 3 included. Adding a 4th requires upgrade to AI Inside Sales or Engine. Contact your advisor.' },
     { q: 'What happens if a connector fails?', a: 'You\'ll see it on the Connections page within minutes. The Brief shows "data unavailable" for any affected dimension instead of guessing. Joe gets paged.' },
     { q: 'Can I pause my subscription?', a: 'Talk to Joe. We don\'t do self-service pause — we want a 5-min conversation first to make sure we\'re not breaking something we shouldn\'t.' },
     { q: 'Where does my data live? What about security?', a: 'Postgres on Neon, US-East, encrypted at rest with per-tenant KMS keys. SOC 2 Type 1 self-assessment complete; Type 2 audit scheduled Q3 2026. We never share data across clients except as anonymized cohort benchmarks (differential privacy, k-anonymity > 5).' },
     { q: 'What if I cancel? Do I keep my data?', a: 'Yes. We export your full Brief archive, scoreboard history, and connector configs as a ZIP within 7 days of cancellation. 30-day soft-delete grace period. After that, all data purged except a minimal audit ledger we keep for 6 years for legal/financial compliance.' },
-    { q: 'How do you handle HIPAA / health data?', a: 'Nucleus tier doesn\'' },
+    { q: 'How do you handle HIPAA / health data?', a: 'Nucleus tier doesn\'t process PHI; AI Inside Sales and Engine sign BAAs with healthcare clients. Aironics voice is HIPAA-eligible (BAA available). Twilio: HIPAA-eligible plan. PostgreSQL: encrypted, isolated. Compliance summary available at zanoma.com/compliance.' },
   ],
 },
 
@@ -1334,7 +1338,7 @@ cascade: {
   id: 'cascade', business: 'Cascade Wellness Clinic', icon: '✨',
   owner: 'Dr. Jennifer Lin', ownerFirst: 'JENNIFER', initials: 'JL',
   city: 'Portland, OR', vertical: 'Medical · aesthetic',
-  tier: 'inside_sales', tierLabel: '$3,000 / mo', tierBadge: '',
+  tier: 'inside_sales', tierLabel: '$3,000 / mo', tierBadge: 'AI INSIDE SALES',
   tierHires: '1 AI HIRE',
   tierPitch: 'One AI hire owns the front of the funnel — calls, qualifies, books, follows up. Voice + email + SMS, 24/7.',
   liveSince: 'April 14, 2026', daysLive: 12,
@@ -1350,7 +1354,7 @@ cascade: {
   today: {
     eyebrow: 'TUESDAY · APRIL 28, 2026 · 7:00 AM PT', caughtCount: 5,
     scoreboard: [
-      { name: 'Acquisition', value: '+34%', sentiment: 'up', spark: spark(20,22,25,27,28,30,32,35,38,42,46,49,52,55), foot: '' },
+      { name: 'Acquisition', value: '+34%', sentiment: 'up', spark: spark(20,22,25,27,28,30,32,35,38,42,46,49,52,55), foot: 'AI Inside Sales kicked in' },
       { name: 'Reputation',  value: '4.9★', sentiment: 'up', spark: spark(4.7,4.7,4.7,4.8,4.8,4.8,4.8,4.8,4.8,4.9,4.9,4.9,4.9,4.9), foot: '+0.2 this month' },
       { name: 'Operations',  value: 'on track', sentiment: 'flat', spark: spark(50,52,51,49,50,51,53,52,51,52,50,51,52,52), foot: 'pipeline healthy' },
       { name: 'Finance',     value: '+12%', sentiment: 'up', spark: spark(60,62,63,65,67,68,70,72,73,75,76,78,80,82), foot: 'avg ticket trending up' },
@@ -1369,19 +1373,19 @@ cascade: {
       headline:'David K. high-value lead awaits your approval. Pipeline +34% WoW.',
       snap:'+34% acq · 4.9★ · 3 pending appr',
       tldr:'Strong day. One high-value lead needs your eyes — David K. wants a same-day callback from "the doctor."',
-      execSummary:'',
+      execSummary:'Pipeline accelerated <b>+34% week-over-week</b> as the AI Inside Sales agents kicked into full coverage. <b>One high-value approval is waiting</b> — David K. asked specifically for you. Reputation jumped to 4.9★ on three new reviews this week. <b>Voice-fit scoring is at 4.7/5</b> across 247 patient interactions — best result since launch.',
       highlights:[
         { num:1, headline:'High-value lead — David K. requested same-day callback from "the doctor."', body:'<p>Caller phoned at <b>6:47 PM yesterday</b>. Maya (AI voice) qualified him: existing patient, zip 97214, interested in full back-and-shoulder laser package. <b>Estimated procedure value: $12,000–$18,000</b>.</p><p>He asked: <i>"Can I talk to the doctor herself today? It\'s urgent."</i> Maya offered <b>tonight at 7 PM</b>, contingent on your confirmation. He agreed.</p>',
           approval: {
-            eye: '',
+            eye: 'AI INSIDE SALES · LEAD HANDOFF · ONE-TAP APPROVAL',
             draft: 'I confirmed your tentative slot tonight at 7 PM with Dr. Lin. I\'ll text you 15 min before to confirm she\'s available, and we\'ll pull up your previous chart so this is efficient. Take care.',
             meta: 'Estimated value $12-18K · auto-pages Joe in 3h 47m if untouched · confidence 94%',
             channel: 'AI Maya · outbound SMS to David K.',
           }
         },
         { num:2, headline:'Pipeline acceleration: 14 calls + 7 web-form leads + 3 SMS replies → 9 booked.', body:'<p><b>95% reach rate</b> (21 of 22). <b>57% qualification rate</b> on reached calls — slightly above your pre-Zanoma baseline of 49%. <b>68% booking rate</b> on qualified leads, +11pts vs prior month.</p><p>The Aironics voice agent handled <b>247 calls in the last 7 days</b> with zero customer escalations. Average call duration: 3m 14s. Voice-fit score: 4.7/5.</p>',
-          upsell: { tier: 'engine', text: '' } },
-        { num:3, headline:'Sarah J. left a 5-star review at 02:14 AM — Nucleus alerted you.', body:'',
+          upsell: { tier: 'engine', text: 'AI Inside Sales catches inbound leads as they come in. <b>AI Outbound Caller</b> at Engine works your <b>existing dormant database 24/7</b> — Riverside Real Estate (Engine demo) saw <b>$1.2M in pipeline reactivation</b> in week one of Outbound.' } },
+        { num:3, headline:'Sarah J. left a 5-star review at 02:14 AM — Nucleus alerted you.', body:'<p>Sarah is a returning patient (lead-pipeline tag: <span class="pill-mark">repeat-customer</span>); the review came through GBP organically. The "20 years in Portland" line in her review is quotable for case studies.</p><p>At your AI Inside Sales tier, this surfaces as a Brief alert. The thank-you reply itself is a <b>review-response action</b>, which lives at the Engine tier. Manual time-to-thank from your team has averaged <b>~36 hours</b> since launch.</p>',
           upsell: { tier: 'engine', text: 'Want this <b>auto-drafted and posted in your voice within 4 minutes</b>? Engine\'s AI Review Responder catches every review (any star) and queues a draft for one-tap approval. Riverside (our Engine client) has gone from 36-hour to 4-minute thank-yous, with measurable lift in re-review behavior.' } },
       ],
       numbers:[
@@ -1400,7 +1404,7 @@ cascade: {
       advisor:'<p>Approve the David K. callback first when you sit down — it\'s the highest-value lead we\'ve seen this month. The pipeline is humming and the no-show flag is just three patients out of nineteen; the new T-2h reminder timing should catch most of those.</p><p>The voice-fit score hitting 4.7/5 is the result of last week\'s voice-profile refresh. Patients are not noticing it\'s AI. We should celebrate that quietly.</p><p>About the Sarah J. review thank-you — your team is still doing those manually. We\'ve been talking about adding AI Review Responder when you\'re ready; based on your review velocity, the per-review time saved would pay for the Engine upgrade in about 4 months. Worth a 15-min call when you\'re back from the conference.</p>',
       watching:['David K. callback outcome (8 PM tonight)','No-show rate: target ≤ 1 of 19 next 7 days','Voice-fit score holds ≥ 4.6 through weekend','Pearl Aesthetics map-pack ranking change'],
       connectorStatus:'GBP ✓ · GoHighLevel ✓ · Aironics 🟡 calibrating · Twilio ✓ · Stripe ✓',
-      nextStep: { tier: 'engine', headline: 'Inside Sales handles your front door. Engine handles your back office.', body: ''t talk to each other.' },
+      nextStep: { tier: 'engine', headline: 'Inside Sales handles your front door. Engine handles your back office.', body: '<b>AI Inside Sales is doing its job</b> — 247 calls a week, 4.7/5 voice-fit, 9 bookings yesterday. The next gap is everything <i>after</i> the lead: review responses (still manual, ~36h latency), bookkeeping reconciliation, listing-management across GBP/Yelp/Apple Maps. Engine adds the four agents that handle all of that — for owners who are tired of running 4-5 AI tools that don\'t talk to each other.' },
     },
 
     { id:'apr27', dow:'Monday', month:'Apr', day:27, year:2026, isFull:true, kind:'daily', readingTime:'2 min',
@@ -1429,7 +1433,7 @@ cascade: {
     { id:'apr26', dow:'Sunday', month:'Apr', day:26, year:2026, isFull:true, kind:'weekly', readingTime:'4 min',
       headline:'Week 2 recap: 47 calls handled by AI · 19 booked · zero patient complaints.',
       snap:'WEEK 2 · 4.7/5 voice-fit · 19 bookings',
-      tldr:'',
+      tldr:'Strong second week. AI Inside Sales agents are humming. Voice-fit hit 4.7/5.',
       execSummary:'<b>Week 2 numbers:</b> 47 inbound calls handled by AI, 19 booked appointments, zero patient complaints, 3 new reviews (all 5-star). <b>Voice-fit score: 4.7/5</b> — your patients are not noticing it\'s an AI on the line. Pipeline value: <b>$6,840 in qualified bookings</b> this week.',
       highlights:[
         { num:1, headline:'Voice-fit score hit 4.7/5 across 247 calls.', body:'<p>The voice-profile refresh on Thursday (warmer greeting + softened qualifying language) lifted the score from <b>4.5 → 4.7</b> over the next 72 hours. Best result since launch.</p>' },
@@ -1482,12 +1486,12 @@ cascade: {
       tldr:'Overnight coverage humming. Three bookings before you woke up.',
     },
     { id:'apr19', dow:'Sunday', month:'Apr', day:19, year:2026, isFull:false, kind:'weekly', readingTime:'2 min',
-      headline:'',
+      headline:'Week 1 recap: AI Inside Sales went live · 38 calls · 14 booked.',
       snap:'WEEK 1 · LIVE · 14 booked',
       tldr:'First full week. AI handled 38 calls. Voice-fit at 4.5/5.',
     },
     { id:'apr18', dow:'Saturday', month:'Apr', day:18, year:2026, isFull:false, kind:'daily', readingTime:'1 min',
-      headline:'',
+      headline:'AI Inside Sales day 4: voicemail message ratings now 4.4/5.',
       snap:'+12% acq · 4.7★',
       tldr:'Voicemail tone landing well with callers.',
     },
@@ -1568,7 +1572,7 @@ cascade: {
   revenueWatch: {
     mode: 'saved',
     headline: '$34,920',
-    title: '',
+    title: 'Revenue AI Inside Sales captured · last 30 days',
     subtitle: 'Every call answered, every form replied within 60 seconds, every dormant lead worked. <b>This is what AI just did for you</b> — and what Engine would extend across reviews, listings, and bookkeeping.',
     stats: [
       { label: 'Calls answered (AI)', val: '1,184' },
@@ -1591,7 +1595,7 @@ cascade: {
       { tag: 'COHORT', icon: '⚡', headline: 'Medical-aesthetic patients respond to AI text within 60s at 3.7× the rate of manual texts at 30 min.', text: 'Cohort of 12 Pacific NW medical-aesthetic SMBs. Reply rate at <60s: <b>34%</b>. Reply rate at 30min: <b>9%</b>. <b>Latency is the dominant variable</b> — voice-fit matters less than speed.', meta: 'Sample: 12 SMBs · 1,400 leads · 90-day window' },
       { tag: 'COHORT', icon: '💡', headline: 'High-value handoffs ($10K+) close at 47% with AI pre-qualification vs 23% without.', text: 'When AI pre-qualifies before doctor takes the call, the doctor walks in armed with the answers. <b>Closing-rate doubles, doctor-time-per-close drops 38%</b>. David K. is exactly this pattern.', meta: 'Sample: 134 high-value calls across cohort · doctor-time tracking · close attribution' },
       { tag: 'YOU', icon: '🎯', headline: 'You\'re #1 in cohort on voice-fit (4.7/5). The next four clinics are all on Aironics or Vapi default voice.', text: 'Your custom voice profile (clinical-warm, banned words, signature greeting) is doing real work. <b>+0.3 voice-fit points correlates with +14% reply rate</b> in the cohort.', meta: 'Sample: 12 SMBs · 14,200 calls · voice-fit scoring (post-call patient survey, n=2,184)' },
-      { tag: 'COHORT', icon: '🚨', headline: 'Pearl Aesthetics opening on NW 23rd: cohort sees a 4-6 month "test the new place" honeymoon for new entrants. Your defense playbook is in Joe\'s hands.', text: '', meta: 'Sample: 7 new-entrant launches · 12 cohort responders · 6-month patient retention' },
+      { tag: 'COHORT', icon: '🚨', headline: 'Pearl Aesthetics opening on NW 23rd: cohort sees a 4-6 month "test the new place" honeymoon for new entrants. Your defense playbook is in Joe\'s hands.', text: 'Cohort experienced 7 new-entrant launches in 2025. <b>Established clinics with AI Inside Sales saw zero net patient loss; manual-only saw 8% churn</b>. Speed-of-response is the moat.', meta: 'Sample: 7 new-entrant launches · 12 cohort responders · 6-month patient retention' },
       { tag: 'YOU', icon: '📈', headline: 'You\'re 12 days into onboarding. The cohort hits steady-state ROI at week 5-6. You\'re ahead of pace.', text: 'Median time to first 100 calls handled in cohort: <b>day 21</b>. Yours: day 12. Median time to 4.5+ voice-fit: day 28. Yours: <b>day 11</b>.', meta: 'Sample: 12 SMBs · onboarding milestone tracking · day-1 to day-30' },
     ],
   },
@@ -1702,7 +1706,7 @@ cascade: {
     { initials: 'MS', name: 'Mike Sanders', email: 'mike@cascadewell.com', role: 'Bookkeeper', status: 'Pending' },
   ],
   invoices: [
-    { date: 'Apr 14, 2026', desc: '', amount: '$3,000.00', status: 'Paid' },
+    { date: 'Apr 14, 2026', desc: 'AI Inside Sales — Apr 14 to May 14, 2026', amount: '$3,000.00', status: 'Paid' },
   ],
   faq: [
     { q: 'How does the AI know my brand voice?', a: 'You pasted 5 of your best customer messages on Day 3 of onboarding. The brain compiled a voice profile from those plus the answers to 6 quick prompts. You can refine it any time on the Brand Voice page.' },
@@ -2247,12 +2251,12 @@ function PersonaSwitcher({ currentId, onChange }) {
     <div className="switcher-wrap">
       <div className="switcher-inner">
         <div className="switcher-heading">
-          <div className="switcher-h-eyebrow">ZANOMA · NUCLEUS · CLIENT DASHBOARD</div>
-          <div className="switcher-h-title">Three sample customers. Pick the one most like your business.</div>
-          <div className="switcher-h-sub">Same dashboard. Same Daily Brief. The difference between tiers is <b>how many AI workers run alongside it</b>.</div>
+          <div className="switcher-h-eyebrow">ZANOMA · ENGINE · CLIENT DASHBOARD</div>
+          <div className="switcher-h-title">This is what the Engine plan looks like in action.</div>
+          <div className="switcher-h-sub">A complete AI workforce running alongside your Daily Brief — voice agents, ops agents, growth agents.</div>
         </div>
         <div className="switcher-grid">
-          {Object.values(PERSONAS).map((p, idx) => (
+          {Object.values(PERSONAS).filter(p => p.tier === 'engine').map((p, idx) => (
             <button key={p.id} className={'persona-card' + (p.id === currentId ? ' active' : '') + ' tier-' + p.tier} onClick={() => onChange(p.id)}>
               <div className="persona-top">
                 <span className="persona-sample-tag">{sampleLabels[idx]}</span>
@@ -2328,7 +2332,7 @@ function Sidebar({ persona, page, onNavigate }) {
             return (
               <div key={item.id} className={'side-link' + (active ? ' active' : '') + (!allowed ? ' locked' : '')}
                    onClick={() => onNavigate(item.id)}
-                   title={!allowed ? '' : ''}>
+                   title={!allowed ? 'Unlocks at AI Inside Sales — $3,000/mo' : ''}>
                 <span className="side-icon"><Icon name={item.icon} /></span>
                 <span>{item.label}</span>
                 {allowed && badgeCount > 0 && <span className="side-badge">{badgeCount}</span>}
@@ -2719,7 +2723,8 @@ function briefIndex(persona, brief) {
 }
 
 // === Inline upsell callout (within Brief highlights) ===
-const TIER_LABELS = {,
+const TIER_LABELS = {
+  inside_sales: { name: 'AI INSIDE SALES', short: 'AI Inside Sales', price: '$3,000/mo', personaId: 'cascade' },
   engine: { name: 'ENGINE', short: 'Engine', price: '$10,000/mo', personaId: 'riverside' },
 };
 
@@ -2854,7 +2859,42 @@ function PipelinePage({ persona, onOpenLead }) {
     return <div className="placeholder"><h2>Pipeline empty for this persona</h2><p>This persona doesn't have lead data wired up.</p></div>;
   }
   const f = persona.funnelStats || {};
-  const stages = ['NEW','REACHED','QUALIFIED','BOOKED','CONFIRMED','SHOWED','WON''var(--green)'}}>📂 thread</span>}</div>
+  const stages = ['NEW','REACHED','QUALIFIED','BOOKED','CONFIRMED','SHOWED','WON'];
+  return (
+    <>
+      <span className="eyebrow">PIPELINE · LIVE</span>
+      <h1 className="page-h2">14 calls. 7 web forms. 3 SMS. 9 booked.</h1>
+      <p className="page-lede">Last 24 hours of pipeline activity. AI Inside Sales handled every touchpoint. Click any lead to see the full conversation thread — voice transcripts, SMS, and CRM sync events.</p>
+
+      <CrmTruthBomb persona={persona} />
+
+      <div className="section-h">Last 14 days · funnel</div>
+      <div className="funnel">
+        {stages.map((s, i) => {
+          const pct = i === 0 ? 100 : Math.round((f[s] || 0) / (f.NEW || 1) * 100);
+          return (
+            <div key={s} className="funnel-stage">
+              <div className="funnel-stage-label">{s}</div>
+              <div className="funnel-stage-num">{f[s] || 0}</div>
+              <div className="funnel-stage-pct">{pct}% of new</div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="section-h">Last 12 leads · click any row to see the full conversation</div>
+      <div className="lead-table">
+        <div className="lead-row head">
+          <div>Name</div>
+          <div>Source</div>
+          <div>State</div>
+          <div>Value</div>
+          <div>Last touch</div>
+          <div></div>
+        </div>
+        {persona.leads.map(l => (
+          <div key={l.id} className="lead-row" onClick={() => l.thread.length > 0 && onOpenLead(l)}>
+            <div className="lead-name">{l.name}{l.thread.length > 0 && <span style={{marginLeft:8, fontSize:11, color:'var(--green)'}}>📂 thread</span>}</div>
             <div className="lead-source">{l.source}</div>
             <div><span className={'lead-state ' + l.state}>{l.state}</span></div>
             <div style={{color:'var(--text-dim)'}}>{l.value}</div>
@@ -3066,7 +3106,24 @@ function VoiceAudioCard({ id, context, text, isPlaying, onToggle }) {
       <div className="voice-audio-body">
         <div className="voice-audio-context">{context}</div>
         <div className="voice-audio-text">"{text}"</div>
-        <div className="voice-audio-meta">{isPlaying ? '● PLAYING · click to stop' : 'Click play to hear it in your voice''\n').map((line, i) => {
+        <div className="voice-audio-meta">{isPlaying ? '● PLAYING · click to stop' : 'Click play to hear it in your voice'}</div>
+      </div>
+      <div className="voice-wave">
+        <span className="voice-wave-bar"></span>
+        <span className="voice-wave-bar"></span>
+        <span className="voice-wave-bar"></span>
+        <span className="voice-wave-bar"></span>
+        <span className="voice-wave-bar"></span>
+      </div>
+    </div>
+  );
+}
+
+function BrandVoicePage({ persona }) {
+  const v = persona.voice;
+  const { speak, playingId } = useSpeak();
+  if (!v) return <div className="placeholder"><h2>Brand voice unlocks at AI Inside Sales</h2></div>;
+  const yamlHtml = v.yaml.split('\n').map((line, i) => {
     const m = line.match(/^(\w+):\s*(.*)$/);
     if (!m) return <div key={i}>{line}</div>;
     return <div key={i}><span className="yaml-key">{m[1]}:</span> <span className="yaml-str">{m[2]}</span></div>;
@@ -3366,7 +3423,7 @@ function BillingPage({ persona }) {
             <p className="upgrade-sub">
               {upgradeTo.id === 'cascade'
                 ? 'AI voice, email, and text on every lead. Qualifies, books, follows up. Runs on your existing CRM. Nucleus included.'
-                : ''}
+                : 'Front Desk, Review Responder, Bookkeeper, Listing Manager, Outbound Caller. Five named AI agents working in harmony. Engine includes Nucleus and AI Inside Sales.'}
             </p>
             <div className="upgrade-math">
               <div className="upgrade-math-cell"><div className="upgrade-math-label">REPLACES</div><div className="upgrade-math-val orange">{upgradeTo.id === 'cascade' ? '~$92K/yr' : '~$180K/yr'}</div></div>
@@ -3558,8 +3615,9 @@ function HelpPage({ persona }) {
 // ============================================================================
 
 function UpsellCard({ targetTier, onBack }) {
-  const targets = {,
-    engine: { name: 'Engine', price: '$10,000', byline: 'Five AI hires. One workforce.', features: ['','AI Front Desk · 24/7 calls + booking','AI Review Responder · in your voice','AI Bookkeeper · daily reconcile','AI Outbound Caller · reactivates leads'] },
+  const targets = {
+    inside_sales: { name: 'AI Inside Sales', price: '$3,000', byline: 'Existing pipeline, handled.', features: ['AI voice · email · text on every lead','Qualifies leads, books appointments','Custom copy across every campaign','Lead-handoff approvals when it matters'] },
+    engine: { name: 'Engine', price: '$10,000', byline: 'Five AI hires. One workforce.', features: ['Everything in AI Inside Sales','AI Front Desk · 24/7 calls + booking','AI Review Responder · in your voice','AI Bookkeeper · daily reconcile','AI Outbound Caller · reactivates leads'] },
   };
   const t = targets[targetTier];
   return (
@@ -3589,7 +3647,7 @@ function RevenueWatchPage({ persona }) {
     <>
       <span className="eyebrow">REVENUE WATCH · {isLost ? 'WHAT NUCLEUS SAW LEAVING' : 'WHAT YOUR AI SAVED YOU'}</span>
       <h1 className="page-h2">{isLost ? 'Every dollar Nucleus saw walk out the door.' : 'Every dollar your AI workforce captured.'}</h1>
-      <p className="page-lede">{isLost ? '' : 'Calls answered. Forms replied. Leads booked. Margin protected. This is the receipts page.'}</p>
+      <p className="page-lede">{isLost ? 'Nucleus alerted you to all of these. The page below shows specifically what AI Inside Sales would have stopped.' : 'Calls answered. Forms replied. Leads booked. Margin protected. This is the receipts page.'}</p>
 
       <div className={'rw-hero' + (isLost ? ' warning' : '')}>
         <div className="rw-hero-eye">{isLost ? '🚨 LOST IN LAST 30 DAYS' : '✓ CAPTURED IN LAST 30 DAYS'}</div>
@@ -3966,7 +4024,7 @@ function Toast({ persona, onDismiss }) {
 const { useState, useEffect, useRef, useMemo } = React;
 
 function App() {
-  const [personaId, setPersonaId] = useState('acme');
+  const [personaId, setPersonaId] = useState('riverside');
   const [page, setPage] = useState('today');
   const [showToast, setShowToast] = useState(false);
   const [openLead, setOpenLead] = useState(null);

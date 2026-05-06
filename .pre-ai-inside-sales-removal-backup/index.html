@@ -39,7 +39,8 @@
       "provider": { "@id": "https://zanoma.com/#org" },
       "areaServed": "US",
       "offers": [
-        { "@type": "Offer", "name": "Nucleus", "price": "500", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "unitText": "MONTH" } } },
+        { "@type": "Offer", "name": "Nucleus", "price": "500", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "unitText": "MONTH" } },
+        { "@type": "Offer", "name": "AI Inside Sales", "price": "3000", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "unitText": "MONTH" } },
         { "@type": "Offer", "name": "Engine", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "unitText": "MONTH" } }
       ]
     },
@@ -48,12 +49,11 @@
       "@id": "https://zanoma.com/#faq",
       "mainEntity": [
         { "@type": "Question", "name": "Is this just ChatGPT with a wrapper?", "acceptedAnswer": { "@type": "Answer", "text": "No. Nucleus is a six-layer architecture — ingestion, normalization, scoring, benchmarks, playbooks, and a human advisor who owns your outcome." } },
-        { "@type": "Question", "name": "How long does onboarding take?", "acceptedAnswer": { "@type": "Answer", "text": "Seven days for Nucleus. We do the integration work — you approve the connections." } },
+        { "@type": "Question", "name": "How long does onboarding take?", "acceptedAnswer": { "@type": "Answer", "text": "Seven days for Nucleus. Thirty days for AI Inside Sales. We do the integration work — you approve the connections." } },
         { "@type": "Question", "name": "What if I already have HubSpot / QuickBooks / Shopify?", "acceptedAnswer": { "@type": "Answer", "text": "Nucleus connects to all of them. We don't replace your tools — we replace the layer above them." } },
         { "@type": "Question", "name": "What if I want to leave?", "acceptedAnswer": { "@type": "Answer", "text": "You own your data. CSV/JSON export delivered within 7 days of cancellation." } },
         { "@type": "Question", "name": "Is my data safe?", "acceptedAnswer": { "@type": "Answer", "text": "Enterprise-grade AI infrastructure, SOC 2 compliant, tenant isolation by default. Your data is never used to train any AI model." } },
-        { "@type": "Question", "name": "Who owns the number?", "acceptedAnswer": { "@type": "Answer", "text": "You do. Every Nucleus client is assigned a named Zanoma advisor who owns the outcome alongside you. Kevin Keranen, founder, reviews every onboarding personally." } },
-        { "@type": "Question", "name": "What if my vertical isn't listed?", "acceptedAnswer": { "@type": "Answer", "text": "Nucleus runs on universal business dimensions — Acquisition, Retention, Operations, Finance, Reputation, Compliance. Every business has all six." } }
+        { "@type": "Question", "name": "Who owns the number?", "acceptedAnswer": { "@type": "Answer", "text": "You do. Every Nucleus client is assigned a named Zanoma advisor who owns the outcome alongside you. Kevin Keranen, founder, reviews every onboarding personally." } }
       ]
     },
     {
@@ -152,7 +152,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .feature-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
 .icon-green { background: var(--green-dim); color: var(--green); }
 .icon-blue { background: var(--blue-dim); color: var(--blue); }
-.pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); max-width: 900px; margin-left: auto; margin-right: auto; gap: 32px; margin-top: 48px; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
 .pricing-card { background: #0F0F12; border: 1.5px solid #1F2024; border-radius: 20px; padding: 24px; max-width: 400px; }
 .pricing-card--featured { background: #0F140E; border: 2px solid #22C55E; }
 .pricing-card--enterprise { background: #0F0F12; border: 1.5px solid #FFFFFF; }
@@ -221,7 +221,7 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px;
 .logo-item { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 18px; color: var(--text-muted); opacity: 0.5; }
 
 /* SECTION 9 — PRICING */
-.pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 48px; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
 .pricing-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px; position: relative; display: flex; flex-direction: column; }
 .pricing-card.featured { border-color: var(--green); box-shadow: var(--green-glow); }
 .badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--green); color: var(--bg); font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700; padding: 4px 16px; border-radius: 20px; white-space: nowrap; }
@@ -332,7 +332,9 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
   <div class="container nav-inner">
     <a href="/" class="nav-logo">ZANOMA</a>
     <div class="nav-links" id="navLinks">
-      <a href="/">Nucleus</a><a href="/engine">Engine</a>
+      <a href="/">Nucleus</a>
+      <a href="/ai-inside-sales">AI Inside Sales</a>
+      <a href="/engine">Engine</a>
       <a href="/about">About</a>
       <a href="/contact">Contact</a>
       <a href="/contact" class="btn btn-primary nav-cta" style="padding:10px 20px;font-size:14px;">Book the Brief Demo</a>
@@ -482,10 +484,63 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
 </section>
 
 <!-- S7: CALCULATOR -->
+<section class="section">
+  <div class="container">
+    <h2>Do the math. Then book the call.</h2>
+    <p class="text-dim" style="margin-top:16px;max-width:600px;">Tell us what you spend. We'll show you what Nucleus costs.</p>
+    <div class="card" style="margin-top:48px;">
+      <div class="calc-card">
+        <div>
+          <div class="slider-group">
+            <div class="slider-label"><span>Marketing agency monthly retainer</span><span class="slider-value" id="val-agency">$3,500</span></div>
+            <input type="range" id="slider-agency" min="0" max="15000" step="100" value="3500" aria-label="Marketing agency monthly retainer">
+          </div>
+          <div class="slider-group">
+            <div class="slider-label"><span>Dashboards / analytics tools</span><span class="slider-value" id="val-dash">$400</span></div>
+            <input type="range" id="slider-dash" min="0" max="3000" step="50" value="400" aria-label="Dashboards and analytics tools">
+          </div>
+          <div class="slider-group">
+            <div class="slider-label"><span>Fractional COO or ops manager <em style="color:var(--text-muted);font-style:normal;font-size:12px;">← drag if you have one</em></span><span class="slider-value" id="val-coo">$0</span></div>
+            <input type="range" id="slider-coo" min="0" max="20000" step="500" value="0" aria-label="Fractional COO or ops manager">
+          </div>
+          <div class="slider-group">
+            <div class="slider-label"><span>Bookkeeper / finance support</span><span class="slider-value" id="val-book">$800</span></div>
+            <input type="range" id="slider-book" min="0" max="5000" step="100" value="800" aria-label="Bookkeeper or finance support">
+          </div>
+        </div>
+        <div class="calc-output">
+          <div class="output-row">
+            <span class="output-label">Current monthly spend</span>
+            <span class="output-value" id="out-spend">$4,700</span>
+          </div>
+          <hr class="divider">
+          <div class="output-row">
+            <span class="output-label">Recommended tier</span>
+            <span class="output-value" id="out-tier" style="color:var(--text-dim);font-size:20px;">AI Inside Sales $3,000/mo</span>
+          </div>
+          <hr class="divider">
+          <div class="output-row">
+            <span class="output-label">Monthly savings</span>
+            <span class="output-value output-savings" id="out-savings">$2,200</span>
+            <span style="font-size:14px;color:var(--text-muted);margin-top:4px;" id="out-annual">That’s $26,400 a year back in your business.</span>
+          </div>
+          <hr class="divider">
+          <div class="output-row">
+            <span class="output-label">What you gain</span>
+            <span class="output-gain">Real-time intelligence · A human advisor · AI agents executing daily</span>
+          </div>
+          <a href="#contact" class="btn btn-primary" style="margin-top:8px;justify-content:center;">Book Your Free Revenue Leak Analysis →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S9: PRICING -->
 <section class="section" id="pricing">
   <div class="container">
-    <h2>Two ways to put AI to work in your business.</h2>
-    <p class="text-dim" style="margin-top:16px;">Brain first. Workforce next. One human advisor either way.</p>
+    <h2>Three ways to put AI to work in your business.</h2>
+    <p class="text-dim" style="margin-top:16px;">Brain first. Workforce next. Always on. Do the math.</p>
     <div class="pricing-grid">
       <div class="pricing-card">
         <span class="tier-label">NUCLEUS</span>
@@ -517,7 +572,37 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
         </div>
         <a href="/contact" class="btn btn-ghost" style="width:100%;justify-content:center;border-color:rgba(255,255,255,0.2);color:var(--text);">Start with Nucleus →</a>
       </div>
-      
+      <div class="pricing-card pricing-card--featured">
+        <span class="badge--popular">★ Most Popular</span>
+        <span class="tier-label" style="color:var(--green);">AI INSIDE SALES</span>
+        <div class="price"><span class="amount">$3,000</span><span class="period">/month</span></div>
+        <p style="font-size:14px;color:var(--text-dim);margin-bottom:8px;">Nucleus included.</p>
+        <p style="font-size:14px;color:var(--text-dim);margin-bottom:16px;">60-day initial term, then month-to-month.</p>
+        <p style="font-size:12px;color:#9CA3AF;font-style:italic;margin-bottom:16px;">Best for businesses doing $1M–$5M.</p>
+        <h3 style="font-size:20px;margin-bottom:8px;">Existing pipeline, handled.</h3>
+        <p style="color:var(--text-dim);font-size:14px;font-style:italic;margin-bottom:16px;">Your AI inside sales employee.</p>
+        <ul style="list-style:none;margin-bottom:24px;font-size:14px;color:var(--text-dim);">
+          <li style="margin-bottom:8px;">Everything in Nucleus</li>
+          <li style="margin-bottom:8px;">AI voice · email · text on every lead</li>
+          <li style="margin-bottom:8px;">Qualifies leads, books appointments</li>
+          <li style="margin-bottom:8px;">Runs on your existing CRM</li>
+          <li style="margin-bottom:8px;">Custom copy across every campaign</li>
+          <li style="margin-bottom:8px;">Email + SMS infra managed for you</li>
+          <li>1:1 live tech support</li>
+        </ul>
+        <div style="background:var(--bg3);border-radius:12px;padding:16px;margin-bottom:20px;">
+          <p class="replaces-label">REPLACES</p>
+          <ul style="list-style:none;margin:12px 0;font-size:13px;color:#9CA3AF;">
+            <li>Inside-sales rep + benefits — $80K/yr</li>
+            <li>Answering service ($700/mo) — $8.4K/yr</li>
+            <li>CRM voice/text add-on — $4K/yr</li>
+          </ul>
+          <p class="replaces-total">~$92K/yr replaced</p>
+          <p class="you-pay">You pay $36K/yr.</p>
+          <p class="savings">Saves ~$56K + works on day one.</p>
+        </div>
+        <a href="/ai-inside-sales" class="btn btn-primary" style="width:100%;justify-content:center;">Hire AI Inside Sales →</a>
+      </div>
       <div class="pricing-card pricing-card--enterprise">
         
         <span class="tier-label" style="color:#FFFFFF;">ENGINE</span>
@@ -575,6 +660,7 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
   </div>
 </section>
 
+<!-- S11: FAQ -->
 <section class="section">
   <div class="container">
     <h2>Answers to the questions every SMB asks first.</h2>
@@ -585,11 +671,11 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">How long does onboarding take?<i data-lucide="chevron-down" class="faq-chevron" style="width:20px;height:20px;"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">Seven days for Nucleus. We do the integration work — you approve the connections. No surprise API calls, no vendor surprises.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Seven days for Nucleus. Thirty days for AI Inside Sales. We do the integration work — you approve the connections.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">What if I already have HubSpot / QuickBooks / Shopify?<i data-lucide="chevron-down" class="faq-chevron" style="width:20px;height:20px;"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">Perfect. Nucleus connects to all of them. We don't replace your tools — we replace the layer above them. Think of it as the operating system for your business stack.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Perfect. Nucleus connects to all of them. We don't replace your tools — we replace the layer above them.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">What if I want to leave?<i data-lucide="chevron-down" class="faq-chevron" style="width:20px;height:20px;"></i></button>
@@ -597,11 +683,15 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">Is my data safe?<i data-lucide="chevron-down" class="faq-chevron" style="width:20px;height:20px;"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">Enterprise-grade AI infrastructure, SOC 2 compliant, tenant isolation by default. Your data is never used to train any AI model — not ours, not anyone's. We've built Nucleus to be paranoid about your business.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Enterprise-grade AI infrastructure, SOC 2 compliant, tenant isolation by default. Your data is never used to train any AI model — not ours, not anyone's.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">Who owns the number?<i data-lucide="chevron-down" class="faq-chevron" style="width:20px;height:20px;"></i></button>
         <div class="faq-a"><div class="faq-a-inner">You do. Every Nucleus client is assigned a named Zanoma advisor who owns the outcome alongside you. Kevin Keranen, founder, reviews every onboarding personally.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do I have to use all the AI agents?<i data-lucide="chevron-down" class="faq-chevron" style="width:20px;height:20px;"></i></button>
+        <div class="faq-a"><div class="faq-a-inner">No. AI Inside Sales tier lets you pick your bundle — Front Desk, Review Responder, Bookkeeper, or Listing Manager. Start with one. Add others when you're ready. The Daily Brief runs regardless of which agents you activate.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">What if my vertical isn't listed?<i data-lucide="chevron-down" class="faq-chevron" style="width:20px;height:20px;"></i></button>
@@ -638,6 +728,7 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
 <footer>
   <div class="container footer-inner">
     <div class="footer-links">
+      <a href="/sales">Lead Generation</a>
       <a href="/brand-intelligence">Brand Intelligence</a>
       
       <a href="#pricing">Pricing</a>
@@ -673,8 +764,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function fmt(n) { return '$' + n.toLocaleString(); }
   function getTier(total) {
-    if (total < 8000) return { label: 'Nucleus — $500/mo', cost: 500 };
-    return { label: 'Engine — $10,000/mo + activation', cost: 10000 };
+    if (total < 2000)  return { label: 'Nucleus $500/mo', cost: 500 };
+    if (total < 6000)  return { label: 'AI Inside Sales $3,000/mo', cost: 3000 };
+    return              { label: 'Engine $10,000/mo + activation', cost: 10000 };
   }
   function updateCalc() {
     const total = ['agency','dash','coo','book'].reduce((s,k) => s + parseInt(sliders[k].value), 0);

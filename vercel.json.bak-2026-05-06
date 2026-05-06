@@ -36,14 +36,6 @@
   ],
   "rewrites": [
     {
-      "source": "/contact",
-      "destination": "/contact/index.html"
-    },
-    {
-      "source": "/about",
-      "destination": "/about/index.html"
-    },
-    {
       "source": "/preview/nucleus_500_new.html",
       "destination": "/preview/nucleus_500_new.html"
     },
@@ -58,10 +50,6 @@
     {
       "source": "/enginedemo",
       "destination": "/enginedemo/index.html"
-    },
-    {
-      "source": "/nucleusdemo",
-      "destination": "/nucleusdemo/index.html"
     },
     {
       "source": "/engine",

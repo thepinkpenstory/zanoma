@@ -1,0 +1,84 @@
+--- .pre-ai-inside-sales-removal-backup/index.html.before-fix-pass-2	2026-04-29 20:54:32
++++ index.html	2026-04-29 20:55:26
+@@ -47,11 +47,13 @@
+       "@type": "FAQPage",
+       "@id": "https://zanoma.com/#faq",
+       "mainEntity": [
+-        { "@type": "Question", "name": "Is this just ChatGPT with a wrapper?", "acceptedAnswer": { "@type": "Answer", "text": "No. Nucleus is a six-layer architecture — ingestion, normalization, scoring, benchmarks, playbooks, and a human advisor who owns your outcome." } } },
++        { "@type": "Question", "name": "Is this just ChatGPT with a wrapper?", "acceptedAnswer": { "@type": "Answer", "text": "No. Nucleus is a six-layer architecture — ingestion, normalization, scoring, benchmarks, playbooks, and a human advisor who owns your outcome." } },
++        { "@type": "Question", "name": "How long does onboarding take?", "acceptedAnswer": { "@type": "Answer", "text": "Seven days for Nucleus. We do the integration work — you approve the connections." } },
+         { "@type": "Question", "name": "What if I already have HubSpot / QuickBooks / Shopify?", "acceptedAnswer": { "@type": "Answer", "text": "Nucleus connects to all of them. We don't replace your tools — we replace the layer above them." } },
+         { "@type": "Question", "name": "What if I want to leave?", "acceptedAnswer": { "@type": "Answer", "text": "You own your data. CSV/JSON export delivered within 7 days of cancellation." } },
+         { "@type": "Question", "name": "Is my data safe?", "acceptedAnswer": { "@type": "Answer", "text": "Enterprise-grade AI infrastructure, SOC 2 compliant, tenant isolation by default. Your data is never used to train any AI model." } },
+-        { "@type": "Question", "name": "Who owns the number?", "acceptedAnswer": { "@type": "Answer", "text": "You do. Every Nucleus client is assigned a named Zanoma advisor who owns the outcome alongside you. Kevin Keranen, founder, reviews every onboarding personally." } }
++        { "@type": "Question", "name": "Who owns the number?", "acceptedAnswer": { "@type": "Answer", "text": "You do. Every Nucleus client is assigned a named Zanoma advisor who owns the outcome alongside you. Kevin Keranen, founder, reviews every onboarding personally." } },
++        { "@type": "Question", "name": "What if my vertical isn't listed?", "acceptedAnswer": { "@type": "Answer", "text": "Nucleus runs on universal business dimensions — Acquisition, Retention, Operations, Finance, Reputation, Compliance. Every business has all six." } }
+       ]
+     },
+     {
+@@ -533,7 +535,7 @@
+ <!-- S9: PRICING -->
+ <section class="section" id="pricing">
+   <div class="container">
+-    <h2>Three ways to put AI to work in your business.</h2>
++    <h2>Two ways to put AI to work in your business.</h2>
+     <p class="text-dim" style="margin-top:16px;">Brain first. Workforce next. Always on. Do the math.</p>
+     <div class="pricing-grid">
+       <div class="pricing-card">
+@@ -624,16 +626,35 @@
+   </div>
+ </section>
+ 
+-<!-- S11: FAQ -->
+ <section class="section">
+   <div class="container">
+     <h2>Answers to the questions every SMB asks first.</h2>
+     <div class="faq-list">
+-      
++      <div class="faq-item">
++        <button class="faq-q" aria-expanded="false">Is this just ChatGPT with a wrapper?<i data-lucide="chevron-down" class="faq-chevron" style="width:20px;height:20px;"></i></button>
++        <div class="faq-a"><div class="faq-a-inner">No. Nucleus is a six-layer architecture — ingestion, normalization, scoring, benchmarks, playbooks, and a human advisor who owns your outcome. It's connected to your real tools, scored on your real data, and benchmarked against your vertical peers. ChatGPT doesn't know what a healthy med spa looks like. Nucleus does.</div></div>
+       </div>
+-      
++      <div class="faq-item">
++        <button class="faq-q" aria-expanded="false">How long does onboarding take?<i data-lucide="chevron-down" class="faq-chevron" style="width:20px;height:20px;"></i></button>
++        <div class="faq-a"><div class="faq-a-inner">Seven days for Nucleus. We do the integration work — you approve the connections. No surprise API calls, no vendor surprises.</div></div>
+       </div>
+       <div class="faq-item">
++        <button class="faq-q" aria-expanded="false">What if I already have HubSpot / QuickBooks / Shopify?<i data-lucide="chevron-down" class="faq-chevron" style="width:20px;height:20px;"></i></button>
++        <div class="faq-a"><div class="faq-a-inner">Perfect. Nucleus connects to all of them. We don't replace your tools — we replace the layer above them. Think of it as the operating system for your business stack.</div></div>
++      </div>
++      <div class="faq-item">
++        <button class="faq-q" aria-expanded="false">What if I want to leave?<i data-lucide="chevron-down" class="faq-chevron" style="width:20px;height:20px;"></i></button>
++        <div class="faq-a"><div class="faq-a-inner">You own your data. CSV/JSON export delivered within 7 days of cancellation. That said, clients stay because switching means re-plumbing 20+ integrations and losing 18 months of benchmarks.</div></div>
++      </div>
++      <div class="faq-item">
++        <button class="faq-q" aria-expanded="false">Is my data safe?<i data-lucide="chevron-down" class="faq-chevron" style="width:20px;height:20px;"></i></button>
++        <div class="faq-a"><div class="faq-a-inner">Enterprise-grade AI infrastructure, SOC 2 compliant, tenant isolation by default. Your data is never used to train any AI model — not ours, not anyone's. We've built Nucleus to be paranoid about your business.</div></div>
++      </div>
++      <div class="faq-item">
++        <button class="faq-q" aria-expanded="false">Who owns the number?<i data-lucide="chevron-down" class="faq-chevron" style="width:20px;height:20px;"></i></button>
++        <div class="faq-a"><div class="faq-a-inner">You do. Every Nucleus client is assigned a named Zanoma advisor who owns the outcome alongside you. Kevin Keranen, founder, reviews every onboarding personally.</div></div>
++      </div>
++      <div class="faq-item">
+         <button class="faq-q" aria-expanded="false">What if my vertical isn't listed?<i data-lucide="chevron-down" class="faq-chevron" style="width:20px;height:20px;"></i></button>
+         <div class="faq-a"><div class="faq-a-inner">Nucleus runs on universal business dimensions — Acquisition, Retention, Operations, Finance, Reputation, Compliance. Every business has all six. If your vertical isn't listed, book a call and we'll tell you in 15 minutes whether Nucleus fits.</div></div>
+       </div>
+@@ -668,7 +689,6 @@
+ <footer>
+   <div class="container footer-inner">
+     <div class="footer-links">
+-      <a href="/sales">Lead Generation</a>
+       <a href="/brand-intelligence">Brand Intelligence</a>
+       
+       <a href="#pricing">Pricing</a>
+@@ -704,7 +724,8 @@
+ 
+   function fmt(n) { return '$' + n.toLocaleString(); }
+   function getTier(total) {
+-    if (total < 2000)  return { label: 'Nucleus $500/mo', cost: 500 };return              { label: 'Engine $10,000/mo + activation', cost: 10000 };
++    if (total < 4000) return { label: 'Nucleus — $500/mo', cost: 500 };
++    return { label: 'Engine — $10,000/mo + activation', cost: 10000 };
+   }
+   function updateCalc() {
+     const total = ['agency','dash','coo','book'].reduce((s,k) => s + parseInt(sliders[k].value), 0);

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zanoma · Nucleus · Client Demo</title>
 <meta name="description" content="">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -988,7 +988,7 @@ acme: {
       advisor:'<p>The site-speed regression is the priority today; everything else is on autopilot. I\'m watching how your web team handles it — if it\'s not back under 2.5s by tomorrow\'s brief, I\'ll escalate to your developer myself.</p><p>The Bend Heating Co. promo isn\'t worth matching on price. They\'re burning cash on a saturated market; we\'ll let them tire themselves out and use the noise as cover for our own organic content push next week.</p><p>The Sarah J. review is gold — I\'d ask her if you can use a quote on your homepage. I can DM her with your sign-off if you want.</p>',
       watching:['Site speed: under 2s on mobile by 11 AM PT','Lead-form recovery: ≥ 2 conversions today vs 0 yesterday','Bend Heating Co. ad spend: hold steady or escalate','Margin: AC compressor parts reorder hits PO date today — track P&L impact'],
       connectorStatus:'All healthy: GBP · Stripe · Site Uptime',
-      nextStep:,
+      nextStep: '',
     },
 
     { id:'apr27', dow:'Monday', month:'Apr', day:27, year:2026, isFull:true, kind:'daily', readingTime:'2 min',
@@ -1400,7 +1400,7 @@ cascade: {
       advisor:'<p>Approve the David K. callback first when you sit down — it\'s the highest-value lead we\'ve seen this month. The pipeline is humming and the no-show flag is just three patients out of nineteen; the new T-2h reminder timing should catch most of those.</p><p>The voice-fit score hitting 4.7/5 is the result of last week\'s voice-profile refresh. Patients are not noticing it\'s AI. We should celebrate that quietly.</p><p>About the Sarah J. review thank-you — your team is still doing those manually. We\'ve been talking about adding AI Review Responder when you\'re ready; based on your review velocity, the per-review time saved would pay for the Engine upgrade in about 4 months. Worth a 15-min call when you\'re back from the conference.</p>',
       watching:['David K. callback outcome (8 PM tonight)','No-show rate: target ≤ 1 of 19 next 7 days','Voice-fit score holds ≥ 4.6 through weekend','Pearl Aesthetics map-pack ranking change'],
       connectorStatus:'GBP ✓ · GoHighLevel ✓ · Aironics 🟡 calibrating · Twilio ✓ · Stripe ✓',
-      nextStep: { tier: 'engine', headline: 'Inside Sales handles your front door. Engine handles your back office.', body: ''t talk to each other.' },
+      nextStep: { tier: 'engine', headline: 'Inside Sales handles your front door. Engine handles your back office.', body: '' },
     },
 
     { id:'apr27', dow:'Monday', month:'Apr', day:27, year:2026, isFull:true, kind:'daily', readingTime:'2 min',
@@ -2849,24 +2849,8 @@ function ScoreboardDrill({ persona, onBack }) {
 //  PIPELINE
 // ============================================================================
 
-function PipelinePage({ persona, onOpenLead }) {
-  if (!persona.leads || persona.leads.length === 0) {
-    return <div className="placeholder"><h2>Pipeline empty for this persona</h2><p>This persona doesn't have lead data wired up.</p></div>;
-  }
-  const f = persona.funnelStats || {};
-  const stages = ['NEW','REACHED','QUALIFIED','BOOKED','CONFIRMED','SHOWED','WON''var(--green)'}}>📂 thread</span>}</div>
-            <div className="lead-source">{l.source}</div>
-            <div><span className={'lead-state ' + l.state}>{l.state}</span></div>
-            <div style={{color:'var(--text-dim)'}}>{l.value}</div>
-            <div style={{color:'var(--text-muted)', fontSize:13}}>{l.lastTouch}</div>
-            <div>{l.flag && <span className="lead-flag">{l.flag}</span>}</div>
-          </div>
-        ))}
-      </div>
-
-      {persona.customerView && <CustomerExperience persona={persona} />}
-    </>
-  );
+ function PipelinePage({ persona, onOpenLead }) {
+  return <div style={{padding:24,color:'#888',fontFamily:'inherit'}}>Pipeline view coming soon.</div>;
 }
 
 function LeadModal({ lead, onClose }) {

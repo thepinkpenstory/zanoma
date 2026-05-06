@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zanoma · Nucleus · Client Demo</title>
 <meta name="description" content="">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -988,7 +988,7 @@ acme: {
       advisor:'<p>The site-speed regression is the priority today; everything else is on autopilot. I\'m watching how your web team handles it — if it\'s not back under 2.5s by tomorrow\'s brief, I\'ll escalate to your developer myself.</p><p>The Bend Heating Co. promo isn\'t worth matching on price. They\'re burning cash on a saturated market; we\'ll let them tire themselves out and use the noise as cover for our own organic content push next week.</p><p>The Sarah J. review is gold — I\'d ask her if you can use a quote on your homepage. I can DM her with your sign-off if you want.</p>',
       watching:['Site speed: under 2s on mobile by 11 AM PT','Lead-form recovery: ≥ 2 conversions today vs 0 yesterday','Bend Heating Co. ad spend: hold steady or escalate','Margin: AC compressor parts reorder hits PO date today — track P&L impact'],
       connectorStatus:'All healthy: GBP · Stripe · Site Uptime',
-      nextStep:,
+      nextStep: '',
     },
 
     { id:'apr27', dow:'Monday', month:'Apr', day:27, year:2026, isFull:true, kind:'daily', readingTime:'2 min',

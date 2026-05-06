@@ -1,0 +1,19 @@
+--- .pre-ai-inside-sales-removal-backup/vercel.json	2026-04-29 20:11:28
++++ vercel.json	2026-04-29 20:19:10
+@@ -19,16 +19,6 @@
+       "permanent": true
+     },
+     {
+-      "source": "/sales",
+-      "destination": "/ai-inside-sales",
+-      "permanent": true
+-    },
+-    {
+-      "source": "/services/lead-generation",
+-      "destination": "/ai-inside-sales",
+-      "permanent": true
+-    },
+-    {
+       "source": "/services/brand-intelligence",
+       "destination": "/",
+       "permanent": true
